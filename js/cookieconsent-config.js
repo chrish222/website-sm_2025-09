@@ -68,8 +68,8 @@ CookieConsent.run({
             },
             en: {
                 consentModal: {
-                    title: "Hello! Cookie time!",
-                    description: "We use cookies and other tracking technologies to improve your browsing experience on our website, to analyze our website traffic, and to understand where our visitors are coming from.",
+                    title: "Hello traveller, it's cookie time!",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
                     acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
                     showPreferencesBtn: "Manage preferences",
@@ -85,21 +85,21 @@ CookieConsent.run({
                     sections: [
                         {
                             title: "Cookie Usage",
-                            description: "Cookies are very small text files that are stored on your computer when you visit a website. We use cookies for a variety of purposes and to enhance your online experience on our website. You can change your preferences and decline certain types of cookies to be stored on your computer while browsing our website. You can also remove any cookies already stored on your computer, but keep in mind that deleting cookies may prevent you from using parts of our website."
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                         },
                         {
                             title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
-                            description: "These cookies are used to run essential functional parts of this website. Deactivating these may negatively affect this website's functionality.",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             linkedCategory: "necessary"
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "These cookies are used to collect information to analyze the traffic to our website and how visitors are using our website. For example, these cookies may track how long you spend on the website or the pages you visit, your preferences or your device, which helps us to understand how we can improve our website for you. The information collected through these tracking cookies do not identify any individual visitor.",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             linkedCategory: "analytics"
                         },
                         {
                             title: "More information",
-                            description: "For any query in relation to the policy on cookies and your choices, please visit Smartmeisters <a class=\"cc__link\" href=\"privacy.html\">Privacy Policy Page</a>."
+                            description: "For any query in relation to my policy on cookies and your choices, please <a class=\"cc__link\" href=\"#yourdomain.com\">contact me</a>."
                         }
                     ]
                 }
