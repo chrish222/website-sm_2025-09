@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartmeister - Adaptive Math & German Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        hand: ['Gochi Hand', 'cursive'],
+                    },
+                    colors: {
+                        primary: '#2e2195',
+                        'brand-yellow': '#FFD64A',
+                        'brand-accent': '#FF4D4D',
+                        'pastel-blue': '#E0F2FE',
+                        'pastel-green': '#DCFCE7',
+                        'pastel-purple': '#F3E8FF',
+                        'light-bg': '#FFFDF4'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-brandYellow {
+          --tw-bg-opacity: 1;
+          background-color: rgb(255 214 74 / var(--tw-bg-opacity, 1));
+      }
+        .hand-divider {
+          height: 12px;
+          background: url("data:image/svg+xml,%3Csvg width='1200' height='12' viewBox='0 0 1200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23FF4D4D' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+          background-repeat: repeat-x;
+      }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-anim { animation: float 3s ease-in-out infinite; }
+        
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #2e2195; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1a135a; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden selection:bg-brand-yellow">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-extrabold tracking-tight text-primary flex items-center">
+                smart<span class="text-brand-accent">|</span>meister
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="font-semibold hover:text-primary transition">Features</a>
+                <a href="#how-it-works" class="font-semibold hover:text-primary transition">How it works</a>
+                <a href="#waitlist" class="bg-primary text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20">
+                    Join the waitlist
+                </a>
+            </div>
+            <button class="md:hidden">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- HERO SECTION -->
+        <section class="relative bg-brand-yellow pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 z-10">
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-primary leading-[1.1]">
+                        Make Math & <br /> German simple. <br />
+                        <span class="text-slate-900">Kids learn at their own pace.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-800/80 max-w-lg leading-relaxed">
+                        Clear explanations & engaging exercises help different types of learners practice independently from day one. German primary school curriculum aligned.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 bg-white/40 p-3 rounded-xl border border-white/40 w-fit backdrop-blur-sm">
+                            <span class="material-symbols-outlined text-primary">school</span>
+                            <span class="font-bold">Deep learning based on teacher insights</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/40 p-3 rounded-xl border border-white/40 w-fit backdrop-blur-sm">
+                            <span class="material-symbols-outlined text-primary">trending_up</span>
+                            <span class="font-bold">Build confidence and learning growth</span>
+                        </div>
+                    </div>
+                    <a href="#waitlist" class="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-105 transition shadow-xl shadow-primary/20">
+                        Join our waiting list
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="relative">
+                    <div class="relative z-10 rounded-[40px] overflow-hidden shadow-2xl border-[12px] border-white/30 aspect-square md:aspect-auto">
+                        <img src="./images/sm_header-img_kids.png" alt="Kids learning" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-10 -left-6 md:-left-12 bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 max-w-[280px] z-20 float-anim">
+                        <div class="flex gap-1 text-brand-yellow mb-3">
+                            <span class="material-symbols-outlined text-xl">star</span>
+                            <span class="material-symbols-outlined text-xl">star</span>
+                            <span class="material-symbols-outlined text-xl">star</span>
+                            <span class="material-symbols-outlined text-xl">star</span>
+                            <span class="material-symbols-outlined text-xl">star</span>
+                        </div>
+                        <p class="italic text-slate-600 font-medium">
+                            "My daughter finally enjoys doing her math homework!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -mr-64 -mt-64"></div>
+        </section>
+
+        <!-- FEATURE SECTION -->
+        <section id="features" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+                <div class="bg-pastel-blue p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
+                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/maths-card.png"></div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Exercises adapt to ability</h3>
+                    <p class="text-slate-600 leading-relaxed font-medium">Our AI identifies knowledge gaps and creates a unique learning path for every child.</p>
+                </div>
+                <div class="bg-pastel-green p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
+                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/flexible-family.png"></div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Detailed progress Insights</h3>
+                    <p class="text-slate-600 leading-relaxed font-medium">Real-time reports for parents to see where their child is excelling and where they need help.</p>
+                </div>
+                <div class="bg-pastel-purple p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
+                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/german-card.png"></div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Comprehension focused</h3>
+                    <p class="text-slate-600 leading-relaxed font-medium">Content specifically designed for deep understanding of the German school curriculum.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO SECTION #1 -->
+        <section id="how-it-works" class="py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Learning in action</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Interactive exercises that feel like games</h2>
+                    <p class="text-lg leading-relaxed text-slate-600">Watch how Smartmeister engages students with vibrant visuals and immediate feedback. No more boring worksheets – just pure learning fun.</p>
+                </div>
+                <div class="relative">
+                    <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
+                        <video data-autoplay src="./videos_sm-downsized/sm_dshboard_exercises_short.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
+                            <span class="material-symbols-outlined text-6xl text-white hidden">play_circle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO SECTION #2 -->
+        <section class="py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6 md:order-2">
+                    <span class="bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Tailored Support</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Struggling? Our AI steps in right away</h2>
+                    <p class="text-lg leading-relaxed text-slate-600">If a child makes the same mistake twice, Smartmeister provides a mini-tutorial video or a hint to help them bridge the gap without frustration.</p>
+                </div>
+                <div class="relative md:order-1">
+                    <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
+                        <video data-autoplay src="./videos_sm-downsized/sm_exercise_solutionpanel.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+                    </div>
+                    <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 text-center w-full">
+                      <svg width="60" height="140" viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg" style="display: block; pointer-events: none; transform: rotate(224deg) scaleY(1.5) translateY(10px);" class="mx-auto w-12 h-12 text-brand-accent -rotate-12" fill="none" stroke="currentColor">
+<!-- Definition of the 'Wobble' filter to simulate hand-drawing -->
+<defs>
+  <filter id="hand-drawn-roughness">
+    <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+  </filter>
+</defs>
+
+<!-- 
+  The Arrow Path 
+  - Filled with a distinct Red (#D32F2F)
+  - Uses the filter defined above
+  - Constructed entirely of Bezier curves (C, Q) so there are no straight lines
+-->
+<path 
+  fill="#D32F2F" 
+  filter="url(#hand-drawn-roughness)"
+  d="M 22 5 
+     C 18 25, 10 55, 18 85 
+     C 21 98, 26 108, 32 115 
+     C 25 112, 15 108, 8 108 
+     Q 15 120, 28 128 
+     C 35 132, 40 136, 48 138 
+     C 45 125, 48 112, 55 102 
+     C 48 108, 42 110, 38 105 
+     C 32 95, 28 70, 28 45 
+     C 28 30, 32 15, 30 5 
+     Q 26 2, 22 5 Z"
+/>
+</svg>
+                        <p class="font-hand text-3xl text-brand-accent mb-2 rotate-2">boosts confidence and independent learning</p>
+                        <!--<svg class="mx-auto w-12 h-12 text-brand-accent -rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+                        </svg>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO SECTION #3 -->
+        <section class="py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Inbuilt Comprehension</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Stress relief for international families</h2>
+                    <p class="italic text-2xl font-medium leading-relaxed text-slate-600">“With helpful tools such as translation, read aloud (pronounciation) and solution explanations everyone can equally learn.”</p>
+                </div>
+                <div class="relative">
+                    <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
+                        <video data-autoplay src="./videos_sm-downsized/sm_dshboard_translation.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="bg-brand-yellow py-24">
+            <div class="max-w-4xl mx-auto px-6 text-center space-y-12">
+                <h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">We want to facilitate individual learning paths that include deep learning
+                  ..transforming struggle into tangible improvement
+                </h2>
+                <a href="#waitlist" class="inline-block bg-primary text-white px-10 py-5 rounded-2xl text-2xl font-black shadow-2xl hover:scale-105 active:scale-95 transition">GET LATEST INFOS WITH OUR WAITLIST</a>
+            </div>
+        </section>
+
+        <!-- VIDEO SECTION #4 (DOUBLE VIDEO / DIAGNOSTICS) -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 space-y-4">
+                    <span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Diagnostics</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Deep Dive into Diagnostics</h2>
+                    <p class="text-slate-600 text-lg max-w-2xl mx-auto">See how we map every single concept to ensure no child is left behind in their learning journey.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Left Video: Auto-loop -->
+                    <div class="space-y-4">
+                        <div class="rounded-[40px] overflow-hidden shadow-2xl aspect-video bg-slate-50 border-4 border-slate-50">
+                            <video id="diagnostics-left" src="./videos_sm-downsized/sm_diagnostics_page2.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-xl font-bold">Real-time Concept Mapping</h4>
+                            <p class="text-slate-500 text-sm">Auto-loops for quick visualization</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Video: Plays on click, stops left -->
+                    <div class="space-y-4 relative">
+                        <div class="absolute -top-32 right-3 w-64 z-20 hidden md:block">
+                            <p class="font-hand text-2xl text-brand-accent -rotate-6 ">granular metrics allow parents to gauge struggles and areas of growth</p>
+                            <style>
+                            .my-arrow-overlay {
+                              position: absolute;
+                              top: 100px; /* Adjust as needed */
+                              left: 50px; /* Adjust as needed */
+                              z-index: 10;
+                              transform: rotate(-10deg); /* Optional: adds more whimsical feel */
+                            }
+                            </style>
+                            <svg width="60" height="140" viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg" style="display: block; pointer-events: none;" class="w-16 h-16 text-brand-accent -scale-x-100 mt-2" fill="none" stroke="currentColor">
+                              <!-- Definition of the 'Wobble' filter to simulate hand-drawing -->
+                              <defs>
+                                <filter id="hand-drawn-roughness">
+                                  <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
+                                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+                                </filter>
+                              </defs>
+                            
+                              <!-- 
+                                The Arrow Path 
+                                - Filled with a distinct Red (#D32F2F)
+                                - Uses the filter defined above
+                                - Constructed entirely of Bezier curves (C, Q) so there are no straight lines
+                              -->
+                              <path 
+                                fill="#D32F2F" 
+                                filter="url(#hand-drawn-roughness)"
+                                d="M 22 5 
+                                   C 18 25, 10 55, 18 85 
+                                   C 21 98, 26 108, 32 115 
+                                   C 25 112, 15 108, 8 108 
+                                   Q 15 120, 28 128 
+                                   C 35 132, 40 136, 48 138 
+                                   C 45 125, 48 112, 55 102 
+                                   C 48 108, 42 110, 38 105 
+                                   C 32 95, 28 70, 28 45 
+                                   C 28 30, 32 15, 30 5 
+                                   Q 26 2, 22 5 Z"
+                              />
+                            </svg>
+                            <!-- <svg class="w-16 h-16 text-brand-accent -scale-x-100 mt-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>-->
+                        </div>
+                        <div id="right-video-container" class="rounded-[40px] overflow-hidden shadow-2xl aspect-video bg-slate-50 border-4 border-slate-50 relative cursor-pointer group">
+                            <video id="diagnostics-right" src="./videos_sm-downsized/sm_diagnostics_graph.mp4" loop playsinline class="w-full h-full object-cover"></video>
+                            <div id="right-overlay" class="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity opacity-100 group-hover:bg-black/10">
+                                <div class="bg-white p-4 rounded-full shadow-xl">
+                                    <span id="right-play-icon" class="material-symbols-outlined text-4xl text-primary">play_arrow</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-xl font-bold">Teacher Insight Dashboard</h4>
+                            <p class="text-slate-500 text-sm">Click to play detailed walkthrough</p>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="mt-16 border-t border-brand-accent h-2 w-full max-w-7xl mx-auto rounded-full opacity-30"></div>-->
+                <div class="hand-divider my-24"></div>
+            </div>
+        </section>
+        
+        <!-- VIDEO SECTION #5 -->
+        <section class="py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Motivated learning</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Engaging exercises</h2>
+                    <p class="italic text-2xl font-medium leading-relaxed text-slate-600">“Smartmeister features engaging exercises in various difficulty levels allowing children to learn at their own level and pace.”</p>
+                </div>
+                <div class="relative">
+                    <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
+                        <video data-autoplay src="./videos_sm-downsized/sm_exercise_numberwall-mascothelp.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- EXPLANATION SECTION -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-16 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-extrabold text-primary">Diverse Learner Types</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Every child has a unique way of absorbing information. Our platform identifies whether a student learns best through visual aids, repetition, or problem-solving.</p>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-extrabold text-primary">Adaptive AI Core</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">The AI doesn't just grade; it analyzes. It understands the "why" behind errors, adapting subsequent tasks to bridge specific conceptual gaps automatically.</p>
+                </div>
+                <div class="rounded-[40px] overflow-hidden shadow-xl bg-brand-yellow/30 p-2">
+                    <img src="./images/curiosity-main.png" alt="Learning Illustration" class="w-full rounded-[36px]">
+                </div>
+            </div>
+        </section>
+
+        <!-- WAITLIST FORM SECTION -->
+        <!--
+        <section id="waitlist" class="py-24 bg-light-bg">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="bg-white rounded-[60px] p-8 md:p-16 shadow-2xl border border-slate-100 flex flex-col md:flex-row gap-16 relative items-center">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 text-brand-accent opacity-60 hidden md:block">
+                        <svg viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M50 0 C60 20 80 20 100 0 C80 20 80 40 100 60 C80 40 60 40 50 60 C40 40 20 40 0 60 C20 40 20 20 0 0 C20 20 40 20 50 0 Z" />
+                        </svg>
+                    </div>
+                    <div class="flex-1 space-y-8">
+                        <h2 class="text-5xl font-extrabold text-slate-900">Join the Waitlist</h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">We are currently in a closed beta with selected schools. Sign up to be notified when we open for public access and get a 3-month free trial.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 font-bold text-green-600">
+                                <span class="material-symbols-outlined">check_circle</span>
+                                <span>Free trial for early adopters</span>
+                            </div>
+                            <div class="flex items-center gap-3 font-bold text-green-600">
+                                <span class="material-symbols-outlined">check_circle</span>
+                                <span>Direct access to roadmap voting</span>
+                            </div>
+                        </div>
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thanks for joining!');">
+                            <div>
+                                <label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Parent Name</label>
+                                <input type="text" placeholder="Jane Doe" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-4 focus:ring-primary/10 transition outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Email Address</label>
+                                <input type="email" placeholder="jane@example.com" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-4 focus:ring-primary/10 transition outline-none">
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-5 rounded-2xl text-xl font-bold hover:scale-[1.02] active:scale-95 transition shadow-xl shadow-primary/20">Reserve My Spot</button>
+                        </form>
+                    </div>
+                    <div class="flex-1 w-full md:max-w-sm">
+                        <div class="bg-slate-900 rounded-[40px] p-6 shadow-2xl relative">
+                            <img src="https://picsum.photos/seed/app/500/700" alt="App Preview" class="w-full rounded-[30px]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      -->
+      <!-- NEW FORM SECTION -->
+      <section class="bg-[#fcde72] px-4 md:px-8 lg:px-[158px] py-12 md:py-16">
+        <div class="max-w-[1440px] mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                
+                <div class="flex-1 w-full">
+                    <h2 class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] text-2xl md:text-3xl lg:text-4xl mb-4">
+                        Give children the confidence to learn independently
+                    </h2>
+                    <p class="font-['Rethink_Sans:Bold',sans-serif] text-[#046ec6] text-xl md:text-2xl mb-5">
+                        Join our waiting list to get Free Early Access
+                    </p>
+    
+                    <div id="brevo-form" class="sib-form" style="text-align: center; background-color: transparent;">
+                        <div id="sib-form-container" class="sib-form-container">
+                            <div id="success-message" class="sib-form-message-panel" style="display:none; font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:1200px; margin-bottom: 20px;">
+                                <span class="sib-form-message-panel__inner-text">Welcome to Smartmeister! You're officially on the waitlist!</span>
+                            </div>
+                            
+                            <div id="sib-container" style="text-align:left; background-color:#ffffff; max-width:1200px; border-radius:20px; border: 1px dotted #C0CCD9; padding: 20px;">
+                                <form id="sib-form" method="POST" action="https://ee44b5ec.sibforms.com/serve/MUIFAP8roiQcAmmZ2SOf15NnFsPZB1evAvyhMugqTdPcaQdASXOrKVWk512cuYAwjF0J1zQdadJE7cJgqfEdxmRunowTGutIRjsPJ9Q64XdebBxD5kO1I0XXy5s2kFvk7c2aK6VpiOKxvJsszitMmyT3nRU6yb327Ulo2VAeEt7ePkzDotwXOMmwr3cXlwaRrDiotJEpqOZFivczsQ==" data-type="subscription" novalidate="true">
+        <div class="email-button-wrapper" style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start;">
+            <div style="flex: 1; min-width: 240px;">
+                <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="email" id="EMAIL" name="EMAIL" placeholder="Email" required="" data-required="true">
+            </div>
+            <button class="sib-form-block__button sib-form-block__button-with-loader" style="background-color:#4C3BAD; color:white; padding: 14px 28px; border-radius: 8px; border:none; cursor:pointer; font-weight:600;" type="submit">
+                <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="display:none; width:20px; height:20px; margin-right:8px;">
+                    <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" fill="currentColor"></path>
+                </svg>
+                Join our waiting list
+            </button>
+        </div>
+        <div class="sib-optin sib-form-block" style="margin-top: 15px;">
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+                <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required="" data-required="true" style="width: 20px; height: 20px; flex-shrink:0; margin-top: 2px;">
+                <label for="OPT_IN" style="font-size: 14px; color: #3C4858; cursor: pointer;">
+                    I agree to receive product updates and accept the privacy policy. You can unsubscribe at any time.<span style="color: #e74c3c;">*</span>
+                </label>
+            </div>
+        </div>
+        <input type="hidden" name="locale" value="en">
+        <input type="hidden" name="html_type" value="simple">
+    </form>
+    
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+    
+                <div class="w-full lg:w-auto flex justify-center lg:justify-end">
+                    <img alt="High five celebration" class="w-[280px] md:w-[350px] lg:w-[398px] h-auto" src="./images/cta-highfive.png">
+                </div>
+    
+            </div> </div>
+        </section>
+        <script defer="" src="https://sibforms.com/forms/end-form/build/main.js"></script>
+        
+        
+        <!-- BIG TEXT SECTION -->
+        <section class="py-32 bg-white">
+            <div class="max-w-5xl mx-auto px-6">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-primary text-center leading-[1.2] tracking-tight">
+                    Smartmeister emphasises individual learning paths without forcing children into memorisation chores and repetitive learning patterns.
+                    <div class="w-24 h-2 bg-brandYellow mx-auto mt-12 rounded-full"></div>
+                </h2>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-slate-900 text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 border-b border-slate-800 pb-16">
+            <div class="md:col-span-2 space-y-6">
+                <div class="text-2xl font-extrabold tracking-tight">smart<span class="text-brand-accent">|</span>meister</div>
+                <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Building the future of adaptive learning for primary and secondary schools. Empowering kids to master math and languages at their own pace.</p>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">E-Learning</h4>
+                <ul class="space-y-4 text-slate-300 font-medium">
+                    <li><a href="#" class="hover:text-white transition">Features</a></li>
+                   <!-- <li><a href="#" class="hover:text-white transition">Pricing</a></li> -->
+                   <!-- <li><a href="#" class="hover:text-white transition">Schools</a></li> -->
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Legal</h4>
+                <ul class="space-y-4 text-slate-300 font-medium">
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <!-- <li><a href="#" class="hover:text-white transition">Terms of Service</a></li> -->
+                    <!-- <li><a href="#" class="hover:text-white transition">Imprint</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm font-medium">
+            <p>© 2024 Smartmeister Learning. All rights reserved.</p>
+            <div class="flex gap-8">
+                <!-- <a href="#" class="hover:text-white transition">Twitter</a> -->
+                <a href="https://www.linkedin.com/company/smartmeister" class="hover:text-white transition">LinkedIn</a>
+                <!-- <a href="#" class="hover:text-white transition">Instagram</a> -->
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+    // WAITLIST FORM ACTIONS
+      document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('sib-form');
+          const successMessage = document.getElementById('success-message');
+          const formContainer = document.getElementById('sib-container');
+          
+          if (form) {
+              form.addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  
+                  const email = document.getElementById('EMAIL').value;
+                  const optIn = document.querySelector('input[name="OPT_IN"]').checked;
+                  
+                  // Validation
+                  if (!email || !email.includes('@')) {
+                      alert('Please enter a valid email address.');
+                      return;
+                  }
+                  
+                  if (!optIn) {
+                      alert('Please check the checkbox to agree to receive product updates.');
+                      return;
+                  }
+                  
+                  // Submit via fetch
+                  const formData = new FormData(form);
+                  
+                  fetch(form.action, {
+                      method: 'POST',
+                      body: formData,
+                      mode: 'no-cors'
+                  })
+                  .then(function() {
+                      // Show success message
+                      if (successMessage) {
+                          successMessage.style.display = 'block';
+                      }
+                      if (formContainer) {
+                          formContainer.style.display = 'none';
+                      }
+                  })
+                  .catch(function(error) {
+                      console.error('Error:', error);
+                      alert('There was an error. Please try again.');
+                  });
+              });
+          }
+      });
+      </script>
+      <div id="newvtPopupMenu"></div>
+      
+    <script>
+        // HANDLE AUTO-PLAY VIDEOS ON SCROLL
+        const autoPlayVideos = document.querySelectorAll('video[data-autoplay]');
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play().catch(e => console.log('Autoplay prevented', e));
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        autoPlayVideos.forEach(v => videoObserver.observe(v));
+
+        // HANDLE DIAGNOSTICS DOUBLE VIDEO LOGIC
+        const leftVideo = document.getElementById('diagnostics-left');
+        const rightVideo = document.getElementById('diagnostics-right');
+        const rightContainer = document.getElementById('right-video-container');
+        const rightOverlay = document.getElementById('right-overlay');
+        const rightPlayIcon = document.getElementById('right-play-icon');
+
+        let isRightPlaying = false;
+
+        // Intersection Observer for Left Video specifically
+        const leftObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !isRightPlaying) {
+                leftVideo.play().catch(() => {});
+            } else {
+                leftVideo.pause();
+            }
+        }, { threshold: 0.2 });
+        leftObserver.observe(leftVideo);
+
+        rightContainer.addEventListener('click', () => {
+            if (isRightPlaying) {
+                // Pause right, play left
+                rightVideo.pause();
+                leftVideo.play();
+                rightOverlay.classList.replace('opacity-0', 'opacity-100');
+                rightPlayIcon.textContent = 'play_arrow';
+                isRightPlaying = false;
+            } else {
+                // Pause left, play right
+                leftVideo.pause();
+                rightVideo.play().catch(() => {});
+                rightOverlay.classList.replace('opacity-100', 'opacity-0');
+                rightPlayIcon.textContent = 'pause';
+                isRightPlaying = true;
+            }
+        });
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
