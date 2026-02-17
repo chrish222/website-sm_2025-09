@@ -25,8 +25,16 @@
                         'pastel-blue': '#E0F2FE',
                         'pastel-green': '#DCFCE7',
                         'pastel-purple': '#F3E8FF',
-                        'light-bg': '#FFFDF4'
-                    }
+                        'light-bg': '#FFFDF4',
+                        brandDeep: '#0d0b21',
+                        pastelOrange: '#FFF7ED',
+                        pastelPink: '#FCE7F3',
+                        vermillion: '#E34234'
+                    },
+                    borderRadius: {
+                      '4xl': '2rem',
+                      '5xl': '3rem',
+                  }
                 }
             }
         }
@@ -49,6 +57,93 @@
             50% { transform: translateY(-10px); }
         }
         .float-anim { animation: float 3s ease-in-out infinite; }
+        
+        .hero-bg {
+          background: linear-gradient(135deg, #FFD64A 0%, #FFF4CC 100%);
+      }
+      
+      .marker-text {
+          font-family: 'Gochi Hand', cursive;
+          color: #FF4D4D;
+          line-height: 1.1;
+      }
+
+      .video-overlay {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          padding: 12px 20px;
+          border-radius: 16px;
+          font-weight: 700;
+          font-size: 0.875rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          z-index: 10;
+          display: none;
+          animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      @keyframes popIn {
+          from { transform: scale(0.8); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+      }
+      
+      @keyframes pulsate-red {
+        0%, 100% { outline: 2px solid rgba(239, 68, 68, 0); outline-offset: 0px; }
+        50% { outline: 6px solid rgba(239, 68, 68, 0.4); outline-offset: 4px; }
+    }
+
+    .pulse-highlight {
+        animation: pulsate-red 1s ease-in-out 3; /* 3 seconds total */
+    }
+
+      .thumbnail-active {
+          outline: 3px solid #374151; /* dark-grey outline */
+          outline-offset: 2px;
+          opacity: 1 !important;
+          animation: none !important; /* Stop pulse if user clicks it */
+      }
+
+      .tooltip {
+          position: absolute;
+          bottom: 120%;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #1f2937;
+          color: white;
+          padding: 6px 12px;
+          border-radius: 8px;
+          font-size: 0.75rem;
+          white-space: nowrap;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s ease;
+          pointer-events: none;
+          z-index: 20;
+      }
+
+      .tooltip::after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: #1f2937 transparent transparent transparent;
+      }
+
+      .thumbnail-btn:hover .tooltip {
+          opacity: 1;
+          visibility: visible;
+          bottom: 110%;
+      }
+
+      /* Custom SVG arrows and doodles */
+      .doodle-arrow-1 {
+          width: 80px;
+          height: 60px;
+          transform: rotate(-10deg);
+      }
         
         /* Hide scrollbar for cleaner look */
         ::-webkit-scrollbar { width: 8px; }
@@ -230,7 +325,7 @@
         </section>
 
         <!-- VIDEO SECTION #3 -->
-        <section class="py-24 overflow-hidden">
+        <!--<section class="py-24 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6">
                     <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Inbuilt Comprehension</span>
@@ -240,6 +335,110 @@
                 <div class="relative">
                     <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
                         <video data-autoplay src="./videos_sm-downsized/sm_dshboard_translation.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+        <!-- Interactive Video Section #3 -->
+        <section class="py-24 overflow-hidden">
+          <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Case Study</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Hear from teachers who use it</h2>
+                <p class="text-lg leading-relaxed text-slate-6000">
+                    Smartmeister has transformed my classroom dynamics. I can focus on group discussions while the app handles individual drill work.
+                </p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Main Display Area -->
+                <div id="video-display" class="relative bg-slate-900 rounded-[40px] aspect-video overflow-hidden shadow-2xl flex items-center justify-center transition-all duration-500">
+                    <video id="main-video-player" class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline poster="https://picsum.photos/seed/vid1/800/450">
+                        <source id="main-video-source" src="./videos_sm-downsized/sm_exercise_solutionpanel.mp4" type="video/mp4">
+                    </video>
+                    <div id="video-overlay-badge" class="video-overlay">
+                        <!-- Dynamic content here -->
+                    </div>
+                    <!-- Overlay Play Icon: Initially hidden as video autoplays -->
+                    <div id="video-play-overlay" class="absolute inset-0 flex items-center justify-center pointer-events-none hidden">
+                        <div class="w-20 h-20 bg-white/40 rounded-full flex items-center justify-center shadow-xl">
+                            <span class="material-symbols-outlined text-white text-4xl fill-1">play_arrow</span>
+                        </div>
+                    </div>
+                    <p class="absolute bottom-6 text-white/70 text-sm font-bold uppercase tracking-widest" id="video-caption">Video Section: Social</p>
+                </div>
+
+                <!-- Thumbnail Navigation -->
+                <div id="thumbnail-container" class="flex flex-wrap gap-4 items-center justify-center md:justify-start">
+                  <!-- Thumb 1 -->
+                  <button class="thumbnail-btn relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100 thumbnail-active" onclick="handleThumbClick(1)">
+                      <img src="https://picsum.photos/seed/vid1/100/60" class="w-full h-full object-cover rounded-xl" alt="thumb 1">
+                      <div class="tooltip">Teacher Intro</div>
+                  </button>
+                  <!-- Thumb 2 (Pulsate Target) -->
+                  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(2)">
+                      <img src="https://picsum.photos/seed/vid2/100/60" class="w-full h-full object-cover rounded-xl" alt="thumb 2">
+                      <div class="tooltip">Class Dynamics</div>
+                  </button>
+                  <!-- Thumb 3 (Pulsate Target) -->
+                  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(3)">
+                      <img src="https://picsum.photos/seed/vid3/100/60" class="w-full h-full object-cover rounded-xl" alt="thumb 3">
+                      <div class="tooltip">Success Story</div>
+                  </button>
+                  <!-- Thumb 4 (Pulsate Target) -->
+                  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(4)">
+                      <img src="https://picsum.photos/seed/vid4/100/60" class="w-full h-full object-cover rounded-xl" alt="thumb 4">
+                      <div class="tooltip">Curriculum Mapping</div>
+                  </button>
+                  <!-- Thumb 5 (Pulsate Target) -->
+                  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(5)">
+                      <img src="https://picsum.photos/seed/vid5/100/60" class="w-full h-full object-cover rounded-xl" alt="thumb 5">
+                      <div class="tooltip">AI Analytics</div>
+                  </button>
+                  <!-- Thumb 6 (Pulsate Target) -->
+                  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(6)">
+                      <img src="https://picsum.photos/seed/vid6/100/60" class="w-full h-full object-cover rounded-xl" alt="thumb 6">
+                      <div class="tooltip">School Partnership</div>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Voice Narration Section -->
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <div class="bg-slate-50 rounded-[60px] p-8 md:p-20 grid md:grid-cols-2 gap-16 items-center">
+                <!-- Left Column: Video -->
+                <div class="relative group">
+                    <div class="relative bg-slate-900 rounded-[40px] aspect-video overflow-hidden shadow-2xl">
+                        <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="https://picsum.photos/seed/voice/800/450">
+                            <source src="./videos_sm-downsized/sm_exercise_solutionpanel.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+                    </div>
+                    
+                    <!-- Vermillion Circular Badge -->
+                    <div class="absolute -top-10 -left-10 bg-vermillion border-[6px] border-white rounded-full w-32 h-32 md:w-40 md:h-40 shadow-2xl flex items-center justify-center z-20 hover:scale-110 transition-transform">
+                        <span class="text-white font-black text-sm md:text-base text-center leading-tight uppercase tracking-widest px-4">voice narration</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Text Content -->
+                <div class="space-y-8">
+                    <div class="inline-block bg-pastelOrange text-orange-700 px-6 py-2 rounded-full text-xs font-extrabold tracking-widest uppercase">
+                        Auditory Learning
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Explanations that speak <br class="hidden md:block"> to every student
+                    </h2>
+                    <blockquote class="text-2xl font-semibold italic text-slate-500 border-l-4 border-vermillion pl-6 leading-relaxed">
+                        "The built-in voice narration isn't just text-to-speech. It's carefully paced to ensure comprehension, making it accessible for children with reading difficulties."
+                    </blockquote>
+                    <div class="pt-4 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-vermillion/10 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-vermillion">volume_up</span>
+                        </div>
+                        <p class="font-bold text-slate-700 uppercase text-sm tracking-widest">Enhanced Accessibility</p>
                     </div>
                 </div>
             </div>
@@ -630,6 +829,109 @@
             }
         });
     </script>
+    <script>
+      /**
+       * Interactive Video Section Logic
+       */
+      const videoBadgeData = [
+          null, // Thumb 1 (no badge)
+          { text: "NEW STRATEGY", color: "#EF4444" }, // Thumb 2 (Red)
+          { text: "LEARNING GOAL", color: "#10B981" }, // Thumb 3 (Green)
+          { text: "MASTERED!", color: "#F59E0B" }, // Thumb 4 (Amber)
+          { text: "AI POWERED", color: "#8B5CF6" }, // Thumb 5 (Purple)
+          { text: "TEACHER DASH", color: "#EC4899" }, // Thumb 6 (Pink)
+      ];
+
+      const videoCaptions = [
+          "Video Section: Social",
+          "Video Section: Engagement",
+          "Video Section: Progress",
+          "Video Section: Mapping",
+          "Video Section: Analysis",
+          "Video Section: Dashboard"
+      ];
+
+      const videoSources = [
+          "./videos_sm-downsized/sm_exercise_solutionpanel.mp4",
+          "./videos_sm-downsized/sm_dshboard_exercises_short.mp4",
+          "./videos_sm-downsized/sm_exercise_solutionpanel.mp4",
+          "./videos_sm-downsized/sm_dshboard_exercises_short.mp4",
+          "./videos_sm-downsized/sm_exercise_solutionpanel.mp4",
+          "./videos_sm-downsized/sm_dshboard_exercises_short.mp4"
+      ];
+
+      function handleThumbClick(id) {
+          const videoPlayer = document.getElementById('main-video-player');
+          const videoSource = document.getElementById('main-video-source');
+          const badge = document.getElementById('video-overlay-badge');
+          const caption = document.getElementById('video-caption');
+          const playOverlay = document.getElementById('video-play-overlay');
+          const btns = document.querySelectorAll('.thumbnail-btn');
+
+          // 1. Update Video Source and Play
+          videoPlayer.poster = `https://picsum.photos/seed/vid${id}/800/450`;
+          videoSource.src = videoSources[id-1];
+          videoPlayer.load();
+          videoPlayer.play();
+          
+          // Ensure play overlay is hidden during autoplay
+          playOverlay.classList.add('hidden');
+          
+          // 2. Handle Thumbnail Active State
+          btns.forEach((btn, index) => {
+              if (index === (id - 1)) {
+                  btn.classList.add('thumbnail-active');
+              } else {
+                  btn.classList.remove('thumbnail-active');
+              }
+          });
+
+          // 3. Update Caption
+          caption.innerText = videoCaptions[id-1];
+
+          // 4. Handle Floating Badge Logic
+          const badgeInfo = videoBadgeData[id-1];
+          if (badgeInfo) {
+              badge.style.display = 'block';
+              badge.style.backgroundColor = badgeInfo.color;
+              badge.style.color = '#FFFFFF';
+              badge.innerText = badgeInfo.text;
+          } else {
+              badge.style.display = 'none';
+          }
+      }
+      
+      /**
+       * Pulse Animation Scroll Trigger
+       */
+      document.addEventListener('DOMContentLoaded', () => {
+          const pulseTargets = document.querySelectorAll('.pulse-target');
+          
+          const observerOptions = {
+              root: null,
+              threshold: 0.5 // Trigger when at least 50% is visible
+          };
+
+          const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      // Add class to all pulsate targets simultaneously for a synchronized look
+                      pulseTargets.forEach(target => {
+                          target.classList.add('pulse-highlight');
+                      });
+                      // Animation lasts 3 seconds as defined in CSS. 
+                      // Once triggered, we unobserve to make it "one time".
+                      observer.unobserve(entry.target);
+                  }
+              });
+          }, observerOptions);
+
+          // We observe the container or the first target to trigger the group pulse
+          if (pulseTargets.length > 0) {
+              observer.observe(document.getElementById('thumbnail-container'));
+          }
+      });
+  </script>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>
