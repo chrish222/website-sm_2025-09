@@ -154,6 +154,10 @@
           height: 60px;
           transform: rotate(-10deg);
       }
+      /* custom Tailwind */
+      .max-w-8xl {
+      max-width: 90rem;
+      }
         
         /* Hide scrollbar for cleaner look */
         ::-webkit-scrollbar { width: 8px; }
@@ -199,9 +203,9 @@
     <main class="pt-20">
         <!-- HERO SECTION -->
         <section class="relative bg-brand-yellow pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="max-w-7xl md:p-12 lg:p-16  md:max-w-screen-2xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center md:items-start lg:items-center md:grid-cols-[40%_60%] lg:grid-cols-[50%_50%]">
                 <div class="space-y-8 z-10">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-primary leading-[1.1]">
+                    <h1 class="text-5xl md:text-4xl lg:text-7xl font-extrabold text-primary leading-[1.1]">
                       <!-- Adaptive learning that helps children <br /> -->
                         Adaptive learning that helps master <br />
                         <span class="text-slate-900">subjects or catch up quickly</span>
@@ -231,44 +235,439 @@
                 </div>
 
                 <div class="relative">
-                    <div class="relative z-10 rounded-[40px] overflow-hidden shadow-2xl border-[12px] border-white/30 aspect-square md:aspect-auto">
+                    <div class="relative z-10 rounded-[40px] overflow-hidden shadow-2xl -ml-4 -mr-4 md:ml-auto md:mr-auto border-[3px] md:border-[12px] border-white/30 aspect-3/2 md:aspect-auto lg:aspect-auto">
                         <!-- <img src="./images/sm_header-img_kids.png" alt="Kids learning" class="w-full h-full object-cover"> -->
-                        <img src="./images/dashboard_exercise_mascot_robot_on_rocket_with_backpack_512x512.jpg" alt="Smarter learning" class="w-full h-full object-cover">
+                        <!-- <img src="./images/dashboard_exercise_mascot_robot_on_rocket_with_backpack_512x512.jpg" alt="Smarter learning" class="w-full h-full object-cover"> -->
+                        <svg viewBox="0 0 800 520" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="w-full h-full object-cover mt-3" style="transform: scale(1.1);">
+                          <defs>
+                              <!-- Background Gradients (Vertical Top-to-Bottom) -->
+                              <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                  <stop offset="0%" stop-color="#F4F9FF" />
+                                  <stop offset="100%" stop-color="#C8DBFA" />
+                              </linearGradient>
+                      
+                              <!-- Drop Shadows & Glows -->
+                              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                                  <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#94A3B8" flood-opacity="0.25"/>
+                              </filter>
+                              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                  <feMerge>
+                                      <feMergeNode in="coloredBlur"/>
+                                      <feMergeNode in="SourceGraphic"/>
+                                  </feMerge>
+                              </filter>
+                              <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                  <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                                  <feMerge>
+                                      <feMergeNode in="coloredBlur"/>
+                                      <feMergeNode in="SourceGraphic"/>
+                                  </feMerge>
+                              </filter>
+                              
+                              <!-- Animated Flow Icons (Material Symbols Inspired) - Scaled 200% -->
+                              <g id="sym-speech-stars" transform="translate(-32, -32) scale(2.66)">
+                                  <!-- Bubble Base (Widened to fit larger stars) -->
+                                  <rect x="-1" y="2" width="26" height="15" rx="4" fill="#FFFFFF" filter="url(#shadow)"/>
+                                  <polygon points="12,17 8,22 10,17" fill="#FFFFFF" />
+                                  
+                                  <!-- Three enlarged stars (Scale increased from 0.6 to 0.85) -->
+                                  <!-- Star 1 (Yellow) -->
+                                  <g transform="translate(4.5, 9.5) scale(0.85)">
+                                      <path d="M0 -4 L1.17 -1.38 L4 -1.38 L1.7 0.38 L2.58 3.12 L0 1.38 L-2.58 3.12 L-1.7 0.38 L-4 -1.38 L-1.17 -1.38 Z" fill="#F2C94C" />
+                                  </g>
+                                  <!-- Star 2 (Yellow) -->
+                                  <g transform="translate(12, 9.5) scale(0.85)">
+                                      <path d="M0 -4 L1.17 -1.38 L4 -1.38 L1.7 0.38 L2.58 3.12 L0 1.38 L-2.58 3.12 L-1.7 0.38 L-4 -1.38 L-1.17 -1.38 Z" fill="#F2C94C" />
+                                  </g>
+                                  <!-- Star 3 (Gray) -->
+                                  <g transform="translate(19.5, 9.5) scale(0.85)">
+                                      <path d="M0 -4 L1.17 -1.38 L4 -1.38 L1.7 0.38 L2.58 3.12 L0 1.38 L-2.58 3.12 L-1.7 0.38 L-4 -1.38 L-1.17 -1.38 Z" fill="#CBD5E1" />
+                                  </g>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#678758" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+                              </g>
+                      
+                              <g id="sym-star" transform="translate(-32, -32) scale(2.66)">
+                                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#F2C94C" filter="url(#glow)"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#D9A406" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+                              </g>
+                      
+                              <g id="sym-stressed" transform="translate(-32, -32) scale(2.66)">
+                                  <circle cx="12" cy="12" r="10" fill="#EB5757" filter="url(#glow)"/>
+                                  <path d="M7 8l2 2l-2 2 M17 8l-2 2l2 2 M8 16l2-1l2 1l2-1l2 1" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#EB5757" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+                              </g>
+                      
+                              <g id="sym-trending-up" transform="translate(-32, -32) scale(2.66)">
+                                  <rect x="2" y="2" width="20" height="20" rx="4" fill="#9B89FF" filter="url(#glow)"/>
+                                  <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="#FFF"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#9B89FF" text-anchor="middle" letter-spacing="0.2px">INSIGHT</text>
+                              </g>
+                      
+                              <g id="sym-mindfulness" transform="translate(-32, -32) scale(2.66)">
+                                  <!-- Clean Person Bust for Mindfulness -->
+                                  <path d="M12 11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#9B89FF" filter="url(#glow)"/>
+                                  <!-- Insight Spark in head -->
+                                  <circle cx="12" cy="7" r="1.5" fill="#FFF"/>
+                                  <path d="M12 4 L12 5.5 M12 8.5 L12 10 M9.5 7 L10.5 7 M13.5 7 L14.5 7 M10.2 5.2 L11 6 M13.8 5.2 L13 6 M10.2 8.8 L11 8 M13.8 8.8 L13 8" stroke="#FFF" stroke-width="0.8" stroke-linecap="round"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#9B89FF" text-anchor="middle" letter-spacing="0.2px">INSIGHT</text>
+                              </g>
+                      
+                              <g id="sym-sheet-green" transform="translate(-32, -32) scale(2.66)">
+                                  <rect x="4" y="2" width="16" height="20" rx="2" fill="#56AB2F" filter="url(#glow)"/>
+                                  <path d="M7 6h10v2H7zm0 4h10v2H7zm0 4h6v2H7z" fill="#FFF"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#56AB2F" text-anchor="middle" letter-spacing="0.2px">EXERCISE</text>
+                              </g>
+                              
+                              <g id="sym-sheet-yellow" transform="translate(-32, -32) scale(2.66)">
+                                  <rect x="4" y="2" width="16" height="20" rx="2" fill="#F2C94C" filter="url(#glow)"/>
+                                  <path d="M7 6h10v2H7zm0 4h10v2H7zm0 4h6v2H7z" fill="#FFF"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#D9A406" text-anchor="middle" letter-spacing="0.2px">EXERCISE</text>
+                              </g>
+                              
+                              <g id="sym-sheet-red" transform="translate(-32, -32) scale(2.66)">
+                                  <rect x="4" y="2" width="16" height="20" rx="2" fill="#EB5757" filter="url(#glow)"/>
+                                  <path d="M7 6h10v2H7zm0 4h10v2H7zm0 4h6v2H7z" fill="#FFF"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#EB5757" text-anchor="middle" letter-spacing="0.2px">EXERCISE</text>
+                              </g>
+                          </defs>
+                      
+                          <style>
+                              .text-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 24px; fill: #1E293B; letter-spacing: 1px; }
+                              .text-subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 14px; fill: #64748B; }
+                              .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 11px; fill: #64748B; letter-spacing: 1.5px; }
+                              .text-value { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 14px; fill: #334155; }
+                              .text-bubble { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 12px; fill: #FFFFFF; }
+                              .text-value-xl { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 24px; fill: #334155; }
+                              
+                              .blink {
+                                  transform-origin: 400px 395px;
+                                  animation: blinker 4s infinite;
+                              }
+                              @keyframes blinker {
+                                  0%, 90% { transform: scaleY(1); }
+                                  95% { transform: scaleY(0.1); }
+                                  100% { transform: scaleY(1); }
+                              }
+                          </style>
+                      
+                          <!-- Background -->
+                          <rect width="100%" height="100%" fill="url(#bgGrad)" />
+                      
+                          <!-- Top Titles -->
+                          <text x="400" y="40" class="text-title" text-anchor="middle">ADAPTIVE LEARNING</text>
+                          <text x="400" y="62" class="text-subtitle" text-anchor="middle">Difficulty level changes based on performance</text>
+                      
+                          <!-- Base Connection Paths (Passive Data Flow) -->
+                          <g stroke="#CBD5E1" stroke-width="3" stroke-dasharray="8 8" fill="none">
+                              <path d="M 400 400 Q 650 400 650 150">
+                                  <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1.5s" repeatCount="indefinite"/>
+                              </path>
+                              <path d="M 650 150 Q 400 50 150 150">
+                                  <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1.5s" repeatCount="indefinite"/>
+                              </path>
+                              <path d="M 150 150 Q 150 400 400 400">
+                                  <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1.5s" repeatCount="indefinite"/>
+                              </path>
+                          </g>
+                      
+                          <!-- Data Flow (Animated Icons - Discrete Appearance) -->
+                          
+                          <!-- 1. Engine -> User (Yellow Normal Task) -->
+                          <use href="#sym-sheet-yellow">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 150 150 Q 150 400 400 400" keyTimes="0; 0.05; 0.15; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.05; 0.15; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 2. User -> Tracker (Eval 1: Stressed / Friction) -->
+                          <use href="#sym-stressed">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 400 400 Q 650 400 650 150" keyTimes="0; 0.15; 0.25; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.15; 0.25; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 3. Tracker -> Engine (Eval 1 Mindfulness Insight) -->
+                          <use href="#sym-mindfulness">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 650 150 Q 400 50 150 150" keyTimes="0; 0.30; 0.40; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.30; 0.40; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 4. Engine -> User (Green Easy Task) -->
+                          <use href="#sym-sheet-green">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 150 150 Q 150 400 400 400" keyTimes="0; 0.45; 0.55; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.45; 0.55; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 5. User -> Tracker (Eval 2: Speech Bubble / Partial Mastery) -->
+                          <use href="#sym-speech-stars">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 400 400 Q 650 400 650 150" keyTimes="0; 0.60; 0.68; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.60; 0.68; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 6. Tracker -> Engine (Eval 2 Trending Up) -->
+                          <use href="#sym-trending-up">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 650 150 Q 400 50 150 150" keyTimes="0; 0.70; 0.75; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.70; 0.75; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 7. Engine -> User (Red Hard Task) -->
+                          <use href="#sym-sheet-red">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 150 150 Q 150 400 400 400" keyTimes="0; 0.75; 0.80; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.75; 0.80; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 8. User -> Tracker (Eval 3: Full Star / Mastery) -->
+                          <use href="#sym-star">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 400 400 Q 650 400 650 150" keyTimes="0; 0.90; 0.95; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.90; 0.95; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- NODES -->
+                      
+                          <!-- Performance Tracker Node (Top Right) -->
+                          <g>
+                              <!-- Tracker Pulse Ring -->
+                              <circle cx="650" cy="110" r="40" fill="none" stroke="#9B89FF" stroke-width="4" opacity="0">
+                                  <animate attributeName="opacity" values="0; 1; 0; 0; 1; 0; 0; 1; 0; 0" keyTimes="0; 0.25; 0.35; 0.66; 0.68; 0.73; 0.93; 0.95; 1.0; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="40; 55; 40; 40; 55; 40; 40; 55; 40; 40" keyTimes="0; 0.25; 0.35; 0.66; 0.68; 0.73; 0.93; 0.95; 1.0; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                              
+                              <!-- Base Box -->
+                              <rect x="580" y="70" width="140" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+                              
+                              <!-- Animated Chart Icon -->
+                              <g>
+                                  <!-- Bar 1 -->
+                                  <rect x="635" y="100" width="8" height="20" rx="2" fill="#9B89FF">
+                                      <animate attributeName="height" values="20; 30; 15; 20; 20; 35; 20; 20" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.73; 0.76; 1" dur="24s" repeatCount="indefinite"/>
+                                      <animate attributeName="y" values="100; 90; 105; 100; 100; 85; 100; 100" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.73; 0.76; 1" dur="24s" repeatCount="indefinite"/>
+                                  </rect>
+                                  <!-- Bar 2 -->
+                                  <rect x="647" y="90" width="8" height="30" rx="2" fill="#818CF8">
+                                      <animate attributeName="height" values="30; 45; 20; 30; 30; 45; 30; 30" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.72; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+                                      <animate attributeName="y" values="90; 75; 100; 90; 90; 75; 90; 90" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.72; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+                                  </rect>
+                                  <!-- Bar 3 -->
+                                  <rect x="659" y="105" width="8" height="15" rx="2" fill="#C7D2FE">
+                                      <animate attributeName="height" values="15; 25; 10; 15; 15; 30; 15; 15" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.74; 0.77; 1" dur="24s" repeatCount="indefinite"/>
+                                      <animate attributeName="y" values="105; 95; 110; 105; 105; 90; 105; 105" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.74; 0.77; 1" dur="24s" repeatCount="indefinite"/>
+                                  </rect>
+                                  <!-- Magnifying Glass -->
+                                  <circle cx="645" cy="100" r="14" fill="none" stroke="#334155" stroke-width="3" />
+                                  <line x1="655" y1="110" x2="665" y2="120" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+                              </g>
+                              
+                              <text x="650" y="155" class="text-value" text-anchor="middle">PERFORMANCE</text>
+                              <text x="650" y="172" class="text-value" text-anchor="middle">TRACKER</text>
+                      
+                              <!-- Tracker Speech Bubbles -->
+                              <g opacity="0">
+                                  <rect x="590" y="25" width="120" height="26" rx="13" fill="#9B89FF" filter="url(#shadow)" />
+                                  <text x="650" y="43" class="text-bubble" text-anchor="middle">Analyzing...</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.24; 0.25; 0.35; 1" dur="24s" repeatCount="indefinite"/>
+                              </g>
+                              <g opacity="0">
+                                  <rect x="590" y="25" width="120" height="26" rx="13" fill="#9B89FF" filter="url(#shadow)" />
+                                  <text x="650" y="43" class="text-bubble" text-anchor="middle">Assessing...</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.67; 0.68; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+                              </g>
+                              <g opacity="0">
+                                  <rect x="590" y="25" width="120" height="26" rx="13" fill="#9B89FF" filter="url(#shadow)" />
+                                  <text x="650" y="43" class="text-bubble" text-anchor="middle">Mastery!</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.94; 0.95; 1.0; 1" dur="24s" repeatCount="indefinite"/>
+                              </g>
+                          </g>
+                      
+                          <!-- Learning Engine Node (Top Left) -->
+                          <g>
+                              <!-- Engine Pulse Ring -->
+                              <circle cx="150" cy="110" r="40" fill="none" stroke="#4FACFE" stroke-width="4" opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 0; 0; 1; 0; 0" keyTimes="0; 0.38; 0.40; 0.50; 0.73; 0.75; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="40; 40; 55; 40; 40; 55; 40; 40" keyTimes="0; 0.38; 0.40; 0.50; 0.73; 0.75; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                              
+                              <!-- Base Box -->
+                              <rect x="80" y="70" width="140" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+                              
+                              <!-- Tech AI Icon -->
+                              <g>
+                                  <polygon points="150,90 167,100 167,120 150,130 133,120 133,100" fill="none" stroke="#4FACFE" stroke-width="3"/>
+                                  <circle cx="150" cy="110" r="8" fill="#4FACFE" filter="url(#glow)">
+                                      <animate attributeName="r" values="8; 12; 8; 8; 12; 8; 8" keyTimes="0; 0.40; 0.50; 0.73; 0.75; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+                                  </circle>
+                                  <!-- Circuit Lines -->
+                                  <line x1="150" y1="90" x2="150" y2="80" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="167" y1="100" x2="177" y2="94" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="167" y1="120" x2="177" y2="126" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="150" y1="130" x2="150" y2="140" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="133" y1="120" x2="123" y2="126" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="133" y1="100" x2="123" y2="94" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                              </g>
+                              
+                              <text x="150" y="155" class="text-value" text-anchor="middle">LEARNING</text>
+                              <text x="150" y="172" class="text-value" text-anchor="middle">ENGINE</text>
+                      
+                              <!-- Engine Speech Bubbles -->
+                              <!-- Easy Bubble -->
+                              <g opacity="0">
+                                  <rect x="90" y="25" width="120" height="26" rx="13" fill="#56AB2F" filter="url(#shadow)" />
+                                  <text x="150" y="43" class="text-bubble" text-anchor="middle">Adjust: Easier</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.42; 0.43; 0.55; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animateTransform attributeName="transform" type="translate" values="0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.42; 0.43; 0.55; 1" dur="24s" repeatCount="indefinite" />
+                              </g>
+                              <!-- Hard Bubble -->
+                              <g opacity="0">
+                                  <rect x="90" y="25" width="120" height="26" rx="13" fill="#EB5757" filter="url(#shadow)" />
+                                  <text x="150" y="43" class="text-bubble" text-anchor="middle">Adjust: Harder</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.72; 0.73; 0.82; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animateTransform attributeName="transform" type="translate" values="0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.72; 0.73; 0.82; 1" dur="24s" repeatCount="indefinite" />
+                              </g>
+                          </g>
+                      
+                          <!-- User / Core Student Node (Center) -->
+                          <g>
+                              <!-- Adaptive Aura -->
+                              <circle cx="400" cy="400" r="50" fill="#F2C94C" opacity="0.15" filter="url(#strongGlow)">
+                                  <animate attributeName="fill" values="#F2C94C; #F2C94C; #56AB2F; #56AB2F; #EB5757; #EB5757; #F2C94C" keyTimes="0; 0.50; 0.51; 0.75; 0.76; 0.99; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="50; 65; 50; 50; 70; 50; 50; 80; 50; 50" keyTimes="0; 0.15; 0.20; 0.54; 0.55; 0.60; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                      
+                              <!-- Tech Orbits representing active learning state -->
+                              <ellipse cx="400" cy="400" rx="45" ry="12" fill="none" stroke="#4FACFE" stroke-width="2" opacity="0.6">
+                                  <animateTransform attributeName="transform" type="rotate" from="0 400 400" to="360 400 400" dur="5s" repeatCount="indefinite" />
+                              </ellipse>
+                              <ellipse cx="400" cy="400" rx="12" ry="45" fill="none" stroke="#4FACFE" stroke-width="2" opacity="0.6">
+                                  <animateTransform attributeName="transform" type="rotate" from="360 400 400" to="0 400 400" dur="7s" repeatCount="indefinite" />
+                              </ellipse>
+                      
+                              <!-- Expanding Completion Rings -->
+                              <!-- Normal Completion -->
+                              <circle cx="400" cy="400" r="30" fill="none" stroke="#F2C94C" stroke-width="6" opacity="0">
+                                  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.15; 0.20; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="30; 60; 70; 70" keyTimes="0; 0.15; 0.20; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                              <!-- Easy Completion -->
+                              <circle cx="400" cy="400" r="30" fill="none" stroke="#56AB2F" stroke-width="6" opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.54; 0.55; 0.60; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="30; 30; 60; 75; 75" keyTimes="0; 0.54; 0.55; 0.60; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                              <!-- Hard Completion (Big effect) -->
+                              <circle cx="400" cy="400" r="30" fill="none" stroke="#EB5757" stroke-width="8" opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="30; 30; 70; 100; 100" keyTimes="0; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                      
+                              <!-- Effects Elements: Lightbulb & Graduation Cap -->
+                              <!-- Lightbulb (Pops up at 0.56 after Green task arrives) -->
+                              <g opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.55; 0.56; 0.63; 0.64; 1" dur="24s" repeatCount="indefinite" />
+                                  <animateTransform attributeName="transform" type="translate" values="0 10; 0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.55; 0.56; 0.63; 0.64; 1" dur="24s" repeatCount="indefinite" />
+                                  <g transform="translate(400, 325) scale(1.3)">
+                                      <path d="M 0 -12 C -6 -12 -10 -8 -10 -2 C -10 2 -7 5 -6 8 L 6 8 C 7 5 10 2 10 -2 C 10 -8 6 -12 0 -12 Z" fill="#F2C94C" filter="url(#glow)"/>
+                                      <rect x="-4" y="9" width="8" height="4" rx="1" fill="#CBD5E1" />
+                                      <path d="M -2 14 L 2 14 L 1 16 L -1 16 Z" fill="#94A3B8" />
+                                      <path d="M -3 -2 C -1 -5 1 -5 3 -2" stroke="#FFF" stroke-width="1.5" fill="none" />
+                                      <line x1="0" y1="-15" x2="0" y2="-19" stroke="#F2C94C" stroke-width="2" stroke-linecap="round"/>
+                                      <line x1="-12" y1="-12" x2="-15" y2="-15" stroke="#F2C94C" stroke-width="2" stroke-linecap="round"/>
+                                      <line x1="12" y1="-12" x2="15" y2="-15" stroke="#F2C94C" stroke-width="2" stroke-linecap="round"/>
+                                  </g>
+                              </g>
+                      
+                              <!-- Graduation Cap (Pops up at 0.85 before Full Star launches) -->
+                              <g opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.84; 0.85; 0.98; 0.99; 1" dur="24s" repeatCount="indefinite" />
+                                  <animateTransform attributeName="transform" type="translate" values="0 10; 0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.84; 0.85; 0.98; 0.99; 1" dur="24s" repeatCount="indefinite" />
+                                  <g transform="translate(400, 335) scale(1.2)">
+                                      <polygon points="0,-10 -18,-2 0,6 18,-2" fill="#1E293B" filter="url(#shadow)"/>
+                                      <polygon points="-10,2 10,2 8,10 -8,10" fill="#334155" />
+                                      <line x1="0" y1="-2" x2="14" y2="4" stroke="#F2C94C" stroke-width="1.5" />
+                                      <circle cx="0" cy="-2" r="2" fill="#F2C94C" />
+                                      <line x1="14" y1="4" x2="14" y2="12" stroke="#F2C94C" stroke-width="2" />
+                                      <line x1="13" y1="12" x2="12" y2="15" stroke="#F2C94C" stroke-width="1" />
+                                      <line x1="14" y1="12" x2="14" y2="15" stroke="#F2C94C" stroke-width="1" />
+                                      <line x1="15" y1="12" x2="16" y2="15" stroke="#F2C94C" stroke-width="1" />
+                                  </g>
+                              </g>
+                      
+                              <!-- Core Avatar Body -->
+                              <circle cx="400" cy="400" r="30" fill="#4FACFE" filter="url(#shadow)">
+                                  <animate attributeName="r" values="30; 36; 30; 30; 38; 30; 30; 45; 30; 30" keyTimes="0; 0.15; 0.20; 0.54; 0.55; 0.60; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite" />
+                              </circle>
+                      
+                              <!-- Whimsical Face -->
+                              <g class="blink">
+                                  <circle cx="388" cy="396" r="3" fill="#FFF" />
+                                  <circle cx="412" cy="396" r="3" fill="#FFF" />
+                                  <path d="M 388 406 Q 400 416 412 406" stroke="#FFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                              </g>
+                              
+                              <!-- Label -->
+                              <text x="400" y="465" class="text-value" fill="#4FACFE" text-anchor="middle">STUDENT</text>
+                          </g>
+                      
+                          <!-- Center Dashboard (Explains the loop) -->
+                          <g transform="translate(260, 210)">
+                              <!-- <rect width="280" height="74" rx="12" fill="#FFFFFF" filter="url(#shadow)" /> -->
+                              <!-- <text x="20" y="26" class="text-label">LEARNING TRAJECTORY</text> -->
+                              
+                              <!-- Baseline Phase (0-45%) -->
+                              <g>
+                                  <animate attributeName="opacity" values="1; 1; 0; 0; 0" keyTimes="0; 0.44; 0.45; 0.99; 1" dur="24s" repeatCount="indefinite"/>
+                                  <circle cx="10" cy="48" r="6" fill="#F2C94C" filter="url(#glow)"/>
+                                  <text x="30" y="53" class="text-value-xl">1. Baseline Evaluation</text>
+                              </g>
+                              <!-- Adaptation Phase (45-75%) -->
+                              <g opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.44; 0.45; 0.74; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+                                  <circle cx="1" cy="48" r="6" fill="#56AB2F" filter="url(#glow)"/>
+                                  <text x="21" y="53" class="text-value-xl">2. Gap Detected: Adapting</text>
+                              </g>
+                              <!-- Mastery Phase (75-100%) -->
+                              <g opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.74; 0.75; 0.99; 1" dur="24s" repeatCount="indefinite"/>
+                                  <circle cx="1" cy="48" r="6" fill="#EB5757" filter="url(#glow)"/>
+                                  <text x="21" y="53" class="text-value-xl">3. Subject Improvement</text>
+                              </g>
+                          </g>
+                      
+                      </svg>
                     </div>
-                    <div class="absolute bg-primary -bottom-10 -left-6 md:-left-12 p-6 rounded-3xl shadow-2xl max-w-[280px] z-20 float-anim">
-                        <div class="flex gap-1 text-brand-yellow mb-3">
+                    <!-- <div class="absolute bg-primary -bottom-10 -left-6 md:-left-12 p-6 rounded-3xl shadow-2xl max-w-[280px] z-20 float-anim"> -->
+                        <div class="absolute bg-primary -bottom-24 -left-2 sm:-left-12 sm:-bottom-20 p-3 md:p-6 rounded-3xl shadow-2xl max-w-full md:max-w-[280px] z-40 md:float-anim">
+                        <div class="flex gap-1 text-brand-yellow mb-3 hidden md:block">
                             <span class="material-symbols-outlined text-xxl">star</span>
                             <span class="material-symbols-outlined text-xxl">star</span>
                             <span class="material-symbols-outlined text-xxl">star</span>
                             <span class="material-symbols-outlined text-xxl">star</span>
                             <span class="material-symbols-outlined text-xxl">star</span>
                         </div>
-                        <p class="text-white font-medium text-xl">
-                            Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades
+                        <p class="text-white font-medium text-lg md:text-xl">
+                            Improving grades, growing confidence and reducing learning frustration.
+                            <!-- Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades -->
                         </p>
                     </div>
                 </div>
             </div>
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -mr-64 -mt-64"></div>
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><div class="w-6 h-10 border-2 border-white/90 rounded-full flex justify-center pt-2"><div class="w-2 h-3 bg-white rounded-full"></div></div></div>
         </section>
 
         <!-- FEATURE SECTION -->
         <section id="features" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
                 <div class="bg-pastel-blue p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
-                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/maths-card.png"></div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Deep learning exercises that adapt to ability</h3>
+                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/maths-card.png"></div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Deep learning that adapts to ability &amp; progress</h3>
                     <p class="text-slate-600 leading-relaxed font-medium">Exercises adapt based on strengths and weaknesses. Easier exercises for struggling learners, harder ones for strong learners</p>
                 </div>
                 <div class="bg-pastel-green p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
-                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/flexible-family.png"></div>
+                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/flexible-family.png"></div>
                     <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Detailed analytics keep parents in the loop </h3>
                     <p class="text-slate-600 leading-relaxed font-medium">Gain insights where struggle persists and measurable learning progress happens</p>
                 </div>
                 <div class="bg-pastel-purple p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
-                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/german-card.png"></div>
+                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/german-card.png"></div>
                     <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Exercises built around easy comprehension</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium">Reduced frustration due to children able to easier understand tasks and solution pathways.</p>
+                    <p class="text-slate-600 leading-relaxed font-medium">Reduced frustration due to children able to easier understand tasks and solution pathways, whether with videos or read-aloud audio.</p>
                 </div>
             </div>
         </section>
@@ -279,7 +678,7 @@
                 <div class="space-y-6">
                     <span class="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">PERSONALISED LEARNING</span>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Exercise difficulty adapts to child’s ability and progress</h2>
-                    <p class="text-lg leading-relaxed text-slate-600">Children learn at their own pace with exercises that adapt to ability and learning progress. No child is left behind.</p>
+                    <p class="text-lg leading-relaxed text-slate-600">Children learn at their own pace with multi-modal exercises that adapt to ability and learning progress. No child is left behind.</p>
                 </div>
                 <div class="relative">
                     <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
@@ -298,7 +697,7 @@
                 <div class="space-y-6 md:order-2">
                     <span class="bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">INDEPENDENT MASTERY</span>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children get the tools to overcome difficulties on their own</h2>
-                    <p class="text-lg leading-relaxed text-slate-600">Easy-to-grasp explanations, hints and solution examples aid children to overcome challenges on their own. Explanations can also be read aloud (text to speech).</p>
+                    <p class="text-lg leading-relaxed text-slate-600">Easy-to-grasp explanations, videos, hints and solution examples aid children to overcome challenges on their own. Explanations can also be read aloud (text to speech).</p>
                 </div>
                 <div class="relative md:order-1">
                     <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
@@ -457,12 +856,27 @@
                     <blockquote class="text-2xl font-semibold text-primary border-l-4 border-vermillion pl-6 leading-relaxed">
                         Creating equal learning opportunities for multi-lingual learners, <span class="bg-yellow-400">Children can listen to short stories or books</span>, train their listening, comprehension, grammar and pronunciation skills with the help of practice tasks, intertwined into the story flow. 
                     </blockquote>
+                    <div class="pt-4 flex items-center gap-4 hover:scale-105 transition">
+                    <a href="#waitlist" id="audioButton" class="inline-flex items-center gap-3 bg-vermillion text-white px-8 py-4 rounded-2xl text-xl font-bold transition shadow-xl shadow-primary/20 float-anim">
+                      Listen to read-aloud example
+                      <span class="material-symbols-outlined">volume_up</span>
+                    </a>
+                    </div>
+                    <audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3"></audio>
                     <div class="pt-4 flex items-center gap-4">
                         <div class="w-12 h-12 bg-vermillion/10 rounded-full flex items-center justify-center">
-                            <span class="material-symbols-outlined text-vermillion">volume_up</span>
+                            <span class="material-symbols-outlined text-vermillion">mindfulness</span>
                         </div>
-                        <p class="font-bold text-orange-800 text-sl">Practice speaking and pronunciation with Smartmeister's upcoming speech recognition engine</p>
+                        <p class="font-bold text-orange-800 text-sl">Text-to-speech read-aloud also aids children with deeper reading and comprehension issues</p>
                     </div>
+                    <div class="pt-4 flex items-center gap-4">
+                      <div class="w-12 h-12 bg-vermillion/10 rounded-full flex items-center justify-center">
+                          <span class="material-symbols-outlined text-vermillion">cognition</span>
+                      </div>
+                      <p class="font-bold text-orange-800 text-sl">Students can practice speaking and pronunciation with Smartmeister's upcoming speech recognition engine</p>
+                  </div>
+                    
+                    
                 </div>
             </div>
         </section>
@@ -473,7 +887,7 @@
                 <!--<h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">Facilitating individual learning paths to boost deep learning
                   ..transforming struggle into tangible improvement
                 </h2>-->
-                <h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">Transforming learning struggle into tangible performance improvement
+                <h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">Transforming struggle into tangible improvement. No child is left behind!
                 </h2>
                 <a href="#waitlist" class="inline-block bg-primary text-white px-10 py-5 rounded-2xl text-2xl font-black shadow-2xl hover:scale-105 active:scale-95 transition">GET THE LATEST INFOS WITH OUR WAITLIST</a>
             </div>
@@ -484,7 +898,7 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16 space-y-4">
                     <span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Detailed Diagnostics</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Discovering where improvement is most needed</h2>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Knowing where improvement is most needed</h2>
                     <p class="text-slate-600 text-lg max-w-2xl mx-auto">Detailed learning insights assist parents to detect struggle and adjust the learning path. Measurable progress, better learning!</p>
                 </div>
 
@@ -573,12 +987,404 @@
                 <div class="space-y-6">
                     <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">INDIVIDUAL LEARNING PATH</span>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children learn best when on their own path</h2>
-                    <p class="italic text-2xl font-medium leading-relaxed text-slate-600">Children practice in individual learning paths based on the parents' pre-defined subject priorities and areas of practise, also using performance insights to steer the learning journey relevantly.</p>
+                    <p class="text-2xl font-medium leading-relaxed text-slate-600">Children practice in individual learning paths based on the parents' pre-defined subject priorities and areas of practise, also using performance insights to steer the learning journey relevantly.</p>
                 </div>
                 <div class="relative">
-                    <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
-                        <video data-autoplay src="./videos_sm-downsized/sm_exercise_numberwall-mascothelp.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+                    <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative" style="aspect-ratio: 4 / 3;">
                         <!-- <video data-autoplay src="./videos_sm-downsized/sm_exercise_numberwall-mascothelp.mp4" muted loop playsinline class="w-full h-full object-cover"></video> -->
+                        <!-- <video data-autoplay src="./videos_sm-downsized/sm_exercise_numberwall-mascothelp.mp4" muted loop playsinline class="w-full h-full object-cover"></video> -->
+                        <svg viewBox="0 0 800 520" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="w-full h-full object-cover" style="transform: scale(1.2);">
+                          <defs>
+                              <!-- Background Gradients (Vertical Top-to-Bottom) -->
+                              <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                  <stop offset="0%" stop-color="#F4F9FF" />
+                                  <stop offset="100%" stop-color="#C8DBFA" />
+                              </linearGradient>
+                      
+                              <!-- Drop Shadows & Glows -->
+                              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                                  <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#94A3B8" flood-opacity="0.25"/>
+                              </filter>
+                              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                  <feMerge>
+                                      <feMergeNode in="coloredBlur"/>
+                                      <feMergeNode in="SourceGraphic"/>
+                                  </feMerge>
+                              </filter>
+                              <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                  <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                                  <feMerge>
+                                      <feMergeNode in="coloredBlur"/>
+                                      <feMergeNode in="SourceGraphic"/>
+                                  </feMerge>
+                              </filter>
+                              
+                              <!-- Animated Flow Icons (Material Symbols Inspired) - Scaled 200% -->
+                              <g id="sym-speech-stars" transform="translate(-32, -32) scale(2.66)">
+                                  <!-- Bubble Base (Widened to fit larger stars) -->
+                                  <rect x="-1" y="2" width="26" height="15" rx="4" fill="#FFFFFF" filter="url(#shadow)"/>
+                                  <polygon points="12,17 8,22 10,17" fill="#FFFFFF" />
+                                  
+                                  <!-- Three enlarged stars (Scale increased from 0.6 to 0.85) -->
+                                  <!-- Star 1 (Yellow) -->
+                                  <g transform="translate(4.5, 9.5) scale(0.85)">
+                                      <path d="M0 -4 L1.17 -1.38 L4 -1.38 L1.7 0.38 L2.58 3.12 L0 1.38 L-2.58 3.12 L-1.7 0.38 L-4 -1.38 L-1.17 -1.38 Z" fill="#F2C94C" />
+                                  </g>
+                                  <!-- Star 2 (Yellow) -->
+                                  <g transform="translate(12, 9.5) scale(0.85)">
+                                      <path d="M0 -4 L1.17 -1.38 L4 -1.38 L1.7 0.38 L2.58 3.12 L0 1.38 L-2.58 3.12 L-1.7 0.38 L-4 -1.38 L-1.17 -1.38 Z" fill="#F2C94C" />
+                                  </g>
+                                  <!-- Star 3 (Gray) -->
+                                  <g transform="translate(19.5, 9.5) scale(0.85)">
+                                      <path d="M0 -4 L1.17 -1.38 L4 -1.38 L1.7 0.38 L2.58 3.12 L0 1.38 L-2.58 3.12 L-1.7 0.38 L-4 -1.38 L-1.17 -1.38 Z" fill="#CBD5E1" />
+                                  </g>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="4.5px" fill="#56AB2F" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+                              </g>
+                      
+                              <g id="sym-star" transform="translate(-32, -32) scale(2.66)">
+                                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#F2C94C" filter="url(#glow)"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="4.5px" fill="#D9A406" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+                              </g>
+                      
+                              <g id="sym-stressed" transform="translate(-32, -32) scale(2.66)">
+                                  <circle cx="12" cy="12" r="10" fill="#EB5757" filter="url(#glow)"/>
+                                  <path d="M7 8l2 2l-2 2 M17 8l-2 2l2 2 M8 16l2-1l2 1l2-1l2 1" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="4.5px" fill="#EB5757" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+                              </g>
+                      
+                              <g id="sym-trending-up" transform="translate(-32, -32) scale(2.66)">
+                                  <rect x="2" y="2" width="20" height="20" rx="4" fill="#9B89FF" filter="url(#glow)"/>
+                                  <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="#FFF"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="4.5px" fill="#604CCF" text-anchor="middle" letter-spacing="0.2px">INSIGHT</text>
+                              </g>
+                      
+                              <g id="sym-mindfulness" transform="translate(-32, -32) scale(2.66)">
+                                  <!-- Clean Person Bust for Mindfulness -->
+                                  <path d="M12 11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#9B89FF" filter="url(#glow)"/>
+                                  <!-- Insight Spark in head -->
+                                  <circle cx="12" cy="7" r="1.5" fill="#FFF"/>
+                                  <path d="M12 4 L12 5.5 M12 8.5 L12 10 M9.5 7 L10.5 7 M13.5 7 L14.5 7 M10.2 5.2 L11 6 M13.8 5.2 L13 6 M10.2 8.8 L11 8 M13.8 8.8 L13 8" stroke="#FFF" stroke-width="0.8" stroke-linecap="round"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="4.5px" fill="#604CCF" text-anchor="middle" letter-spacing="0.2px">INSIGHT</text>
+                              </g>
+                      
+                              <g id="sym-sheet-green" transform="translate(-32, -32) scale(2.66)">
+                                  <rect x="4" y="2" width="16" height="20" rx="2" fill="#56AB2F" filter="url(#glow)"/>
+                                  <path d="M7 6h10v2H7zm0 4h10v2H7zm0 4h6v2H7z" fill="#FFF"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="4.5px" fill="#56AB2F" text-anchor="middle" letter-spacing="0.2px">EXERCISE</text>
+                              </g>
+                              
+                              <g id="sym-sheet-yellow" transform="translate(-32, -32) scale(2.66)">
+                                  <rect x="4" y="2" width="16" height="20" rx="2" fill="#F2C94C" filter="url(#glow)"/>
+                                  <path d="M7 6h10v2H7zm0 4h10v2H7zm0 4h6v2H7z" fill="#FFF"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="4.5px" fill="#D9A406" text-anchor="middle" letter-spacing="0.2px">EXERCISE</text>
+                              </g>
+                              
+                              <g id="sym-sheet-red" transform="translate(-32, -32) scale(2.66)">
+                                  <rect x="4" y="2" width="16" height="20" rx="2" fill="#EB5757" filter="url(#glow)"/>
+                                  <path d="M7 6h10v2H7zm0 4h10v2H7zm0 4h6v2H7z" fill="#FFF"/>
+                                  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="4.5px" fill="#EB5757" text-anchor="middle" letter-spacing="0.2px">EXERCISE</text>
+                              </g>
+                          </defs>
+                      
+                          <style>
+                              .text-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 24px; fill: #1E293B; letter-spacing: 1px; }
+                              .text-subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 14px; fill: #64748B; }
+                              .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 11px; fill: #64748B; letter-spacing: 1.5px; }
+                              .text-value { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 14px; fill: #334155; }
+                              .text-bubble { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 12px; fill: #FFFFFF; }
+                              
+                              .blink {
+                                  transform-origin: 400px 395px;
+                                  animation: blinker 4s infinite;
+                              }
+                              @keyframes blinker {
+                                  0%, 90% { transform: scaleY(1); }
+                                  95% { transform: scaleY(0.1); }
+                                  100% { transform: scaleY(1); }
+                              }
+                          </style>
+                      
+                          <!-- Background -->
+                          <rect width="100%" height="100%" fill="url(#bgGrad)" />
+                      
+                          <!-- Top Titles -->
+                          <text x="400" y="40" class="text-title" text-anchor="middle">ADAPTIVE LEARNING</text>
+                          <text x="400" y="62" class="text-subtitle" text-anchor="middle">Difficulty level changes based on performance</text>
+                      
+                          <!-- Base Connection Paths (Passive Data Flow) -->
+                          <g stroke="#CBD5E1" stroke-width="3" stroke-dasharray="8 8" fill="none">
+                              <path d="M 400 400 Q 650 400 650 150">
+                                  <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1.5s" repeatCount="indefinite"/>
+                              </path>
+                              <path d="M 650 150 Q 400 50 150 150">
+                                  <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1.5s" repeatCount="indefinite"/>
+                              </path>
+                              <path d="M 150 150 Q 150 400 400 400">
+                                  <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1.5s" repeatCount="indefinite"/>
+                              </path>
+                          </g>
+                      
+                          <!-- Data Flow (Animated Icons - Discrete Appearance) -->
+                          
+                          <!-- 1. Engine -> User (Yellow Normal Task) -->
+                          <use href="#sym-sheet-yellow">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 150 150 Q 150 400 400 400" keyTimes="0; 0.05; 0.15; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.05; 0.15; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 2. User -> Tracker (Eval 1: Stressed / Friction) -->
+                          <use href="#sym-stressed">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 400 400 Q 650 400 650 150" keyTimes="0; 0.15; 0.25; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.15; 0.25; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 3. Tracker -> Engine (Eval 1 Mindfulness Insight) -->
+                          <use href="#sym-mindfulness">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 650 150 Q 400 50 150 150" keyTimes="0; 0.30; 0.40; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.30; 0.40; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 4. Engine -> User (Green Easy Task) -->
+                          <use href="#sym-sheet-green">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 150 150 Q 150 400 400 400" keyTimes="0; 0.45; 0.55; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.45; 0.55; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 5. User -> Tracker (Eval 2: Speech Bubble / Partial Mastery) -->
+                          <use href="#sym-speech-stars">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 400 400 Q 650 400 650 150" keyTimes="0; 0.60; 0.68; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.60; 0.68; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 6. Tracker -> Engine (Eval 2 Trending Up) -->
+                          <use href="#sym-trending-up">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 650 150 Q 400 50 150 150" keyTimes="0; 0.70; 0.75; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.70; 0.75; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 7. Engine -> User (Red Hard Task) -->
+                          <use href="#sym-sheet-red">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 150 150 Q 150 400 400 400" keyTimes="0; 0.75; 0.80; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.75; 0.80; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- 8. User -> Tracker (Eval 3: Full Star / Mastery) -->
+                          <use href="#sym-star">
+                              <animateMotion dur="24s" repeatCount="indefinite" path="M 400 400 Q 650 400 650 150" keyTimes="0; 0.90; 0.95; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+                              <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.90; 0.95; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+                          </use>
+                      
+                          <!-- NODES -->
+                      
+                          <!-- Performance Tracker Node (Top Right) -->
+                          <g>
+                              <!-- Tracker Pulse Ring -->
+                              <circle cx="650" cy="110" r="40" fill="none" stroke="#9B89FF" stroke-width="4" opacity="0">
+                                  <animate attributeName="opacity" values="0; 1; 0; 0; 1; 0; 0; 1; 0; 0" keyTimes="0; 0.25; 0.35; 0.66; 0.68; 0.73; 0.93; 0.95; 1.0; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="40; 55; 40; 40; 55; 40; 40; 55; 40; 40" keyTimes="0; 0.25; 0.35; 0.66; 0.68; 0.73; 0.93; 0.95; 1.0; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                              
+                              <!-- Base Box -->
+                              <rect x="580" y="70" width="140" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+                              
+                              <!-- Animated Chart Icon -->
+                              <g>
+                                  <!-- Bar 1 -->
+                                  <rect x="635" y="100" width="8" height="20" rx="2" fill="#9B89FF">
+                                      <animate attributeName="height" values="20; 30; 15; 20; 20; 35; 20; 20" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.73; 0.76; 1" dur="24s" repeatCount="indefinite"/>
+                                      <animate attributeName="y" values="100; 90; 105; 100; 100; 85; 100; 100" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.73; 0.76; 1" dur="24s" repeatCount="indefinite"/>
+                                  </rect>
+                                  <!-- Bar 2 -->
+                                  <rect x="647" y="90" width="8" height="30" rx="2" fill="#818CF8">
+                                      <animate attributeName="height" values="30; 45; 20; 30; 30; 45; 30; 30" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.72; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+                                      <animate attributeName="y" values="90; 75; 100; 90; 90; 75; 90; 90" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.72; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+                                  </rect>
+                                  <!-- Bar 3 -->
+                                  <rect x="659" y="105" width="8" height="15" rx="2" fill="#C7D2FE">
+                                      <animate attributeName="height" values="15; 25; 10; 15; 15; 30; 15; 15" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.74; 0.77; 1" dur="24s" repeatCount="indefinite"/>
+                                      <animate attributeName="y" values="105; 95; 110; 105; 105; 90; 105; 105" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.74; 0.77; 1" dur="24s" repeatCount="indefinite"/>
+                                  </rect>
+                                  <!-- Magnifying Glass -->
+                                  <circle cx="645" cy="100" r="14" fill="none" stroke="#334155" stroke-width="3" />
+                                  <line x1="655" y1="110" x2="665" y2="120" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+                              </g>
+                              
+                              <text x="650" y="155" class="text-value" text-anchor="middle">PERFORMANCE</text>
+                              <text x="650" y="172" class="text-value" text-anchor="middle">TRACKER</text>
+                      
+                              <!-- Tracker Speech Bubbles -->
+                              <g opacity="0">
+                                  <rect x="590" y="25" width="120" height="26" rx="13" fill="#9B89FF" filter="url(#shadow)" />
+                                  <text x="650" y="43" class="text-bubble" text-anchor="middle">Analyzing...</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.24; 0.25; 0.35; 1" dur="24s" repeatCount="indefinite"/>
+                              </g>
+                              <g opacity="0">
+                                  <rect x="590" y="25" width="120" height="26" rx="13" fill="#9B89FF" filter="url(#shadow)" />
+                                  <text x="650" y="43" class="text-bubble" text-anchor="middle">Assessing...</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.67; 0.68; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+                              </g>
+                              <g opacity="0">
+                                  <rect x="590" y="25" width="120" height="26" rx="13" fill="#9B89FF" filter="url(#shadow)" />
+                                  <text x="650" y="43" class="text-bubble" text-anchor="middle">Mastery!</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.94; 0.95; 1.0; 1" dur="24s" repeatCount="indefinite"/>
+                              </g>
+                          </g>
+                      
+                          <!-- Learning Engine Node (Top Left) -->
+                          <g>
+                              <!-- Engine Pulse Ring -->
+                              <circle cx="150" cy="110" r="40" fill="none" stroke="#4FACFE" stroke-width="4" opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 0; 0; 1; 0; 0" keyTimes="0; 0.38; 0.40; 0.50; 0.73; 0.75; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="40; 40; 55; 40; 40; 55; 40; 40" keyTimes="0; 0.38; 0.40; 0.50; 0.73; 0.75; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                              
+                              <!-- Base Box -->
+                              <rect x="80" y="70" width="140" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+                              
+                              <!-- Tech AI Icon -->
+                              <g>
+                                  <polygon points="150,90 167,100 167,120 150,130 133,120 133,100" fill="none" stroke="#4FACFE" stroke-width="3"/>
+                                  <circle cx="150" cy="110" r="8" fill="#4FACFE" filter="url(#glow)">
+                                      <animate attributeName="r" values="8; 12; 8; 8; 12; 8; 8" keyTimes="0; 0.40; 0.50; 0.73; 0.75; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+                                  </circle>
+                                  <!-- Circuit Lines -->
+                                  <line x1="150" y1="90" x2="150" y2="80" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="167" y1="100" x2="177" y2="94" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="167" y1="120" x2="177" y2="126" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="150" y1="130" x2="150" y2="140" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="133" y1="120" x2="123" y2="126" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                                  <line x1="133" y1="100" x2="123" y2="94" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+                              </g>
+                              
+                              <text x="150" y="155" class="text-value" text-anchor="middle">LEARNING</text>
+                              <text x="150" y="172" class="text-value" text-anchor="middle">ENGINE</text>
+                      
+                              <!-- Engine Speech Bubbles -->
+                              <!-- Easy Bubble -->
+                              <g opacity="0">
+                                  <rect x="90" y="25" width="120" height="26" rx="13" fill="#56AB2F" filter="url(#shadow)" />
+                                  <text x="150" y="43" class="text-bubble" text-anchor="middle">Adjust: Easier</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.42; 0.43; 0.55; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animateTransform attributeName="transform" type="translate" values="0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.42; 0.43; 0.55; 1" dur="24s" repeatCount="indefinite" />
+                              </g>
+                              <!-- Hard Bubble -->
+                              <g opacity="0">
+                                  <rect x="90" y="25" width="120" height="26" rx="13" fill="#EB5757" filter="url(#shadow)" />
+                                  <text x="150" y="43" class="text-bubble" text-anchor="middle">Adjust: Harder</text>
+                                  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.72; 0.73; 0.82; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animateTransform attributeName="transform" type="translate" values="0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.72; 0.73; 0.82; 1" dur="24s" repeatCount="indefinite" />
+                              </g>
+                          </g>
+                      
+                          <!-- User / Core Student Node (Center) -->
+                          <g>
+                              <!-- Adaptive Aura -->
+                              <circle cx="400" cy="400" r="50" fill="#F2C94C" opacity="0.15" filter="url(#strongGlow)">
+                                  <animate attributeName="fill" values="#F2C94C; #F2C94C; #56AB2F; #56AB2F; #EB5757; #EB5757; #F2C94C" keyTimes="0; 0.50; 0.51; 0.75; 0.76; 0.99; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="50; 65; 50; 50; 70; 50; 50; 80; 50; 50" keyTimes="0; 0.15; 0.20; 0.54; 0.55; 0.60; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                      
+                              <!-- Tech Orbits representing active learning state -->
+                              <ellipse cx="400" cy="400" rx="45" ry="12" fill="none" stroke="#4FACFE" stroke-width="2" opacity="0.6">
+                                  <animateTransform attributeName="transform" type="rotate" from="0 400 400" to="360 400 400" dur="5s" repeatCount="indefinite" />
+                              </ellipse>
+                              <ellipse cx="400" cy="400" rx="12" ry="45" fill="none" stroke="#4FACFE" stroke-width="2" opacity="0.6">
+                                  <animateTransform attributeName="transform" type="rotate" from="360 400 400" to="0 400 400" dur="7s" repeatCount="indefinite" />
+                              </ellipse>
+                      
+                              <!-- Expanding Completion Rings -->
+                              <!-- Normal Completion -->
+                              <circle cx="400" cy="400" r="30" fill="none" stroke="#F2C94C" stroke-width="6" opacity="0">
+                                  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.15; 0.20; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="30; 60; 70; 70" keyTimes="0; 0.15; 0.20; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                              <!-- Easy Completion -->
+                              <circle cx="400" cy="400" r="30" fill="none" stroke="#56AB2F" stroke-width="6" opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.54; 0.55; 0.60; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="30; 30; 60; 75; 75" keyTimes="0; 0.54; 0.55; 0.60; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                              <!-- Hard Completion (Big effect) -->
+                              <circle cx="400" cy="400" r="30" fill="none" stroke="#EB5757" stroke-width="8" opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite"/>
+                                  <animate attributeName="r" values="30; 30; 70; 100; 100" keyTimes="0; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite"/>
+                              </circle>
+                      
+                              <!-- Effects Elements: Lightbulb & Graduation Cap -->
+                              <!-- Lightbulb (Pops up at 0.56 after Green task arrives) -->
+                              <g opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.55; 0.56; 0.63; 0.64; 1" dur="24s" repeatCount="indefinite" />
+                                  <animateTransform attributeName="transform" type="translate" values="0 10; 0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.55; 0.56; 0.63; 0.64; 1" dur="24s" repeatCount="indefinite" />
+                                  <g transform="translate(400, 325) scale(1.3)">
+                                      <path d="M 0 -12 C -6 -12 -10 -8 -10 -2 C -10 2 -7 5 -6 8 L 6 8 C 7 5 10 2 10 -2 C 10 -8 6 -12 0 -12 Z" fill="#F2C94C" filter="url(#glow)"/>
+                                      <rect x="-4" y="9" width="8" height="4" rx="1" fill="#CBD5E1" />
+                                      <path d="M -2 14 L 2 14 L 1 16 L -1 16 Z" fill="#94A3B8" />
+                                      <path d="M -3 -2 C -1 -5 1 -5 3 -2" stroke="#FFF" stroke-width="1.5" fill="none" />
+                                      <line x1="0" y1="-15" x2="0" y2="-19" stroke="#F2C94C" stroke-width="2" stroke-linecap="round"/>
+                                      <line x1="-12" y1="-12" x2="-15" y2="-15" stroke="#F2C94C" stroke-width="2" stroke-linecap="round"/>
+                                      <line x1="12" y1="-12" x2="15" y2="-15" stroke="#F2C94C" stroke-width="2" stroke-linecap="round"/>
+                                  </g>
+                              </g>
+                      
+                              <!-- Graduation Cap (Pops up at 0.85 before Full Star launches) -->
+                              <g opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.84; 0.85; 0.98; 0.99; 1" dur="24s" repeatCount="indefinite" />
+                                  <animateTransform attributeName="transform" type="translate" values="0 10; 0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.84; 0.85; 0.98; 0.99; 1" dur="24s" repeatCount="indefinite" />
+                                  <g transform="translate(400, 335) scale(1.2)">
+                                      <polygon points="0,-10 -18,-2 0,6 18,-2" fill="#1E293B" filter="url(#shadow)"/>
+                                      <polygon points="-10,2 10,2 8,10 -8,10" fill="#334155" />
+                                      <line x1="0" y1="-2" x2="14" y2="4" stroke="#F2C94C" stroke-width="1.5" />
+                                      <circle cx="0" cy="-2" r="2" fill="#F2C94C" />
+                                      <line x1="14" y1="4" x2="14" y2="12" stroke="#F2C94C" stroke-width="2" />
+                                      <line x1="13" y1="12" x2="12" y2="15" stroke="#F2C94C" stroke-width="1" />
+                                      <line x1="14" y1="12" x2="14" y2="15" stroke="#F2C94C" stroke-width="1" />
+                                      <line x1="15" y1="12" x2="16" y2="15" stroke="#F2C94C" stroke-width="1" />
+                                  </g>
+                              </g>
+                      
+                              <!-- Core Avatar Body -->
+                              <circle cx="400" cy="400" r="30" fill="#4FACFE" filter="url(#shadow)">
+                                  <animate attributeName="r" values="30; 36; 30; 30; 38; 30; 30; 45; 30; 30" keyTimes="0; 0.15; 0.20; 0.54; 0.55; 0.60; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite" />
+                              </circle>
+                      
+                              <!-- Whimsical Face -->
+                              <g class="blink">
+                                  <circle cx="388" cy="396" r="3" fill="#FFF" />
+                                  <circle cx="412" cy="396" r="3" fill="#FFF" />
+                                  <path d="M 388 406 Q 400 416 412 406" stroke="#FFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                              </g>
+                              
+                              <!-- Label -->
+                              <text x="400" y="465" class="text-value" fill="#4FACFE" text-anchor="middle">STUDENT</text>
+                          </g>
+                      
+                          <!-- Center Dashboard (Explains the loop) -->
+                          <g transform="translate(260, 210)">
+                              <rect width="280" height="74" rx="12" fill="#FFFFFF" filter="url(#shadow)" />
+                              <text x="20" y="26" class="text-label">LEARNING TRAJECTORY</text>
+                              
+                              <!-- Baseline Phase (0-45%) -->
+                              <g>
+                                  <animate attributeName="opacity" values="1; 1; 0; 0; 0" keyTimes="0; 0.44; 0.45; 0.99; 1" dur="24s" repeatCount="indefinite"/>
+                                  <circle cx="30" cy="48" r="6" fill="#F2C94C" filter="url(#glow)"/>
+                                  <text x="48" y="53" class="text-value">1. Baseline Evaluation</text>
+                              </g>
+                              <!-- Adaptation Phase (45-75%) -->
+                              <g opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.44; 0.45; 0.74; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+                                  <circle cx="30" cy="48" r="6" fill="#56AB2F" filter="url(#glow)"/>
+                                  <text x="48" y="53" class="text-value">2. Gap Detected: Adapting</text>
+                              </g>
+                              <!-- Mastery Phase (75-100%) -->
+                              <g opacity="0">
+                                  <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.74; 0.75; 0.99; 1" dur="24s" repeatCount="indefinite"/>
+                                  <circle cx="30" cy="48" r="6" fill="#EB5757" filter="url(#glow)"/>
+                                  <text x="48" y="53" class="text-value">3. Mastery Achieved: Scaling</text>
+                              </g>
+                          </g>
+                      
+                      </svg>
+                      
                     </div>
                 </div>
             </div>
@@ -589,12 +1395,13 @@
         <section class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-16 items-center">
                 <div class="space-y-6">
-                    <h3 class="text-3xl font-extrabold text-primary">Diverse Learner Types</h3>
-                    <p class="text-lg text-slate-600 leading-relaxed">Every child has a unique way of absorbing information. Smartmeister identifies whether students learn best through visual aids, repetition, or problem-solving. Encourage and challenge!</p>
+                    <h3 class="text-3xl font-extrabold text-primary">Diverse Learner Types get it their way</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Every child has a unique way of absorbing information and cognitive learning. Smartmeister identifies whether students learn best through visual aids, repetition, or problem-solving. Encourage, build and challenge! Students get it tailored their way. </p>
                 </div>
                 <div class="space-y-6">
-                    <h3 class="text-3xl font-extrabold text-primary">Adaptive Learning Engine</h3>
-                    <p class="text-lg text-slate-600 leading-relaxed">Smartmeister monitors performance and repeated mistakes, adapting subsequent tasks in the learning path to bridge specific conceptual gaps automatically and propose assignments.</p>
+                    <h3 class="text-3xl font-extrabold text-primary">Aiding students with reading difficulties &amp; focusing issues</h3>
+                    <!-- <p class="text-lg text-slate-600 leading-relaxed">Smartmeister monitors performance and repeated mistakes, adapting subsequent tasks in the learning path to bridge specific conceptual gaps automatically and propose assignments.</p> --> 
+                    <p class="text-lg text-slate-600 leading-relaxed">Dyslexia and Dyscalculia are not so uncommon. Children encountering problems like reading or spelling difficulties, slow word recognition, or reduced number, shape and abstraction comprehension do also benefit from additional functionality. From Dyslexia friendly typefaces, text-to-speech read-aloud features to custom display settings that reduce clutter and emphasise clarity.</p>
                 </div>
                 <div class="rounded-[40px] overflow-hidden shadow-xl bg-brand-yellow/30 p-2">
                     <img src="./images/curiosity-main.png" alt="Learning Illustration" class="w-full rounded-[36px]">
@@ -756,8 +1563,21 @@
             </div>
         </div>
     </footer>
-
-
+    <script>
+    const button = document.getElementById('audioButton');
+    const audio = document.getElementById('storyAudio');
+  
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+  
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+        audio.currentTime = 0; // reset to start
+      }
+    });
+    </script>
     <script>
     // WAITLIST FORM ACTIONS
       document.addEventListener('DOMContentLoaded', function() {
