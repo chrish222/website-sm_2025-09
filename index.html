@@ -1521,7 +1521,7 @@
                             </div>
                             
                             <div id="sib-container" style="text-align:left; background-color:#ffffff; max-width:1200px; border-radius:20px; border: 1px dotted #C0CCD9; padding: 20px;">
-                                <form id="sib-form" method="POST" action="https://ee44b5ec.sibforms.com/serve/MUIFAP8roiQcAmmZ2SOf15NnFsPZB1evAvyhMugqTdPcaQdASXOrKVWk512cuYAwjF0J1zQdadJE7cJgqfEdxmRunowTGutIRjsPJ9Q64XdebBxD5kO1I0XXy5s2kFvk7c2aK6VpiOKxvJsszitMmyT3nRU6yb327Ulo2VAeEt7ePkzDotwXOMmwr3cXlwaRrDiotJEpqOZFivczsQ==" data-type="subscription" novalidate="true">
+                         <!--       <form id="sib-form" method="POST" action="https://ee44b5ec.sibforms.com/serve/MUIFAP8roiQcAmmZ2SOf15NnFsPZB1evAvyhMugqTdPcaQdASXOrKVWk512cuYAwjF0J1zQdadJE7cJgqfEdxmRunowTGutIRjsPJ9Q64XdebBxD5kO1I0XXy5s2kFvk7c2aK6VpiOKxvJsszitMmyT3nRU6yb327Ulo2VAeEt7ePkzDotwXOMmwr3cXlwaRrDiotJEpqOZFivczsQ==" data-type="subscription" novalidate="true">
         <div class="email-button-wrapper" style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start;">
             <div style="flex: 1; min-width: 240px;">
                 <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="email" id="EMAIL" name="EMAIL" placeholder="Email" required="" data-required="true">
@@ -1543,7 +1543,41 @@
         </div>
         <input type="hidden" name="locale" value="en">
         <input type="hidden" name="html_type" value="simple">
-    </form>
+    </form> -->
+                                 <form id="sib-form" method="POST" action="https://ee44b5ec.sibforms.com/serve/MUIFAP8roiQcAmmZ2SOf15NnFsPZB1evAvyhMugqTdPcaQdASXOrKVWk512cuYAwjF0J1zQdadJE7cJgqfEdxmRunowTGutIRjsPJ9Q64XdebBxD5kO1I0XXy5s2kFvk7c2aK6VpiOKxvJsszitMmyT3nRU6yb327Ulo2VAeEt7ePkzDotwXOMmwr3cXlwaRrDiotJEpqOZFivczsQ==" data-type="subscription">
+                                   
+                                   <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 16px;">
+                                       <div style="flex: 1; min-width: 240px;">
+                                           <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="Name (Optional)" />
+                                       </div>
+                               
+                                       <div style="flex: 1; min-width: 240px;">
+                                           <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="email" id="EMAIL" name="EMAIL" placeholder="Email" required data-required="true" />
+                                       </div>
+                                   </div>
+                               
+                                   <div class="sib-optin sib-form-block" style="margin-bottom: 16px;">
+                                       <div style="display: flex; align-items: flex-start; gap: 10px;">
+                                           <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required data-required="true" style="width: 20px; height: 20px; flex-shrink:0; margin-top: 2px;" />
+                                           <label for="OPT_IN" style="font-size: 14px; color: #3C4858; cursor: pointer; text-align: left;">
+                                               I agree to receive product updates and accept the privacy policy. You can unsubscribe at any time.<span style="color: #e74c3c;">*</span>
+                                           </label>
+                                       </div>
+                                   </div>
+                               
+                                   <div style="margin-bottom: 24px;">
+                                       <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+                                   </div>
+                               
+                                   <div style="text-align: left;">
+                                       <button class="sib-form-block__button sib-form-block__button-with-loader" style="background-color:#4C3BAD; color:white; padding: 14px 28px; border-radius: 8px; border:none; cursor:pointer; font-weight:600; width: 100%; max-width: 300px;" type="submit">
+                                           Join our waiting list
+                                       </button>
+                                   </div>
+                               
+                                   <input type="hidden" name="locale" value="en">
+                                   <input type="hidden" name="html_type" value="simple">
+                               </form>
     
                             </div>
                         </div>
@@ -1645,6 +1679,14 @@
                   if (!optIn) {
                       alert('Please check the checkbox to agree to receive product updates.');
                       return;
+                  }
+                  // 3. CAPTCHA Validation
+                  if (typeof grecaptcha !== 'undefined') {
+                      const recaptchaResponse = grecaptcha.getResponse();
+                      if (!recaptchaResponse) {
+                          alert('Please check the "I\'m not a robot" checkbox.');
+                          return;
+                      }
                   }
                   
                   // Submit via fetch
