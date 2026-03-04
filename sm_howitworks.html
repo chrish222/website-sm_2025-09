@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smartmeister - Features &amp; FAQ</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="ce1868df-8948-49af-902f-7e5d205b3ee9"></script> -->
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2E3192", // Deep navy
+                        accent: "#FFD700",  // Bright yellow
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#0F172A",
+                        "soft-blue": "#E3F2FD",
+                        "soft-mint": "#E8F5E9",
+                        "soft-lavender": "#F3E5F5",
+                        "card-dark": "#1E293B"
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        "xl": "24px",
+                        "2xl": "32px",
+                        "3xl": "48px",
+                    },
+                },
+            },
+        };
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        hand: ['Gochi Hand', 'cursive'],
+                    },
+                    colors: {
+                        primary2: '#2e2195',
+                        'brand-yellow': '#FFD64A',
+                        'brand-accent': '#FF4D4D',
+                        'pastel-blue': '#E0F2FE',
+                        'pastel-green': '#DCFCE7',
+                        'pastel-purple': '#F3E8FF',
+                        'light-bg': '#FFFDF4',
+                        brandDeep: '#0d0b21',
+                        pastelOrange: '#FFF7ED',
+                        pastelPink: '#FCE7F3',
+                        vermillion: '#E34234'
+                    },
+                    borderRadius: {
+                      '4xl': '2rem',
+                      '5xl': '3rem',
+                  }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hero-pattern {
+            background-color: #FFD700;
+            background-image: radial-gradient(#2E3192 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .how-it-works-line {
+            background: linear-gradient(to right, #2E3192 0%, #FFD700 100%);
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+    <style type="text/tailwindcss">
+    * {
+      font-variant-ligatures: none;
+    }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-brandYellow {
+          --tw-bg-opacity: 1;
+          background-color: rgb(255 214 74 / var(--tw-bg-opacity, 1));
+      }
+        .hand-divider {
+          height: 12px;
+          background: url("data:image/svg+xml,%3Csvg width='1200' height='12' viewBox='0 0 1200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23FF4D4D' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+          background-repeat: repeat-x;
+      }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-anim { animation: float 3s ease-in-out infinite; }
+        
+        .hero-bg {
+          background: linear-gradient(135deg, #FFD64A 0%, #FFF4CC 100%);
+      }
+      
+      .marker-text {
+          font-family: 'Gochi Hand', cursive;
+          color: #FF4D4D;
+          line-height: 1.1;
+      }
+      
+      .section-yellow-image-fix {
+      outline-offset: -5px;
+      outline: 7px solid #fcde72;
+      outline-color: #fcde72; }
+
+      .video-overlay {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          padding: 12px 20px;
+          border-radius: 16px;
+          font-weight: 700;
+          font-size: 0.875rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          z-index: 10;
+          display: none;
+          animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      @keyframes popIn {
+          from { transform: scale(0.8); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+      }
+      
+      @keyframes pulsate-red {
+        0%, 100% { outline: 2px solid rgba(239, 68, 68, 0); outline-offset: 0px; }
+        50% { outline: 6px solid rgba(239, 68, 68, 0.4); outline-offset: 4px; }
+    }
+
+    .pulse-highlight {
+        animation: pulsate-red 1s ease-in-out 3; /* 3 seconds total */
+    }
+
+      .thumbnail-active {
+          outline: 3px solid #374151; /* dark-grey outline */
+          outline-offset: 2px;
+          opacity: 1 !important;
+          animation: none !important; /* Stop pulse if user clicks it */
+      }
+
+      .tooltip {
+          position: absolute;
+          bottom: 120%;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #1f2937;
+          color: white;
+          padding: 6px 12px;
+          border-radius: 8px;
+          font-size: 0.75rem;
+          white-space: nowrap;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s ease;
+          pointer-events: none;
+          z-index: 20;
+      }
+
+      .tooltip::after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: #1f2937 transparent transparent transparent;
+      }
+
+      .thumbnail-btn:hover .tooltip {
+          opacity: 1;
+          visibility: visible;
+          bottom: 110%;
+      }
+
+      /* Custom SVG arrows and doodles */
+      .doodle-arrow-1 {
+          width: 80px;
+          height: 60px;
+          transform: rotate(-10deg);
+      }
+      /* custom Tailwind */
+      .max-w-8xl {
+      max-width: 90rem;
+      }
+        
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #2e2195; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1a135a; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-extrabold tracking-tight text-primary flex items-center">
+                Smart<span class="text-brand-accent">|</span>meister
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="./index.html#features" class="font-semibold hover:text-primary transition">Features</a>
+                <a href="#how-it-works" class="font-semibold hover:text-primary transition">How it works</a>
+                <a href="#granular_metrics" class="font-semibold hover:text-primary transition">Learning progress</a>
+                <a href="#waitlist" class="bg-primary text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20">
+                    Join the waitlist
+                </a>
+            </div>
+            <button class="md:hidden">
+                <span class="material-symbols-outlined text-3xl"></span>
+                <a href="#waitlist" class="bg-primary text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20">
+                  Join the waitlist
+              </a>
+            </button>
+        </div>
+    </nav>
+<!-- <nav class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="text-white font-bold text-xl">S</span>
+</div>
+<span class="text-2xl font-extrabold text-primary dark:text-white">Smartmeister</span>
+</div>
+<div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+<a class="hover:text-primary transition-colors" href="#features">Features</a>
+<a class="hover:text-primary transition-colors" href="#how-it-works">How it works</a>
+<a class="hover:text-primary transition-colors" href="#faq">FAQ</a>
+<a class="bg-primary text-white px-6 py-2.5 rounded-full hover:opacity-90 transition-all shadow-md" href="#">Join the waitlist</a>
+</div>
+</div>
+</nav> -->
+
+<section class="py-24 px-6 bg-[#F8FAFC] dark:bg-background-dark overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="bg-white dark:bg-card-dark rounded-[32px] p-10 lg:p-14 shadow-sm border border-slate-100 dark:border-slate-800 mb-20" id="how-it-works">
+<div class="flex flex-col items-center mb-16 text-center">
+<span class="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-primary text-xs font-bold uppercase tracking-wider mb-4">The Process</span>
+<h3 class="text-3xl font-extrabold text-primary dark:text-white mb-2">How It Works</h3>
+<p class="text-slate-500 text-sm font-medium">A seamless journey from onboarding to mastery</p>
+</div>
+<div class="relative px-4 lg:px-8">
+<div class="absolute top-[14px] left-0 right-0 h-[2px] how-it-works-line opacity-20"></div>
+<div class="relative z-10 grid grid-cols-7 gap-6">
+<div class="flex flex-col items-center text-center">
+<div class="w-7 h-7 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-8"></div>
+<h4 class="text-sm font-extrabold text-primary dark:text-white mb-2 leading-tight">1. Quick Setup</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed max-w-[120px]">Get started in under 60 seconds.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-7 h-7 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-8"></div>
+<h4 class="text-sm font-extrabold text-primary dark:text-white mb-2 leading-tight">2. Ability Check</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed max-w-[120px]">Identifying current skill levels.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-7 h-7 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-8"></div>
+<h4 class="text-sm font-extrabold text-primary dark:text-white mb-2 leading-tight">3. AI Pathing</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed max-w-[120px]">Custom curriculum generation.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-7 h-7 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-8"></div>
+<h4 class="text-sm font-extrabold text-primary dark:text-white mb-2 leading-tight">4. Daily Play</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed max-w-[120px]">Engaging bite-sized exercises.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-7 h-7 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-8"></div>
+<h4 class="text-sm font-extrabold text-primary dark:text-white mb-2 leading-tight">5. Help-on-tap</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed max-w-[120px]">Real-time AI tutoring support.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-7 h-7 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-8"></div>
+<h4 class="text-sm font-extrabold text-primary dark:text-white mb-2 leading-tight">6. Skill Mastery</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed max-w-[120px]">Confirming deep understanding.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-7 h-7 rounded-full bg-accent border-4 border-white dark:border-card-dark shadow-md mb-8"></div>
+<h4 class="text-sm font-extrabold text-primary dark:text-white mb-2 leading-tight">7. Parent Insights</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed max-w-[120px]">Visualizing progress and growth.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mb-12" id="features">
+<h2 class="text-4xl font-extrabold text-primary dark:text-white">Benefits</h2>
+<p class="text-slate-500 mt-2 font-medium">Why parents and children love Smartmeister</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+<div class="bg-white dark:bg-card-dark p-8 rounded-[32px] border border-slate-100 dark:border-slate-800 shadow-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 bg-soft-blue rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">Adaptive Exercises</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Smartmeister’s engine continuously adjusts the difficulty level in real-time, ensuring your child is always challenged but never overwhelmed.</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-8 rounded-[32px] border border-slate-200 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mb-6 text-primary dark:text-accent">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">Independence</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Foster self-reliance as children learn to overcome challenges and navigate their own learning path without constant supervision.</p>
+</div>
+<div class="bg-primary p-8 rounded-[32px] shadow-lg transition-transform hover:-translate-y-1 text-white">
+<div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-accent">translate</span>
+</div>
+<h3 class="text-xl font-extrabold mb-3">Comprehension Tools</h3>
+<p class="text-blue-100 text-sm leading-relaxed">Built-in AI tools for paraphrasing, translation, and text-to-speech help break down complex concepts into digestible insights.</p>
+</div>
+<div class="bg-accent p-8 rounded-[32px] shadow-sm transition-transform hover:-translate-y-1 text-primary">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-6 text-accent">
+<span class="material-symbols-outlined">balance</span>
+</div>
+<h3 class="text-xl font-extrabold mb-3">Balanced Motivation</h3>
+<p class="text-primary/80 text-sm leading-relaxed">Designed to be engaging but not addictive. Parents maintain control over rewards and screen time to ensure a healthy digital balance.</p>
+</div>
+<div class="bg-white dark:bg-card-dark p-8 rounded-[32px] border border-slate-100 dark:border-slate-800 shadow-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 bg-soft-mint rounded-xl flex items-center justify-center mb-6 text-emerald-600">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">Clarity Analytics</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Stop guessing and start knowing. Track your child's specific strengths and knowledge gaps with crystal-clear visual reports.</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-8 rounded-[32px] border border-slate-200 dark:border-slate-700 shadow-sm transition-transform hover:-translate-y-1">
+<div class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mb-6 text-primary dark:text-accent">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">School Complement</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Designed to strengthen classroom learning. We bridge the gap between school curriculum and your child's unique learning pace.</p>
+</div>
+</div>
+<div class="bg-primary rounded-[48px] overflow-hidden text-white relative mb-24">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="h-full w-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/50 via-transparent to-transparent"></div>
+</div>
+<div class="relative px-8 py-16 lg:p-20 flex flex-col items-center text-center">
+<span class="text-accent font-bold text-xs tracking-[0.3em] uppercase mb-6">Why we built this</span>
+<h2 class="text-3xl lg:text-5xl font-extrabold mb-10 max-w-4xl leading-tight">“Built by someone who needed it too.”</h2>
+<div class="max-w-3xl">
+<p class="text-lg lg:text-xl text-blue-100 leading-relaxed italic mb-8">
+                        "As a parent, I saw the struggle of children falling through the cracks of a one-size-fits-all education system. Smartmeister was born from a mission to provide every child with a personal mentor that understands their unique rhythm and potential."
+                    </p>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-slate-300 mb-4 border-2 border-accent"></div>
+<p class="font-bold text-lg">Karina Mang</p>
+<p class="text-sm text-blue-200">Founder &amp; CEO, Smartmeister</p>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-4xl mx-auto py-12" id="faq">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold text-primary dark:text-white">Frequently Asked Questions</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg font-bold text-primary dark:text-white">What subjects does Smartmeister cover?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Currently, we focus on core Math and Language skills (English and German). We are rapidly expanding into Science, Coding, and Financial Literacy modules soon.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg font-bold text-primary dark:text-white">Is the curriculum aligned with school standards?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Yes, our content is designed to complement major international and local curricula, ensuring the skills learned are directly applicable to your child's school performance.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg font-bold text-primary dark:text-white">How long should a child use it daily?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        We recommend short, high-impact sessions of 10–15 minutes. This prevents digital fatigue while maximizing long-term knowledge retention.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg font-bold text-primary dark:text-white">How safe is my child's data?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Data safety is our top priority. We are 100% GDPR compliant, and your child's learning data never leaves our secure servers or is sold to third parties.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg font-bold text-primary dark:text-white">Can I use one subscription for multiple siblings?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        We offer a family plan that allows separate profiles for up to three children, ensuring each child has their own personalized learning pathway and progress reports.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg font-bold text-primary dark:text-white">How much does the subscription cost?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Pricing will be announced upon official launch. Waitlist members will receive a special lifetime discount and a free trial period.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg font-bold text-primary dark:text-white">How does the waitlist work?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Joining the waitlist secures your spot for Early Access. We roll out invites in batches to ensure every family gets a smooth onboarding experience.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg font-bold text-primary dark:text-white">How is this different from other learning apps?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Unlike linear apps, Smartmeister uses deep AI to identify *why* a child is stuck—not just *if* they are. Our focus on parent insights and balanced motivation makes us a partner, not just a game.
+                    </div>
+</details>
+</div>
+</div>
+</div>
+</section>
+<section id="waitlist" class="hero-pattern py-24 px-6 text-center">
+<div class="max-w-3xl mx-auto bg-white dark:bg-slate-900 p-12 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-800">
+<h2 class="text-4xl font-extrabold text-primary dark:text-white mb-6">Join our waiting list to get Free Early Access</h2>
+<form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<input class="flex-1 rounded-xl border-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-white focus:ring-primary focus:border-primary px-4 py-3" placeholder="Enter your email" required="" type="email"/>
+<button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:opacity-90 transition-all whitespace-nowrap" type="submit">Join now</button>
+</form>
+<p class="mt-4 text-xs text-slate-500">By joining, you agree to our privacy policy. No spam, ever.</p>
+</div>
+</section>
+<footer class="bg-[#0A0D1F] text-slate-400 py-16 px-6 border-t border-slate-800">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-6 h-6 bg-white rounded flex items-center justify-center">
+<span class="text-[#0A0D1F] font-bold text-sm">S</span>
+</div>
+<span class="text-xl font-extrabold text-white">Smartmeister</span>
+</div>
+<p class="max-w-xs text-sm leading-relaxed mb-6">
+                    Empowering kids to master math and languages at their own pace. Adaptive learning that boosts individual growth and grade improvement.
+                </p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Personalised Learning</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Adaptive Exercises</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Learning Tools</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Text Translation</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Read Aloud Audio</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Legal</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Imprint</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+<p>© 2025-2026 Smartmeister Learning. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-white transition-colors" href="#">Twitter</a>
+<a class="hover:text-white transition-colors" href="#">Instagram</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
