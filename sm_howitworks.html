@@ -102,6 +102,9 @@
         details[open] .faq-icon {
             transform: rotate(180deg);
         }
+        .bento-card {
+            @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+        }
     </style>
     <style type="text/tailwindcss">
     * {
@@ -442,6 +445,7 @@
     <!-- <div class="max-w-7xl mx-auto">
         <div class="bg-white dark:bg-card-dark rounded-[32px] p-10 lg:p-14 shadow-sm border border-slate-100 dark:border-slate-800 mb-32" id="how-it-works">
         <div class="flex flex-col items-center mb-20 text-center"> -->
+<!--
 <div class="text-center mb-12" id="features">
 <h2 class="text-4xl font-extrabold text-primary dark:text-white">Benefits</h2>
 <p class="text-slate-500 mt-2 font-medium">Why parents and children love Smartmeister</p>
@@ -498,17 +502,121 @@
 <span class="text-accent font-bold text-xs tracking-[0.3em] uppercase mb-6">Why we built this</span>
 <h2 class="text-3xl lg:text-5xl font-extrabold mb-10 max-w-4xl leading-tight">“Built by someone who needed it too.”</h2>
 <div class="max-w-3xl">
-<p class="text-lg lg:text-xl text-blue-100 leading-relaxed italic mb-8">
+                    <p class="text-lg lg:text-xl text-blue-100 leading-relaxed italic mb-8">
                         "As a child and non-typical learner, I experienced the struggle falling through the cracks of a one-size-fits-all education system. Smartmeister was born from a mission to empower every child to learn with their unique rhythm and potential."
                     </p>
-<div class="flex flex-col items-center">
-<div class="w-16 h-16 rounded-full bg-slate-300 mb-4 border-2 border-accent"></div>
-<p class="font-bold text-lg">Karina Mang</p>
-<p class="text-sm text-blue-200">Founder, Smartmeister</p>
+    <div class="flex flex-col items-center">
+         <div class="w-16 h-16 rounded-full bg-slate-300 mb-4 border-2 border-accent"></div>
+         <p class="font-bold text-lg">Karina Mang</p>
+         <p class="text-sm text-blue-200">Founder, Smartmeister</p>
+    </div>
 </div>
 </div>
 </div>
-</div>
+-->
+<section class="py-24 px-6 bg-[#F8FAFC] dark:bg-background-dark overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col items-center mb-16 text-center">
+    <span class="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-primary text-xs font-bold uppercase tracking-wider mb-4">Parent Benefits</span>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-primary dark:text-white">Everything your child needs to thrive</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-[minmax(180px,auto)]">
+    <div class="md:col-span-2 lg:col-span-3 bento-card bg-soft-mint dark:bg-emerald-950/20 rounded-[32px] p-8 lg:p-10 border border-emerald-100 dark:border-emerald-900/30 flex flex-col justify-between">
+    <div>
+    <div class="w-14 h-14 bg-white dark:bg-emerald-500/20 rounded-2xl shadow-sm flex items-center justify-center mb-8">
+    <span class="material-symbols-outlined text-emerald-600 text-3xl">auto_fix_high</span>
+    </div>
+    <h3 class="text-3xl font-extrabold text-primary dark:text-white mb-4">Learning that adapts to your child’s pace</h3>
+    <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-md">
+                                Our AI engine constantly monitors progress, <strong>adjusting difficulty</strong> in real-time to avoid the frustration of "too hard" and the boredom of "too easy."
+                            </p>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-3 bento-card bg-white dark:bg-card-dark rounded-[32px] p-8 border-2 border-primary/10 dark:border-primary/30 flex flex-col">
+    <div class="flex items-center gap-4 mb-6">
+    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+    <span class="material-symbols-outlined text-primary">emoji_objects</span>
+    </div>
+    <h3 class="text-xl font-extrabold text-primary dark:text-white">Solve challenges independently</h3>
+    </div>
+    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
+                            Step-by-step <strong>explanations, helpful videos, and contextual hints</strong> empower children to overcome hurdles without constantly relying on parents for help.
+                        </p>
+    <div class="mt-auto flex gap-2 overflow-hidden">
+    <div class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-bold text-slate-400 uppercase tracking-tight">Hints</div>
+    <div class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-bold text-slate-400 uppercase tracking-tight">Videos</div>
+    <div class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-bold text-slate-400 uppercase tracking-tight">Tutorials</div>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-2 bento-card bg-soft-lavender dark:bg-purple-950/20 rounded-[32px] p-8 border border-purple-100 dark:border-purple-900/30 flex flex-col justify-between">
+    <div>
+    <div class="w-12 h-12 bg-white/60 dark:bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-purple-600">translate</span>
+    </div>
+    <h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">Comprehension support built-in</h3>
+    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                Includes <strong>paraphrasing, read-aloud audio, and instant translation</strong>. Perfect for multilingual families needing that extra layer of accessibility.
+                            </p>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-4 bento-card bg-accent rounded-[32px] p-10 flex flex-col md:flex-row gap-8 items-center justify-between text-primary">
+    <div class="max-w-md">
+    <div class="w-14 h-14 bg-white/30 rounded-full flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+    </div>
+    <h3 class="text-3xl font-extrabold mb-4 leading-tight">Motivating practice — without addictive game mechanics</h3>
+    <p class="font-medium text-primary/80 leading-relaxed">
+                                Healthy, <strong>parent-controlled rewards</strong> like custom avatars, unlockable stories, and collectibles. We foster genuine achievement without dopamine loops.
+                            </p>
+    </div>
+    <div class="w-full md:w-1/3 aspect-square bg-white/20 rounded-2xl border-4 border-white/40 flex items-center justify-center">
+    <span class="material-symbols-outlined text-6xl text-white opacity-80">account_circle</span>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-2 bento-card bg-white dark:bg-card-dark rounded-[32px] p-8 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col">
+    <div class="w-12 h-12 bg-soft-blue rounded-xl flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-primary">analytics</span>
+    </div>
+    <h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">Clear insight into where support is needed</h3>
+    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                            Detailed <strong>analytics dashboard</strong> for parents to track strengths and identify patterns without any guesswork.
+                        </p>
+    </div>
+    <div class="md:col-span-2 lg:col-span-2 bento-card bg-primary rounded-[32px] p-8 text-white flex flex-col justify-between shadow-xl">
+    <div>
+    <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-accent">timer</span>
+    </div>
+    <h3 class="text-xl font-extrabold mb-3">Focused practice that makes learning time count</h3>
+    <p class="text-blue-100/70 text-sm leading-relaxed">
+                                Efficiency over hours of repetition. <strong>10–15 minute sessions</strong> optimized for family schedules before or after school.
+                            </p>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-2 bento-card bg-white dark:bg-card-dark rounded-[32px] p-8 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col border-b-4 border-b-accent">
+    <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-primary">volunteer_activism</span>
+    </div>
+    <h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">Less homework stress for the whole family</h3>
+    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                            Building <strong>confidence for schoolwork</strong> and assessments, transforming homework time from a battle into a win.
+                        </p>
+    </div>
+    <div class="md:col-span-1 lg:col-span-1 bento-card bg-slate-50 dark:bg-slate-800/50 rounded-[32px] p-6 border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center justify-center">
+    <span class="material-symbols-outlined text-emerald-500 text-3xl mb-2">shield</span>
+    <h4 class="text-sm font-bold text-primary dark:text-white">GDPR Compliant</h4>
+    <p class="text-[10px] text-slate-400 uppercase font-extrabold tracking-widest mt-1">EU Servers</p>
+    </div>
+    <div class="md:col-span-1 lg:col-span-1 bento-card bg-slate-50 dark:bg-slate-800/50 rounded-[32px] p-6 border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center justify-center">
+    <span class="material-symbols-outlined text-blue-500 text-3xl mb-2">accessibility_new</span>
+    <h4 class="text-sm font-bold text-primary dark:text-white">Inclusive</h4>
+    <p class="text-[10px] text-slate-400 uppercase font-extrabold tracking-widest mt-1">Diverse Needs</p>
+    </div>
+    </div>
+    </div>
+    </section>
+
+        
 <div class="max-w-4xl mx-auto py-12" id="faq">
 <div class="text-center mb-16">
 <h2 class="text-4xl font-extrabold text-primary dark:text-white">Frequently Asked Questions</h2>
