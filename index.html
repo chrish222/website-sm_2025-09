@@ -183,7 +183,9 @@
     <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="text-2xl font-extrabold tracking-tight text-primary flex items-center">
+               <a href="./index.html" title="Home" class="no-underline">
                 Smart<span class="text-brand-accent">|</span>meister
+              </a>
             </div>
             <div class="hidden md:flex items-center gap-8">
                 <a href="#features" class="font-semibold hover:text-primary transition">Features</a>
@@ -207,13 +209,22 @@
         <section class="relative bg-brand-yellow pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
             <div class="max-w-7xl md:p-12 lg:p-16  md:max-w-screen-2xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center md:items-start lg:items-center md:grid-cols-[40%_60%] lg:grid-cols-[50%_50%]">
                 <div class="space-y-8 z-10">
-                    <h1 class="text-5xl md:text-4xl lg:text-7xl font-extrabold text-primary leading-[1.1]">
+                  
+                    <h1 class="relative text-5xl md:text-4xl lg:text-7xl font-extrabold text-primary leading-[1.1] 
+                     before:content-['German_primary_school_curriculum_aligned'] 
+                     before:absolute before:-top-16 before:-left-12 md:before:-top-20 md:before:-left-14 2xl:before:-left-24 
+                     before:w-64 before:h-24 before:flex before:items-center before:justify-center 
+                     before:text-center before:-rotate-2 md:before:-rotate-12 before:font-hand before:text-brand-accent 
+                     before:font-bold before:text-xl md:before:text-2xl xl:before:text-3xl before:leading-4 sm:before:leading-6 before:tracking-wide before:z-10">
+                      <!-- <div class="relative z-0 top-12 left-32 w-48 h-48 rounded-full flex items-center justify-center">
+                        <span class="font-hand text-brand-accent font-bold text-xl md:text-xl flex items-center justify-center text-center -rotate-12">German primary school curriculum aligned</span>
+                      </div>-->
                       <!-- Adaptive learning that helps children <br /> -->
                         Adaptive learning that helps master <br />
                         <span class="text-slate-900">subjects or catch up quickly</span>
                     </h1>
                     <p class="text-lg md:text-xl text-slate-800/80 max-w-lg leading-relaxed font-bold">
-                        Built on adaptive exercises Smartmeister helps different types of learners master subjects, fill proficiency gaps and overcome challenges independently - aligned to German primary school curriculum.
+                        Built on adaptive exercises Smartmeister helps different types of learners master subjects, tackle proficiency gaps &amp; challenges independently.
                     </p>
                     <!-- ORIGINAL BUBBLE FEATURE POINTS
                       <div class="space-y-4">
@@ -230,23 +241,25 @@
                           <span class="font-bold text-slate-800">German primary school curriculum aligned</span>
                       </div>
                     -->
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
-                            <span class="material-symbols-outlined text-slate-800">school</span>
-                            <span class="font-bold text-slate-800">Deep learning based on teacher insights</span> 
+                    <a href="#waitlist" class="hidden md:inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-105 transition shadow-xl shadow-primary/20">
+                      Get access early. Join our waiting list
+                      <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                    <div class="space-y-1 flex-col md:hidden lg:flex">
+                        <div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
+                            <span class="material-symbols-outlined text-primary">school</span>
+                            <span class="font-bold text-primary text-base xl:text-lg">Deep learning that aligns to abilities</span> 
                         </div>
-                        <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
-                            <span class="material-symbols-outlined text-slate-800">trending_up</span>
-                            <span class="font-bold text-slate-800">Tools that aid comprehension and pronunciation</span>
+                        <div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
+                            <span class="material-symbols-outlined text-primary">trending_up</span>
+                            <span class="font-bold text-primary text-base xl:text-lg">Exercises that aid listening &amp; pronunciation</span>
                         </div>
-                        <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
-                          <span class="material-symbols-outlined text-slate-800"">emoji_people</span>
-                          <span class="font-bold text-slate-800">Parents decide on gamification & screen time</span>
+                        <div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
+                          <span class="material-symbols-outlined text-primary">emoji_people</span>
+                          <span class="font-bold text-primary text-base xl:text-lg">Lower gamification & screen time</span>
                       </div>
-                     <!-- https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=school,trending_up,emoji_people,editor_choice,child_hat,menu_book,spellcheck,article_person,spatial_audio,voice_selection,ear_sound,trophy,mindfulness,rewarded_ads,g_translate,rocket,check_circle,star,favorite,thumb_up&display=block -->
                     </div>
-                    <a href="#waitlist" class="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-105 transition shadow-xl shadow-primary/20">
+                    <a href="#waitlist" class="inline-flex md:hidden items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-105 transition shadow-xl shadow-primary/20 ">
                         Get access early. Join our waiting list
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
@@ -374,7 +387,7 @@
                       
                           <!-- Top Titles -->
                           <text x="400" y="40" class="text-title" text-anchor="middle">ADAPTIVE LEARNING</text>
-                          <text x="400" y="62" class="text-subtitle" text-anchor="middle">Difficulty level changes based on performance</text>
+                          <text x="400" y="62" class="text-subtitle" text-anchor="middle">Difficulty based on performance</text>
                       
                           <!-- Base Connection Paths (Passive Data Flow) -->
                           <g stroke="#CBD5E1" stroke-width="3" stroke-dasharray="8 8" fill="none">
@@ -649,9 +662,10 @@
                       
                       </svg>
                     </div>
+                    
                     <!-- <div class="absolute bg-primary -bottom-10 -left-6 md:-left-12 p-6 rounded-3xl shadow-2xl max-w-[280px] z-20 float-anim"> -->
-                        <div class="absolute bg-primary -bottom-24 -left-2 sm:-left-12 sm:-bottom-20 p-3 md:p-6 rounded-3xl shadow-2xl max-w-full md:max-w-[280px] z-40 md:float-anim">
-                        <div class="flex gap-1 text-brand-yellow mb-3 hidden md:block">
+                    <div class="absolute hidden lg:block bg-primary -bottom-24 -left-2 sm:-left-12 sm:-bottom-20 p-3 md:p-6 rounded-3xl shadow-2xl max-w-full md:max-w-[280px] z-40 md:float-anim">
+                        <div class="flex gap-1 text-brand-yellow mb-3 hidden lg:block">
                             <span class="material-symbols-outlined text-xxl">star</span>
                             <span class="material-symbols-outlined text-xxl">star</span>
                             <span class="material-symbols-outlined text-xxl">star</span>
@@ -663,10 +677,31 @@
                             <!-- Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades -->
                         </p>
                     </div>
+                    <div class="absolute block lg:hidden -bottom-20 md:-bottom-28 lg:-bottom-24 left-4 sm:-bottom-20 p-3 md:p-3 max-w-full md:max-w z-40">
+                      <p class="font-hand text-brand-accent font-bold text-lg md:text-xl">
+                          Improve grades, grow confidence, reduce frustration. A real time-saver for parents. 
+                          <!-- Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades -->
+                      </p>
+                    </div>
                 </div>
+                
             </div>
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -mr-64 -mt-64"></div>
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><div class="w-6 h-10 border-2 border-white/90 rounded-full flex justify-center pt-2"><div class="w-2 h-3 bg-white rounded-full"></div></div></div>
+            <div class="space-y-4 gap-4 items-end hidden md:flex lg:hidden px-12">
+              <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
+                  <span class="material-symbols-outlined text-primary text-4xl">school</span>
+                  <span class="font-bold text-primary text-lg xl:text-lg">Deep learning that aligns to abilities</span> 
+              </div>
+              <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
+                  <span class="material-symbols-outlined text-primary text-4xl">trending_up</span>
+                  <span class="font-bold text-primary text-lg xl:text-lg">Exercises that aid listening and pronunciation</span>
+              </div>
+              <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
+                <span class="material-symbols-outlined text-primary text-4xl">emoji_people</span>
+                <span class="font-bold text-primary text-lg xl:text-lg">Lower gamification & screen time</span>
+              </div>
+            </div>
+            <div class="absolute hidden md:block top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -mr-64 -mt-64"></div>
+            <div class="absolute hidden md:block bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><div class="w-6 h-10 border-2 border-white/90 rounded-full flex justify-center pt-2"><div class="w-2 h-3 bg-white rounded-full"></div></div></div>
         </section>
 
         <!-- FEATURE SECTION -->
@@ -915,7 +950,7 @@
         <section class="py-24 bg-white" id="granular_metrics">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16 space-y-4">
-                    <span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Detailed Diagnostics</span>
+                    <span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Growth Diagnostics</span>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Knowing where improvement is most needed</h2>
                     <p class="text-slate-600 text-lg max-w-2xl mx-auto">Detailed learning insights assist parents to detect struggle and adjust the learning path. Measurable progress, better learning!</p>
                 </div>
@@ -927,15 +962,15 @@
                             <video id="diagnostics-left" src="./videos_sm-downsized/sm_diagnostics_page2.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
                         </div>
                         <div class="text-center">
-                            <h4 class="text-xl font-bold">Granular Insights Dashboard</h4>
-                            <p class="text-slate-500 text-sm">Identify where you child needs more practice</p>
+                            <h4 class="text-xl font-bold">Inbox Alerts &amp; Progress Insights</h4>
+                            <p class="text-slate-500 text-sm">Weekly reports inform about areas where more practice is needed</p>
                         </div>
                     </div>
 
                     <!-- Right Video: Plays on click, stops left -->
                     <div class="space-y-4 relative">
                         <div class="absolute -top-32 right-3 w-64 z-20 hidden md:block">
-                            <p class="font-hand text-2xl text-brand-accent -rotate-6 ">granular metrics allow parents to gauge struggles and areas of growth</p>
+                            <p class="font-hand text-2xl text-brand-accent -rotate-6 ">Practical overviews enable parents to gauge learning performance &amp; areas of growth</p>
                             <style>
                             .my-arrow-overlay {
                               position: absolute;
@@ -1004,8 +1039,9 @@
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6">
                     <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">INDIVIDUAL LEARNING PATH</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children learn best when on their own path</h2>
-                    <p class="text-2xl font-medium leading-relaxed text-slate-600">Children practice in individual learning paths based on the parents' pre-defined subject priorities and areas of practise, also using performance insights to steer the learning journey relevantly.</p>
+                    <!-- <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children learn best when on their own path</h2> -->
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children learn efficiently on tailored paths</h2>
+                    <p class="text-2xl font-medium leading-relaxed text-slate-600">Students practice within personalised learning paths based on pre-set subject priorities and areas of practise, also using performance insights to steer the learning journey.</p>
                 </div>
                 <div class="relative">
                     <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative" style="aspect-ratio: 4 / 3;">
@@ -1426,7 +1462,7 @@
                   <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
                     <span class="material-symbols-outlined text-primary">check_circle</span>
                   </div>
-                  <p class="text-lg text-slate-600 leading-relaxed">Designed to complement school learning, with granular focus on continuous performance assessment, unlocking potential. </p>
+                  <p class="text-lg text-slate-600 leading-relaxed">Designed to complement school learning, with granular focus on continuous performance assessment, unlocking hidden potential. </p>
                 </div>
                 <div class="pt-4 flex items-left gap-4"> 
                   <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
@@ -1498,8 +1534,8 @@
         </section>
       -->
       <!-- NEW FORM SECTION -->
-      <section class="bg-[#fcde72] px-4 md:px-8 lg:px-[158px] py-12 md:py-16" id="waitlist">
-        <div class="max-w-[1440px] mx-auto">
+      <section class="bg-[#fcde72] gap-4 px-4 md:px-8 lg:px-[158px] py-12 md:py-16" id="waitlist">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-32">
             <div class="flex flex-col lg:flex-row items-center gap-8">
                 
                 <div class="flex-1 w-full">
@@ -1609,15 +1645,17 @@
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 border-b border-slate-800 pb-16">
             <div class="md:col-span-2 space-y-6">
                 <div class="text-2xl font-extrabold tracking-tight">smart<span class="text-brand-accent">|</span>meister</div>
-                <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Empowering kids to master math and German at their own pace. Adaptive Learning that boosts individual growth and grade improvement.</p>
+                <!-- <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Empowering kids to master math and German at their own pace. Adaptive Learning that boosts individual growth and grade improvement.</p> -->
+                <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Empowering kids to better learn and unlock their full potential. With adaptive learning that boosts individual growth and grade improvement.</p>
             </div>
             <div class="space-y-6">
                 <h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Personalised Learning</h4>
-                <ul class="space-y-4 text-slate-300 font-medium">
-                  <li><span class="text-white">Exercises that adapt to ability</a></li> 
-                  <li><span class="text-white">Equal learning tools</a></li>
-                  <li><span class="text-white">Selective text translation</a></li>
-                  <li><span class="text-white">Read aloud for listening &amp; reading practice</a></li>
+                <ul class="space-y-2 text-slate-300 font-medium">
+                  <li><span class="text-white" title="">Exercises that adapt to ability</li> 
+                  <li><span class="text-white" title="">Equally fair learning tools</li>
+                  <li><span class="text-white" title="">Selective text translation</li>
+                  <li><span class="text-white" title="">Read aloud for listening practice</li>
+                  <li><span class="text-white" title="">German Primary School Curriculum aligned</li>
                    <!--  <li><a href="#" class="hover:text-white transition">Features</a></li>  -->
                    <!-- <li><a href="#" class="hover:text-white transition">Pricing</a></li> -->
                    <!-- <li><a href="#" class="hover:text-white transition">Schools</a></li> -->
@@ -1633,7 +1671,7 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-6 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm font-medium">
-            <p>©2025-2026 Smartmeister Learning. All rights reserved.</p>
+            <p>©2025-2026 Smartmeister Learning. All rights reserved.</p> <p>     Built for parents that want more peace of mind when concerning about their kids future</p>
             <div class="flex gap-8">
                 <!-- <a href="#" class="hover:text-white transition">Twitter</a> -->
                 <a href="https://www.linkedin.com/company/smartmeister" class="hover:text-white transition">LinkedIn</a>
@@ -1874,6 +1912,6 @@
           }
       });
   </script>
-<script type="module" src="/index.tsx"></script>
+<!-- <script type="module" src="/index.tsx"></script> -->
 </body>
 </html>
