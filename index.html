@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartmeister - Adaptive Learning that boosts individual growth and grade improvement</title>
+    <title>Smartmeister – Growing confidence, reducing frustration</title>
+    <meta name="description" content="German primary school curriculum aligned, Smartmeister supports children learn and practice different subjects through adaptive exercises, whether improving subject foundations, catching up or unlocking better results.">
+    <meta name="keywords" content="german primary school, school curriculum, tutoring, learning app, school learning app, subject improvement, subject practice, exam preparation, grades">
+    <meta name="author" content="Smartmeister">
     <link rel="icon" type="image/x-icon" href="/smartmeister-favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Gochi+Hand&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=school,play_arrow,play_circle,star,arrow_forward,volume_up,trending_up,emoji_people,editor_choice,child_hat,menu_book,spellcheck,article_person,spatial_audio,voice_selection,ear_sound,trophy,mindfulness,rewarded_ads,g_translate,rocket,check_circle,star,favorite,thumb_up&display=block" rel="stylesheet"> -->
-     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward,article,check_circle,child_care,cognition,ear_sound,editor_choice,emoji_people,favorite,g_translate,hub,menu_book,mindfulness,person,play_arrow,play_circle,rewarded_ads,rocket,school,spatial_audio,spellcheck,star,thumb_up,trending_up,voice_selection,volume_up&display=block" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward,article,check_circle,child_care,cognition,ear_sound,editor_choice,emoji_people,favorite,g_translate,hub,menu_book,mindfulness,person,play_arrow,play_circle,rewarded_ads,rocket,school,spatial_audio,spellcheck,star,thumb_up,trending_up,trophy,voice_selection,volume_up&display=block" rel="stylesheet"> 
     <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"> -->
     <script>
         tailwind.config = {
@@ -33,6 +36,10 @@
                         pastelOrange: '#FFF7ED',
                         pastelPink: '#FCE7F3',
                         vermillion: '#E34234'
+                    },
+                    margin: {
+                      '-mt-100': '-100%',
+                      'mt-100': '100%',
                     },
                     borderRadius: {
                       '4xl': '2rem',
@@ -159,7 +166,48 @@
       .max-w-8xl {
       max-width: 90rem;
       }
-        
+      
+      .custom_highlights::before, .custom_highlights::after {
+        z-index: -1 !important;
+      }
+      .custom_marker_highlight-green {
+        background: linear-gradient(104deg, rgba(130, 255, 173,0) 0.9%, rgba(130, 255, 173,1.25) 2.4%, rgba(130, 255, 173,0.5) 5.8%, rgba(130, 255, 173,0.1) 93%, rgba(130, 255, 173,0.7) 96%, rgba(130, 255, 1732,0) 98%), linear-gradient(183deg, rgba(130, 255, 173,0) 0%, rgba(130, 255, 173,0.3) 7.9%, rgba(130, 255, 173,0) 15%);
+        padding: 0.3em 4.7px;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        margin: 0;
+        border-radius: 7.5px;
+        text-shadow: -12px 12px 9.8px rgba(130, 255, 173,0.7), 21px -18.1px 7.3px rgba(255, 255, 255,1), -18.1px -27.3px 30px rgba(255, 255, 255,1);
+      }
+      .custom_marker_highlight {
+      /* Updated for RGB 255, 214, 74 */
+      background: 
+          linear-gradient(104deg, 
+              rgba(255, 214, 74, 0) 0.9%, 
+              rgba(255, 214, 74, 1) 2.4%, 
+              rgba(255, 214, 74, 0.5) 5.8%, 
+              rgba(255, 214, 74, 0.1) 93%, 
+              rgba(255, 214, 74, 0.7) 96%, 
+              rgba(255, 214, 74, 0) 98%
+          ), 
+          linear-gradient(183deg, 
+              rgba(255, 214, 74, 0) 0%, 
+              rgba(255, 214, 74, 0.3) 7.9%, 
+              rgba(255, 214, 74, 0) 15%
+          );
+      
+      padding: 0.4em 10px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      margin: 0;
+      border-radius: 7.5px;
+      
+      /* Shadow updated to yellow glow */
+      text-shadow: 
+          -12px 12px 9.8px rgba(255, 214, 74, 0.4), 
+          21px -18.1px 7.3px rgba(255, 255, 255, 1), 
+          -18.1px -27.3px 30px rgba(255, 255, 255, 1);
+        }
         /* Hide scrollbar for cleaner look */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -181,28 +229,64 @@
 
     <!-- NAVIGATION -->
     <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-2xl font-extrabold tracking-tight text-primary flex items-center">
-               <a href="./index.html" title="Home" class="no-underline">
-                Smart<span class="text-brand-accent">|</span>meister
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div class="text-2xl font-extrabold tracking-tight text-primary flex items-center shrink-0">
+              <a href="./index.html" title="Home" class="no-underline">
+                  Smart<span class="text-brand-accent">|</span>meister
               </a>
-            </div>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#features" class="font-semibold hover:text-primary transition">Features</a>
-                <a href="./sm_howitworks.html" class="font-semibold hover:text-primary transition">How it works</a>
-                <a href="#granular_metrics" class="font-semibold hover:text-primary transition">Learning progress</a>
-                <a href="#waitlist" class="bg-primary text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20">
-                    Join the waitlist
-                </a>
-            </div>
-            <button class="md:hidden">
-                <span class="material-symbols-outlined text-3xl"></span>
-                <a href="#waitlist" class="bg-primary text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20">
+          </div>
+  
+          <div class="hidden md:flex items-center gap-8">
+              <a href="#features" class="font-semibold hover:text-primary transition">Features</a>
+              <a href="./sm_howitworks.html" class="font-semibold hover:text-primary transition">How it works</a>
+              <a href="#granular_metrics" class="font-semibold hover:text-primary transition">Learning progress</a>
+          </div>
+  
+          <div class="flex items-center gap-4">
+              <a href="#waitlist" class="bg-primary text-white px-5 py-2 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
                   Join the waitlist
               </a>
-            </button>
-        </div>
-    </nav>
+              
+              <button id="menu-toggle" class="md:hidden text-primary focus:outline-none p-2" aria-label="Toggle Menu">
+                  <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                  </svg>
+              </button>
+          </div>
+      </div>
+  
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full left-0 animate-in slide-in-from-top duration-300">
+          <div class="flex flex-col p-6 space-y-4 shadow-xl">
+              <a href="#features" class="font-semibold text-lg py-2 border-b border-slate-50">Features</a>
+              <a href="./sm_howitworks.html" class="font-semibold text-lg py-2 border-b border-slate-50">How it works</a>
+              <a href="#granular_metrics" class="font-semibold text-lg py-2 border-b border-slate-50">Learning progress</a>
+          </div>
+      </div>
+  </nav>
+  
+  <script>
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        
+        // Simple icon swap (Hamburger to X)
+        if (menu.classList.contains('hidden')) {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />';
+        } else {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+        }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+        });
+    });
+</script>
 
     <main class="pt-20">
         <!-- HERO SECTION -->
@@ -219,12 +303,14 @@
                       <!-- <div class="relative z-0 top-12 left-32 w-48 h-48 rounded-full flex items-center justify-center">
                         <span class="font-hand text-brand-accent font-bold text-xl md:text-xl flex items-center justify-center text-center -rotate-12">German primary school curriculum aligned</span>
                       </div>-->
-                      <!-- Adaptive learning that helps children <br /> -->
-                        Adaptive learning that helps master <br />
-                        <span class="text-slate-900">subjects or catch up quickly</span>
+                      <!--Small steps turn<br>into big leaps.-->
+
+                        Boost learning<br>and grades.
+                        <br />
+                        <span class="text-slate-900">15min of smart learning daily.</span>
                     </h1>
                     <p class="text-lg md:text-xl text-slate-800/80 max-w-lg leading-relaxed font-bold">
-                        Built on adaptive exercises Smartmeister helps different types of learners master subjects, tackle proficiency gaps &amp; challenges independently.
+                        Built for real results: Keeping practice in the sweet spot so every training session creates real progress. Children stay motivated when learning feels just right.. <span class="inline md:inline lg:hidden">and parents have their peace of mind.</span>
                     </p>
                     <!-- ORIGINAL BUBBLE FEATURE POINTS
                       <div class="space-y-4">
@@ -248,15 +334,20 @@
                     <div class="space-y-1 flex-col md:hidden lg:flex">
                         <div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
                             <span class="material-symbols-outlined text-primary">school</span>
-                            <span class="font-bold text-primary text-base xl:text-lg">Deep learning that aligns to abilities</span> 
+                            <span class="font-bold text-primary text-base xl:text-lg">Primary School Curriculum aligned exercises <!--Thousands of curriculum exercises--></span>
                         </div>
                         <div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
                             <span class="material-symbols-outlined text-primary">trending_up</span>
-                            <span class="font-bold text-primary text-base xl:text-lg">Exercises that aid listening &amp; pronunciation</span>
+                            <span class="font-bold text-primary text-base xl:text-lg">Small wins that build real momentum</span>
                         </div>
-                        <div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
+                        <div class="flex md:hidden lg:flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
                           <span class="material-symbols-outlined text-primary">emoji_people</span>
-                          <span class="font-bold text-primary text-base xl:text-lg">Lower gamification & screen time</span>
+                          <span class="font-bold text-primary text-base xl:text-lg">Challenges adapt as skills grow</span>
+                      </div>
+                      <!-- STEFAN CHANGE FOR OTHER FILES -->
+                      <div class="flex lg:hidden items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
+                        <span class="material-symbols-outlined text-primary">trophy</span>
+                        <span class="font-bold text-primary text-base xl:text-lg">Improve grades and grow confidence</span>
                       </div>
                     </div>
                     <a href="#waitlist" class="inline-flex md:hidden items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-105 transition shadow-xl shadow-primary/20 ">
@@ -673,13 +764,14 @@
                             <span class="material-symbols-outlined text-xxl">star</span>
                         </div>
                         <p class="text-white font-medium text-lg md:text-xl">
-                            Improve grades, grow confidence, reduce frustration. A real time-saver for parents. 
+                            <b>Created by parents, made for parents..</b> with the help of real teacher insights that improve grades.
                             <!-- Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades -->
                         </p>
                     </div>
-                    <div class="absolute block lg:hidden -bottom-20 md:-bottom-28 lg:-bottom-24 left-4 sm:-bottom-20 p-3 md:p-3 max-w-full md:max-w z-40">
+                    <div class="absolute hidden lg:hidden -bottom-20 md:-bottom-28 lg:-bottom-24 left-4 sm:-bottom-20 p-3 md:p-3 max-w-full md:max-w z-40">
                       <p class="font-hand text-brand-accent font-bold text-lg md:text-xl">
-                          Improve grades, grow confidence, reduce frustration. A real time-saver for parents. 
+                          Made by parents, for parents.. with the help of real teacher insights that improve grades.
+                          <!--Confidence for children. Peace of mind for parents.-->
                           <!-- Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades -->
                       </p>
                     </div>
@@ -687,51 +779,90 @@
                 
             </div>
             <div class="space-y-4 gap-4 items-end hidden md:flex lg:hidden px-12">
-              <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
+              <div class="flex items-center gap-3 p-4 rounded-xl w-fit backdrop-blur-sm border-2 border-primary">
                   <span class="material-symbols-outlined text-primary text-4xl">school</span>
-                  <span class="font-bold text-primary text-lg xl:text-lg">Deep learning that aligns to abilities</span> 
+                  <span class="font-bold text-primary text-lg xl:text-lg">Primary School Curriculum aligned exercises <!--Thousands of curriculum exercises--></span>
               </div>
-              <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
+              <div class="flex items-center gap-3 p-4 rounded-xl w-fit backdrop-blur-sm border-2 border-primary">
                   <span class="material-symbols-outlined text-primary text-4xl">trending_up</span>
-                  <span class="font-bold text-primary text-lg xl:text-lg">Exercises that aid listening and pronunciation</span>
+                  <span class="font-bold text-primary text-lg xl:text-lg">Small wins that build real momentum</span>
               </div>
-              <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
+              <div class="flex items-center gap-3 p-4 rounded-xl w-fit backdrop-blur-sm border-2 border-primary">
                 <span class="material-symbols-outlined text-primary text-4xl">emoji_people</span>
-                <span class="font-bold text-primary text-lg xl:text-lg">Lower gamification & screen time</span>
+                <span class="font-bold text-primary text-lg xl:text-lg">Challenges adapt as skills grow</span>
               </div>
             </div>
             <div class="absolute hidden md:block top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -mr-64 -mt-64"></div>
             <div class="absolute hidden md:block bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><div class="w-6 h-10 border-2 border-white/90 rounded-full flex justify-center pt-2"><div class="w-2 h-3 bg-white rounded-full"></div></div></div>
         </section>
 
-        <!-- FEATURE SECTION -->
-        <section id="features" class="py-24 bg-white">
+        <!-- WHY WE BUILT IT SECTION -->
+        <section class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-                <div class="bg-pastel-blue p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
-                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/maths-card.png"></div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Deep learning that adapts to ability &amp; progress</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium">Exercises adapt based on strengths and weaknesses. Easier exercises for struggling learners, harder ones for strong learners</p>
+                <div class="text-center mb-12 space-y-4 sm:mb-32 xl:mb-16 col-span-3">
+                  <span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Why we built Smartmeister</span>
+                  <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">All kids learn differently!</h2>
+                  </div>
+                  
+                <!--<div class="bg-pastel-blue p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">-->
+                <div class="bg-transparent p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
+                    <!--<div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/maths-card.png"></div>-->
+                    <div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block"><img alt="High five celebration" class="w-[280px] md:w-[200px] lg:w-[280px] h-auto" style="" src="./images/sm_learners-1-fits-all.jpg"></div>
+                    <!--<div class="w-200 h-200 bg-white/30 rounded-full inline-flex items-center justify-center mb-6">
+                      <span class="material-symbols-outlined font-bold text-secondary-300 text-1xl xl:text-1xl icon-48">menu_book</span>
+                    </div>-->
+                    <!--<h3 class="custom_highlights relative z-10 inline-block text-2xl font-extrabold text-slate-900 leading-tight after:content-[''] after:absolute after:inset-x-[-3px] after:bottom-1 after:h-[95%] after:bg-[#ffd64a] after:-z-1 after:rotate-[-1.5deg] after:rounded-sm after:opacity-80">
+                      One-size-fits-all apps not adapting to your child</h3>-->
+                      <h3 data-text="One-size-fits-all apps don't adapt to your child" class="custom_highlights relative z-10 inline-block text-2xl leading-normal font-extrabold text-slate-900 ">
+                        <span class="custom_marker_highlight leading-normal">One-size-fits-all apps don't adapt to your child</span></h3>
+                    <p class="text-slate-600 leading-relaxed font-medium">Every child learns and grows differently, yet most apps treat them the same.</p>
                 </div>
-                <div class="bg-pastel-green p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
-                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/flexible-family.png"></div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Detailed analytics keep parents in the loop </h3>
-                    <p class="text-slate-600 leading-relaxed font-medium">Gain insights where struggle persists and measurable learning progress happens. <br>➜ Less babysitting for parents</p>
+                <!--<div class="bg-pastel-green p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">-->
+                <div class="bg-transparent p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
+                    <!--<div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/flexible-family.png"></div>-->
+                    <div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block"><img alt="High five celebration" class="w-[280px] md:w-[200px] lg:w-[280px] h-auto" style="" src="./images/sm_time-is-money.jpg"></div>
+                    <!--<div class="w-20 h-20 bg-white/30 rounded-full inline-flex items-center justify-center mb-6">
+                       <span class="material-symbols-outlined font-bold text-secondary-300 text-3xl xl:text-4xl">mindfulness</span>
+                    </div>-->
+                    <!--<h3 class="custom_highlights relative z-10 inline-block text-2xl font-extrabold text-slate-900 leading-tight before:content-[''] before:absolute before:inset-x-[-3px] before:bottom-1 before:h-[95%] before:bg-[#ffd64a] before:-z-1 before:rotate-[-1.5deg] before:rounded-sm before:opacity-80">
+                      Typical tutoring is costly and slow</h3>-->
+                      <h3 data-text="Typical tutoring is costly and slow" class="custom_highlights relative z-10 inline-block text-2xl leading-normal font-extrabold text-slate-900 ">
+                        <span class="custom_marker_highlight leading-normal">Typical tutoring is costly and slow</span></h3>
+                    <p class="text-slate-600 leading-relaxed font-medium">€80-300 a month with rigid schedules <br>mostly does not fit busy family life.</p>
                 </div>
-                <div class="bg-pastel-purple p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
-                    <div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/german-card.png"></div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Exercises built around easy comprehension</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium">Reduced frustration due to easier understanding of tasks and clear solution pathways, whether with videos or read-aloud audio.</p>
+                <!--<div class="bg-pastel-purple p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">-->
+                <div class="bg-transparent p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
+                    <!--<div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/german-card.png"></div>-->
+                    <div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block"><img alt="High five celebration" class="w-[280px] md:w-[200px] lg:w-[280px] h-auto" style="" src="./images/sm_learner-piechart.jpg"></div>
+                    <!--<div class="w-20 h-20 bg-white/30 rounded-full inline-flex items-center justify-center mb-6">
+                       <span class="material-symbols-outlined font-bold text-secondary-300 text-3xl xl:text-4xl">school</span>
+                    </div>-->
+                    <!--<h3 data-text="Unpersonalised practice doesn't build mastery" class="custom_highlights relative z-10 inline-block text-2xl font-extrabold text-slate-900 leading-tight 
+                    before:content-[attr(data-text)] before:relative before:inline before:text-transparent before:bg-[#ffd64a] before:rotate-[-0.3deg] ">
+                      Unpersonalised practice doesn't build mastery</h3>-->
+                      <h3 data-text="Unpersonalised practice doesn't build mastery" class="custom_highlights relative z-10 inline-block text-2xl leading-normal font-extrabold text-slate-900 ">
+                        <span class="custom_marker_highlight leading-normal">Unpersonalised practice doesn't build mastery</span></h3>
+                    
+                    <p class="text-slate-600 leading-relaxed font-medium">Practice not accounting for personal gaps &amp; misconceptions is frustrating</p>
+                </div>
+                <div class="text-center mb-12 space-y-4 sm:mb-32 xl:mb-16 col-span-3 mt-12">
+                   <h2 class="text-4xl md:text-6xl font-extrabold text-primary text-center leading-[1.2] tracking-tight">
+                   We make learning grow with children...
+                   <div class="w-24 h-2 bg-brandYellow mx-auto mt-12 rounded-full"></div>
+                   </h2>
                 </div>
             </div>
         </section>
-
+        
+        <!-- FEATURE SECTION -->
         <!-- VIDEO SECTION #1 -->
-        <section id="how-it-works" class="py-24 overflow-hidden">
+        <section id="features" class="py-24 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6">
-                    <span class="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">PERSONALISED LEARNING</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Exercise difficulty adapts to child’s ability and progress</h2>
-                    <p class="text-lg leading-relaxed text-slate-600">Children learn at their own pace with multi-modal exercises that adapt to ability and learning progress. No child is left behind.</p>
+                    <span class="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">TAILOR-MADE PROGRESS</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">The moment a learner gets stuck, an easier exercise is ready</h2>
+                    <!--<p class="text-lg leading-relaxed text-slate-600">When children repeatedly run into obstacles, easier exercises push learning forward. Too easy and exercise get harder. Less frustration, just steady progression built around what your child can actually do.</p>-->
+                    <p class="text-lg leading-relaxed text-slate-600">When mistakes keep repeating, easier exercises push learning forward. Too easy and exercise get harder. Less frustration, just steady progression built around what your child can actually do.</p>
                 </div>
                 <div class="relative">
                     <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
@@ -743,14 +874,47 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Voice Narration Section -->
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <div class="bg-pink-50 rounded-[60px] p-8 md:p-20 grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div class="relative bg-slate-900 rounded-[40px] aspect-video overflow-hidden shadow-2xl">
+                        <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="./">
+                            <source src="./videos_sm-downsized/sm_dshboard_translation.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+                    </div>
+                    
+                    <div class="absolute -top-10 -left-10 bg-vermillion border-[6px] border-white rounded-full w-32 h-32 md:w-40 md:h-40 shadow-2xl flex items-center justify-center z-20 hover:scale-110 transition-transform">
+                        <span class="text-white font-black text-sm md:text-base text-center leading-tight uppercase tracking-widest px-4">Barrier free learning</span>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="inline-block bg-pastelOrange text-orange-700 px-6 py-2 rounded-full text-xs font-extrabold tracking-widest uppercase">
+                       Supporting International families 
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                      Learn German school subjects regardless<br class="hidden xl:block">  of German language proficiency
+                  </h2>
+                    <!--<h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                        Learn Math or Science regardless<br class="hidden xl:block">  of German language proficiency
+                    </h2>-->
+                    <blockquote class="text-xl lg:text-xl xl:text-xl font-semibold text-primary border-l-4 border-vermillion pl-6 leading-relaxed">
+                        Learners with German as a second language (DAZ) benefit from a multi-lingual interface, granular translation functions, read-aloud functionality and exercises that practice spelling, pronunciation, listening and comprehension. Learning irrespective of language barriers. 📖 
+                    </blockquote>
+                </div>
+            </div>
+        </section>
 
         <!-- VIDEO SECTION #2 -->
         <section class="py-24 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6 md:order-2">
-                    <span class="bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">INDEPENDENT MASTERY</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children get the tools to overcome difficulties on their own</h2>
-                    <p class="text-lg leading-relaxed text-slate-600">Easy-to-grasp explanations, videos, hints and solution examples aid children to overcome challenges on their own. Explanations can also be read aloud (text to speech).</p>
+                    <span class="bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">STRUGGLE SUPPORT</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Giving practical help when they struggle</h2>
+                    <p class="text-lg leading-relaxed text-slate-600">When children run into obstacles, Smartmeister provides hints and solution examples that strengthen independent mastery. Videos and read-aloud explanations help to work it out on their own. Obstacles are never unsurmountable.</p>
                 </div>
                 <div class="relative md:order-1">
                     <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
@@ -788,7 +952,7 @@
      Q 26 2, 22 5 Z"
 />
 </svg>
-                        <p class="font-hand text-3xl text-brand-accent mb-2 rotate-2">boosts confidence and independent learning</p>
+                        <p class="font-hand text-3xl text-brand-accent mb-2 rotate-2">Inbuilt support that helps them tackle challenges on their own!</p>
                         <!--<svg class="mx-auto w-12 h-12 text-brand-accent -rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
                         </svg>-->
@@ -816,11 +980,12 @@
         <section class="py-24 overflow-hidden">
           <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div class="space-y-6">
-                <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">ALL LEARNER TYPES</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Diverse exercises build subject proficiency step by step</h2>
+                <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">MADE FOR DIFFERENT LEARNERS</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Personalised learning for deeper improvement and better grades</h2>
                 <p class="text-lg leading-relaxed text-slate-6000">
                     <!--Suitable to different types of learners, Smartmeister's engaging exercises build lasting subject proficiency, making learning fun yet relevant.-->
-                    Whether building up foundational subject knowledge, catching up or tackling knowledge gaps, our diverse exercises are suited for different types of learners. 
+                    <!--Important concepts are revisited at the right moment so they become second nature. Diverse exercise formats build genuine subject proficiency, layer by layer.-->
+                     Learning paths are re-balanced for different types of learners, using a variety of exercise formats to build genuine subject proficiency, layer by layer. Turning pockets of knowledge into solid subject competencies.
                 </p>
             </div>
             
@@ -882,7 +1047,7 @@
         
         <!-- Voice Narration Section -->
         <section class="max-w-7xl mx-auto px-6 py-24">
-            <div class="bg-slate-50 rounded-[60px] p-8 md:p-20 grid md:grid-cols-2 gap-16 items-center">
+            <div class="bg-slate-50 rounded-[60px] p-8 md:p-20 grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <!-- Left Column: Video -->
                 <div class="relative group">
                     <div class="relative bg-slate-900 rounded-[40px] aspect-video overflow-hidden shadow-2xl">
@@ -894,20 +1059,21 @@
                     
                     <!-- Vermillion Circular Badge -->
                     <div class="absolute -top-10 -left-10 bg-vermillion border-[6px] border-white rounded-full w-32 h-32 md:w-40 md:h-40 shadow-2xl flex items-center justify-center z-20 hover:scale-110 transition-transform">
-                        <span class="text-white font-black text-sm md:text-base text-center leading-tight uppercase tracking-widest px-4">equal learning for all children</span>
+                        <span class="text-white font-black text-sm md:text-base text-center leading-tight uppercase tracking-widest px-4">No child is left behind</span>
                     </div>
                 </div>
 
                 <!-- Right Column: Text Content -->
                 <div class="space-y-8">
                     <div class="inline-block bg-pastelOrange text-orange-700 px-6 py-2 rounded-full text-xs font-extrabold tracking-widest uppercase">
-                        Reading and pronunciation
+                        Improving pronunciation and spelling
                     </div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                        German language learning made easy <br class="hidden md:block"> with read aloud text 
+                        Listening, spelling &amp; pronunciation — built right into the story
                     </h2>
-                    <blockquote class="text-2xl font-semibold text-primary border-l-4 border-vermillion pl-6 leading-relaxed">
-                        Creating equal learning opportunities for multi-lingual learners, <span class="bg-yellow-400">Children can listen to short stories or books</span>, train their listening, comprehension, grammar and pronunciation skills with the help of practice tasks, intertwined into the story flow. 
+                    <blockquote class="text-2xl lg:text-xl xl:text-2xl font-semibold text-primary border-l-4 border-vermillion pl-6 leading-relaxed">
+                      <!--Real understanding comes from hearing language in context, not just reading it. <span class="bg-yellow-400">Children listen to stories and books</span>, then practise comprehension, grammar and pronunciation through tasks woven naturally into the flow. The foundation is solid before anything new is introduced.-->
+                       Comprehension is the key to learn effectively. <span class="bg-yellow-400">Children listen to stories and books</span>, then practise comprehension, spelling or pronunciation through tasks woven naturally into the flow. 
                     </blockquote>
                     <div class="pt-4 flex items-center gap-4 hover:scale-105 transition">
                     <a href="#waitlist" id="audioButton" class="inline-flex items-center gap-3 bg-vermillion text-white px-8 py-4 rounded-2xl text-xl font-bold transition shadow-xl shadow-primary/20 float-anim">
@@ -920,13 +1086,14 @@
                         <div class="w-12 h-12 bg-vermillion/10 rounded-full flex items-center justify-center">
                             <span class="material-symbols-outlined text-vermillion">mindfulness</span>
                         </div>
-                        <p class="font-bold text-orange-800 text-sl">Text-to-speech read-aloud also aids children with deeper reading and comprehension issues</p>
+                        <!--<p class="font-bold text-orange-800 text-sl">Read-aloud also builds confidence for children with reading difficulties. Hearing the language helps it click.</p>-->
+                        <p class="font-bold text-orange-800 text-sl">Read-aloud also builds confidence for children with reading difficulties. Hearing the language helps it click.</p>
                     </div>
                     <div class="pt-4 flex items-center gap-4">
                       <div class="w-12 h-12 bg-vermillion/10 rounded-full flex items-center justify-center">
                           <span class="material-symbols-outlined text-vermillion">cognition</span>
                       </div>
-                      <p class="font-bold text-orange-800 text-sl">Students can practice speaking and pronunciation with Smartmeister's upcoming speech recognition engine</p>
+                      <p class="font-bold text-orange-800 text-sl">Coming soon: pronunciation practice with Smartmeister’s speech recognition engine. Real feedback to improve!</p>
                   </div>
                     
                     
@@ -940,19 +1107,19 @@
                 <!--<h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">Facilitating individual learning paths to boost deep learning
                   ..transforming struggle into tangible improvement
                 </h2>-->
-                <h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">Close subject gaps before they become learning obstacles. No child is left behind!
+                <h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">Growing confidence. Reducing frustration. Progress that actually clicks and sticks.</h2>
                 </h2>
-                <a href="#waitlist" class="inline-block bg-primary text-white px-10 py-5 rounded-2xl text-2xl font-black shadow-2xl hover:scale-105 active:scale-95 transition">GET THE LATEST INFOS WITH OUR WAITLIST</a>
+                <a href="#waitlist" class="inline-block bg-primary text-white px-10 py-5 rounded-2xl text-2xl font-black shadow-2xl hover:scale-105 active:scale-95 transition">JOIN THE WAITLIST — GET EARLY ACCESS</a>
             </div>
         </section>
 
         <!-- VIDEO SECTION #4 (DOUBLE VIDEO / DIAGNOSTICS) -->
         <section class="py-24 bg-white" id="granular_metrics">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16 space-y-4">
-                    <span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Growth Diagnostics</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Knowing where improvement is most needed</h2>
-                    <p class="text-slate-600 text-lg max-w-2xl mx-auto">Detailed learning insights assist parents to detect struggle and adjust the learning path. Measurable progress, better learning!</p>
+                <div class="text-center mb-12 space-y-4 sm:mb-32 xl:mb-16">
+                    <span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Identify weak areas</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">See the growth. Spot what to focus on next.</h2>
+                    <p class="text-slate-600 text-lg max-w-2xl mx-auto">Parent-friendly insights that track real progress, so you always know where your child is thriving and where a little extra focus will go a long way.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12">
@@ -962,15 +1129,15 @@
                             <video id="diagnostics-left" src="./videos_sm-downsized/sm_diagnostics_page2.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
                         </div>
                         <div class="text-center">
-                            <h4 class="text-xl font-bold">Inbox Alerts &amp; Progress Insights</h4>
-                            <p class="text-slate-500 text-sm">Weekly reports inform about areas where more practice is needed</p>
+                            <h4 class="text-xl font-bold">Smart Diagnostics &amp; Weekly Reports</h4>
+                            <p class="text-slate-500 text-sm">Parents are kept in the loop where more practice is needed</p>
                         </div>
                     </div>
 
                     <!-- Right Video: Plays on click, stops left -->
                     <div class="space-y-4 relative">
                         <div class="absolute -top-32 right-3 w-64 z-20 hidden md:block">
-                            <p class="font-hand text-2xl text-brand-accent -rotate-6 ">Practical overviews enable parents to gauge learning performance &amp; areas of growth</p>
+                            <p class="font-hand text-2xl text-brand-accent -rotate-6 ">progress that’s not just a score!</p>
                             <style>
                             .my-arrow-overlay {
                               position: absolute;
@@ -1024,8 +1191,8 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <h4 class="text-xl font-bold">Improvement Tracking</h4>
-                            <p class="text-slate-500 text-sm">View learning progress from then to now</p>
+                            <h4 class="text-xl font-bold">Progress Over Time</h4>
+                            <p class="text-slate-500 text-sm">Track how far your child has come, whether foundations built or gaps closed</p>
                         </div>
                     </div>
                 </div>
@@ -1038,10 +1205,11 @@
         <section class="py-24 overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6">
-                    <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">INDIVIDUAL LEARNING PATH</span>
+                    <span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Learning paths that grow with them</span>
                     <!-- <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children learn best when on their own path</h2> -->
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children learn efficiently on tailored paths</h2>
-                    <p class="text-2xl font-medium leading-relaxed text-slate-600">Students practice within personalised learning paths based on pre-set subject priorities and areas of practise, also using performance insights to steer the learning journey.</p>
+                    <!--<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children only move on with their learning journey when standing on solid ground</h2>-->
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">A learning journey that only moves on when students stand on solid foundations</h2>
+                    <p class="text-2xl font-medium leading-relaxed text-slate-600">There’s no rushing ahead before something is truly understood. The learning path adjusts to your child’s actual performance — reinforcing what needs more time, unlocking what’s next when they’re ready.</p>
                 </div>
                 <div class="relative">
                     <div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative" style="aspect-ratio: 4 / 3;">
@@ -1413,78 +1581,104 @@
         <section class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-16 items-start">
                 <div class="space-y-6">
-                    <h3 class="text-3xl font-extrabold text-primary">Diverse Learner Types get it their way</h3>
-                    <p class="text-lg text-slate-600 leading-relaxed">Every child has a unique way of absorbing information and cognitive learning. Smartmeister identifies whether students learn best through visual aids, reinforcement, or iterative problem-solving. Encourage, build and challenge! Students get it tailored their way. </p>
+                    <h3 class="text-3xl font-extrabold text-primary">The right challenge level makes all the difference</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Exercises stay right in the sweet spot — hard enough to be interesting, achievable enough to feel good. Smartmeister watches for difficulty spikes and adjusts before frustration sets in, keeping motivation steady and momentum building.</p>
                 </div>
                 <div class="space-y-6">
-                    <h3 class="text-3xl font-extrabold text-primary">Aiding children with reading difficulties &amp; focusing issues</h3>
+                    <h3 class="text-3xl font-extrabold text-primary">Every child can build confidence — including those who find it harder</h3>
                     <!-- <p class="text-lg text-slate-600 leading-relaxed">Smartmeister monitors performance and repeated mistakes, adapting subsequent tasks in the learning path to bridge specific conceptual gaps automatically and propose assignments.</p> --> 
-                    <p class="text-lg text-slate-600 leading-relaxed">Dyslexia and Dyscalculia are not uncommon. Learners encountering problems like reading or spelling difficulties, slow word recognition, as well as reduced number, shape and abstraction comprehension do also benefit. From Dyslexia friendly typefaces, text-to-speech read-aloud features to custom display settings that reduce clutter and emphasise clarity.</p>
+                    <p class="text-lg text-slate-600 leading-relaxed">Various levels of dyslexia, dyscalculia and attention challenges are more common than many think. Smartmeister supports these learners too — with dyslexia-friendly typefaces, text-to-speech read-aloud, and display settings that reduce clutter so nothing gets in the way of understanding.</p>
                 </div>
                 <div class="rounded-[40px] overflow-hidden shadow-xl bg-brand-yellow/30 p-2">
                     <img src="./images/curiosity-main.png" alt="Learning Illustration" class="w-full rounded-[36px]">
                 </div>
             </div>
         </section>
-        <!-- STEF ADDED: SERVICE SUMMARY SECTION -->
+        
         <section class="bg-slate-50 py-24">
-            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 grid-cols-1 gap-8 items-start">
-              <div class="space-y-6 md:col-span-2"><span class="bg-green-100 text-green-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Designed for Parents &amp; Children</span></div>
-              <div class="space-y-6">
-                <div class="pt-4 flex items-left gap-4 "> 
-                  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
-                    <span class="material-symbols-outlined text-primary">check_circle</span>
-                  </div>
-                  <p class="text-lg text-slate-600 leading-relaxed">Evaluate abilities &amp; identify gaps early before secondary school decisions get locked-in. Set learning goals and milestones.</p>
+          <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 grid-cols-1 gap-8 items-start">
+            <div class="space-y-6 md:col-span-2"><span class="bg-green-100 text-green-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Designed with love for parents &amp; children</span></div>
+            <div class="space-y-6">
+              <div class="pt-4 flex items-left gap-4 "> 
+                <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
                 </div>
-                <div class="pt-4 flex items-left gap-4"> 
-                  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
-                    <span class="material-symbols-outlined text-primary">check_circle</span>
-                  </div>
-                  <p class="text-lg text-slate-600 leading-relaxed">Unlike other elearning apps, Smartmeister adapts exercises to your child's specific gaps and potential, aligning the learning path in real-time.</p>
-                </div>
-                <div class="pt-4 flex items-left gap-4"> 
-                  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
-                    <span class="material-symbols-outlined text-primary">check_circle</span>
-                  </div>
-                  <p class="text-lg text-slate-600 leading-relaxed">Set it up once. The platform handles the rest. Get alerts or periodic reports, highlighting milestones, goals &amp; learning path options. </p>
-                </div>
-                <div class="pt-4 flex items-left gap-4"> 
-                  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
-                    <span class="material-symbols-outlined text-primary">check_circle</span>
-                  </div>
-                  <p class="text-lg text-slate-600 leading-relaxed">Primary school children enrich their subject knowledge more deeply with exercises that involve a larger scope of challenges.</p>
+                <div class="flex flex-col gap-2">
+                <p class="text-lg text-slate-600 leading-relaxed font-bold xl:pr-24">Catch foundational gaps before they grow or enrich your child's subject practice.</p>
+                <p class="text-lg text-slate-600 leading-relaxed">Identify gaps before they become obstacles — and before secondary school decisions get locked in. Set meaningful goals and track milestones along the way.</p>
                 </div>
               </div>
-              
-              <div class="space-y-6">
-                <div class="pt-4 flex items-left gap-4 "> 
-                  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
-                    <span class="material-symbols-outlined text-primary">check_circle</span>
-                  </div>
-                  <p class="text-lg text-slate-600 leading-relaxed">Designed to complement school learning, with granular focus on continuous performance assessment, unlocking hidden potential. </p>
+              <div class="pt-4 flex items-left gap-4"> 
+                <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
                 </div>
-                <div class="pt-4 flex items-left gap-4"> 
-                  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
-                    <span class="material-symbols-outlined text-primary">check_circle</span>
-                  </div>
-                  <p class="text-lg text-slate-600 leading-relaxed">10 to 15 minutes a day. Screen time can be regulated. Parents also decide the level of gamification and how rewards can be used.</p>
-                </div>
-                <div class="pt-4 flex items-left gap-4"> 
-                  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
-                    <span class="material-symbols-outlined text-primary">check_circle</span>
-                  </div>
-                  <p class="text-lg text-slate-600 leading-relaxed">Students can also reinforce crucial examination practice or repeat a previously accomplished learning path.</p>   
-                </div>
-                <div class="pt-4 flex items-left gap-4"> 
-                  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
-                    <span class="material-symbols-outlined text-primary">check_circle</span>
-                  </div>
-                  <p class="text-lg text-slate-600 leading-relaxed">Get full access to primary-school curriculum aligned Smartmeister through monthly or annual subscription (2 children accounts included).</p>
+                <div class="flex flex-col gap-2">
+                <p class="text-lg text-slate-600 leading-relaxed font-bold xl:pr-24">Curriculum-aligned exercises (Lehrplan) in multiple subjects adapt to how your child learns.</p>
+                <p class="text-lg text-slate-600 leading-relaxed">Unlike other elearning apps, Smartmeister adjusts to your child’s actual performance in real-time — not just their grade level or fixed learning plan.</p>
                 </div>
               </div>
-          </div>
-        </section>
+              <div class="pt-4 flex items-left gap-4"> 
+                <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                <p class="text-lg text-slate-600 leading-relaxed font-bold xl:pr-24">Turn learning anxiety into confidence, and frustration into engaged learning.</p>
+                <p class="text-lg text-slate-600 leading-relaxed">Children can revisit and reinforce key exam topics or repeat a completed learning path for extra confidence ahead of big moments.</p>
+                </div>
+              </div>
+              <div class="pt-4 flex items-left gap-4"> 
+                <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                <p class="text-lg text-slate-600 leading-relaxed font-bold xl:pr-24">When obstacles occur our struggle prodigy Pico jumps in, never giving away too much.</p>
+                <p class="text-lg text-slate-600 leading-relaxed">Designed to support children in the most frustrating moments, Pico gives practical help and takes their hand when problems are mounting.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="space-y-6">
+              <div class="pt-4 flex items-left gap-4 "> 
+                <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                <p class="text-lg text-slate-600 leading-relaxed font-bold xl:pr-24">Just 10 to 15 minutes a day! Less screen time, steady grade improvement.</p>
+                <p class="text-lg text-slate-600 leading-relaxed">Set it up once. The platform does the rest. Receive reports highlighting milestones, areas to focus on and next steps. Parents control screen time and the level of gamification</p>
+                </div>
+              </div>
+              <div class="pt-4 flex items-left gap-4"> 
+                <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                <p class="text-lg text-slate-600 leading-relaxed font-bold xl:pr-24">No more lost in translation. Kids still learning German get the tools to shine and master.</p>
+                <p class="text-lg text-slate-600 leading-relaxed">With intuitive translation tools, read-aloud exercise tasks as well as simple, child-friendly vocabulary children can comprehend where it matters most.</p>
+                </div>
+              </div>
+              <div class="pt-4 flex items-left gap-4"> 
+                <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                <p class="text-lg text-slate-600 leading-relaxed font-bold xl:pr-24">Set cognitive practice focus such as problem solving, abstraction or comprehension.</p> 
+                <p class="text-lg text-slate-600 leading-relaxed">Children build real subject knowledge through exercises that go well beyond surface memorisation — practicing a variety of competencies.</p>
+                </div>
+              </div>
+              <div class="pt-4 flex items-left gap-4"> 
+                <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                <p class="text-lg text-slate-600 leading-relaxed font-bold xl:pr-24">Streamlined account management of up to 3 children accounts in one view.</p>
+                <p class="text-lg text-slate-600 leading-relaxed">Parents can manage multiple children accounts from one dashboard and also get summarised progress updates of all children in one report.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+
+
 
 
 
@@ -1533,9 +1727,9 @@
             </div>
         </section>
       -->
-      <!-- NEW FORM SECTION -->
-      <section class="bg-[#fcde72] gap-4 px-4 md:px-8 lg:px-[158px] py-12 md:py-16" id="waitlist">
-        <div class="max-w-[1440px] mx-auto px-4 md:px-32">
+      <!-- STEFAN CHANGE FOR OTHER FILES -->
+      <section class="bg-[#fcde72] gap-4 px-4 md:px-1 py-12 md:py-16" id="waitlist">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-12 xl:px-28 max-w-7xl">
             <div class="flex flex-col lg:flex-row items-center gap-8">
                 
                 <div class="flex-1 w-full">
@@ -1546,8 +1740,8 @@
                       Boosting individual growth and grade improvement. 
                   </h2>
                     
-                    <p class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] font-bold text-5xl md:text-2xl lg:text-6xl mb-5">
-                        Join early! (120+ families already have). Get Free Early Access.
+                    <p class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] font-bold text-4xl md:text-2xl lg:text-5xl mb-5">
+                        Join early! 120+ already have. Get Free Early Access.
                     </p>
     
                     <div id="brevo-form" class="sib-form" style="text-align: center; background-color: transparent;">
@@ -1596,7 +1790,7 @@
                                        <div style="display: flex; align-items: flex-start; gap: 10px;">
                                            <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required data-required="true" style="width: 20px; height: 20px; flex-shrink:0; margin-top: 2px;" />
                                            <label for="OPT_IN" style="font-size: 14px; color: #3C4858; cursor: pointer; text-align: left;">
-                                               I agree to receive product updates and accept the privacy policy. You can unsubscribe at any time.<span style="color: #e74c3c;">*</span>
+                                               I agree to receive product updates and accept the privacy policy. Unsubscribe at any time.<span style="color: #e74c3c;">*</span>
                                            </label>
                                        </div>
                                    </div>
@@ -1633,7 +1827,7 @@
         <section class="py-32 bg-white">
             <div class="max-w-5xl mx-auto px-6">
                 <h2 class="text-4xl md:text-6xl font-extrabold text-primary text-center leading-[1.2] tracking-tight">
-                    Smartmeister emphasises individual learning paths without forcing children into memorisation chores and repetitive learning patterns.
+                    Smartmeister keeps children in the sweet spot — where learning feels achievable, progress is real, and confidence grows naturally.
                     <div class="w-24 h-2 bg-brandYellow mx-auto mt-12 rounded-full"></div>
                 </h2>
             </div>
@@ -1644,9 +1838,9 @@
     <footer class="bg-slate-900 text-white pt-24 pb-12">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 border-b border-slate-800 pb-16">
             <div class="md:col-span-2 space-y-6">
-                <div class="text-2xl font-extrabold tracking-tight">smart<span class="text-brand-accent">|</span>meister</div>
+                <div class="text-2xl font-extrabold tracking-tight"><a href="./index.html" title="Home" class="no-underline">smart<span class="text-brand-accent">|</span>meister</a></div>
                 <!-- <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Empowering kids to master math and German at their own pace. Adaptive Learning that boosts individual growth and grade improvement.</p> -->
-                <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Empowering kids to better learn and unlock their full potential. With adaptive learning that boosts individual growth and grade improvement.</p>
+                <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Giving kids the tools to better learn and unlock their full potential. With adaptive learning that boosts individual growth and grade improvement.</p>
             </div>
             <div class="space-y-6">
                 <h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Personalised Learning</h4>
@@ -1671,7 +1865,7 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-6 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm font-medium">
-            <p>©2025-2026 Smartmeister Learning. All rights reserved.</p> <p>     Built for parents that want more peace of mind when concerning about their kids future</p>
+            <p>©2025-2026 Smartmeister Learning. All rights reserved.</p> <p>     Built for parents that want more peace of mind in view of their kids future</p>
             <div class="flex gap-8">
                 <!-- <a href="#" class="hover:text-white transition">Twitter</a> -->
                 <a href="https://www.linkedin.com/company/smartmeister" class="hover:text-white transition">LinkedIn</a>
