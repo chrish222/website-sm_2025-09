@@ -1,0 +1,1917 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Smartmeister - Adaptive Learning that boosts individual growth and grade improvement</title>
+	<link rel="icon" type="image/x-icon" href="/smartmeister-favicon.png">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Gochi+Hand&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=school,play_arrow,play_circle,star,arrow_forward,volume_up,trending_up,emoji_people,editor_choice,child_hat,menu_book,spellcheck,article_person,spatial_audio,voice_selection,ear_sound,trophy,mindfulness,rewarded_ads,g_translate,rocket,check_circle,star,favorite,thumb_up&display=block" rel="stylesheet"> -->
+	 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward,article,check_circle,child_care,cognition,ear_sound,editor_choice,emoji_people,favorite,g_translate,hub,menu_book,mindfulness,person,play_arrow,play_circle,rewarded_ads,rocket,school,spatial_audio,spellcheck,star,thumb_up,trending_up,voice_selection,volume_up&display=block" rel="stylesheet"> 
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"> -->
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: {
+						sans: ['Plus Jakarta Sans', 'sans-serif'],
+						hand: ['Gochi Hand', 'cursive'],
+					},
+					colors: {
+						primary: '#2e2195',
+						'brand-yellow': '#FFD64A',
+						'brand-accent': '#FF4D4D',
+						'pastel-blue': '#E0F2FE',
+						'pastel-green': '#DCFCE7',
+						'pastel-purple': '#F3E8FF',
+						'light-bg': '#FFFDF4',
+						brandDeep: '#0d0b21',
+						pastelOrange: '#FFF7ED',
+						pastelPink: '#FCE7F3',
+						vermillion: '#E34234'
+					},
+					borderRadius: {
+					  '4xl': '2rem',
+					  '5xl': '3rem',
+				  }
+				}
+			}
+		}
+	</script>
+	<style>
+	* {
+	  font-variant-ligatures: none;
+	}
+		.material-symbols-outlined {
+			font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+		}
+		.bg-brandYellow {
+		  --tw-bg-opacity: 1;
+		  background-color: rgb(255 214 74 / var(--tw-bg-opacity, 1));
+	  }
+		.hand-divider {
+		  height: 12px;
+		  background: url("data:image/svg+xml,%3Csvg width='1200' height='12' viewBox='0 0 1200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23FF4D4D' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+		  background-repeat: repeat-x;
+	  }
+		@keyframes float {
+			0%, 100% { transform: translateY(0); }
+			50% { transform: translateY(-10px); }
+		}
+		.float-anim { animation: float 3s ease-in-out infinite; }
+		
+		.hero-bg {
+		  background: linear-gradient(135deg, #FFD64A 0%, #FFF4CC 100%);
+	  }
+	  
+	  .marker-text {
+		  font-family: 'Gochi Hand', cursive;
+		  color: #FF4D4D;
+		  line-height: 1.1;
+	  }
+	  
+	  .section-yellow-image-fix {
+	  outline-offset: -5px;
+	  outline: 7px solid #fcde72;
+	  outline-color: #fcde72; }
+
+	  .video-overlay {
+		  position: absolute;
+		  top: 20px;
+		  right: 20px;
+		  padding: 12px 20px;
+		  border-radius: 16px;
+		  font-weight: 700;
+		  font-size: 0.875rem;
+		  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+		  z-index: 10;
+		  display: none;
+		  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	  }
+
+	  @keyframes popIn {
+		  from { transform: scale(0.8); opacity: 0; }
+		  to { transform: scale(1); opacity: 1; }
+	  }
+	  
+	  @keyframes pulsate-red {
+		0%, 100% { outline: 2px solid rgba(239, 68, 68, 0); outline-offset: 0px; }
+		50% { outline: 6px solid rgba(239, 68, 68, 0.4); outline-offset: 4px; }
+	}
+
+	.pulse-highlight {
+		animation: pulsate-red 1s ease-in-out 3; /* 3 seconds total */
+	}
+
+	  .thumbnail-active {
+		  outline: 3px solid #374151; /* dark-grey outline */
+		  outline-offset: 2px;
+		  opacity: 1 !important;
+		  animation: none !important; /* Stop pulse if user clicks it */
+	  }
+
+	  .tooltip {
+		  position: absolute;
+		  bottom: 120%;
+		  left: 50%;
+		  transform: translateX(-50%);
+		  background: #1f2937;
+		  color: white;
+		  padding: 6px 12px;
+		  border-radius: 8px;
+		  font-size: 0.75rem;
+		  white-space: nowrap;
+		  opacity: 0;
+		  visibility: hidden;
+		  transition: all 0.2s ease;
+		  pointer-events: none;
+		  z-index: 20;
+	  }
+
+	  .tooltip::after {
+		  content: '';
+		  position: absolute;
+		  top: 100%;
+		  left: 50%;
+		  margin-left: -5px;
+		  border-width: 5px;
+		  border-style: solid;
+		  border-color: #1f2937 transparent transparent transparent;
+	  }
+
+	  .thumbnail-btn:hover .tooltip {
+		  opacity: 1;
+		  visibility: visible;
+		  bottom: 110%;
+	  }
+
+	  /* Custom SVG arrows and doodles */
+	  .doodle-arrow-1 {
+		  width: 80px;
+		  height: 60px;
+		  transform: rotate(-10deg);
+	  }
+	  /* custom Tailwind */
+	  .max-w-8xl {
+	  max-width: 90rem;
+	  }
+		
+		/* Hide scrollbar for cleaner look */
+		::-webkit-scrollbar { width: 8px; }
+		::-webkit-scrollbar-track { background: #f1f1f1; }
+		::-webkit-scrollbar-thumb { background: #2e2195; border-radius: 10px; }
+		::-webkit-scrollbar-thumb:hover { background: #1a135a; }
+	</style>
+<!--<script type="importmap">
+{
+  "imports": {
+	"react": "https://esm.sh/react@^19.2.3",
+	"react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>-->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="ce1868df-8948-49af-902f-7e5d205b3ee9"></script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="font-sans text-slate-900 overflow-x-hidden selection:bg-brand-yellow">
+
+	<!-- NAVIGATION -->
+	<nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
+		<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+			<div class="text-2xl font-extrabold tracking-tight text-primary flex items-center">
+			   <a href="./index.html" title="Home" class="no-underline">
+				Smart<span class="text-brand-accent">|</span>meister
+			  </a>
+			</div>
+			<div class="hidden md:flex items-center gap-8">
+				<a href="#features" class="font-semibold hover:text-primary transition">Features</a>
+				<a href="./sm_howitworks.html" class="font-semibold hover:text-primary transition">How it works</a>
+				<a href="#granular_metrics" class="font-semibold hover:text-primary transition">Learning progress</a>
+				<a href="#waitlist" class="bg-primary text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20">
+					Join the waitlist
+				</a>
+			</div>
+			<button class="md:hidden">
+				<span class="material-symbols-outlined text-3xl"></span>
+				<a href="#waitlist" class="bg-primary text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20">
+				  Join the waitlist
+			  </a>
+			</button>
+		</div>
+	</nav>
+
+	<main class="pt-20">
+		<!-- HERO SECTION -->
+		<section class="relative bg-brand-yellow pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
+			<div class="max-w-7xl md:p-12 lg:p-16  md:max-w-screen-2xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center md:items-start lg:items-center md:grid-cols-[40%_60%] lg:grid-cols-[50%_50%]">
+				<div class="space-y-8 z-10">
+				  
+					<h1 class="relative text-5xl md:text-4xl lg:text-7xl font-extrabold text-primary leading-[1.1] 
+					 before:content-['German_primary_school_curriculum_aligned'] 
+					 before:absolute before:-top-16 before:-left-12 md:before:-top-20 md:before:-left-14 2xl:before:-left-24 
+					 before:w-64 before:h-24 before:flex before:items-center before:justify-center 
+					 before:text-center before:-rotate-2 md:before:-rotate-12 before:font-hand before:text-brand-accent 
+					 before:font-bold before:text-xl md:before:text-2xl xl:before:text-3xl before:leading-4 sm:before:leading-6 before:tracking-wide before:z-10">
+					  <!-- <div class="relative z-0 top-12 left-32 w-48 h-48 rounded-full flex items-center justify-center">
+						<span class="font-hand text-brand-accent font-bold text-xl md:text-xl flex items-center justify-center text-center -rotate-12">German primary school curriculum aligned</span>
+					  </div>-->
+					  <!-- Adaptive learning that helps children <br /> -->
+						Adaptive learning that helps master <br />
+						<span class="text-slate-900">subjects or catch up quickly</span>
+					</h1>
+					<p class="text-lg md:text-xl text-slate-800/80 max-w-lg leading-relaxed font-bold">
+						Built on adaptive exercises Smartmeister helps different types of learners master subjects, tackle proficiency gaps &amp; challenges independently.
+					</p>
+					<!-- ORIGINAL BUBBLE FEATURE POINTS
+					  <div class="space-y-4">
+						<div class="flex items-center gap-3 bg-blue-100 p-3 rounded-xl border-white/40 w-fit backdrop-blur-sm">
+							<span class="material-symbols-outlined text-slate-800">school</span>
+							<span class="font-bold text-slate-800">Deep learning based on teacher insights</span>
+						</div>
+						<div class="flex items-center gap-3 bg-lime-100 p-3 rounded-xl border-white/40 w-fit backdrop-blur-sm">
+							<span class="material-symbols-outlined text-slate-800">trending_up</span>
+							<span class="font-bold text-slate-800">Tools that aid comprehension and pronunciation</span>
+						</div>
+						<div class="flex items-center gap-3 bg-rose-100 p-3 rounded-xl border-white/40 w-fit backdrop-blur-sm">
+						  <span class="material-symbols-outlined text-slate-800"">emoji_people</span>
+						  <span class="font-bold text-slate-800">German primary school curriculum aligned</span>
+					  </div>
+					-->
+					<a href="#waitlist" class="hidden md:inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-105 transition shadow-xl shadow-primary/20">
+					  Get access early. Join our waiting list
+					  <span class="material-symbols-outlined">arrow_forward</span>
+				  </a>
+					<div class="space-y-1 flex-col md:hidden lg:flex">
+						<div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
+							<span class="material-symbols-outlined text-primary">school</span>
+							<span class="font-bold text-primary text-base xl:text-lg">Deep learning that aligns to abilities</span> 
+						</div>
+						<div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
+							<span class="material-symbols-outlined text-primary">trending_up</span>
+							<span class="font-bold text-primary text-base xl:text-lg">Exercises that aid listening &amp; pronunciation</span>
+						</div>
+						<div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
+						  <span class="material-symbols-outlined text-primary">emoji_people</span>
+						  <span class="font-bold text-primary text-base xl:text-lg">Lower gamification & screen time</span>
+					  </div>
+					</div>
+					<a href="#waitlist" class="inline-flex md:hidden items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-105 transition shadow-xl shadow-primary/20 ">
+						Get access early. Join our waiting list
+						<span class="material-symbols-outlined">arrow_forward</span>
+					</a>
+				</div>
+
+				<div class="relative">
+					<div class="relative z-10 rounded-[40px] overflow-hidden shadow-2xl -ml-4 -mr-4 md:ml-auto md:mr-auto border-[3px] md:border-[12px] border-white/30 aspect-3/2 md:aspect-auto lg:aspect-auto">
+						<!-- <img src="./images/sm_header-img_kids.png" alt="Kids learning" class="w-full h-full object-cover"> -->
+						<!-- <img src="./images/dashboard_exercise_mascot_robot_on_rocket_with_backpack_512x512.jpg" alt="Smarter learning" class="w-full h-full object-cover"> -->
+						<svg viewBox="0 0 800 520" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" class="w-full h-full object-cover mt-3" style="transform: scale(1.1);">
+						  <defs>
+							  <!-- Background Gradients (Vertical Top-to-Bottom) -->
+							  <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+								  <stop offset="0%" stop-color="#F4F9FF" />
+								  <stop offset="100%" stop-color="#C8DBFA" />
+							  </linearGradient>
+					  
+							  <!-- Drop Shadows & Glows -->
+							  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+								  <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#94A3B8" flood-opacity="0.25"/>
+							  </filter>
+							  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+								  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+								  <feMerge>
+									  <feMergeNode in="coloredBlur"/>
+									  <feMergeNode in="SourceGraphic"/>
+								  </feMerge>
+							  </filter>
+							  <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+								  <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+								  <feMerge>
+									  <feMergeNode in="coloredBlur"/>
+									  <feMergeNode in="SourceGraphic"/>
+								  </feMerge>
+							  </filter>
+							  
+							  <!-- Animated Flow Icons (Material Symbols Inspired) - Scaled 200% -->
+							  <g id="sym-speech-stars" transform="translate(-32, -32) scale(2.66)">
+								  <!-- Bubble Base (Widened to fit larger stars) -->
+								  <rect x="-1" y="2" width="26" height="15" rx="4" fill="#FFFFFF" filter="url(#shadow)"/>
+								  <polygon points="12,17 8,22 10,17" fill="#FFFFFF" />
+								  
+								  <!-- Three enlarged stars (Scale increased from 0.6 to 0.85) -->
+								  <!-- Star 1 (Yellow) -->
+								  <g transform="translate(4.5, 9.5) scale(0.85)">
+									  <path d="M0 -4 L1.17 -1.38 L4 -1.38 L1.7 0.38 L2.58 3.12 L0 1.38 L-2.58 3.12 L-1.7 0.38 L-4 -1.38 L-1.17 -1.38 Z" fill="#F2C94C" />
+								  </g>
+								  <!-- Star 2 (Yellow) -->
+								  <g transform="translate(12, 9.5) scale(0.85)">
+									  <path d="M0 -4 L1.17 -1.38 L4 -1.38 L1.7 0.38 L2.58 3.12 L0 1.38 L-2.58 3.12 L-1.7 0.38 L-4 -1.38 L-1.17 -1.38 Z" fill="#F2C94C" />
+								  </g>
+								  <!-- Star 3 (Gray) -->
+								  <g transform="translate(19.5, 9.5) scale(0.85)">
+									  <path d="M0 -4 L1.17 -1.38 L4 -1.38 L1.7 0.38 L2.58 3.12 L0 1.38 L-2.58 3.12 L-1.7 0.38 L-4 -1.38 L-1.17 -1.38 Z" fill="#CBD5E1" />
+								  </g>
+								  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#678758" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+							  </g>
+					  
+							  <g id="sym-star" transform="translate(-32, -32) scale(2.66)">
+								  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#F2C94C" filter="url(#glow)"/>
+								  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#D9A406" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+							  </g>
+					  
+							  <g id="sym-stressed" transform="translate(-32, -32) scale(2.66)">
+								  <circle cx="12" cy="12" r="10" fill="#EB5757" filter="url(#glow)"/>
+								  <path d="M7 8l2 2l-2 2 M17 8l-2 2l2 2 M8 16l2-1l2 1l2-1l2 1" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#EB5757" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+							  </g>
+					  
+							  <g id="sym-trending-up" transform="translate(-32, -32) scale(2.66)">
+								  <rect x="2" y="2" width="20" height="20" rx="4" fill="#9B89FF" filter="url(#glow)"/>
+								  <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="#FFF"/>
+								  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#9B89FF" text-anchor="middle" letter-spacing="0.2px">INSIGHT</text>
+							  </g>
+					  
+							  <g id="sym-mindfulness" transform="translate(-32, -32) scale(2.66)">
+								  <!-- Clean Person Bust for Mindfulness -->
+								  <path d="M12 11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#9B89FF" filter="url(#glow)"/>
+								  <!-- Insight Spark in head -->
+								  <circle cx="12" cy="7" r="1.5" fill="#FFF"/>
+								  <path d="M12 4 L12 5.5 M12 8.5 L12 10 M9.5 7 L10.5 7 M13.5 7 L14.5 7 M10.2 5.2 L11 6 M13.8 5.2 L13 6 M10.2 8.8 L11 8 M13.8 8.8 L13 8" stroke="#FFF" stroke-width="0.8" stroke-linecap="round"/>
+								  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#9B89FF" text-anchor="middle" letter-spacing="0.2px">INSIGHT</text>
+							  </g>
+					  
+							  <g id="sym-sheet-green" transform="translate(-32, -32) scale(2.66)">
+								  <rect x="4" y="2" width="16" height="20" rx="2" fill="#56AB2F" filter="url(#glow)"/>
+								  <path d="M7 6h10v2H7zm0 4h10v2H7zm0 4h6v2H7z" fill="#FFF"/>
+								  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#56AB2F" text-anchor="middle" letter-spacing="0.2px">EXERCISE</text>
+							  </g>
+							  
+							  <g id="sym-sheet-yellow" transform="translate(-32, -32) scale(2.66)">
+								  <rect x="4" y="2" width="16" height="20" rx="2" fill="#F2C94C" filter="url(#glow)"/>
+								  <path d="M7 6h10v2H7zm0 4h10v2H7zm0 4h6v2H7z" fill="#FFF"/>
+								  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#D9A406" text-anchor="middle" letter-spacing="0.2px">EXERCISE</text>
+							  </g>
+							  
+							  <g id="sym-sheet-red" transform="translate(-32, -32) scale(2.66)">
+								  <rect x="4" y="2" width="16" height="20" rx="2" fill="#EB5757" filter="url(#glow)"/>
+								  <path d="M7 6h10v2H7zm0 4h10v2H7zm0 4h6v2H7z" fill="#FFF"/>
+								  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#EB5757" text-anchor="middle" letter-spacing="0.2px">EXERCISE</text>
+							  </g>
+						  </defs>
+					  
+						  <style>
+							  .text-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 24px; fill: #1E293B; letter-spacing: 1px; }
+							  .text-subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 14px; fill: #64748B; }
+							  .text-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 11px; fill: #64748B; letter-spacing: 1.5px; }
+							  .text-value { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 14px; fill: #334155; }
+							  .text-bubble { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 12px; fill: #FFFFFF; }
+							  .text-value-xl { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 24px; fill: #334155; }
+							  
+							  .blink {
+								  transform-origin: 400px 395px;
+								  animation: blinker 4s infinite;
+							  }
+							  @keyframes blinker {
+								  0%, 90% { transform: scaleY(1); }
+								  95% { transform: scaleY(0.1); }
+								  100% { transform: scaleY(1); }
+							  }
+						  </style>
+					  
+						  <!-- Background -->
+						  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+					  
+						  <!-- Top Titles -->
+						  <text x="400" y="40" class="text-title" text-anchor="middle">ADAPTIVE LEARNING</text>
+						  <text x="400" y="62" class="text-subtitle" text-anchor="middle">Difficulty based on performance</text>
+					  
+						  <!-- Base Connection Paths (Passive Data Flow) -->
+						  <g stroke="#CBD5E1" stroke-width="3" stroke-dasharray="8 8" fill="none">
+							  <path d="M 400 400 Q 650 400 650 150">
+								  <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1.5s" repeatCount="indefinite"/>
+							  </path>
+							  <path d="M 650 150 Q 400 50 150 150">
+								  <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1.5s" repeatCount="indefinite"/>
+							  </path>
+							  <path d="M 150 150 Q 150 400 400 400">
+								  <animate attributeName="stroke-dashoffset" from="16" to="0" dur="1.5s" repeatCount="indefinite"/>
+							  </path>
+						  </g>
+					  
+						  <!-- Data Flow (Animated Icons - Discrete Appearance) -->
+						  
+						  <!-- 1. Engine -> User (Yellow Normal Task) -->
+						  <use href="#sym-sheet-yellow">
+							  <animateMotion dur="24s" repeatCount="indefinite" path="M 150 150 Q 150 400 400 400" keyTimes="0; 0.05; 0.15; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+							  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.05; 0.15; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+						  </use>
+					  
+						  <!-- 2. User -> Tracker (Eval 1: Stressed / Friction) -->
+						  <use href="#sym-stressed">
+							  <animateMotion dur="24s" repeatCount="indefinite" path="M 400 400 Q 650 400 650 150" keyTimes="0; 0.15; 0.25; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+							  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.15; 0.25; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+						  </use>
+					  
+						  <!-- 3. Tracker -> Engine (Eval 1 Mindfulness Insight) -->
+						  <use href="#sym-mindfulness">
+							  <animateMotion dur="24s" repeatCount="indefinite" path="M 650 150 Q 400 50 150 150" keyTimes="0; 0.30; 0.40; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+							  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.30; 0.40; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+						  </use>
+					  
+						  <!-- 4. Engine -> User (Green Easy Task) -->
+						  <use href="#sym-sheet-green">
+							  <animateMotion dur="24s" repeatCount="indefinite" path="M 150 150 Q 150 400 400 400" keyTimes="0; 0.45; 0.55; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+							  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.45; 0.55; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+						  </use>
+					  
+						  <!-- 5. User -> Tracker (Eval 2: Speech Bubble / Partial Mastery) -->
+						  <use href="#sym-speech-stars">
+							  <animateMotion dur="24s" repeatCount="indefinite" path="M 400 400 Q 650 400 650 150" keyTimes="0; 0.60; 0.68; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+							  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.60; 0.68; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+						  </use>
+					  
+						  <!-- 6. Tracker -> Engine (Eval 2 Trending Up) -->
+						  <use href="#sym-trending-up">
+							  <animateMotion dur="24s" repeatCount="indefinite" path="M 650 150 Q 400 50 150 150" keyTimes="0; 0.70; 0.75; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+							  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.70; 0.75; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+						  </use>
+					  
+						  <!-- 7. Engine -> User (Red Hard Task) -->
+						  <use href="#sym-sheet-red">
+							  <animateMotion dur="24s" repeatCount="indefinite" path="M 150 150 Q 150 400 400 400" keyTimes="0; 0.75; 0.80; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+							  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.75; 0.80; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+						  </use>
+					  
+						  <!-- 8. User -> Tracker (Eval 3: Full Star / Mastery) -->
+						  <use href="#sym-star">
+							  <animateMotion dur="24s" repeatCount="indefinite" path="M 400 400 Q 650 400 650 150" keyTimes="0; 0.90; 0.95; 1" keyPoints="0; 0; 1; 1" calcMode="linear" />
+							  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.90; 0.95; 1" calcMode="discrete" dur="24s" repeatCount="indefinite" />
+						  </use>
+					  
+						  <!-- NODES -->
+					  
+						  <!-- Performance Tracker Node (Top Right) -->
+						  <g>
+							  <!-- Tracker Pulse Ring -->
+							  <circle cx="650" cy="110" r="40" fill="none" stroke="#9B89FF" stroke-width="4" opacity="0">
+								  <animate attributeName="opacity" values="0; 1; 0; 0; 1; 0; 0; 1; 0; 0" keyTimes="0; 0.25; 0.35; 0.66; 0.68; 0.73; 0.93; 0.95; 1.0; 1" dur="24s" repeatCount="indefinite"/>
+								  <animate attributeName="r" values="40; 55; 40; 40; 55; 40; 40; 55; 40; 40" keyTimes="0; 0.25; 0.35; 0.66; 0.68; 0.73; 0.93; 0.95; 1.0; 1" dur="24s" repeatCount="indefinite"/>
+							  </circle>
+							  
+							  <!-- Base Box -->
+							  <rect x="580" y="70" width="140" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+							  
+							  <!-- Animated Chart Icon -->
+							  <g>
+								  <!-- Bar 1 -->
+								  <rect x="635" y="100" width="8" height="20" rx="2" fill="#9B89FF">
+									  <animate attributeName="height" values="20; 30; 15; 20; 20; 35; 20; 20" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.73; 0.76; 1" dur="24s" repeatCount="indefinite"/>
+									  <animate attributeName="y" values="100; 90; 105; 100; 100; 85; 100; 100" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.73; 0.76; 1" dur="24s" repeatCount="indefinite"/>
+								  </rect>
+								  <!-- Bar 2 -->
+								  <rect x="647" y="90" width="8" height="30" rx="2" fill="#818CF8">
+									  <animate attributeName="height" values="30; 45; 20; 30; 30; 45; 30; 30" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.72; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+									  <animate attributeName="y" values="90; 75; 100; 90; 90; 75; 90; 90" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.72; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+								  </rect>
+								  <!-- Bar 3 -->
+								  <rect x="659" y="105" width="8" height="15" rx="2" fill="#C7D2FE">
+									  <animate attributeName="height" values="15; 25; 10; 15; 15; 30; 15; 15" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.74; 0.77; 1" dur="24s" repeatCount="indefinite"/>
+									  <animate attributeName="y" values="105; 95; 110; 105; 105; 90; 105; 105" keyTimes="0; 0.25; 0.3; 0.35; 0.7; 0.74; 0.77; 1" dur="24s" repeatCount="indefinite"/>
+								  </rect>
+								  <!-- Magnifying Glass -->
+								  <circle cx="645" cy="100" r="14" fill="none" stroke="#334155" stroke-width="3" />
+								  <line x1="655" y1="110" x2="665" y2="120" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+							  </g>
+							  
+							  <text x="650" y="155" class="text-value" text-anchor="middle">PERFORMANCE</text>
+							  <text x="650" y="172" class="text-value" text-anchor="middle">TRACKER</text>
+					  
+							  <!-- Tracker Speech Bubbles -->
+							  <g opacity="0">
+								  <rect x="590" y="25" width="120" height="26" rx="13" fill="#9B89FF" filter="url(#shadow)" />
+								  <text x="650" y="43" class="text-bubble" text-anchor="middle">Analyzing...</text>
+								  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.24; 0.25; 0.35; 1" dur="24s" repeatCount="indefinite"/>
+							  </g>
+							  <g opacity="0">
+								  <rect x="590" y="25" width="120" height="26" rx="13" fill="#9B89FF" filter="url(#shadow)" />
+								  <text x="650" y="43" class="text-bubble" text-anchor="middle">Assessing...</text>
+								  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.67; 0.68; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+							  </g>
+							  <g opacity="0">
+								  <rect x="590" y="25" width="120" height="26" rx="13" fill="#9B89FF" filter="url(#shadow)" />
+								  <text x="650" y="43" class="text-bubble" text-anchor="middle">Mastery!</text>
+								  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.94; 0.95; 1.0; 1" dur="24s" repeatCount="indefinite"/>
+							  </g>
+						  </g>
+					  
+						  <!-- Learning Engine Node (Top Left) -->
+						  <g>
+							  <!-- Engine Pulse Ring -->
+							  <circle cx="150" cy="110" r="40" fill="none" stroke="#4FACFE" stroke-width="4" opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 0; 0; 1; 0; 0" keyTimes="0; 0.38; 0.40; 0.50; 0.73; 0.75; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+								  <animate attributeName="r" values="40; 40; 55; 40; 40; 55; 40; 40" keyTimes="0; 0.38; 0.40; 0.50; 0.73; 0.75; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+							  </circle>
+							  
+							  <!-- Base Box -->
+							  <rect x="80" y="70" width="140" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+							  
+							  <!-- Tech AI Icon -->
+							  <g>
+								  <polygon points="150,90 167,100 167,120 150,130 133,120 133,100" fill="none" stroke="#4FACFE" stroke-width="3"/>
+								  <circle cx="150" cy="110" r="8" fill="#4FACFE" filter="url(#glow)">
+									  <animate attributeName="r" values="8; 12; 8; 8; 12; 8; 8" keyTimes="0; 0.40; 0.50; 0.73; 0.75; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+								  </circle>
+								  <!-- Circuit Lines -->
+								  <line x1="150" y1="90" x2="150" y2="80" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+								  <line x1="167" y1="100" x2="177" y2="94" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+								  <line x1="167" y1="120" x2="177" y2="126" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+								  <line x1="150" y1="130" x2="150" y2="140" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+								  <line x1="133" y1="120" x2="123" y2="126" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+								  <line x1="133" y1="100" x2="123" y2="94" stroke="#4FACFE" stroke-width="3" stroke-linecap="round"/>
+							  </g>
+							  
+							  <text x="150" y="155" class="text-value" text-anchor="middle">LEARNING</text>
+							  <text x="150" y="172" class="text-value" text-anchor="middle">ENGINE</text>
+					  
+							  <!-- Engine Speech Bubbles -->
+							  <!-- Easy Bubble -->
+							  <g opacity="0">
+								  <rect x="90" y="25" width="120" height="26" rx="13" fill="#56AB2F" filter="url(#shadow)" />
+								  <text x="150" y="43" class="text-bubble" text-anchor="middle">Adjust: Easier</text>
+								  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.42; 0.43; 0.55; 1" dur="24s" repeatCount="indefinite"/>
+								  <animateTransform attributeName="transform" type="translate" values="0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.42; 0.43; 0.55; 1" dur="24s" repeatCount="indefinite" />
+							  </g>
+							  <!-- Hard Bubble -->
+							  <g opacity="0">
+								  <rect x="90" y="25" width="120" height="26" rx="13" fill="#EB5757" filter="url(#shadow)" />
+								  <text x="150" y="43" class="text-bubble" text-anchor="middle">Adjust: Harder</text>
+								  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.72; 0.73; 0.82; 1" dur="24s" repeatCount="indefinite"/>
+								  <animateTransform attributeName="transform" type="translate" values="0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.72; 0.73; 0.82; 1" dur="24s" repeatCount="indefinite" />
+							  </g>
+						  </g>
+					  
+						  <!-- User / Core Student Node (Center) -->
+						  <g>
+							  <!-- Adaptive Aura -->
+							  <circle cx="400" cy="400" r="50" fill="#F2C94C" opacity="0.15" filter="url(#strongGlow)">
+								  <animate attributeName="fill" values="#F2C94C; #F2C94C; #56AB2F; #56AB2F; #EB5757; #EB5757; #F2C94C" keyTimes="0; 0.50; 0.51; 0.75; 0.76; 0.99; 1" dur="24s" repeatCount="indefinite"/>
+								  <animate attributeName="r" values="50; 65; 50; 50; 70; 50; 50; 80; 50; 50" keyTimes="0; 0.15; 0.20; 0.54; 0.55; 0.60; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite"/>
+							  </circle>
+					  
+							  <!-- Tech Orbits representing active learning state -->
+							  <ellipse cx="400" cy="400" rx="45" ry="12" fill="none" stroke="#4FACFE" stroke-width="2" opacity="0.6">
+								  <animateTransform attributeName="transform" type="rotate" from="0 400 400" to="360 400 400" dur="5s" repeatCount="indefinite" />
+							  </ellipse>
+							  <ellipse cx="400" cy="400" rx="12" ry="45" fill="none" stroke="#4FACFE" stroke-width="2" opacity="0.6">
+								  <animateTransform attributeName="transform" type="rotate" from="360 400 400" to="0 400 400" dur="7s" repeatCount="indefinite" />
+							  </ellipse>
+					  
+							  <!-- Expanding Completion Rings -->
+							  <!-- Normal Completion -->
+							  <circle cx="400" cy="400" r="30" fill="none" stroke="#F2C94C" stroke-width="6" opacity="0">
+								  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0; 0.15; 0.20; 1" dur="24s" repeatCount="indefinite"/>
+								  <animate attributeName="r" values="30; 60; 70; 70" keyTimes="0; 0.15; 0.20; 1" dur="24s" repeatCount="indefinite"/>
+							  </circle>
+							  <!-- Easy Completion -->
+							  <circle cx="400" cy="400" r="30" fill="none" stroke="#56AB2F" stroke-width="6" opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.54; 0.55; 0.60; 1" dur="24s" repeatCount="indefinite"/>
+								  <animate attributeName="r" values="30; 30; 60; 75; 75" keyTimes="0; 0.54; 0.55; 0.60; 1" dur="24s" repeatCount="indefinite"/>
+							  </circle>
+							  <!-- Hard Completion (Big effect) -->
+							  <circle cx="400" cy="400" r="30" fill="none" stroke="#EB5757" stroke-width="8" opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite"/>
+								  <animate attributeName="r" values="30; 30; 70; 100; 100" keyTimes="0; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite"/>
+							  </circle>
+					  
+							  <!-- Effects Elements: Lightbulb & Graduation Cap -->
+							  <!-- Lightbulb (Pops up at 0.56 after Green task arrives) -->
+							  <g opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.55; 0.56; 0.63; 0.64; 1" dur="24s" repeatCount="indefinite" />
+								  <animateTransform attributeName="transform" type="translate" values="0 10; 0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.55; 0.56; 0.63; 0.64; 1" dur="24s" repeatCount="indefinite" />
+								  <g transform="translate(400, 325) scale(1.3)">
+									  <path d="M 0 -12 C -6 -12 -10 -8 -10 -2 C -10 2 -7 5 -6 8 L 6 8 C 7 5 10 2 10 -2 C 10 -8 6 -12 0 -12 Z" fill="#F2C94C" filter="url(#glow)"/>
+									  <rect x="-4" y="9" width="8" height="4" rx="1" fill="#CBD5E1" />
+									  <path d="M -2 14 L 2 14 L 1 16 L -1 16 Z" fill="#94A3B8" />
+									  <path d="M -3 -2 C -1 -5 1 -5 3 -2" stroke="#FFF" stroke-width="1.5" fill="none" />
+									  <line x1="0" y1="-15" x2="0" y2="-19" stroke="#F2C94C" stroke-width="2" stroke-linecap="round"/>
+									  <line x1="-12" y1="-12" x2="-15" y2="-15" stroke="#F2C94C" stroke-width="2" stroke-linecap="round"/>
+									  <line x1="12" y1="-12" x2="15" y2="-15" stroke="#F2C94C" stroke-width="2" stroke-linecap="round"/>
+								  </g>
+							  </g>
+					  
+							  <!-- Graduation Cap (Pops up at 0.85 before Full Star launches) -->
+							  <g opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.84; 0.85; 0.98; 0.99; 1" dur="24s" repeatCount="indefinite" />
+								  <animateTransform attributeName="transform" type="translate" values="0 10; 0 10; 0 0; 0 0; 0 -10; 0 -10" keyTimes="0; 0.84; 0.85; 0.98; 0.99; 1" dur="24s" repeatCount="indefinite" />
+								  <g transform="translate(400, 335) scale(1.2)">
+									  <polygon points="0,-10 -18,-2 0,6 18,-2" fill="#1E293B" filter="url(#shadow)"/>
+									  <polygon points="-10,2 10,2 8,10 -8,10" fill="#334155" />
+									  <line x1="0" y1="-2" x2="14" y2="4" stroke="#F2C94C" stroke-width="1.5" />
+									  <circle cx="0" cy="-2" r="2" fill="#F2C94C" />
+									  <line x1="14" y1="4" x2="14" y2="12" stroke="#F2C94C" stroke-width="2" />
+									  <line x1="13" y1="12" x2="12" y2="15" stroke="#F2C94C" stroke-width="1" />
+									  <line x1="14" y1="12" x2="14" y2="15" stroke="#F2C94C" stroke-width="1" />
+									  <line x1="15" y1="12" x2="16" y2="15" stroke="#F2C94C" stroke-width="1" />
+								  </g>
+							  </g>
+					  
+							  <!-- Core Avatar Body -->
+							  <circle cx="400" cy="400" r="30" fill="#4FACFE" filter="url(#shadow)">
+								  <animate attributeName="r" values="30; 36; 30; 30; 38; 30; 30; 45; 30; 30" keyTimes="0; 0.15; 0.20; 0.54; 0.55; 0.60; 0.79; 0.80; 0.86; 1" dur="24s" repeatCount="indefinite" />
+							  </circle>
+					  
+							  <!-- Whimsical Face -->
+							  <g class="blink">
+								  <circle cx="388" cy="396" r="3" fill="#FFF" />
+								  <circle cx="412" cy="396" r="3" fill="#FFF" />
+								  <path d="M 388 406 Q 400 416 412 406" stroke="#FFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+							  </g>
+							  
+							  <!-- Label -->
+							  <text x="400" y="465" class="text-value" fill="#4FACFE" text-anchor="middle">STUDENT</text>
+						  </g>
+					  
+						  <!-- Center Dashboard (Explains the loop) -->
+						  <g transform="translate(260, 210)">
+							  <!-- <rect width="280" height="74" rx="12" fill="#FFFFFF" filter="url(#shadow)" /> -->
+							  <!-- <text x="20" y="26" class="text-label">LEARNING TRAJECTORY</text> -->
+							  
+							  <!-- Baseline Phase (0-45%) -->
+							  <g>
+								  <animate attributeName="opacity" values="1; 1; 0; 0; 0" keyTimes="0; 0.44; 0.45; 0.99; 1" dur="24s" repeatCount="indefinite"/>
+								  <circle cx="10" cy="48" r="6" fill="#F2C94C" filter="url(#glow)"/>
+								  <text x="30" y="53" class="text-value-xl">1. Baseline Evaluation</text>
+							  </g>
+							  <!-- Adaptation Phase (45-75%) -->
+							  <g opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.44; 0.45; 0.74; 0.75; 1" dur="24s" repeatCount="indefinite"/>
+								  <circle cx="1" cy="48" r="6" fill="#56AB2F" filter="url(#glow)"/>
+								  <text x="21" y="53" class="text-value-xl">2. Gap Detected: Adapting</text>
+							  </g>
+							  <!-- Mastery Phase (75-100%) -->
+							  <g opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.74; 0.75; 0.99; 1" dur="24s" repeatCount="indefinite"/>
+								  <circle cx="1" cy="48" r="6" fill="#EB5757" filter="url(#glow)"/>
+								  <text x="21" y="53" class="text-value-xl">3. Subject Improvement</text>
+							  </g>
+						  </g>
+					  
+					  </svg>
+					</div>
+					
+					<!-- <div class="absolute bg-primary -bottom-10 -left-6 md:-left-12 p-6 rounded-3xl shadow-2xl max-w-[280px] z-20 float-anim"> -->
+					<div class="absolute hidden lg:block bg-primary -bottom-24 -left-2 sm:-left-12 sm:-bottom-20 p-3 md:p-6 rounded-3xl shadow-2xl max-w-full md:max-w-[280px] z-40 md:float-anim">
+						<div class="flex gap-1 text-brand-yellow mb-3 hidden lg:block">
+							<span class="material-symbols-outlined text-xxl">star</span>
+							<span class="material-symbols-outlined text-xxl">star</span>
+							<span class="material-symbols-outlined text-xxl">star</span>
+							<span class="material-symbols-outlined text-xxl">star</span>
+							<span class="material-symbols-outlined text-xxl">star</span>
+						</div>
+						<p class="text-white font-medium text-lg md:text-xl">
+							Improve grades, grow confidence, reduce frustration. A real time-saver for parents. 
+							<!-- Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades -->
+						</p>
+					</div>
+					<div class="absolute block lg:hidden -bottom-20 md:-bottom-28 lg:-bottom-24 left-4 sm:-bottom-20 p-3 md:p-3 max-w-full md:max-w z-40">
+					  <p class="font-hand text-brand-accent font-bold text-lg md:text-xl">
+						  Improve grades, grow confidence, reduce frustration. A real time-saver for parents. 
+						  <!-- Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades -->
+					  </p>
+					</div>
+				</div>
+				
+			</div>
+			<div class="space-y-4 gap-4 items-end hidden md:flex lg:hidden px-12">
+			  <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
+				  <span class="material-symbols-outlined text-primary text-4xl">school</span>
+				  <span class="font-bold text-primary text-lg xl:text-lg">Deep learning that aligns to abilities</span> 
+			  </div>
+			  <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
+				  <span class="material-symbols-outlined text-primary text-4xl">trending_up</span>
+				  <span class="font-bold text-primary text-lg xl:text-lg">Exercises that aid listening and pronunciation</span>
+			  </div>
+			  <div class="flex items-center gap-3 p-0 rounded-xl w-fit backdrop-blur-sm">
+				<span class="material-symbols-outlined text-primary text-4xl">emoji_people</span>
+				<span class="font-bold text-primary text-lg xl:text-lg">Lower gamification & screen time</span>
+			  </div>
+			</div>
+			<div class="absolute hidden md:block top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -mr-64 -mt-64"></div>
+			<div class="absolute hidden md:block bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><div class="w-6 h-10 border-2 border-white/90 rounded-full flex justify-center pt-2"><div class="w-2 h-3 bg-white rounded-full"></div></div></div>
+		</section>
+
+		<!-- FEATURE SECTION -->
+		<section id="features" class="py-24 bg-white">
+			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+				<div class="bg-pastel-blue p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
+					<div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/maths-card.png"></div>
+					<h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Deep learning that adapts to ability &amp; progress</h3>
+					<p class="text-slate-600 leading-relaxed font-medium">Exercises adapt based on strengths and weaknesses. Easier exercises for struggling learners, harder ones for strong learners</p>
+				</div>
+				<div class="bg-pastel-green p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
+					<div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/flexible-family.png"></div>
+					<h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Detailed analytics keep parents in the loop </h3>
+					<p class="text-slate-600 leading-relaxed font-medium">Gain insights where struggle persists and measurable learning progress happens. <br>➜ Less babysitting for parents</p>
+				</div>
+				<div class="bg-pastel-purple p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">
+					<div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/german-card.png"></div>
+					<h3 class="text-2xl font-extrabold text-slate-900 leading-tight">Exercises built around easy comprehension</h3>
+					<p class="text-slate-600 leading-relaxed font-medium">Reduced frustration due to easier understanding of tasks and clear solution pathways, whether with videos or read-aloud audio.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- VIDEO SECTION #1 -->
+		<section id="how-it-works" class="py-24 overflow-hidden">
+			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+				<div class="space-y-6">
+					<span class="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">PERSONALISED LEARNING</span>
+					<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Exercise difficulty adapts to child’s ability and progress</h2>
+					<p class="text-lg leading-relaxed text-slate-600">Children learn at their own pace with multi-modal exercises that adapt to ability and learning progress. No child is left behind.</p>
+				</div>
+				<div class="relative">
+					<div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
+						<video data-autoplay src="./videos_sm-downsized/sm_exercise_adaptive-short_de.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+						<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
+							<span class="material-symbols-outlined text-6xl text-white hidden">play_circle</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- VIDEO SECTION #2 -->
+		<section class="py-24 overflow-hidden">
+			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+				<div class="space-y-6 md:order-2">
+					<span class="bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">INDEPENDENT MASTERY</span>
+					<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children get the tools to overcome difficulties on their own</h2>
+					<p class="text-lg leading-relaxed text-slate-600">Easy-to-grasp explanations, videos, hints and solution examples aid children to overcome challenges on their own. Explanations can also be read aloud (text to speech).</p>
+				</div>
+				<div class="relative md:order-1">
+					<div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
+						<video data-autoplay src="./videos_sm-downsized/sm_exercise_solutionpanel.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+					</div>
+					<div class="absolute -bottom-20 left-1/2 -translate-x-1/2 text-center w-full">
+					  <svg width="60" height="140" viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg" style="display: block; pointer-events: none; transform: rotate(224deg) scaleY(1.5) translateY(10px);" class="mx-auto w-12 h-12 text-brand-accent -rotate-12" fill="none" stroke="currentColor">
+<!-- Definition of the 'Wobble' filter to simulate hand-drawing -->
+<defs>
+  <filter id="hand-drawn-roughness">
+	<feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
+	<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+  </filter>
+</defs>
+
+<!-- 
+  The Arrow Path 
+  - Filled with a distinct Red (#D32F2F)
+  - Uses the filter defined above
+  - Constructed entirely of Bezier curves (C, Q) so there are no straight lines
+-->
+<path 
+  fill="#D32F2F" 
+  filter="url(#hand-drawn-roughness)"
+  d="M 22 5 
+	 C 18 25, 10 55, 18 85 
+	 C 21 98, 26 108, 32 115 
+	 C 25 112, 15 108, 8 108 
+	 Q 15 120, 28 128 
+	 C 35 132, 40 136, 48 138 
+	 C 45 125, 48 112, 55 102 
+	 C 48 108, 42 110, 38 105 
+	 C 32 95, 28 70, 28 45 
+	 C 28 30, 32 15, 30 5 
+	 Q 26 2, 22 5 Z"
+/>
+</svg>
+						<p class="font-hand text-3xl text-brand-accent mb-2 rotate-2">boosts confidence and independent learning</p>
+						<!--<svg class="mx-auto w-12 h-12 text-brand-accent -rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+						</svg>-->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- VIDEO SECTION #3 -->
+		<!--<section class="py-24 overflow-hidden">
+			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+				<div class="space-y-6">
+					<span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Inbuilt Comprehension</span>
+					<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Stress relief for international families</h2>
+					<p class="italic text-2xl font-medium leading-relaxed text-slate-600">“With helpful tools such as translation, read aloud (pronounciation) and solution explanations everyone can equally learn.”</p>
+				</div>
+				<div class="relative">
+					<div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
+						<video data-autoplay src="./videos_sm-downsized/sm_dshboard_translation.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+					</div>
+				</div>
+			</div>
+		</section>-->
+		<!-- Interactive Video Section #3 -->
+		<section class="py-24 overflow-hidden">
+		  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+			<div class="space-y-6">
+				<span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">ALL LEARNER TYPES</span>
+				<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Diverse exercises build subject proficiency step by step</h2>
+				<p class="text-lg leading-relaxed text-slate-6000">
+					<!--Suitable to different types of learners, Smartmeister's engaging exercises build lasting subject proficiency, making learning fun yet relevant.-->
+					Whether building up foundational subject knowledge, catching up or tackling knowledge gaps, our diverse exercises are suited for different types of learners. 
+				</p>
+			</div>
+			
+			<div class="space-y-6">
+				<!-- Main Display Area -->
+				<!-- REMOVED CSS CLASS FROM NEXT DIV: bg-slate-900 -->
+				<div id="video-display" class="relative rounded-[40px] aspect-video overflow-hidden shadow-2xl flex items-center justify-center transition-all duration-500">
+					<video id="main-video-player" class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline poster="./">
+						<source id="main-video-source" src="./videos_sm-downsized/sm_dshboard_exercises_short.mp4" type="video/mp4">
+					</video>
+					<div id="video-overlay-badge" class="video-overlay">
+						<!-- Dynamic content here -->
+					</div>
+					<!-- Overlay Play Icon: Initially hidden as video autoplays -->
+					<div id="video-play-overlay" class="absolute inset-0 flex items-center justify-center pointer-events-none hidden">
+						<div class="w-20 h-20 bg-white/40 rounded-full flex items-center justify-center shadow-xl">
+							<span class="material-symbols-outlined text-white text-4xl fill-1">play_arrow</span>
+						</div>
+					</div>
+					<p class="absolute bottom-6 text-white/70 text-sm font-bold uppercase tracking-widest" id="video-caption">Video Section: Exercises</p>
+				</div>
+
+				<!-- Thumbnail Navigation -->
+				<div id="thumbnail-container" class="flex flex-wrap gap-4 items-center justify-center md:justify-start">
+				  <!-- Thumb 1 -->
+				  <button class="thumbnail-btn relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100 thumbnail-active" onclick="handleThumbClick(1)">
+					  <img src="./images/sm_exercise_mathdotcluster.gif" class="w-full h-full object-cover rounded-xl" alt="thumb 1">
+					  <div class="tooltip">Math: Hundreds Array</div>
+				  </button>
+				  <!-- Thumb 2 (Pulsate Target) -->
+				  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(2)">
+					  <img src="./images/sm_exercise_numberwall.gif" class="w-full h-full object-cover rounded-xl" alt="thumb 2">
+					  <div class="tooltip">Math: Calculation Pyramid</div>
+				  </button>
+				  <!-- Thumb 3 (Pulsate Target) -->
+				  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(3)">
+					  <img src="./images/sm_exercise_prepositions-drag.gif" class="w-full h-full object-cover rounded-xl" alt="thumb 3">
+					  <div class="tooltip">German: Prepositions</div>
+				  </button>
+				  <!-- Thumb 4 (Pulsate Target) -->
+				  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(4)">
+					  <img src="./images/sm_exercise_syllables_en.gif" class="w-full h-full object-cover rounded-xl" alt="thumb 4">
+					  <div class="tooltip">German: Syllables</div>
+				  </button>
+				  <!-- Thumb 5 (Pulsate Target) -->
+				  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(5)">
+					  <img src="./images/sm_exercise_grammar_en.gif" class="w-full h-full object-cover rounded-xl" alt="thumb 5">
+					  <div class="tooltip">German: Pronouns</div>
+				  </button>
+				  <!-- Thumb 6 (Pulsate Target) -->
+				  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(6)">
+					  <img src="./images/sm_exercise_articles-drag_en.gif" class="w-full h-full object-cover rounded-xl" alt="thumb 6">
+					  <div class="tooltip">German: Articles</div>
+				  </button>
+			  </div>
+			</div>
+		  </div>
+		</section>
+		
+		<!-- Voice Narration Section -->
+		<section class="max-w-7xl mx-auto px-6 py-24">
+			<div class="bg-slate-50 rounded-[60px] p-8 md:p-20 grid md:grid-cols-2 gap-16 items-center">
+				<!-- Left Column: Video -->
+				<div class="relative group">
+					<div class="relative bg-slate-900 rounded-[40px] aspect-video overflow-hidden shadow-2xl">
+						<video class="w-full h-full object-cover" autoplay muted loop playsinline poster="./">
+							<source src="./videos_sm-downsized/sm_exercise_readaloud.mp4" type="video/mp4">
+						</video>
+						<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+					</div>
+					
+					<!-- Vermillion Circular Badge -->
+					<div class="absolute -top-10 -left-10 bg-vermillion border-[6px] border-white rounded-full w-32 h-32 md:w-40 md:h-40 shadow-2xl flex items-center justify-center z-20 hover:scale-110 transition-transform">
+						<span class="text-white font-black text-sm md:text-base text-center leading-tight uppercase tracking-widest px-4">equal learning for all children</span>
+					</div>
+				</div>
+
+				<!-- Right Column: Text Content -->
+				<div class="space-y-8">
+					<div class="inline-block bg-pastelOrange text-orange-700 px-6 py-2 rounded-full text-xs font-extrabold tracking-widest uppercase">
+						Reading and pronunciation
+					</div>
+					<h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+						German language learning made easy <br class="hidden md:block"> with read aloud text 
+					</h2>
+					<blockquote class="text-2xl font-semibold text-primary border-l-4 border-vermillion pl-6 leading-relaxed">
+						Creating equal learning opportunities for multi-lingual learners, <span class="bg-yellow-400">Children can listen to short stories or books</span>, train their listening, comprehension, grammar and pronunciation skills with the help of practice tasks, intertwined into the story flow. 
+					</blockquote>
+					<div class="pt-4 flex items-center gap-4 hover:scale-105 transition">
+					<a href="#waitlist" id="audioButton" class="inline-flex items-center gap-3 bg-vermillion text-white px-8 py-4 rounded-2xl text-xl font-bold transition shadow-xl shadow-primary/20 float-anim">
+					  Listen to read-aloud example
+					  <span class="material-symbols-outlined">volume_up</span>
+					</a>
+					</div>
+					<audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3"></audio>
+					<div class="pt-4 flex items-center gap-4">
+						<div class="w-12 h-12 bg-vermillion/10 rounded-full flex items-center justify-center">
+							<span class="material-symbols-outlined text-vermillion">mindfulness</span>
+						</div>
+						<p class="font-bold text-orange-800 text-sl">Text-to-speech read-aloud also aids children with deeper reading and comprehension issues</p>
+					</div>
+					<div class="pt-4 flex items-center gap-4">
+					  <div class="w-12 h-12 bg-vermillion/10 rounded-full flex items-center justify-center">
+						  <span class="material-symbols-outlined text-vermillion">cognition</span>
+					  </div>
+					  <p class="font-bold text-orange-800 text-sl">Students can practice speaking and pronunciation with Smartmeister's upcoming speech recognition engine</p>
+				  </div>
+					
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA SECTION -->
+		<section class="bg-brand-yellow py-24">
+			<div class="max-w-4xl mx-auto px-6 text-center space-y-12">
+				<!--<h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">Facilitating individual learning paths to boost deep learning
+				  ..transforming struggle into tangible improvement
+				</h2>-->
+				<h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">Close subject gaps before they become learning obstacles. No child is left behind!
+				</h2>
+				<a href="#waitlist" class="inline-block bg-primary text-white px-10 py-5 rounded-2xl text-2xl font-black shadow-2xl hover:scale-105 active:scale-95 transition">GET THE LATEST INFOS WITH OUR WAITLIST</a>
+			</div>
+		</section>
+
+		<!-- VIDEO SECTION #4 (DOUBLE VIDEO / DIAGNOSTICS) -->
+		<section class="py-24 bg-white" id="granular_metrics">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="text-center mb-16 space-y-4">
+					<span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Growth Diagnostics</span>
+					<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Knowing where improvement is most needed</h2>
+					<p class="text-slate-600 text-lg max-w-2xl mx-auto">Detailed learning insights assist parents to detect struggle and adjust the learning path. Measurable progress, better learning!</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-12">
+					<!-- Left Video: Auto-loop -->
+					<div class="space-y-4">
+						<div class="rounded-[40px] overflow-hidden shadow-2xl aspect-video bg-slate-50 border-4 border-slate-50">
+							<video id="diagnostics-left" src="./videos_sm-downsized/sm_diagnostics_page2.mp4" muted loop playsinline class="w-full h-full object-cover"></video>
+						</div>
+						<div class="text-center">
+							<h4 class="text-xl font-bold">Inbox Alerts &amp; Progress Insights</h4>
+							<p class="text-slate-500 text-sm">Weekly reports inform about areas where more practice is needed</p>
+						</div>
+					</div>
+
+					<!-- Right Video: Plays on click, stops left -->
+					<div class="space-y-4 relative">
+						<div class="absolute -top-32 right-3 w-64 z-20 hidden md:block">
+							<p class="font-hand text-2xl text-brand-accent -rotate-6 ">Practical overviews enable parents to gauge learning performance &amp; areas of growth</p>
+							<style>
+							.my-arrow-overlay {
+							  position: absolute;
+							  top: 100px; /* Adjust as needed */
+							  left: 50px; /* Adjust as needed */
+							  z-index: 10;
+							  transform: rotate(-10deg); /* Optional: adds more whimsical feel */
+							}
+							</style>
+							<svg width="60" height="140" viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg" style="display: block; pointer-events: none;" class="w-16 h-16 text-brand-accent -scale-x-100 mt-2" fill="none" stroke="currentColor">
+							  <!-- Definition of the 'Wobble' filter to simulate hand-drawing -->
+							  <defs>
+								<filter id="hand-drawn-roughness">
+								  <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
+								  <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+								</filter>
+							  </defs>
+							
+							  <!-- 
+								The Arrow Path 
+								- Filled with a distinct Red (#D32F2F)
+								- Uses the filter defined above
+								- Constructed entirely of Bezier curves (C, Q) so there are no straight lines
+							  -->
+							  <path 
+								fill="#D32F2F" 
+								filter="url(#hand-drawn-roughness)"
+								d="M 22 5 
+								   C 18 25, 10 55, 18 85 
+								   C 21 98, 26 108, 32 115 
+								   C 25 112, 15 108, 8 108 
+								   Q 15 120, 28 128 
+								   C 35 132, 40 136, 48 138 
+								   C 45 125, 48 112, 55 102 
+								   C 48 108, 42 110, 38 105 
+								   C 32 95, 28 70, 28 45 
+								   C 28 30, 32 15, 30 5 
+								   Q 26 2, 22 5 Z"
+							  />
+							</svg>
+							<!-- <svg class="w-16 h-16 text-brand-accent -scale-x-100 mt-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+							</svg>-->
+						</div>
+						<div id="right-video-container" class="rounded-[40px] overflow-hidden shadow-2xl aspect-video bg-slate-50 border-4 border-slate-50 relative cursor-pointer group">
+							<video id="diagnostics-right" src="./videos_sm-downsized/sm_diagnostics_graph.mp4" loop playsinline class="w-full h-full object-cover"></video>
+							<div id="right-overlay" class="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity opacity-100 group-hover:bg-black/10">
+								<div class="bg-white p-4 rounded-full shadow-xl">
+									<span id="right-play-icon" class="material-symbols-outlined text-4xl text-primary">play_arrow</span>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<h4 class="text-xl font-bold">Improvement Tracking</h4>
+							<p class="text-slate-500 text-sm">View learning progress from then to now</p>
+						</div>
+					</div>
+				</div>
+				<!--<div class="mt-16 border-t border-brand-accent h-2 w-full max-w-7xl mx-auto rounded-full opacity-30"></div>-->
+				<div class="hand-divider my-24"></div>
+			</div>
+		</section>
+		
+		<!-- VIDEO SECTION #5 -->
+		<section class="py-24 overflow-hidden">
+			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+				<div class="space-y-6">
+					<span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">INDIVIDUAL LEARNING PATH</span>
+					<!-- <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children learn best when on their own path</h2> -->
+					<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Children learn efficiently on tailored paths</h2>
+					<p class="text-2xl font-medium leading-relaxed text-slate-600">Students practice within personalised learning paths based on pre-set subject priorities and areas of practise, also using performance insights to steer the learning journey.</p>
+				</div>
+				<div class="relative">
+					<div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative" style="aspect-ratio: 4 / 3;">
+						<!-- <video data-autoplay src="./videos_sm-downsized/sm_exercise_numberwall-mascothelp.mp4" muted loop playsinline class="w-full h-full object-cover"></video> -->
+						<!-- <video data-autoplay src="./videos_sm-downsized/sm_exercise_numberwall-mascothelp.mp4" muted loop playsinline class="w-full h-full object-cover"></video> -->
+						<svg viewBox="0 0 800 600" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+						  <defs>
+							  <!-- Background Gradients (Vertical Top-to-Bottom) -->
+							  <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+								  <stop offset="0%" stop-color="#FEF08A" />
+								  <stop offset="100%" stop-color="#FDBA74" />
+							  </linearGradient>
+					  
+							  <linearGradient id="pathGlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+								  <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.8" />
+								  <stop offset="100%" stop-color="#10B981" stop-opacity="1" />
+							  </linearGradient>
+					  
+							  <!-- Drop Shadows & Glows -->
+							  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+								  <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#64748B" flood-opacity="0.15"/>
+							  </filter>
+							  <filter id="strongShadow" x="-20%" y="-20%" width="140%" height="140%">
+								  <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#475569" flood-opacity="0.25"/>
+							  </filter>
+							  <filter id="glowG" x="-50%" y="-50%" width="200%" height="200%">
+								  <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+								  <feMerge>
+									  <feMergeNode in="coloredBlur"/>
+									  <feMergeNode in="SourceGraphic"/>
+								  </feMerge>
+							  </filter>
+							  <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+								  <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+								  <feMerge>
+									  <feMergeNode in="coloredBlur"/>
+									  <feMergeNode in="SourceGraphic"/>
+								  </feMerge>
+							  </filter>
+					  
+							  <!-- Icons for Nodes -->
+							  <g id="icon-target">
+								  <circle cx="12" cy="12" r="10" fill="none" stroke="#E11D48" stroke-width="2.5"/>
+								  <circle cx="12" cy="12" r="5" fill="none" stroke="#E11D48" stroke-width="2.5"/>
+								  <circle cx="12" cy="12" r="1.5" fill="#E11D48"/>
+							  </g>
+							  
+							  <g id="icon-chart">
+								  <polyline points="4,18 10,10 15,14 20,6" fill="none" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+								  <polyline points="15,6 20,6 20,11" fill="none" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+								  <line x1="4" y1="20" x2="20" y2="20" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+							  </g>
+					  
+							  <!-- Colored Hexagon Milestone -->
+							  <g id="hex-milestone">
+								  <polygon points="0,-14 12,-7 12,7 0,14 -12,7 -12,-7" filter="url(#shadow)"/>
+							  </g>
+						  </defs>
+					  
+						  <style>
+							  .title { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 26px; fill: #0F172A; letter-spacing: 0.5px; }
+							  .subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 15px; fill: #475569; }
+							  .panel-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 17px; fill: #334155; letter-spacing: 1px; }
+							  .tag-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 16px; fill: #FFFFFF; }
+							  .legend-title { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 11px; fill: #64748B; letter-spacing: 1.5px; }
+							  .legend-active { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 14px; fill: #0F172A; }
+							  .milestone-label { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 22px; text-anchor: middle; letter-spacing: 0.5px; filter: drop-shadow(0px 2px 2px rgba(255,255,255,0.8)); }
+							  .beam-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 20px; text-anchor: middle; }
+						  </style>
+					  
+						  <!-- Background -->
+						  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+					  
+						  <!-- Header -->
+						  <text x="400" y="45" class="title" text-anchor="middle">DYNAMIC LEARNING PATHWAY</text>
+						  <!-- <text x="400" y="68" class="subtitle" text-anchor="middle">Multi-factor curriculum adaptation based on progress and parent goals</text> -->
+					  
+						  <!-- ========================================== -->
+						  <!-- SCENE FADE WRAPPER (Smooth reset logic)    -->
+						  <!-- ========================================== -->
+						  <g>
+							  <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.05; 0.95; 1" dur="24s" repeatCount="indefinite" />
+					  
+							  <!-- Base Grid (Stylistic) -->
+							  <g stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 6" opacity="0.5">
+								  <line x1="100" y1="200" x2="700" y2="200" />
+								  <line x1="100" y1="300" x2="700" y2="300" />
+								  <line x1="100" y1="400" x2="700" y2="400" />
+								  <line x1="250" y1="150" x2="250" y2="450" />
+								  <line x1="400" y1="150" x2="400" y2="450" />
+								  <line x1="550" y1="150" x2="550" y2="450" />
+							  </g>
+					  
+							  <!-- 1. The Past Path (Static, Immutable) -->
+							  <path d="M 100 480 C 180 480, 250 430, 350 350" fill="none" stroke="#94A3B8" stroke-width="8" stroke-linecap="round" filter="url(#shadow)"/>
+							  
+							  <!-- Pulsating Triangular Arrows (Section 1: Active 0% to 15%) -->
+							  <g opacity="0">
+								  <animate attributeName="opacity" values="0.2; 1; 0.2; 1; 0.2; 1; 0; 0" keyTimes="0; 0.03; 0.06; 0.09; 0.12; 0.15; 0.16; 1" dur="24s" repeatCount="indefinite" />
+								  <polygon points="-5,-5 5,0 -5,5" fill="#38BDF8" transform="translate(170, 477) rotate(-10) scale(1.7)" />
+								  <polygon points="-5,-5 5,0 -5,5" fill="#38BDF8" transform="translate(250, 435) rotate(-25) scale(1.7)" />
+								  <polygon points="-5,-5 5,0 -5,5" fill="#38BDF8" transform="translate(310, 385) rotate(-40) scale(1.7)" />
+							  </g>
+					  
+							  <!-- 2. The Future Path (Dynamic, Evolves & Holds) -->
+							  <path fill="none" stroke-linecap="round" filter="url(#shadow)">
+								  <animate attributeName="d" 
+										   values="M 350 350 C 450 280, 550 280, 680 250;
+												   M 350 350 C 450 280, 550 280, 680 250;
+												   M 350 350 C 420 180, 550 150, 700 120;
+												   M 350 350 C 420 180, 550 150, 700 120"
+										   keyTimes="0; 0.35; 0.45; 1" dur="24s" repeatCount="indefinite" />
+								  
+								  <animate attributeName="stroke-width" 
+										   values="4; 4; 16; 16" 
+										   keyTimes="0; 0.35; 0.45; 1" dur="24s" repeatCount="indefinite" />
+										   
+								  <animate attributeName="stroke" 
+										   values="#CBD5E1; #CBD5E1; url(#pathGlowGrad); url(#pathGlowGrad)" 
+										   keyTimes="0; 0.35; 0.45; 1" dur="24s" repeatCount="indefinite" />
+							  </path>
+							  
+							  <!-- Pulsating Triangular Arrows (Section 2: Active 50% to 75%) -->
+							  <g opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 0.2; 1; 0.2; 1; 0.2; 1; 0; 0" keyTimes="0; 0.49; 0.50; 0.55; 0.60; 0.65; 0.70; 0.75; 0.76; 1" dur="24s" repeatCount="indefinite" />
+								  <polygon points="-6,-6 6,0 -6,6" fill="#10B981" transform="translate(415, 240) rotate(-60) scale(1.7)" />
+								  <polygon points="-6,-6 6,0 -6,6" fill="#10B981" transform="translate(510, 165) rotate(-20) scale(1.7)" />
+								  <polygon points="-6,-6 6,0 -6,6" fill="#10B981" transform="translate(620, 135) rotate(-10) scale(1.7)" />
+							  </g>
+					  
+							  <!-- Milestone Rings -->
+							  <circle cx="100" cy="480" r="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="4" filter="url(#shadow)"/>
+							  <circle cx="350" cy="350" r="10" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="4" filter="url(#shadow)"/>
+							  
+							  <!-- Final Goal Ring (Morphs and holds position) -->
+							  <circle r="12" fill="#FFFFFF" filter="url(#shadow)">
+								  <animate attributeName="cx" values="680; 680; 700; 700" keyTimes="0; 0.35; 0.45; 1" dur="24s" repeatCount="indefinite"/>
+								  <animate attributeName="cy" values="250; 250; 120; 120" keyTimes="0; 0.35; 0.45; 1" dur="24s" repeatCount="indefinite"/>
+								  <animate attributeName="stroke" values="#CBD5E1; #CBD5E1; #10B981; #10B981" keyTimes="0; 0.35; 0.45; 1" dur="24s" repeatCount="indefinite"/>
+								  <animate attributeName="stroke-width" values="4; 4; 6; 6" keyTimes="0; 0.35; 0.45; 1" dur="24s" repeatCount="indefinite"/>
+							  </circle>
+							  
+							  <!-- STEFAN ADDITIONAL STAR -->
+							 
+					
+								<g id="sym-star" transform="translate(670, 145) scale(2.66)">
+								  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#F2C94C" filter="url(#glow)"/>
+								  <text x="12" y="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="5.5px" fill="#D9A406" text-anchor="middle" letter-spacing="0.2px">RESULT</text>
+								  <animate attributeName="opacity" values="0; 0; 0; 0; 0; 1" keyTimes="0; 0.24; 0.25; 0.43; 0.45; 1" dur="24s" repeatCount="indefinite" />
+								</g>
+					  
+							  <!-- ========================================== -->
+							  <!-- FORCES & INFLUENCES (Growing White Arrows) -->
+							  <!-- ========================================== -->
+					  
+							  <!-- Parent Goal Force (Top Left to Center) -->
+							  <g>
+								  <path d="M 300 210 Q 320 280 345 345" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" pathLength="100" stroke-dasharray="100" filter="url(#shadow)">
+									  <animate attributeName="stroke-dashoffset" values="100; 100; 0; 0" keyTimes="0; 0.25; 0.40; 1" dur="24s" repeatCount="indefinite" />
+									  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.24; 0.25; 0.43; 0.45; 1" dur="24s" repeatCount="indefinite" />
+								  </path>
+								  <!-- Enlarged Polygon for Thicker Arrow -->
+								  <polygon points="-30,-24 30,0 -30,24" fill="#FFFFFF" filter="url(#shadow)">
+									  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.24; 0.25; 0.43; 0.45; 1" dur="24s" repeatCount="indefinite" />
+									  <animateMotion dur="24s" path="M 300 210 Q 320 280 345 345" keyTimes="0; 0.25; 0.40; 1" keyPoints="0; 0; 1; 1" calcMode="linear" rotate="auto" repeatCount="indefinite"/>
+								  </polygon>
+								  
+								  <!-- Beam Label -->
+								  <g opacity="0">
+									  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.24; 0.25; 0.43; 0.45; 1" dur="24s" repeatCount="indefinite" />
+									  <rect x="220" y="245" width="230" height="34" rx="8" fill="#FFFFFF" filter="url(#shadow)" />
+									  <text x="335" y="269" class="beam-text" fill="#E11D48">Adjust for Goals</text>
+								  </g>
+							  </g>
+					  
+							  <!-- Progress Metric Force (Bottom Right to Center) -->
+							  <g>
+								  <!-- <path d="M 490 430 Q 400 400 355 355" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" pathLength="100" stroke-dasharray="100" filter="url(#shadow)"> -->
+								  <path d="M 490 470 Q 400 400 355 355" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" pathLength="100" stroke-dasharray="100" filter="url(#shadow)">
+									  <animate attributeName="stroke-dashoffset" values="100; 100; 0; 0" keyTimes="0; 0.25; 0.40; 1" dur="24s" repeatCount="indefinite" />
+									  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.24; 0.25; 0.43; 0.45; 1" dur="24s" repeatCount="indefinite" />
+								  </path>
+								  <!-- Enlarged Polygon for Thicker Arrow -->
+								  <polygon points="-30,-24 30,0 -30,24" fill="#FFFFFF" filter="url(#shadow)">
+								  <!-- <polygon points="-30,-64 30,-40 -30,-16" fill="#FFFFFF" filter="url(#shadow)"> -->
+									  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.24; 0.25; 0.43; 0.45; 1" dur="24s" repeatCount="indefinite" />
+									  <!-- <animateMotion dur="24s" path="M 490 430 Q 400 400 355 355" keyTimes="0; 0.25; 0.40; 1" keyPoints="0; 0; 1; 1" calcMode="linear" rotate="auto" repeatCount="indefinite"/> -->
+									  <animateMotion dur="24s" path="M 490 470 Q 400 400 355 355" keyTimes="0; 0.25; 0.40; 1" keyPoints="0; 0; 1; 1" calcMode="linear" rotate="auto" repeatCount="indefinite"/>
+								  </polygon>
+					  
+								  <!-- Beam Label -->
+								  <g opacity="0">
+									  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.24; 0.25; 0.43; 0.45; 1" dur="24s" repeatCount="indefinite" />
+									  <rect x="310" y="405" width="240" height="34" rx="8" fill="#FFFFFF" filter="url(#shadow)" />
+									  <text x="430" y="429" class="beam-text" fill="#4F46E5">Align Exercise Path</text>
+								  </g>
+							  </g>
+					  
+							  <!-- ========================================== -->
+							  <!-- NEW EXERCISE NODES (Spawn on Optimized Path)-->
+							  <!-- ========================================== -->
+							  <g opacity="0">
+								  <!-- Appear when path finishes morphing and hold until scene fade -->
+								  <animate attributeName="opacity" values="0; 0; 1; 1" keyTimes="0; 0.44; 0.45; 1" dur="24s" repeatCount="indefinite" />
+								  
+								  <!-- Node 1: Spatial Math -->
+								  <g transform="translate(420, 240)">
+									  <use href="#hex-milestone" fill="#F43F5E" />
+									  <text x="95" y="8" class="milestone-label" fill="#E11D48" text-anchor="start">Shape Sorting</text>
+									  <animateTransform attributeName="transform" type="translate" values="0 10; 0 0" keyTimes="0.45; 0.50" dur="24s" repeatCount="indefinite" additive="sum"/>
+								  </g>
+								  
+								  <!-- Node 2: Pattern Rec -->
+								  <g transform="translate(510, 165)">
+									  <use href="#hex-milestone" fill="#0EA5E9" />
+									  <text x="0" y="-24" class="milestone-label" fill="#0284C7">3D Shapes</text>
+									  <animateTransform attributeName="transform" type="translate" values="0 10; 0 0" keyTimes="0.46; 0.51" dur="24s" repeatCount="indefinite" additive="sum"/>
+								  </g>
+					  
+								  <!-- Node 3: Logic Base -->
+								  <g transform="translate(610, 135)">
+									  <use href="#hex-milestone" fill="#8B5CF6" />
+									  <text x="0" y="-24" class="milestone-label" fill="#7C3AED">Shape Transformation</text>
+									  <animateTransform attributeName="transform" type="translate" values="0 10; 0 0" keyTimes="0.47; 0.52" dur="24s" repeatCount="indefinite" additive="sum"/>
+								  </g>
+							  </g>
+					  
+							  <!-- ========================================== -->
+							  <!-- THE STUDENT AVATAR (Motion Logic)          -->
+							  <!-- ========================================== -->
+					  
+							  <!-- Avatar 1: Moves along the PAST path (0% to 15%) -->
+							  <g opacity="0">
+								  <animate attributeName="opacity" values="1; 1; 0; 0" keyTimes="0; 0.149; 0.15; 1" dur="24s" repeatCount="indefinite"/>
+								  <animateMotion dur="24s" path="M 100 480 C 180 480, 250 430, 350 350" keyTimes="0; 0.15; 1" keyPoints="0; 1; 1" calcMode="linear" repeatCount="indefinite"/>
+								  
+								  <!-- Student Graphic (2x Size) -->
+								  <circle cx="0" cy="0" r="32" fill="#38BDF8" filter="url(#shadow)"/>
+								  <circle cx="-10" cy="-4" r="5" fill="#FFF"/>
+								  <circle cx="10" cy="-4" r="5" fill="#FFF"/>
+								  <path d="M -8 10 Q 0 16 8 10" stroke="#FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+							  </g>
+					  
+							  <!-- Avatar 2: Paused at CHECKPOINT, experiencing Friction (15% to 50%) -->
+							  <g transform="translate(350, 350)" opacity="0">
+								  <animate attributeName="opacity" values="0; 1; 1; 0; 0" keyTimes="0; 0.15; 0.50; 0.501; 1" dur="24s" repeatCount="indefinite"/>
+								  
+								  <!-- Red Friction Pulses (Active between 15% and 25%) (2x Size) -->
+								  <circle cx="0" cy="0" r="32" fill="none" stroke="#EF4444" stroke-width="6" opacity="0">
+									  <animate attributeName="r" values="32; 80; 32" keyTimes="0.15; 0.20; 0.25" dur="24s" repeatCount="indefinite"/>
+									  <animate attributeName="opacity" values="0; 1; 0; 0" keyTimes="0.15; 0.18; 0.25; 1" dur="24s" repeatCount="indefinite"/>
+								  </circle>
+								  
+								  <circle cx="0" cy="0" r="32" fill="#38BDF8" filter="url(#shadow)">
+									<animate attributeName="fill" values="#38BDF8; #F2BB4B; #F2BB4B; #38BDF8" keyTimes="0; 0.35; 0.36; 1" dur="24s" repeatCount="indefinite"/>
+									  <!-- Shake effect during friction -->
+									  <animateTransform attributeName="transform" type="translate" values="0 0; -4 0; 4 0; -4 0; 4 0; 0 0; 0 0" keyTimes="0; 0.16; 0.17; 0.18; 0.19; 0.20; 1" dur="24s" repeatCount="indefinite" />
+								  </circle>
+								  <!-- Stressed Face (2x Size) -->
+								  <g>
+									  <animate attributeName="opacity" values="1; 1; 0; 0" keyTimes="0; 0.35; 0.36; 1" dur="24s" repeatCount="indefinite"/>
+									  <path d="M -12 -8 L -4 -4 M 12 -8 L 4 -4" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+									  <circle cx="-8" cy="-2" r="3" fill="#FFF"/>
+									  <circle cx="8" cy="-2" r="3" fill="#FFF"/>
+									  <path d="M -8 12 Q 0 6 8 12" stroke="#FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+								  </g>
+								  <!-- Hopeful Face (As forces arrive) (2x Size) -->
+								  <g opacity="0">
+									  <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.35; 0.36; 1; 1" dur="24s" repeatCount="indefinite"/>
+									  <circle cx="-8" cy="-4" r="5" fill="#FFF"/>
+									  <circle cx="8" cy="-4" r="5" fill="#FFF"/>
+									  <path d="M -8 8 Q 0 16 8 8" stroke="#FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+								  </g>
+							  </g>
+					  
+							  <!-- Avatar 3: Moves along the FUTURE OPTIMIZED path (50% to 75%) -->
+							  <g opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.499; 0.50; 0.82; 0.85; 1" dur="24s" repeatCount="indefinite"/>
+								  <!-- Uses the exact curve coordinates of the optimized path state -->
+								  <animateMotion dur="24s" path="M 350 350 C 420 180, 550 150, 700 120" keyTimes="0; 0.50; 0.75; 1" keyPoints="0; 0; 1; 1" calcMode="linear" repeatCount="indefinite"/>
+								  
+								  <!-- Glowing Super Student Graphic (2x Size) -->
+								  <circle cx="0" cy="0" r="44" fill="#F59E0B" opacity="0.4" filter="url(#glowStrong)"/>
+								  <circle cx="0" cy="0" r="32" fill="#38BDF8" filter="url(#shadow)"/>
+								  
+								  <!-- Joyful Face (2x Size) -->
+								  <path d="M -12 -6 Q -8 -10 -4 -6 M 4 -6 Q 8 -10 12 -6" stroke="#FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+								  <path d="M -10 6 Q 0 18 10 6 Z" fill="#FFF" />
+							  </g>
+						  </g>
+						  <!-- End Scene Fade Wrapper -->
+					  
+					  
+						  <!-- ========================================== -->
+						  <!-- UI PANELS & OVERLAYS (Persist across loop) -->
+						  <!-- ========================================== -->
+					  
+						  <!-- Parent Portal Node (Top Left) -->
+						  <g transform="translate(40, 90)">
+							  <!-- Expanded Modal Box -->
+							  <rect width="280" height="120" rx="12" fill="#FFFFFF" filter="url(#strongShadow)" />
+							  <use href="#icon-target" x="15" y="15" />
+							  <text x="45" y="32" class="panel-title">PARENT SETTINGS</text>
+							  
+							  <!-- Priority Tags (Expanded height, width, and font) -->
+							  <rect x="15" y="45" width="200" height="28" rx="14" fill="#FB7185" />
+							  <text x="25" y="64" class="tag-text">Goal: Master Geometry</text>
+							  
+							  <rect x="15" y="80" width="255" height="28" rx="14" fill="#FB7185" />
+							  <text x="25" y="99" class="tag-text">Weakness: Spatial Reasoning</text>
+						  </g>
+					  
+						  <!-- Progress Engine Node (Bottom Right) -->
+						  <!-- Repositioned slightly left to accommodate the wider 280px modal -->
+						  <!-- <g transform="translate(490, 400)"> -->
+							  <g transform="translate(490, 460)">
+							  <!-- Expanded Modal Box -->
+							  <rect width="280" height="120" rx="12" fill="#FFFFFF" filter="url(#strongShadow)" />
+							  <use href="#icon-chart" x="15" y="15" />
+							  <text x="45" y="32" class="panel-title">PROGRESS ENGINE</text>
+							  
+							  <!-- Metric Tags (Expanded height, width, and font) -->
+							  <rect x="15" y="45" width="220" height="28" rx="14" fill="#6366F1" />
+							  <text x="25" y="64" class="tag-text">Growth Rate: Decreasing</text>
+							  
+							  <rect x="15" y="80" width="250" height="28" rx="14" fill="#6366F1" />
+							  <text x="25" y="99" class="tag-text">Identified Gap: Shape Types</text>
+						  </g>
+					  
+						  <!-- Dynamic Status Legend (Bottom Left) -->
+						  <!-- <g transform="translate(40, 480)">
+							  <rect width="260" height="74" rx="12" fill="#FFFFFF" filter="url(#shadow)" />
+							  <text x="20" y="26" class="legend-title">CURRENT PATH STATE</text>
+							  -->
+							  <!-- Phase 1 (0% - 15%) -->
+							  <!-- <g>
+								  <animate attributeName="opacity" values="1; 1; 0; 0" keyTimes="0; 0.149; 0.15; 1" dur="24s" repeatCount="indefinite"/>
+								  <circle cx="30" cy="48" r="6" fill="#38BDF8" filter="url(#glowG)"/>
+								  <text x="48" y="53" class="legend-active">Baseline Iteration</text>
+							  </g>-->
+							  <!-- Phase 2 (15% - 25%) -->
+							  <!-- <g opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.149; 0.15; 0.249; 0.25; 1" dur="24s" repeatCount="indefinite"/>
+								  <circle cx="30" cy="48" r="6" fill="#EF4444" filter="url(#glowG)"/>
+								  <text x="48" y="53" class="legend-active">Friction &amp; Gap Detected</text>
+							  </g>-->
+							  <!-- Phase 3 (25% - 45%) -->
+							  <!-- <g opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.249; 0.25; 0.449; 0.45; 1" dur="24s" repeatCount="indefinite"/>
+								  <circle cx="30" cy="48" r="6" fill="#8B5CF6" filter="url(#glowG)"/>
+								  <text x="48" y="53" class="legend-active">Evaluating Goals &amp; Metrics</text>
+							  </g>-->
+							  <!-- Phase 4 (45% - 100%) -->
+							  <!-- <g opacity="0">
+								  <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.449; 0.45; 0.95; 1" dur="24s" repeatCount="indefinite"/>
+								  <circle cx="30" cy="48" r="6" fill="#10B981" filter="url(#glowG)"/>
+								  <text x="48" y="53" class="legend-active">Path Dynamically Optimized</text>
+							  </g>
+						  </g>-->
+					  
+					  </svg>
+					  
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- EXPLANATION SECTION -->
+		<section class="py-24 bg-white">
+			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-16 items-start">
+				<div class="space-y-6">
+					<h3 class="text-3xl font-extrabold text-primary">Diverse Learner Types get it their way</h3>
+					<p class="text-lg text-slate-600 leading-relaxed">Every child has a unique way of absorbing information and cognitive learning. Smartmeister identifies whether students learn best through visual aids, reinforcement, or iterative problem-solving. Encourage, build and challenge! Students get it tailored their way. </p>
+				</div>
+				<div class="space-y-6">
+					<h3 class="text-3xl font-extrabold text-primary">Aiding children with reading difficulties &amp; focusing issues</h3>
+					<!-- <p class="text-lg text-slate-600 leading-relaxed">Smartmeister monitors performance and repeated mistakes, adapting subsequent tasks in the learning path to bridge specific conceptual gaps automatically and propose assignments.</p> --> 
+					<p class="text-lg text-slate-600 leading-relaxed">Dyslexia and Dyscalculia are not uncommon. Learners encountering problems like reading or spelling difficulties, slow word recognition, as well as reduced number, shape and abstraction comprehension do also benefit. From Dyslexia friendly typefaces, text-to-speech read-aloud features to custom display settings that reduce clutter and emphasise clarity.</p>
+				</div>
+				<div class="rounded-[40px] overflow-hidden shadow-xl bg-brand-yellow/30 p-2">
+					<img src="./images/curiosity-main.png" alt="Learning Illustration" class="w-full rounded-[36px]">
+				</div>
+			</div>
+		</section>
+		<!-- STEF ADDED: SERVICE SUMMARY SECTION -->
+		<section class="bg-slate-50 py-24">
+			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 grid-cols-1 gap-8 items-start">
+			  <div class="space-y-6 md:col-span-2"><span class="bg-green-100 text-green-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Designed for Parents &amp; Children</span></div>
+			  <div class="space-y-6">
+				<div class="pt-4 flex items-left gap-4 "> 
+				  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+					<span class="material-symbols-outlined text-primary">check_circle</span>
+				  </div>
+				  <p class="text-lg text-slate-600 leading-relaxed">Evaluate abilities &amp; identify gaps early before secondary school decisions get locked-in. Set learning goals and milestones.</p>
+				</div>
+				<div class="pt-4 flex items-left gap-4"> 
+				  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+					<span class="material-symbols-outlined text-primary">check_circle</span>
+				  </div>
+				  <p class="text-lg text-slate-600 leading-relaxed">Unlike other elearning apps, Smartmeister adapts exercises to your child's specific gaps and potential, aligning the learning path in real-time.</p>
+				</div>
+				<div class="pt-4 flex items-left gap-4"> 
+				  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+					<span class="material-symbols-outlined text-primary">check_circle</span>
+				  </div>
+				  <p class="text-lg text-slate-600 leading-relaxed">Set it up once. The platform handles the rest. Get alerts or periodic reports, highlighting milestones, goals &amp; learning path options. </p>
+				</div>
+				<div class="pt-4 flex items-left gap-4"> 
+				  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+					<span class="material-symbols-outlined text-primary">check_circle</span>
+				  </div>
+				  <p class="text-lg text-slate-600 leading-relaxed">Primary school children enrich their subject knowledge more deeply with exercises that involve a larger scope of challenges.</p>
+				</div>
+			  </div>
+			  
+			  <div class="space-y-6">
+				<div class="pt-4 flex items-left gap-4 "> 
+				  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+					<span class="material-symbols-outlined text-primary">check_circle</span>
+				  </div>
+				  <p class="text-lg text-slate-600 leading-relaxed">Designed to complement school learning, with granular focus on continuous performance assessment, unlocking hidden potential. </p>
+				</div>
+				<div class="pt-4 flex items-left gap-4"> 
+				  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+					<span class="material-symbols-outlined text-primary">check_circle</span>
+				  </div>
+				  <p class="text-lg text-slate-600 leading-relaxed">10 to 15 minutes a day. Screen time can be regulated. Parents also decide the level of gamification and how rewards can be used.</p>
+				</div>
+				<div class="pt-4 flex items-left gap-4"> 
+				  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+					<span class="material-symbols-outlined text-primary">check_circle</span>
+				  </div>
+				  <p class="text-lg text-slate-600 leading-relaxed">Students can also reinforce crucial examination practice or repeat a previously accomplished learning path.</p>   
+				</div>
+				<div class="pt-4 flex items-left gap-4"> 
+				  <div class="w-5 h-12 bg-green-500/10 rounded-full items-center justify-center">
+					<span class="material-symbols-outlined text-primary">check_circle</span>
+				  </div>
+				  <p class="text-lg text-slate-600 leading-relaxed">Get full access to primary-school curriculum aligned Smartmeister through monthly or annual subscription (2 children accounts included).</p>
+				</div>
+			  </div>
+		  </div>
+		</section>
+
+
+
+
+		<!-- WAITLIST FORM SECTION -->
+		<!--
+		<section id="waitlist" class="py-24 bg-light-bg">
+			<div class="max-w-6xl mx-auto px-6">
+				<div class="bg-white rounded-[60px] p-8 md:p-16 shadow-2xl border border-slate-100 flex flex-col md:flex-row gap-16 relative items-center">
+					<div class="absolute -top-10 -right-10 w-32 h-32 text-brand-accent opacity-60 hidden md:block">
+						<svg viewBox="0 0 100 100" fill="currentColor">
+							<path d="M50 0 C60 20 80 20 100 0 C80 20 80 40 100 60 C80 40 60 40 50 60 C40 40 20 40 0 60 C20 40 20 20 0 0 C20 20 40 20 50 0 Z" />
+						</svg>
+					</div>
+					<div class="flex-1 space-y-8">
+						<h2 class="text-5xl font-extrabold text-slate-900">Join the Waitlist</h2>
+						<p class="text-lg text-slate-600 leading-relaxed">We are currently in a closed beta with selected schools. Sign up to be notified when we open for public access and get a 3-month free trial.</p>
+						<div class="space-y-4">
+							<div class="flex items-center gap-3 font-bold text-green-600">
+								<span class="material-symbols-outlined">check_circle</span>
+								<span>Free trial for early adopters</span>
+							</div>
+							<div class="flex items-center gap-3 font-bold text-green-600">
+								<span class="material-symbols-outlined">check_circle</span>
+								<span>Direct access to roadmap voting</span>
+							</div>
+						</div>
+						<form class="space-y-4" onsubmit="event.preventDefault(); alert('Thanks for joining!');">
+							<div>
+								<label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Parent Name</label>
+								<input type="text" placeholder="Jane Doe" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-4 focus:ring-primary/10 transition outline-none">
+							</div>
+							<div>
+								<label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-2">Email Address</label>
+								<input type="email" placeholder="jane@example.com" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-4 focus:ring-primary/10 transition outline-none">
+							</div>
+							<button type="submit" class="w-full bg-primary text-white py-5 rounded-2xl text-xl font-bold hover:scale-[1.02] active:scale-95 transition shadow-xl shadow-primary/20">Reserve My Spot</button>
+						</form>
+					</div>
+					<div class="flex-1 w-full md:max-w-sm">
+						<div class="bg-slate-900 rounded-[40px] p-6 shadow-2xl relative">
+							<img src="https://picsum.photos/seed/app/500/700" alt="App Preview" class="w-full rounded-[30px]">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	  -->
+	  <!-- NEW FORM SECTION -->
+	  <section class="bg-[#fcde72] gap-4 px-4 md:px-8 lg:px-[158px] py-12 md:py-16" id="waitlist">
+		<div class="max-w-[1440px] mx-auto px-4 md:px-32">
+			<div class="flex flex-col lg:flex-row items-center gap-8">
+				
+				<div class="flex-1 w-full">
+					<!-- <h2 class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] font-bold md:text-3xl lg:text-4xl mb-4">
+						Give children the confidence to learn independently
+					</h2> -->
+					<h2 class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] font-bold md:text-3xl lg:text-4xl mb-4">
+					  Boosting individual growth and grade improvement. 
+				  </h2>
+					
+					<p class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] font-bold text-5xl md:text-2xl lg:text-6xl mb-5">
+						Join early! (120+ families already have). Get Free Early Access.
+					</p>
+	
+					<div id="brevo-form" class="sib-form" style="text-align: center; background-color: transparent;">
+						<div id="sib-form-container" class="sib-form-container">
+							<div id="success-message" class="sib-form-message-panel" style="display:none; font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:1200px; margin-bottom: 20px;">
+								<span class="sib-form-message-panel__inner-text">Welcome to Smartmeister! You're officially on the waitlist!</span>
+							</div>
+							
+							<div id="sib-container" style="text-align:left; background-color:#ffffff; max-width:1200px; border-radius:20px; border: 1px dotted #C0CCD9; padding: 20px;">
+						 <!--       <form id="sib-form" method="POST" action="https://ee44b5ec.sibforms.com/serve/MUIFAP8roiQcAmmZ2SOf15NnFsPZB1evAvyhMugqTdPcaQdASXOrKVWk512cuYAwjF0J1zQdadJE7cJgqfEdxmRunowTGutIRjsPJ9Q64XdebBxD5kO1I0XXy5s2kFvk7c2aK6VpiOKxvJsszitMmyT3nRU6yb327Ulo2VAeEt7ePkzDotwXOMmwr3cXlwaRrDiotJEpqOZFivczsQ==" data-type="subscription" novalidate="true">
+		<div class="email-button-wrapper" style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start;">
+			<div style="flex: 1; min-width: 240px;">
+				<input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="email" id="EMAIL" name="EMAIL" placeholder="Email" required="" data-required="true">
+			</div>
+			<button class="sib-form-block__button sib-form-block__button-with-loader" style="background-color:#4C3BAD; color:white; padding: 14px 28px; border-radius: 8px; border:none; cursor:pointer; font-weight:600;" type="submit">
+				<svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="display:none; width:20px; height:20px; margin-right:8px;">
+					<path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" fill="currentColor"></path>
+				</svg>
+				Join our waiting list
+			</button>
+		</div>
+		<div class="sib-optin sib-form-block" style="margin-top: 15px;">
+			<div style="display: flex; align-items: flex-start; gap: 10px;">
+				<input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required="" data-required="true" style="width: 20px; height: 20px; flex-shrink:0; margin-top: 2px;">
+				<label for="OPT_IN" style="font-size: 14px; color: #3C4858; cursor: pointer;">
+					I agree to get product updates and accept the privacy policy. Unsubscribe any time. No weekly emails!<span style="color: #e74c3c;">*</span>
+				</label>
+			</div>
+		</div>
+		<input type="hidden" name="locale" value="en">
+		<input type="hidden" name="html_type" value="simple">
+	</form> -->
+								 <form id="sib-form" method="POST" action="https://ee44b5ec.sibforms.com/serve/MUIFAP8roiQcAmmZ2SOf15NnFsPZB1evAvyhMugqTdPcaQdASXOrKVWk512cuYAwjF0J1zQdadJE7cJgqfEdxmRunowTGutIRjsPJ9Q64XdebBxD5kO1I0XXy5s2kFvk7c2aK6VpiOKxvJsszitMmyT3nRU6yb327Ulo2VAeEt7ePkzDotwXOMmwr3cXlwaRrDiotJEpqOZFivczsQ==" data-type="subscription">
+								   
+								   <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 16px;">
+									   <div style="flex: 1; min-width: 240px;">
+										   <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="Name (Optional)" />
+									   </div>
+							   
+									   <div style="flex: 1; min-width: 240px;">
+										   <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="email" id="EMAIL" name="EMAIL" placeholder="Email" required data-required="true" />
+									   </div>
+								   </div>
+							   
+								   <div class="sib-optin sib-form-block" style="margin-bottom: 16px;">
+									   <div style="display: flex; align-items: flex-start; gap: 10px;">
+										   <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required data-required="true" style="width: 20px; height: 20px; flex-shrink:0; margin-top: 2px;" />
+										   <label for="OPT_IN" style="font-size: 14px; color: #3C4858; cursor: pointer; text-align: left;">
+											   I agree to receive product updates and accept the privacy policy. You can unsubscribe at any time.<span style="color: #e74c3c;">*</span>
+										   </label>
+									   </div>
+								   </div>
+							   
+								   <div style="margin-bottom: 24px;">
+									   <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+								   </div>
+							   
+								   <div style="text-align: left;">
+									   <button class="sib-form-block__button sib-form-block__button-with-loader" style="background-color:#4C3BAD; color:white; padding: 14px 28px; border-radius: 8px; border:none; cursor:pointer; font-weight:600; width: 100%; max-width: 300px;" type="submit">
+										   Join our waiting list
+									   </button>
+								   </div>
+							   
+								   <input type="hidden" name="locale" value="en">
+								   <input type="hidden" name="html_type" value="simple">
+							   </form>
+	
+							</div>
+						</div>
+					</div>
+					</div>
+	
+				<div class="section-yellow-image-fix w-full lg:w-auto flex justify-center lg:justify-end">
+					<img alt="High five celebration" class="w-[280px] md:w-[350px] lg:w-[398px] h-auto" src="./images/cta-highfive.png">
+				</div>
+	
+			</div> </div>
+		</section>
+		<script defer="" src="https://sibforms.com/forms/end-form/build/main.js"></script>
+		
+		
+		<!-- BIG TEXT SECTION -->
+		<section class="py-32 bg-white">
+			<div class="max-w-5xl mx-auto px-6">
+				<h2 class="text-4xl md:text-6xl font-extrabold text-primary text-center leading-[1.2] tracking-tight">
+					Smartmeister emphasises individual learning paths without forcing children into memorisation chores and repetitive learning patterns.
+					<div class="w-24 h-2 bg-brandYellow mx-auto mt-12 rounded-full"></div>
+				</h2>
+			</div>
+		</section>
+	</main>
+
+	<!-- FOOTER SECTION -->
+	<footer class="bg-slate-900 text-white pt-24 pb-12">
+		<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 border-b border-slate-800 pb-16">
+			<div class="md:col-span-2 space-y-6">
+				<div class="text-2xl font-extrabold tracking-tight">smart<span class="text-brand-accent">|</span>meister</div>
+				<!-- <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Empowering kids to master math and German at their own pace. Adaptive Learning that boosts individual growth and grade improvement.</p> -->
+				<p class="text-slate-400 text-lg max-w-sm leading-relaxed">Empowering kids to better learn and unlock their full potential. With adaptive learning that boosts individual growth and grade improvement.</p>
+			</div>
+			<div class="space-y-6">
+				<h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Personalised Learning</h4>
+				<ul class="space-y-2 text-slate-300 font-medium">
+				  <li><span class="text-white" title="">Exercises that adapt to ability</li> 
+				  <li><span class="text-white" title="">Equally fair learning tools</li>
+				  <li><span class="text-white" title="">Selective text translation</li>
+				  <li><span class="text-white" title="">Read aloud for listening practice</li>
+				  <li><span class="text-white" title="">German Primary School Curriculum aligned</li>
+				   <!--  <li><a href="#" class="hover:text-white transition">Features</a></li>  -->
+				   <!-- <li><a href="#" class="hover:text-white transition">Pricing</a></li> -->
+				   <!-- <li><a href="#" class="hover:text-white transition">Schools</a></li> -->
+				</ul>
+			</div>
+			<div class="space-y-6">
+				<h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Legal</h4>
+				<ul class="space-y-4 text-slate-300 font-medium">
+					<li><a href="privacy_sm_lp 2.html" class="hover:text-white transition">Privacy Policy</a></li>
+					<!-- <li><a href="#" class="hover:text-white transition">Terms of Service</a></li> -->
+					<li><a href="./imprnt_sm.html" class="hover:text-white transition">Imprint</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="max-w-7xl mx-auto px-6 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm font-medium">
+			<p>©2025-2026 Smartmeister Learning. All rights reserved.</p> <p>     Built for parents that want more peace of mind when concerning about their kids future</p>
+			<div class="flex gap-8">
+				<!-- <a href="#" class="hover:text-white transition">Twitter</a> -->
+				<a href="https://www.linkedin.com/company/smartmeister" class="hover:text-white transition">LinkedIn</a>
+				<!-- <a href="#" class="hover:text-white transition">Instagram</a> -->
+			</div>
+		</div>
+	</footer>
+	<script>
+	const button = document.getElementById('audioButton');
+	const audio = document.getElementById('storyAudio');
+  
+	button.addEventListener('click', function(e) {
+	  e.preventDefault();
+  
+	  if (audio.paused) {
+		audio.play();
+	  } else {
+		audio.pause();
+		audio.currentTime = 0; // reset to start
+	  }
+	});
+	</script>
+	<script>
+	// WAITLIST FORM ACTIONS
+	  document.addEventListener('DOMContentLoaded', function() {
+		  const form = document.getElementById('sib-form');
+		  const successMessage = document.getElementById('success-message');
+		  const formContainer = document.getElementById('sib-container');
+		  
+		  if (form) {
+			  form.addEventListener('submit', function(e) {
+				  e.preventDefault();
+				  
+				  const email = document.getElementById('EMAIL').value;
+				  const optIn = document.querySelector('input[name="OPT_IN"]').checked;
+				  
+				  // Validation
+				  if (!email || !email.includes('@')) {
+					  alert('Please enter a valid email address.');
+					  return;
+				  }
+				  
+				  if (!optIn) {
+					  alert('Please check the checkbox to agree to receive product updates.');
+					  return;
+				  }
+				  // 3. CAPTCHA Validation
+				  if (typeof grecaptcha !== 'undefined') {
+					  const recaptchaResponse = grecaptcha.getResponse();
+					  if (!recaptchaResponse) {
+						  alert('Please check the "I\'m not a robot" checkbox.');
+						  return;
+					  }
+				  }
+				  
+				  // Submit via fetch
+				  const formData = new FormData(form);
+				  
+				  fetch(form.action, {
+					  method: 'POST',
+					  body: formData,
+					  mode: 'no-cors'
+				  })
+				  .then(function() {
+					  // Show success message
+					  if (successMessage) {
+						  successMessage.style.display = 'block';
+					  }
+					  if (formContainer) {
+						  formContainer.style.display = 'none';
+					  }
+				  })
+				  .catch(function(error) {
+					  console.error('Error:', error);
+					  alert('There was an error. Please try again.');
+				  });
+			  });
+		  }
+	  });
+	  </script>
+	  <div id="newvtPopupMenu"></div>
+	  
+	<script>
+		// HANDLE AUTO-PLAY VIDEOS ON SCROLL
+		const autoPlayVideos = document.querySelectorAll('video[data-autoplay]');
+		const videoObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				const video = entry.target;
+				if (entry.isIntersecting) {
+					video.play().catch(e => console.log('Autoplay prevented', e));
+				} else {
+					video.pause();
+				}
+			});
+		}, { threshold: 0.5 });
+
+		autoPlayVideos.forEach(v => videoObserver.observe(v));
+
+		// HANDLE DIAGNOSTICS DOUBLE VIDEO LOGIC
+		const leftVideo = document.getElementById('diagnostics-left');
+		const rightVideo = document.getElementById('diagnostics-right');
+		const rightContainer = document.getElementById('right-video-container');
+		const rightOverlay = document.getElementById('right-overlay');
+		const rightPlayIcon = document.getElementById('right-play-icon');
+
+		let isRightPlaying = false;
+
+		// Intersection Observer for Left Video specifically
+		const leftObserver = new IntersectionObserver((entries) => {
+			if (entries[0].isIntersecting && !isRightPlaying) {
+				leftVideo.play().catch(() => {});
+			} else {
+				leftVideo.pause();
+			}
+		}, { threshold: 0.2 });
+		leftObserver.observe(leftVideo);
+
+		rightContainer.addEventListener('click', () => {
+			if (isRightPlaying) {
+				// Pause right, play left
+				rightVideo.pause();
+				leftVideo.play();
+				rightOverlay.classList.replace('opacity-0', 'opacity-100');
+				rightPlayIcon.textContent = 'play_arrow';
+				isRightPlaying = false;
+			} else {
+				// Pause left, play right
+				leftVideo.pause();
+				rightVideo.play().catch(() => {});
+				rightOverlay.classList.replace('opacity-100', 'opacity-0');
+				rightPlayIcon.textContent = 'pause';
+				isRightPlaying = true;
+			}
+		});
+	</script>
+	<script>
+	  /**
+	   * Interactive Video Section Logic
+	   */
+	  const videoBadgeData = [
+		 // null, // Thumb 1 (no badge)
+		  { text: "Math: Hundreds Array", color: "#EF4444" }, // Thumb 1 
+		  { text: "Math: Calculation Pyramid", color: "#EF4444" }, // Thumb 2 (Red)
+		  { text: "German: Prepositions", color: "#10B981" }, // Thumb 3 (Green)
+		  { text: "German: Syllables", color: "#F59E0B" }, // Thumb 4 (Amber)
+		  { text: "German: Pronouns", color: "#8B5CF6" }, // Thumb 5 (Purple)
+		  { text: "German: Articles", color: "#EC4899" }, // Thumb 6 (Pink)
+	  ];
+
+	  const videoCaptions = [
+		  "",
+		  "",
+		  "",
+		  "",
+		  "",
+		  ""
+	  ];
+
+	  const videoSources = [
+		  "./videos_sm-downsized/sm_exercise_mathdotcluster.mp4",
+		  "./videos_sm-downsized/sm_exercise_numberwall.mp4",
+		  "./videos_sm-downsized/sm_exercise_prepositions-drag.mp4",
+		  "./videos_sm-downsized/sm_exercise_syllables_en.mp4",
+		  "./videos_sm-downsized/sm_exercise_grammar_en.mp4",
+		  "./videos_sm-downsized/sm_exercise_articles-drag_en.mp4"
+	  ];
+
+	  function handleThumbClick(id) {
+		  const videoPlayer = document.getElementById('main-video-player');
+		  const videoSource = document.getElementById('main-video-source');
+		  const badge = document.getElementById('video-overlay-badge');
+		  const caption = document.getElementById('video-caption');
+		  const playOverlay = document.getElementById('video-play-overlay');
+		  const btns = document.querySelectorAll('.thumbnail-btn');
+
+		  // 1. Update Video Source and Play
+		  // videoPlayer.poster = `https://picsum.photos/seed/vid${id}/800/450`;
+		  videoPlayer.poster = ``;
+		  videoSource.src = videoSources[id-1];
+		  videoPlayer.load();
+		  videoPlayer.play();
+		  
+		  // Ensure play overlay is hidden during autoplay
+		  playOverlay.classList.add('hidden');
+		  
+		  // 2. Handle Thumbnail Active State
+		  btns.forEach((btn, index) => {
+			  if (index === (id - 1)) {
+				  btn.classList.add('thumbnail-active');
+			  } else {
+				  btn.classList.remove('thumbnail-active');
+			  }
+		  });
+
+		  // 3. Update Caption
+		  caption.innerText = videoCaptions[id-1];
+
+		  // 4. Handle Floating Badge Logic
+		  const badgeInfo = videoBadgeData[id-1];
+		  if (badgeInfo) {
+			  badge.style.display = 'block';
+			  badge.style.backgroundColor = badgeInfo.color;
+			  badge.style.color = '#FFFFFF';
+			  badge.innerText = badgeInfo.text;
+		  } else {
+			  badge.style.display = 'none';
+		  }
+	  }
+	  
+	  /**
+	   * Pulse Animation Scroll Trigger
+	   */
+	  document.addEventListener('DOMContentLoaded', () => {
+		  const pulseTargets = document.querySelectorAll('.pulse-target');
+		  
+		  const observerOptions = {
+			  root: null,
+			  threshold: 0.5 // Trigger when at least 50% is visible
+		  };
+
+		  const observer = new IntersectionObserver((entries, observer) => {
+			  entries.forEach(entry => {
+				  if (entry.isIntersecting) {
+					  // Add class to all pulsate targets simultaneously for a synchronized look
+					  pulseTargets.forEach(target => {
+						  target.classList.add('pulse-highlight');
+					  });
+					  // Animation lasts 3 seconds as defined in CSS. 
+					  // Once triggered, we unobserve to make it "one time".
+					  observer.unobserve(entry.target);
+				  }
+			  });
+		  }, observerOptions);
+
+		  // We observe the container or the first target to trigger the group pulse
+		  if (pulseTargets.length > 0) {
+			  observer.observe(document.getElementById('thumbnail-container'));
+		  }
+	  });
+  </script>
+<!-- <script type="module" src="/index.tsx"></script> -->
+</body>
+</html>
