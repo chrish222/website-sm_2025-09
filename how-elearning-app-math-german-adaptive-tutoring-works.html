@@ -2,10 +2,22 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>How does Smartmeister work? - Inclusive elearning app thats boosts learning better than German and Math tutoring sessions - Berlin &amp; Munich or Hamburg - German school curriculum aligned</title>
-<meta name="description" content="Our elearning app uses adaptive exercises and learning path adjustment to suit every learner type, whether in Berlin, Hamburg or Munich. Bye bye expensive tutoring.">
+<title>How does Smartmeister work? - Inclusive tutoring app thats boosts learning better than German and Math tutoring sessions - Berlin &amp; Munich or Hamburg - German school curriculum aligned</title>
+<meta name="description" content="Smartmeister tracks progress and mistakes, also adapting exercises to the student's abilities. Personalised online tutoring whether in Berlin, Hamburg or Munich, aligned to the German primary school curriculum.">
 <meta name="keywords" content="math tutoring, german tutoring, german primary school, school tutor, elearning, elearning app, lehrplan, school curriculum, primary school tutoring, german learning app, math learning app, subject improvement, subject practice, exam preparation, grades">
 <meta name="author" content="Smartmeister">
+
+<!--<meta property="og:title" content="SmartMeister - The learning app that suits every child, without forcing them into one-size-fits-all learning.">-->
+<meta property="og:title" content="SmartMeister: Subject learning that suits every child. No more one-size-fits-all.">
+<meta property="og:description" content="Personalised learning & tutoring app boosting German primary school subject learning regardless of abilities. Tracks knowledge gaps, strengths + weaknesses, adjusting difficulty and learning path to a child's individual learning style. Bilingual learner friendly!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.smartmeister.app">
+<meta property="og:image" content="https://www.smartmeister.app/images/smartmeister_og-image_en.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SmartMeister | Boosting school subject practice regardless of ability">
+<meta name="twitter:description" content="Personalised learning & tutoring app boosting German primary school subject practice regardless of abilities. Tracks knowledge gaps, strengths + weaknesses, adjusting difficulty and learning path to a child's individual learning style. With additional tools for bilingual learners">
+<meta name="twitter:image" content="https://www.smartmeister.app/images/smartmeister_og-image_en.jpg">
+
 <link rel="icon" type="image/x-icon" href="/smartmeister-favicon.png">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -109,6 +121,30 @@
         .bento-card {
             @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
         }
+      .step-group:hover .step-circle {
+          box-shadow: inset 0 0 0 4px white;
+      }
+      .comparison-table-row:nth-child(even) {
+          @apply bg-slate-50/50 dark:bg-slate-800/30;
+      }
+      .scenario-scroller::-webkit-scrollbar {
+          display: none;
+      }
+      .scenario-scroller {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+  
+      .hand-drawn-arrow {
+          position: absolute;
+          top: 0.5rem;
+          height: 1.5rem;
+          pointer-events: none;
+          z-index: 10;
+          filter: url(#fuzzy-red);
+      }
+        
+        
     </style>
     <style type="text/tailwindcss">
     * {
@@ -283,16 +319,15 @@
     <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="text-2xl font-extrabold tracking-tight text-primary2 flex items-center">
-              <a href="./index.html" title="Home" class="no-underline">
+              <a href="./index.html" title="Home" alt="Return to Homepage" class="no-underline">
                 Smart<span class="text-brand-accent">|</span>meister
               </a>
             </div>
             <div class="hidden md:flex items-center gap-8">
-                <a href="./index.html#features" class="font-semibold hover:text-primary2 transition">Features</a>
-                <a href="#how-it-works" class="font-semibold hover:text-primary2 transition">How it works</a>
-                <a href="#waitlist" class="bg-primary2 text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary2/20">
-                    Join the waitlist
-                </a>
+                <a href="#features" alt="What features do help children to better learn" class="font-semibold hover:text-primary transition">Features</a>
+                <a href="./how-elearning-app-math-german-adaptive-tutoring-works.html" alt="How does learning with Smartmeister work" class="font-semibold hover:text-primary transition">How it works</a>
+                <a href="./smartmeister-german-primary-school-children-maximising-subject-abilities.html" alt="About the team of Smartmeister" class="font-semibold text-lg py-2 border-b border-slate-50">About Us</a>
+                <a href="#granular_metrics" alt="How is learning progress measured" class="font-semibold hover:text-primary transition">Progress Tracking</a>
             </div>
             <button class="md:hidden">
                 <span class="material-symbols-outlined text-3xl"></span>
@@ -313,9 +348,10 @@
         
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full left-0 animate-in slide-in-from-top duration-300">
           <div class="flex flex-col p-6 space-y-4 shadow-xl">
-              <a href="#features" class="font-semibold text-lg py-2 border-b border-slate-50">Features</a>
-              <a href="#how-it-works" class="font-semibold text-lg py-2 border-b border-slate-50">How it works</a>
-              <a href="#faq" class="font-semibold text-lg py-2 border-b border-slate-50">FAQ</a>
+              <a href="#features" alt="What features do help children to better learn" class="font-semibold text-lg py-2 border-b border-slate-50">Features</a>
+              <a href="./how-elearning-app-math-german-adaptive-tutoring-works.html" alt="How does learning with Smartmeister work" class="font-semibold text-lg py-2 border-b border-slate-50">How it works</a>
+              <a href="./smartmeister-german-primary-school-children-maximising-subject-abilities.html" alt="About the team of Smartmeister" class="font-semibold text-lg py-2 border-b border-slate-50">About Us</a>
+              <a href="#granular_metrics" alt="How is learning progress measured" class="font-semibold text-lg py-2 border-b border-slate-50">Progress Tracking</a>
           </div>
       </div>
     </nav>
@@ -370,83 +406,8 @@
     <!-- <p class="text-lg md:text-2xl font-bold text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"> -->
     <h2 class="text-lg md:text-2xl font-bold text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                       <!--  Smartmeister bridges the gap between traditional curriculum and individual learning speeds through AI-driven adaptation.-->
-                      Built around the child in front of you — not the average child in a statistic. Whether your child is catching up or ready to go further, our learning app adapts to where they actually are and is more reliable tackling various learning issues than typical Math or German tutoring.
+                      Built around the child in front of you — not the average child in a statistic. Whether your child is catching up or ready to go further, our learning app adapts to where they actually are and is more effective tackling various learning issues than typical Math or German tutoring.
                     </h2>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8">
-    <div class="pb-6 pl-3 pr-3 pt-0 md:pb-8 md:pl-8 md:pr-8 rounded-xl bg-soft-mint dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50">
-      <div class="w-12 h-12 bg-emerald-200/90 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center relative -top-4 -left-7 md:-top-4 md:-left-12">
-           <span class="material-symbols-outlined">psychology</span>
-      </div>
-    <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Suitable for different learning goals</h3>
-
-   <!-- <div class="flex items-start gap-3 transition-all duration-300 group">-->
-    <div class="group relative flex items-start text-left">
-        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
-            For children falling behind in class, exercises target the exact gaps holding them back — building foundational knowledge step by step, without pressure.
-            </div>
-    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Catching up foundational gaps
-    </div>
-    
-    <div class="group relative flex items-start text-left">
-        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
-            For kids who are on track but need consistent reinforcement, short daily sessions maintain what's been learned and prevent gaps from forming.
-            </div>
-    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Keeping pace with curriculum
-    </div>
-    
-    <div class="group relative flex items-start text-left">
-        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
-            For children ready to be challenged beyond the standard level, exercises adapt upward to support deeper mastery and subject confidence.
-            </div>
-    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Enriching subject practice
-    </div>
-    
-    <div class="group relative flex items-start text-left">
-        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
-            Focused subject modules help children practise specific content ahead of assessments. Less last-minute stress for them — and for you.
-            </div>
-    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Test and homework preparation
-    </div>
-    
-    <div class="group relative flex items-start text-left">
-        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
-            Built-in translation, dual-language audio pronunciation and child-friendly paraphrasing make subject content accessible even if German isn't spoken at home. Language support that doesn't slow down subject learning.
-            </div>
-    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Multilingual and language-barrier learners
-    </div>
-    
-    <div class="group relative flex items-start text-left">
-        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
-            Neurodivergent children or ones having a different learning capacity benefit from dyslexia-friendly typefaces, text-to-speech, adjustable display settings, and exercises that respect individual pace and learning style. Every child's way of absorbing information is valid here.
-            </div>
-    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Neurodiverse and different-pace learners
-    </div>
-    
-    </div>
-    <div class="pb-8 pl-8 pr-8 pt-0 rounded-xl bg-soft-lavender dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/50">
-    <div class="w-12 h-12 bg-purple-500/20 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center relative -top-4 -left-12">
-    <span class="material-symbols-outlined">route</span>
-    </div>
-    <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Built to close that gap</h3>
-    <!--<ul class="space-y-4 text-slate-700 dark:text-slate-300">
-    <li class="flex items-start gap-3">
-    <span class="material-symbols-outlined text-purple-500 text-xl">check_circle</span>
-    <span>Tailored content flow matching child's interests.</span>
-    </li>
-    <li class="flex items-start gap-3">
-    <span class="material-symbols-outlined text-purple-500 text-xl">check_circle</span>
-    <span>Supports multi-modal learning (audio, visual, text).</span>
-    </li>
-    <li class="flex items-start gap-3">
-    <span class="material-symbols-outlined text-purple-500 text-xl">check_circle</span>
-    <span>Customizable milestones to boost confidence.</span> 
-    </li>
-    </ul> -->
-    Learning struggles aren't a coincidence. They're usually caused by gaps in foundational knowledge, a learning pace that doesn't match the child, or a classroom that simply can't adapt to 25 different learners at once. Smartmeister is built to close that gap — for every child, at every level.
-    No pressure. No one-size-fits-all. <strong>Just steady research backed learning that is personalised and child-friendly.</strong>
-    
-    </div>
     </div>
     </div>
 </section>
@@ -487,8 +448,8 @@
           </svg>
           <div class="absolute top-[-25px] left-[57%] -translate-x-1/2 rotate-3 text-[#EF4444] font-bold text-2xl md:text-2xl whitespace-nowrap" style="font-family: 'Gochi Hand', cursive;">
                                   Adaption Loop
-                              </div>
           </div>
+        </div>
         <!--
         <div class="relative z-10 grid grid-cols-7 gap-6">
             <div class="group step-group relative flex flex-col items-center text-center">  
@@ -908,7 +869,7 @@
                             </p>
     </div>
     <div class="w-full md:w-1/3 aspect-square bg-white/20 rounded-2xl border-4 border-white/40 flex items-center justify-center">
-    <span class="material-symbols-outlined text-6xl text-white opacity-80"><img src="./images/dashboard_exercise_mascot_robot_on_rocket_with_backpack_512x512.jpg" class="block full-width"></span>
+    <span class="material-symbols-outlined text-6xl text-white opacity-80"><img src="./images/dashboard_exercise_mascot_robot_on_rocket_with_backpack_512x512.png" class="block full-width"></span>
     </div>
     </div>
     <div class="md:col-span-2 lg:col-span-2 bento-card bg-white dark:bg-card-dark rounded-[32px] p-8 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col">
@@ -988,7 +949,86 @@
     </div>
     </section>
     
+<section class="py-20 pb-48 px-6 mt-6 md:mt-32">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-8">
+    <div class="pb-6 pl-3 pr-3 pt-0 md:pb-8 md:pl-8 md:pr-8 rounded-xl bg-soft-mint dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50">
+      <div class="w-12 h-12 bg-emerald-200/90 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center relative -top-4 -left-7 md:-top-4 md:-left-12">
+           <span class="material-symbols-outlined">psychology</span>
+      </div>
+    <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Suitable for different learning goals</h3>
+
+   <!-- <div class="flex items-start gap-3 transition-all duration-300 group">-->
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            For children falling behind in class, exercises target the exact gaps holding them back — building foundational knowledge step by step, without pressure.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Catching up foundational gaps
+    </div>
     
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            For kids who are on track but need consistent reinforcement, short daily sessions maintain what's been learned and prevent gaps from forming.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Keeping pace with curriculum
+    </div>
+    
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            For children ready to be challenged beyond the standard level, exercises adapt upward to support deeper mastery and subject confidence.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Enriching subject practice
+    </div>
+    
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            Focused subject modules help children practise specific content ahead of assessments. Less last-minute stress for them — and for you.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Test and homework preparation
+    </div>
+    
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            Built-in translation, dual-language audio pronunciation and child-friendly paraphrasing make subject content accessible even if German isn't spoken at home. Language support that doesn't slow down subject learning.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Multilingual and language-barrier learners
+    </div>
+    
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            Neurodivergent children or ones having a different learning capacity benefit from dyslexia-friendly typefaces, text-to-speech, adjustable display settings, and exercises that respect individual pace and learning style. Every child's way of absorbing information is valid here.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Neurodiverse and different-pace learners
+    </div>
+    
+    </div>
+    <div class="pb-8 pl-8 pr-8 pt-0 rounded-xl bg-soft-lavender dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/50">
+    <div class="w-12 h-12 bg-purple-500/20 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center relative -top-4 -left-12">
+    <span class="material-symbols-outlined">route</span>
+    </div>
+    <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Built to close that gap</h3>
+    <!--<ul class="space-y-4 text-slate-700 dark:text-slate-300">
+    <li class="flex items-start gap-3">
+    <span class="material-symbols-outlined text-purple-500 text-xl">check_circle</span>
+    <span>Tailored content flow matching child's interests.</span>
+    </li>
+    <li class="flex items-start gap-3">
+    <span class="material-symbols-outlined text-purple-500 text-xl">check_circle</span>
+    <span>Supports multi-modal learning (audio, visual, text).</span>
+    </li>
+    <li class="flex items-start gap-3">
+    <span class="material-symbols-outlined text-purple-500 text-xl">check_circle</span>
+    <span>Customizable milestones to boost confidence.</span> 
+    </li>
+    </ul> -->
+    Learning struggles aren't a coincidence. They're usually caused by gaps in foundational knowledge, a learning pace that doesn't match the child, or a classroom that simply can't adapt to 25 different learners at once. Smartmeister is built to close that gap — for every child, at every level.
+    No pressure. No one-size-fits-all. <strong>Just steady research backed learning that is personalised and child-friendly.</strong>
+    
+    </div>
+    </div>
+    </div>
+</section>
+
 
 
 <!-- New Real Scenarios Section -->
