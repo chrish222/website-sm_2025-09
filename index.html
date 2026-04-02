@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="content-language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartmeister – Child-friendly app for German & maths subject practice. Adaptively suits all learner types. Germany primary school curriculum learning aligned.</title>
+    <meta name="robots" content="all"/>
+    <title>Smartmeister – Child-friendly learning app for German & maths subject practice. Adaptively suits all learner types. Germany primary school curriculum learning aligned.</title>
     <!--<meta name="description" content="German primary school curriculum aligned, Smartmeister supports children learn and practice different subjects through adaptive exercises, whether improving subject foundations, catching up or unlocking better results.">-->
     <!--<meta name="description" content="With Smartmeister children strengthen subject proficiency & practice Maths + German through adaptive exercises at home. Kids improve their foundations, catch up or unlock better results along with traditional tutoring.">-->
     <meta name="description" content="With Smartmeister children strengthen subject proficiency & practice Maths + German through adaptive exercises at home, improving foundations & results, or fixing gaps along with tutoring.">
-    <meta name="keywords" content="german primary school, school curriculum, tutoring, learning app, school learning app, subject improvement, subject practice, exam preparation, grades">
+    <meta name="keywords" content="german primary school, school curriculum, tutoring, learning app, school learning app, subject improvement, subject practice, exam preparation, grades, Berlin, Hamburg, Munich, Frankfurt">
     <meta name="author" content="Smartmeister">
     <meta name="geo.country" content="DE">
     <meta name="country" content="Germany">
@@ -22,13 +23,13 @@
     <meta name="twitter:title" content="SmartMeister | Boost school subject practice regardless of abilities">
     <meta name="twitter:description" content="Master German school curriculum and practice subjects using adaptive exercises, incl. tools for bilingual families. Learning that suits every child.">
     <meta name="twitter:image" content="https://www.smartmeister.app/images/smartmeister_og-image_en.jpg">
-    
+    <link rel="canonical" href="https://www.smartmeister.app/index.html" />
     <link rel="icon" type="image/x-icon" href="/smartmeister-favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Gochi+Hand&display=swap" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=school,play_arrow,play_circle,star,arrow_forward,volume_up,trending_up,emoji_people,editor_choice,child_hat,menu_book,spellcheck,article_person,spatial_audio,voice_selection,ear_sound,trophy,mindfulness,rewarded_ads,g_translate,rocket,check_circle,star,favorite,thumb_up&display=block" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=school,play_arrow,play_circle,star,arrow_forward,volume_up,trending_up,emoji_people,editor_choice,child_hat,keyboard_arrow_down,menu_book,spellcheck,article_person,spatial_audio,voice_selection,ear_sound,trophy,mindfulness,rewarded_ads,g_translate,rocket,check_circle,star,favorite,thumb_up&display=block" rel="stylesheet"> -->
      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward,article,check_circle,child_care,cognition,ear_sound,editor_choice,emoji_people,favorite,g_translate,hub,menu_book,mindfulness,person,play_arrow,play_circle,rewarded_ads,rocket,school,spatial_audio,spellcheck,star,thumb_up,trending_up,trophy,voice_selection,volume_up&display=block" rel="stylesheet"> 
     <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"> -->
     <script>
@@ -75,6 +76,19 @@
           --tw-bg-opacity: 1;
           background-color: rgb(255 214 74 / var(--tw-bg-opacity, 1));
       }
+      .bg-brandYellow-Gradient {
+      background: linear-gradient(128deg,rgba(250, 215, 102, 1) 1%, rgba(255, 214, 74, 1) 37%, rgba(255, 199, 77, 1) 100%);
+      }
+      .bg-pink-gradient {
+        background: linear-gradient(128deg,rgba(250, 237, 244, 1) 1%, rgba(252, 220, 238, 1) 46%, rgba(247, 220, 236, 1) 100%);
+        }
+      .bg-lightblue-gradient {
+        background: linear-gradient(128deg,rgba(233, 242, 245, 1) 5%, rgba(216, 230, 237, 1) 46%, rgba(207, 224, 232, 1) 100%);
+
+        }
+        .bg-lightblue-strong-gradient {
+          background: linear-gradient(128deg,rgba(237, 246, 250, 1) 2%, rgba(220, 242, 252, 1) 46%, rgba(220, 239, 247, 1) 100%);
+          }
         .hand-divider {
           height: 12px;
           background: url("data:image/svg+xml,%3Csvg width='1200' height='12' viewBox='0 0 1200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23FF4D4D' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -223,6 +237,81 @@
           21px -18.1px 7.3px rgba(255, 255, 255, 1), 
           -18.1px -27.3px 30px rgba(255, 255, 255, 1);
         }
+        
+      .split-flag {
+        width: 20px;
+        height: 14px;
+        /* Load the SVG instead of the gradient */
+        background-image: url('./images/language-auswahl.svg');
+        background-size: 100% 100%; /* Ensures the SVG stretches/fits exactly to the 20x14 box */
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        /* Kept all your original positioning and borders */
+        position: relative;
+        border-radius: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+        border: 0px solid rgba(0,0,0,0.1);
+    }
+    
+    /* how it works animation */
+    /* 1. Define the colors and the animation */
+    :root {
+      --step-yellow: #E0CA00;
+      --text-primary-color: #0f172a; /* Change this to your actual primary text color */
+    }
+  
+    @keyframes highlight-sequence {
+      0% {
+        background-color: var(--active-bg);
+        color: var(--active-text);
+      }
+      /* Stay yellow for 2.5s (25% of 10s) */
+      20% {
+        background-color: var(--step-yellow);
+        color: var(--text-primary-color);
+      }
+      /* Transition back to original */
+      25%, 100% {
+        background-color: var(--orig-bg);
+        color: var(--orig-text);
+      }
+    }
+  
+    .step-circle {
+      /* Apply animation */
+      animation: highlight-sequence 10s infinite linear;
+      /* Default states */
+      background-color: var(--orig-bg);
+      color: var(--orig-text);
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+  
+    /* 2. Assign original colors for each step */
+    #step-1 { 
+      --orig-bg: #60A5FA; /* bg-blue-400 */
+      --orig-text: #ffffff;
+      animation-delay: 0s; 
+    }
+    #step-2 { 
+      --orig-bg: #1D4ED8; /* bg-blue-700 */
+      --orig-text: #ffffff;
+      animation-delay: 2.5s; 
+    }
+    #step-3 { 
+      --orig-bg: #676AA3; 
+      --orig-text: #ffffff;
+      animation-delay: 5s; 
+    }
+    #step-4 { 
+      --orig-bg: #2e2195; /* your bg-primary */
+      --orig-text: #ffffff;
+      animation-delay: 7.5s; 
+    }
+    
+    
         /* Hide scrollbar for cleaner look */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -250,37 +339,45 @@
                   Smart<span class="text-brand-accent">|</span>meister
               </a>
           </div>
-  
           <div class="hidden md:flex items-center gap-8">
-              <a href="./index.html#features" alt="What features do help children to better learn" class="font-semibold text-lg hover:text-primary transition">Features</a>
-              <a href="./how-elearning-app-math-german-adaptive-tutoring-works.html" alt="How does German and Math learning with Smartmeister work" class="font-semibold hover:text-primary transition">How it works</a>
-              <a href="./smartmeister-german-primary-school-children-maximising-subject-abilities.html" alt="About the team of Smartmeister" class="font-semibold text-lg py-2 border-b border-slate-50">About Us</a>
-              <a href="./index.html#granular_metrics" alt="How is learning progress measured" class="font-semibold text-lg hover:text-primary transition">Progress Tracking</a>
+              <a href="./index.html#features" title="What features do help children to better learn" class="font-semibold text-base hover:text-primary transition">Features</a>
+              <a href="./how_learning_app_math_german_primary_school_adaptive_tutoring_works.html" title="How does adaptive German and Math learning with Smartmeister work" class="font-semibold text-base hover:text-primary transition">How it works</a>
+              <a href="./about_smartmeister_german_primary_school_children_improve_subject_abilities.html" title="About the startup founders of Smartmeister" class="font-semibold text-base py-2 border-b border-slate-50">About Us</a>
+              <a href="./index.html#granular_metrics" title="How is learning progress measured" class="font-semibold text-base hover:text-primary transition">Progress Tracking</a>
           </div>
-  
           <div class="flex items-center gap-4">
-              <a href="#waitlist" class="bg-primary text-white px-5 py-2 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
-                  Join the waitlist
+            <button class="mb-4">
+              <span class="material-symbols-outlined text-3xl"></span>
+              <a href="#waitlist" class="hidden md:block bg-primary text-white px-5 py-2 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
+                  Join our waitlist
               </a>
-              
-            <button class="md:hidden">
-                <span class="material-symbols-outlined text-3xl"></span>
-                <a href="#waitlist" class="hidden md:block bg-primary2 text-white px-6 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary2/20">
-                  Join the waitlist
-              </a>
-              <a href="#waitlist" class="block md:hidden bg-primary2 text-white px-6 py-2.5 -mt-6 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary2/20">
-                Join now
-              </a>
+              <a href="#waitlist" class="block md:hidden bg-primary text-white px-5 py-2 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
+                 Start Now
+             </a>
             </button>
+          </div>
+          
+          <button id="menu-toggle" class="md:hidden text-primary focus:outline-none p-2" aria-label="Menü umschalten">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+          <div class="hidden lg:flex items-center ml-4 pr-4 border-r border-slate-200 dark:border-slate-700 mr-2">
+          <a class="flex items-center text-slate-600 dark:text-slate-400 hover:text-navy-900 dark:hover:text-white transition-colors duration-200 font-medium text-sm" href="./index_de.html" title="German">
+          <span aria-hidden="true" class="split-flag"></span>
+          <span><b>EN</b> / DE</span>
+          </a>
           </div>
       </div>
   
       <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full left-0 animate-in slide-in-from-top duration-300">
           <div class="flex flex-col p-6 space-y-4 shadow-xl">
-              <a href="./index.html#features" alt="What features do help children to better learn" class="font-semibold text-lg py-2 border-b border-slate-50">Features</a>
-              <a href="./how-elearning-app-math-german-adaptive-tutoring-works.html" alt="How does German and Math learning with Smartmeister work" class="font-semibold text-lg py-2 border-b border-slate-50">How it works</a>
-              <a href="./smartmeister-german-primary-school-children-maximising-subject-abilities.html" alt="About the team of Smartmeister" class="font-semibold text-lg py-2 border-b border-slate-50">About Us</a>
-              <a href="./index.html#granular_metrics" alt="How is learning progress measured" class="font-semibold text-lg py-2 border-b border-slate-50">Progress Tracking</a>
+              <a href="./index.html#features" title="What features do help children to better learn" class="font-semibold text-base py-2 border-b border-slate-50">Features</a>
+              <a href="./how_learning_app_math_german_primary_school_adaptive_tutoring_works.html" title="How does adaptive German and Math learning with Smartmeister work" class="font-semibold text-base py-2 border-b border-slate-50">How it works</a>
+              <a href="./about_smartmeister_german_primary_school_children_improve_subject_abilities.html" title="About the startup founders of Smartmeister" class="font-semibold text-base py-2 border-b border-slate-50">About Us</a>
+              <a href="./index.html#granular_metrics" title="How is learning progress measured" class="font-semibold text-base py-2 border-b border-slate-50">Progress Tracking</a>
+              <a class="flex items-center text-slate-600 dark:text-slate-400 hover:text-navy-900 dark:hover:text-white transition-colors duration-200 font-medium text-sm" href="./index_de.html" title="German"><span aria-hidden="true" class="split-flag"></span>
+              <span><b>EN</b> / DE</span></a>
           </div>
       </div>
   </nav>
@@ -311,7 +408,7 @@
 
     <main class="pt-20">
         <!-- HERO SECTION -->
-        <section class="relative bg-brand-yellow pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
+        <section class="relative bg-brand-yellow bg-brandYellow-Gradient pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
             <div class="max-w-7xl md:p-12 lg:p-16  md:max-w-screen-2xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center md:items-start lg:items-center md:grid-cols-[40%_60%] lg:grid-cols-[50%_50%]">
                 <div class="space-y-8 z-10">
                   
@@ -331,7 +428,7 @@
                         <span class="text-slate-900">15min of subject practice daily.</span>
                     </h1>
                     <p class="text-lg md:text-xl text-slate-800/80 max-w-lg leading-relaxed font-bold">
-                        Built for real results: Keeping practice in the sweet spot so every training session creates real progress. Children stay motivated when learning feels just right.. <span class="inline md:inline lg:hidden">and parents have their peace of mind.</span>
+                        Built for results: Practice adapts to your child's abilities, keeping difficulty in the sweet spot. Every session creates real progress. Children keep motivated when learning feels just right.. <span class="inline md:inline lg:hidden">and parents their peace of mind.</span>
                     </p>
                     <!-- ORIGINAL BUBBLE FEATURE POINTS
                       <div class="space-y-4">
@@ -776,7 +873,7 @@
                     </div>
                     
                     <!-- <div class="absolute bg-primary -bottom-10 -left-6 md:-left-12 p-6 rounded-3xl shadow-2xl max-w-[280px] z-20 float-anim"> -->
-                    <div class="absolute hidden lg:block bg-primary -bottom-24 -left-2 sm:-left-12 sm:-bottom-20 p-3 md:p-6 rounded-3xl shadow-2xl max-w-full md:max-w-[280px] z-40 md:float-anim">
+                    <div class="absolute hidden lg:block bg-white -bottom-24 -left-2 sm:-left-12 sm:-bottom-20 p-3 md:p-6 rounded-3xl shadow-2xl max-w-full md:max-w-[280px] z-40 md:float-anim">
                         <div class="flex gap-1 text-brand-yellow mb-3 hidden lg:block">
                             <span class="material-symbols-outlined text-xxl">star</span>
                             <span class="material-symbols-outlined text-xxl">star</span>
@@ -784,14 +881,14 @@
                             <span class="material-symbols-outlined text-xxl">star</span>
                             <span class="material-symbols-outlined text-xxl">star</span>
                         </div>
-                        <p class="text-white font-medium text-lg md:text-xl">
-                            <b>Created by parents, made for parents..</b> with the help of real teacher insights that improve grades.
+                        <p class="text-primary font-medium text-lg md:text-xl">
+                            <b>Created by parents</b> with the help of teacher insights that measurably improve results.
                             <!-- Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades -->
                         </p>
                     </div>
                     <div class="absolute hidden lg:hidden -bottom-20 md:-bottom-28 lg:-bottom-24 left-4 sm:-bottom-20 p-3 md:p-3 max-w-full md:max-w z-40">
                       <p class="font-hand text-brand-accent font-bold text-lg md:text-xl">
-                          Made by parents, for parents.. with the help of real teacher insights that improve grades.
+                          Made by parents for parents.. with the help of real teacher insights that improve grades.
                           <!--Confidence for children. Peace of mind for parents.-->
                           <!-- Whether overcoming learning anxiety or reducing frustration, Smartmeister improves grades -->
                       </p>
@@ -898,7 +995,7 @@
         
         <!-- Voice Narration Section -->
         <section class="max-w-7xl mx-auto px-6 py-24">
-            <div class="bg-pink-50 rounded-[60px] p-8 md:p-20 grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="bg-pink-50 bg-pink-gradient rounded-[60px] p-8 md:p-20 grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative group">
                     <div class="relative bg-slate-900 rounded-[40px] aspect-video overflow-hidden shadow-2xl">
                         <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="./">
@@ -933,112 +1030,101 @@
         <!-- SHORT HOW IT WORKS -->
         
         <section class="py-24 pt-32 px-6 bg-[#F8FAFC] dark:bg-background-dark overflow-hidden">
-          <!-- Redesigned 4-Step Horizontal Guide -->
           <div class="max-w-7xl mx-auto px-6 mb-32">
-          <div class="text-center mb-16">
-          <h3 class="text-3xl font-extrabold text-primary dark:text-slate mb-2">Your Path to Progress</h3>
-          <p class="text-slate-500 font-medium">Simple steps to boost your child's subject learning</p>
-          </div>
-          <!-- Horizontal Steps Card -->
-          <div class="bg-white dark:bg-card-dark p-10 md:p-14 rounded-[40px] border border-slate-100 dark:border-slate-800 shadow-xl">
-            
-            
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 relative">
-            <!--  <div class="hidden lg:block absolute -left-[4%] w-[90%] hand-drawn-arrow z-1">
-                <svg class="mx-auto w-256 h-12 text-[#D32F2F] -top-[0.2rem]" fill="none" height="8" stroke="#D0DBDB" style="display: block; pointer-events: none; transform: scaleX(1.0) scaleY(1.0) rotate(-0deg); position:relative;" viewbox="0 0 800 12" width="800" xmlns="http://www.w3.org/2000/svg">
-                <path d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23FF4D4D' stroke-width='4' stroke-linecap='round'></path>
-                
+            <div class="text-center mb-16">
+              <h3 class="text-3xl font-extrabold text-primary dark:text-slate mb-2">Your Path to Progress</h3>
+              <p class="text-slate-500 font-medium">Simple steps to boost your child's subject learning</p>
+            </div>
+        
+            <div class="bg-white dark:bg-card-dark p-10 md:p-14 rounded-[40px] border border-slate-100 dark:border-slate-800 shadow-xl">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 relative">
+                <!-- additional loop -->
+                <div class="hidden lg:flex absolute -top-[70px] -left-[0.5rem] right-0 h-[120px] w-[70%] pointer-events-none z-1">
+                <svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 120">
+                <defs>
+                <filter height="120%" id="fuzzy-red" width="120%" x="-1%" y="-1%">
+                <feturbulence basefrequency="0.005" numoctaves="0" result="noise" type="fractalNoise"></feturbulence>
+                <fedisplacementmap in="SourceGraphic" in2="noise" scale="3"></fedisplacementmap>
+                </filter>
+                </defs>
+                <path d="M 290,95 C 210,95 200,10 430,10 C 660,10 700,95 670,95" fill="none" filter="url(#fuzzy-red)" stroke="#EF4444" stroke-linecap="round" stroke-width="3"></path>
+                <path d="M 285,85 L 300,95 L 282,103" fill="none" filter="url(#fuzzy-red)" stroke="#EF4444" stroke-linecap="round" stroke-width="3"></path>
                 </svg>
-              </div> -->
-            <!-- additional loop -->
-            <div class="hidden lg:flex absolute -top-[70px] -left-[0.5rem] right-0 h-[120px] w-[70%] pointer-events-none z-1">
-              <svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 120">
-              <defs>
-              <filter height="120%" id="fuzzy-red" width="120%" x="-1%" y="-1%">
-              <feturbulence basefrequency="0.005" numoctaves="0" result="noise" type="fractalNoise"></feturbulence>
-              <fedisplacementmap in="SourceGraphic" in2="noise" scale="3"></fedisplacementmap>
-              </filter>
-              </defs>
-              <path d="M 290,95 C 210,95 200,10 430,10 C 660,10 700,95 670,95" fill="none" filter="url(#fuzzy-red)" stroke="#EF4444" stroke-linecap="round" stroke-width="3"></path>
-              <path d="M 285,85 L 300,95 L 282,103" fill="none" filter="url(#fuzzy-red)" stroke="#EF4444" stroke-linecap="round" stroke-width="3"></path>
-              </svg>
-              <div class="absolute top-[-25px] left-[57%] -translate-x-1/2 rotate-3 text-[#EF4444] font-bold text-2xl md:text-2xl whitespace-nowrap" style="font-family: 'Gochi Hand', cursive;">
-                                      Adaption Loop
+                <div class="absolute top-[-25px] left-[57%] -translate-x-1/2 rotate-3 text-[#EF4444] font-bold text-2xl md:text-2xl whitespace-nowrap" style="font-family: 'Gochi Hand', cursive;">
+                            Adaption Loop
+                </div>
+                </div>
+                <!-- Step 1 -->
+                <div class="flex flex-col gap-5 z-50">
+                  <!-- Removed bg-blue-400 and text-white classes -->
+                  <div id="step-1" class="step-circle w-12 h-12 rounded-2xl flex items-center justify-center text-2xl font-extrabold shadow-md mb-2">1</div>
+                  <div>
+                    <h4 class="text-lg lg:text-base xl:text-lg font-extrabold text-primary dark:text-slate mb-3">Parent Creates Account</h4>
+                    <p class="text-slate-600 dark:text-slate-700 text-lg lg:text-base xl:text-lg leading-relaxed">
+                      <span class="text-lg lg:text-base xl:text-lg font-semibold block mb-1">Sign up in 30 seconds, add your child's details. Voila.</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="hidden lg:block absolute -left-[38%] w-[90%] hand-drawn-arrow">
+                  <svg class="mx-auto w-48 h-12 text-[#D32F2F] top-[1.6rem]" fill="none" height="6" stroke="#D0DBDB" style="display: block; pointer-events: none; transform: scaleX(1.5) scaleY(1.7) rotate(-0deg); position:relative;" viewbox="0 0 60 143" width="60" xmlns="http://www.w3.org/2000/svg">
+                 <!-- <path d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path> -->
+                  <path d='M0 10C50 8 100 12 150 10C200 8 250 12 300 10C350 8 400 12 450 10C500 8 550 12 600 10C650 8 700 12 750 10C800 8 850 12 900 10C950 8 1000 12 1050 10C1100 8 1150 12 1200 10' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path>
+                  <path d="M 295,0 L 310,10 L 292,18" fill="none" filter="url(#fuzzy-red)" stroke-linecap="round" stroke-width="6"></path>
+                  </svg>
+                </div>
+                
+                <div class="hidden lg:block absolute left-[26%] top-6 w-[8%] hand-drawn-arrow">
+                <svg class="mx-auto w-48 h-12 text-[#D32F2F] top-[1.6rem]" fill="none" height="6" stroke="#D0DBDB" style="display: block; pointer-events: none; transform: scaleX(1.5) scaleY(1.7) rotate(-0deg); position:relative;" viewbox="0 0 60 143" width="60" xmlns="http://www.w3.org/2000/svg">
+                   <!-- <path d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path> -->
+                  <path d='M0 10C50 8 100 12 150 10C200 8 250 12 300 10C350 8 400 12 450 10C500 8 550 12 600 10C650 8 700 12 750 10C800 8 850 12 900 10C950 8 1000 12 1050 10C1100 8 1150 12 1200 10' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path>
+                  <path d="M 295,0 L 310,10 L 292,18" fill="none" filter="url(#fuzzy-red)" stroke-linecap="round" stroke-width="6"></path>
+                  </svg>
+                </div>
+                    
+                <div class="hidden lg:block absolute left-[54%] top-6 w-[8%] hand-drawn-arrow">
+                <svg class="mx-auto w-48 h-12 text-[#D32F2F] top-[1.6rem]" fill="none" height="6" stroke="#D0DBDB" style="display: block; pointer-events: none; transform: scaleX(1.5) scaleY(1.7) rotate(-0deg); position:relative;" viewbox="0 0 60 143" width="60" xmlns="http://www.w3.org/2000/svg">
+                   <!-- <path d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path> -->
+                  <path d='M0 10C50 8 100 12 150 10C200 8 250 12 300 10C350 8 400 12 450 10C500 8 550 12 600 10C650 8 700 12 750 10C800 8 850 12 900 10C950 8 1000 12 1050 10C1100 8 1150 12 1200 10' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path>
+                  <path d="M 295,0 L 310,10 L 292,18" fill="none" filter="url(#fuzzy-red)" stroke-linecap="round" stroke-width="6"></path>
+                  </svg>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col gap-5 z-50">
+                  <div id="step-2" class="step-circle w-12 h-12 rounded-2xl flex items-center justify-center text-2xl font-extrabold shadow-md mb-2">2</div>
+                  <div>
+                    <h4 class="text-lg lg:text-base xl:text-lg font-extrabold text-primary dark:text-slate mb-3">Daily Practice Sessions</h4>
+                    <p class="text-slate-600 dark:text-slate-700 text-lg lg:text-base xl:text-lg leading-relaxed">
+                      <span class="text-lg lg:text-base xl:text-lg font-semibold block mb-1">Short, focused German/Maths sessions that fit around school and family life.</span>
+                    </p>
+                  </div>
+                </div>
+        
+                <!-- Step 3 -->
+                <div class="flex flex-col gap-5 z-50">
+                  <div id="step-3" class="step-circle w-12 h-12 rounded-2xl flex items-center justify-center text-2xl font-extrabold shadow-md mb-2">3</div>
+                  <div>
+                    <h4 class="text-lg lg:text-base xl:text-lg font-extrabold text-primary dark:text-slate mb-3">AI Tracks &amp; Adapts</h4>
+                    <p class="text-slate-600 dark:text-slate-700 text-lg lg:text-base xl:text-lg leading-relaxed">
+                      <span class="text-lg lg:text-base xl:text-lg font-semibold block mb-1">Every answer is analysed to build a picture of your child's strengths and gaps.</span>
+                    </p>
+                  </div>
+                </div>
+        
+                <!-- Step 4 -->
+                <div class="flex flex-col gap-5 z-50">
+                  <div id="step-4" class="step-circle w-12 h-12 rounded-2xl flex items-center justify-center text-2xl font-extrabold shadow-md mb-2">4</div>
+                  <div>
+                    <h4 class="text-lg lg:text-base xl:text-lg font-extrabold text-primary dark:text-slate mb-3">Parents Stay Informed</h4>
+                    <p class="text-slate-600 dark:text-slate-600 text-lg lg:text-base xl:text-lg leading-relaxed">
+                      <span class="text-lg lg:text-base xl:text-lg font-semibold block mb-1">Weekly learning progress reports keep you in the loop.</span>
+                    </p>
+                  </div>
+                </div>
+        
               </div>
             </div>
-          <!-- Step 1 -->
-          <div class="flex flex-col gap-5 z-50">
-          <div class="w-12 h-12 rounded-2xl bg-accent text-primary flex items-center justify-center text-2xl font-extrabold shadow-md mb-2 z-5">1</div>
-          <div class=" z-1">
-          <h4 class="text-lg lg:text-base xl:text-lg font-extrabold text-primary dark:text-slate mb-3">Parent Creates Account</h4>
-          <p class="text-slate-600 dark:text-slate-700 text-lg lg:text-base xl:text-lg leading-relaxed"><span class="text-lg lg:text-base xl:text-lg font-semibold block mb-1">Sign up in 30 seconds, add your child's details. Voila.</span><!-- Choose their year group and they're ready to go — no complicated setup.--></p>
           </div>
-          </div>
-          <!--
-          <div class="hidden lg:block absolute left-[22%] top-6 w-[8%] hand-drawn-arrow">
-            <svg class="mx-auto w-12 h-12 text-[#D32F2F]" fill="none" height="140" stroke="currentColor" style="display: block; pointer-events: none; transform: scaleX(2.0) scaleY(1.1) rotate(-80deg); left: -5rem; position:relative;" viewbox="0 0 60 140" width="60" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-              <filter id="hand-drawn-roughness-2">
-              <feturbulence basefrequency="0.04" numoctaves="3" result="noise" type="fractalNoise"></feturbulence>
-              <fedisplacementmap in="SourceGraphic" in2="noise" scale="2"></fedisplacementmap>
-              </filter>
-              </defs>
-              <path d="M 22 5 C 18 25, 10 55, 18 85 C 21 98, 26 108, 32 115 C 25 112, 15 108, 8 108 Q 15 120, 28 128 C 35 132, 40 136, 48 138 C 45 125, 48 112, 55 102 C 48 108, 42 110, 38 105 C 32 95, 28 70, 28 45 C 28 30, 32 15, 30 5 Q 26 2, 22 5 Z" fill="#D32F2F" filter="url(#hand-drawn-roughness-2)">
-              </path>
-            </svg>
-          </div>
-          -->
-          <div class="hidden lg:block absolute -left-[38%] w-[90%] hand-drawn-arrow">
-            <svg class="mx-auto w-48 h-12 text-[#D32F2F] top-[1.6rem]" fill="none" height="6" stroke="#D0DBDB" style="display: block; pointer-events: none; transform: scaleX(1.5) scaleY(1.7) rotate(-0deg); position:relative;" viewbox="0 0 60 143" width="60" xmlns="http://www.w3.org/2000/svg">
-           <!-- <path d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path> -->
-            <path d='M0 10C50 8 100 12 150 10C200 8 250 12 300 10C350 8 400 12 450 10C500 8 550 12 600 10C650 8 700 12 750 10C800 8 850 12 900 10C950 8 1000 12 1050 10C1100 8 1150 12 1200 10' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path>
-            <path d="M 295,0 L 310,10 L 292,18" fill="none" filter="url(#fuzzy-red)" stroke-linecap="round" stroke-width="6"></path>
-            </svg>
-          </div>
-          
-          <div class="hidden lg:block absolute left-[26%] top-6 w-[8%] hand-drawn-arrow">
-          <svg class="mx-auto w-48 h-12 text-[#D32F2F] top-[1.6rem]" fill="none" height="6" stroke="#D0DBDB" style="display: block; pointer-events: none; transform: scaleX(1.5) scaleY(1.7) rotate(-0deg); position:relative;" viewbox="0 0 60 143" width="60" xmlns="http://www.w3.org/2000/svg">
-             <!-- <path d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path> -->
-              <path d='M0 10C50 8 100 12 150 10C200 8 250 12 300 10C350 8 400 12 450 10C500 8 550 12 600 10C650 8 700 12 750 10C800 8 850 12 900 10C950 8 1000 12 1050 10C1100 8 1150 12 1200 10' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path>
-              <path d="M 295,0 L 310,10 L 292,18" fill="none" filter="url(#fuzzy-red)" stroke-linecap="round" stroke-width="6"></path>
-              </svg>
-          </div>
-                
-          <div class="hidden lg:block absolute left-[54%] top-6 w-[8%] hand-drawn-arrow">
-          <svg class="mx-auto w-48 h-12 text-[#D32F2F] top-[1.6rem]" fill="none" height="6" stroke="#D0DBDB" style="display: block; pointer-events: none; transform: scaleX(1.5) scaleY(1.7) rotate(-0deg); position:relative;" viewbox="0 0 60 143" width="60" xmlns="http://www.w3.org/2000/svg">
-             <!-- <path d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path> -->
-              <path d='M0 10C50 8 100 12 150 10C200 8 250 12 300 10C350 8 400 12 450 10C500 8 550 12 600 10C650 8 700 12 750 10C800 8 850 12 900 10C950 8 1000 12 1050 10C1100 8 1150 12 1200 10' stroke='%23D0DBDB' stroke-width='4' stroke-linecap='round'></path>
-              <path d="M 295,0 L 310,10 L 292,18" fill="none" filter="url(#fuzzy-red)" stroke-linecap="round" stroke-width="6"></path>
-              </svg>
-          </div>
-          <!-- Step 2 -->
-          <div class="flex flex-col gap-5 z-5">
-          <div class="w-12 h-12 rounded-2xl bg-[#E0CA00] text-primary flex items-center justify-center text-2xl font-extrabold shadow-md mb-2 z-5">2</div>
-          <div>
-          <h4 class="text-lg lg:text-base xl:text-lg font-extrabold text-primary dark:text-slate mb-3">Daily Practice Sessions</h4>
-          <p class="text-slate-600 dark:text-slate-700 text-lg lg:text-base xl:text-lg leading-relaxed"><span class="text-lg lg:text-base xl:text-lg font-semibold block mb-1">Short, focused German/Maths sessions that fit around school and family life.</span><!-- 3 practice modes: Self Practice, Smart Practice with AI, and Challenge Mode.--></p>
-          </div>
-          </div>
-          <!-- Step 3 -->
-          <div class="flex flex-col gap-5 z-5">
-          <div class="w-12 h-12 rounded-2xl bg-[#676AA3] text-white flex items-center justify-center text-2xl font-extrabold shadow-md mb-2 z-5">3</div>
-          <div>
-          <h4 class="text-lg lg:text-base xl:text-lg font-extrabold text-primary dark:text-slate mb-3">AI Tracks &amp; Adapts</h4>
-          <p class="text-slate-600 dark:text-slate-700 text-lg lg:text-base xl:text-lg leading-relaxed"><span class="text-lg lg:text-base xl:text-lg font-semibold block mb-1">Every answer is analysed to build a picture of your child's strengths and gaps.</span> <!--Smart Practice automatically focuses on weak topics with guided hints. --></p>
-          </div>
-          </div>
-          <!-- Step 4 -->
-          <div class="flex flex-col gap-5 z-5">
-          <div class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center text-2xl font-extrabold shadow-md mb-2 z-5">4</div>
-          <div>
-          <h4 class="text-lg lg:text-base xl:text-lg font-extrabold text-primary dark:text-slate mb-3">Parents Stay Informed</h4>
-          <p class="text-slate-600 dark:text-slate-600 text-lg lg:text-base xl:text-lg leading-relaxed"><span class="text-lg lg:text-base xl:text-lg font-semibold block mb-1">Weekly learning progress reports keep you in the loop.</span><!-- Parent dashboard shows accuracy trends and topic performance so you always know where your child stands.--></p>
-          </div>
-          </div>
-          </div>
-          </div>
-          </div>
-          </section>
+        </section>
 
         <!-- VIDEO SECTION #2 -->
         <section class="py-24 overflow-hidden">
@@ -1179,7 +1265,7 @@
         
         <!-- Voice Narration Section -->
         <section class="max-w-7xl mx-auto px-6 py-24">
-            <div class="bg-slate-50 rounded-[60px] p-8 md:p-20 grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="bg-slate-50 bg-lightblue-gradient rounded-[60px] p-8 md:p-20 grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <!-- Left Column: Video -->
                 <div class="relative group">
                     <div class="relative bg-slate-900 rounded-[40px] aspect-video overflow-hidden shadow-2xl">
@@ -1234,7 +1320,7 @@
         </section>
 
         <!-- CTA SECTION -->
-        <section class="bg-brand-yellow py-24">
+        <section class="bg-brand-yellow bg-brandYellow-Gradient py-24">
             <div class="max-w-4xl mx-auto px-6 text-center space-y-12">
                 <!--<h2 class="text-5xl md:text-7xl font-extrabold text-primary leading-tight">Facilitating individual learning paths to boost deep learning
                   ..transforming struggle into tangible improvement
@@ -1860,7 +1946,7 @@
         </section>
       -->
       <!-- STEFAN CHANGE FOR OTHER FILES -->
-      <section class="bg-[#fcde72] gap-4 px-4 md:px-1 py-12 md:py-16" id="waitlist">
+      <section class="bg-[#fcde72] bg-brandYellow-Gradient gap-4 px-4 md:px-1 py-12 md:py-16" id="waitlist">
         <div class="max-w-[1440px] mx-auto px-8 lg:px-12 xl:px-28 max-w-7xl">
             <div class="flex flex-col lg:flex-row items-center gap-8">
                 
