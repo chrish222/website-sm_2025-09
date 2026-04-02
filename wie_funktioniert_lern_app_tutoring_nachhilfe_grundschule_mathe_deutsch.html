@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="robots" content="all"/>
+<title>Wie funktioniert Smartmeister? - Inklusive Lern-App, die besser fördert als Mathe- und Deutsch-Nachhilfe - Berlin, München, Hamburg - Lehrplangerecht</title>
+<meta name="description" content="Smartmeister's Lernapp paßt Lernen und Fortschritt an die Fähigkeiten Ihres Kindes an. Personalisierte Übungen nach dem Grundschul-Lehrplan.">
+<!--<meta name="description" content="Smartmeister analysiert Lernfortschritte und Fehler und passt Übungen an die Fähigkeiten des Kindes an. Personalisierte Online-Nachhilfe nach dem Grundschul-Lehrplan.">-->
+<meta name="keywords" content="Mathe Nachhilfe, Lern-App, Deutsch Nachhilfe, Grundschule, E-Learning, Lehrplan, Noten verbessern, Prüfungsvorbereitung, LRS, Dyskalkulie">
+<meta name="author" content="Smartmeister">
+
+<meta property="og:title" content="SmartMeister: Die Lern-App, die sich jedem Kind anpasst. Schluss mit Einheitsbrei.">
+<meta property="og:description" content="Personalisierte Lern-App, die Grundschulwissen unabhängig vom Leistungsstand fördert. Erkennt Wissenslücken, Stärken und Schwächen und passt Schwierigkeit sowie Lernpfad individuell an. Ideal auch für zweisprachige Kinder!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.smartmeister.app">
+<meta property="og:image" content="https://www.smartmeister.app/images/smartmeister_og-image_de.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SmartMeister | Schulwissen aufbauen – ganz im eigenen Tempo">
+<meta name="twitter:description" content="Personalisierte Lern-App für die Grundschule. Erkennt Lücken und passt den Lernpfad automatisch an. Mit smarten Tools für bilinguale Lerner.">
+<meta name="twitter:image" content="https://www.smartmeister.app/images/smartmeister_og-image_de.jpg">
+
+<link rel="icon" type="image/x-icon" href="/smartmeister-favicon.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Gochi+Hand&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<script>
+  tailwind.config = {
+      darkMode: "class",
+      theme: {
+          extend: {
+              colors: {
+                  primary: "#2E3192", // Deep navy
+                  accent: "#FFD700",  // Bright yellow
+                  "background-light": "#FFFFFF",
+                  "background-dark": "#0F172A",
+                  "soft-blue": "#E3F2FD",
+                  "soft-mint": "#E8F5E9",
+                  "soft-lavender": "#F3E5F5",
+                  "card-dark": "#1E293B",
+                  primary2: '#2e2195',
+                  'brand-yellow': '#FFD64A',
+                  'brand-accent': '#FF4D4D',
+                  'pastel-blue': '#E0F2FE',
+                  'pastel-green': '#DCFCE7',
+                  'pastel-purple': '#F3E8FF',
+                  'light-bg': '#FFFDF4',
+                  brandDeep: '#0d0b21',
+                  pastelOrange: '#FFF7ED',
+                  pastelPink: '#FCE7F3',
+                  vermillion: '#E34234',
+              },
+              fontFamily: {
+                  display: ["Plus Jakarta Sans", "sans-serif"],
+                  sans: ["Plus Jakarta Sans", "sans-serif"],
+                  hand: ['Gochi Hand', 'cursive'],
+              },
+              borderRadius: {
+                  DEFAULT: "12px",
+                  "xl": "24px",
+                  "2xl": "32px",
+                  "3xl": "48px",
+                  '4xl': '2rem',
+                  '5xl': '3rem',
+              },
+          },
+      },
+  };
+</script>
+<!--    <script>
+  tailwind.config = {
+      theme: {
+          extend: {
+              fontFamily: {
+                  sans: ['Plus Jakarta Sans', 'sans-serif'],
+                  hand: ['Gochi Hand', 'cursive'],
+              },
+              colors: {
+                  primary2: '#2e2195',
+                  'brand-yellow': '#FFD64A',
+                  'brand-accent': '#FF4D4D',
+                  'pastel-blue': '#E0F2FE',
+                  'pastel-green': '#DCFCE7',
+                  'pastel-purple': '#F3E8FF',
+                  'light-bg': '#FFFDF4',
+                  brandDeep: '#0d0b21',
+                  pastelOrange: '#FFF7ED',
+                  pastelPink: '#FCE7F3',
+                  vermillion: '#E34234'
+              },
+              borderRadius: {
+                '4xl': '2rem',
+                '5xl': '3rem',
+            }
+          }
+      }
+  }
+</script> -->
+<style type="text/tailwindcss">
+  body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .hero-pattern {
+      background-color: #FFD700;
+      background-image: radial-gradient(#2E3192 0.5px, transparent 0.5px);
+      background-size: 24px 24px;
+  }
+  .how-it-works-line {
+      background: linear-gradient(to right, #2E3192 0%, #FFD700 100%);
+  }
+  details > summary {
+      list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+      display: none;
+  }
+  details[open] .faq-icon {
+      transform: rotate(180deg);
+  }
+  .bento-card {
+      @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+.step-group:hover .step-circle {
+    box-shadow: inset 0 0 0 4px white;
+}
+.comparison-table-row:nth-child(even) {
+    @apply bg-slate-50/50 dark:bg-slate-800/30;
+}
+.scenario-scroller::-webkit-scrollbar {
+    display: none;
+}
+.scenario-scroller {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hand-drawn-arrow {
+    position: absolute;
+    top: 0.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+    z-index: 10;
+    filter: url(#fuzzy-red);
+}
+  
+  
+</style>
+<style type="text/tailwindcss">
+* {
+font-variant-ligatures: none;
+}
+  .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .bg-brandYellow {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 214 74 / var(--tw-bg-opacity, 1));
+}
+  .hand-divider {
+    height: 12px;
+    background: url("data:image/svg+xml,%3Csvg width='1200' height='12' viewBox='0 0 1200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23FF4D4D' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+}
+  @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+  }
+  .float-anim { animation: float 3s ease-in-out infinite; }
+  
+  .hero-bg {
+    background: linear-gradient(135deg, #FFD64A 0%, #FFF4CC 100%);
+}
+
+.marker-text {
+    font-family: 'Gochi Hand', cursive;
+    color: #FF4D4D;
+    line-height: 1.1;
+}
+
+.section-yellow-image-fix {
+outline-offset: -5px;
+outline: 7px solid #fcde72;
+outline-color: #fcde72; }
+
+.video-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 10;
+    display: none;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulsate-red {
+  0%, 100% { outline: 2px solid rgba(239, 68, 68, 0); outline-offset: 0px; }
+  50% { outline: 6px solid rgba(239, 68, 68, 0.4); outline-offset: 4px; }
+}
+
+.pulse-highlight {
+  animation: pulsate-red 1s ease-in-out 3; /* 3 seconds total */
+}
+
+.thumbnail-active {
+    outline: 3px solid #374151; /* dark-grey outline */
+    outline-offset: 2px;
+    opacity: 1 !important;
+    animation: none !important; /* Stop pulse if user clicks it */
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f2937;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1f2937 transparent transparent transparent;
+}
+
+.thumbnail-btn:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: 110%;
+}
+
+/* Custom SVG arrows and doodles */
+.doodle-arrow-1 {
+    width: 80px;
+    height: 60px;
+    transform: rotate(-10deg);
+}
+/* custom Tailwind */
+.max-w-8xl {
+max-width: 90rem;
+}
+ .split-flag {
+   width: 20px;
+   height: 14px;
+   /* Load the SVG instead of the gradient */
+   background-image: url('./images/language-auswahl.svg');
+   background-size: 100% 100%; /* Ensures the SVG stretches/fits exactly to the 20x14 box */
+   background-position: center;
+   background-repeat: no-repeat;
+   
+   /* Kept all your original positioning and borders */
+   position: relative;
+   border-radius: 2px;
+   display: inline-block;
+   vertical-align: middle;
+   margin-right: 8px;
+   border: 1px solid rgba(0,0,0,0.1);
+}
+  /* Hide scrollbar for cleaner look */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: #2e2195; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #1a135a; }
+</style>
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+   const openBtn = document.getElementById('open-struggle-modal');
+   const closeBtn = document.getElementById('close-modal');
+   const modal = document.getElementById('struggle-modal');
+   const modalBody = document.getElementById('modal-body');
+   const backdrop = document.getElementById('modal-backdrop');
+
+   const openModal = () => {
+       modal.classList.remove('hidden');
+       modal.classList.add('flex');
+       // Trigger reflow for animation
+       setTimeout(() => {
+           modalBody.classList.remove('scale-95', 'opacity-0');
+           modalBody.classList.add('scale-100', 'opacity-100');
+       }, 10);
+       // Prevent background scroll
+       document.body.style.overflow = 'hidden';
+   };
+
+   const closeModal = () => {
+       modalBody.classList.add('scale-95', 'opacity-0');
+       modalBody.classList.remove('scale-100', 'opacity-100');
+       setTimeout(() => {
+           modal.classList.add('hidden');
+           modal.classList.remove('flex');
+           document.body.style.overflow = '';
+       }, 300);
+   };
+
+   openBtn.addEventListener('click', openModal);
+   closeBtn.addEventListener('click', closeModal);
+   backdrop.addEventListener('click', closeModal);
+
+   // Escape key to close
+   document.addEventListener('keydown', (e) => {
+       if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+           closeModal();
+       }
+   });
+});
+</script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="ce1868df-8948-49af-902f-7e5d205b3ee9"></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-extrabold tracking-tight text-primary2 flex items-center">
+              <a href="./index_de.html" title="Startseite" alt="Zurück zur Startseite" class="no-underline">
+                Smart<span class="text-brand-accent">|</span>meister
+              </a>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="./index_de.html#features" title="Welche Funktionen helfen das Lernen einfacher zu machen" class="font-semibold text-base hover:text-primary transition">Funktionen</a>
+                <a href="./wie_funktioniert_lern_app_tutoring_nachhilfe_grundschule_mathe_deutsch.html" title="Wie funktioniert Smartmeister?" class="font-semibold text-base hover:text-primary transition">So funktioniert's</a>
+                <a href="./über_smartmeister_gründer_adaptive_nachhilfe_lernapp_grundschule.html" title="Über die Smartmeister Gründer" class="font-semibold text-base py-2 border-b border-slate-50">Über uns</a>
+                <a href="./index_de.html#granular_metrics" title="Wie wird Lernfortschritt gemessen?" class="font-semibold text-base hover:text-primary transition">Lernfortschritt</a>
+            </div>
+            <div class="flex items-center gap-4">
+               <button class="mb-4">
+                  <span class="material-symbols-outlined text-3xl"></span>
+                  <a href="#waitlist" class="hidden md:block bg-primary text-white px-5 py-2 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
+                      Jetzt zur Warteliste
+                  </a>
+                  <a href="#waitlist" class="block md:hidden bg-primary text-white px-5 py-2 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
+                     Loslegen!
+                 </a>
+                </button>
+          </div>
+            
+            <button id="menu-toggle" class="md:hidden text-primary focus:outline-none p-2" aria-label="Menü umschalten">
+              <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+          </button>
+          <div class="hidden lg:flex items-center ml-4 pr-4 border-r border-slate-200 dark:border-slate-700 mr-2">
+            <a class="flex items-center text-slate-600 dark:text-slate-400 hover:text-navy-900 dark:hover:text-white transition-colors duration-200 font-medium text-sm" href="./how_learning_app_math_german_primary_school_adaptive_tutoring_works.html" title="Englisch - Verstehen wie Smartmeisters Lernfunktionen Kindern helfen besser zu lernen">
+            <span aria-hidden="true" class="split-flag"></span>
+            <span>EN / <b>DE</b></span>
+            </a>
+          </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full left-0 animate-in slide-in-from-top duration-300">
+          <div class="flex flex-col p-6 space-y-4 shadow-xl">
+              <a href="./index_de.html#features" title="Welche Funktionen helfen das Lernen einfacher zu machen" class="font-semibold text-base py-2 border-b border-slate-50">Funktionen</a>
+              <a href="./wie_funktioniert_lern_app_tutoring_nachhilfe_grundschule_mathe_deutsch.html" title="Wie funktioniert Smartmeister?" class="font-semibold text-base py-2 border-b border-slate-50">So funktioniert's</a>
+              <a href="./über_smartmeister_gründer_adaptive_nachhilfe_lernapp_grundschule.html" title="Über die Smartmeister Gründer" class="font-semibold text-base py-2 border-b border-slate-50">Über uns</a>
+              <a href="./index_de.html#granular_metrics" title="Wie wird Lernfortschritt gemessen?" class="font-semibold text-base py-2 border-b border-slate-50">Lernfortschritt</a>
+              <a class="flex items-center text-slate-600 dark:text-slate-400 hover:text-navy-900 dark:hover:text-white transition-colors duration-200 font-medium text-sm" href="./how_learning_app_math_german_primary_school_adaptive_tutoring_works.html" title="English - So funktioniert Smartmeisters angepasstes Lernen im Detail"><span aria-hidden="true" class="split-flag"></span>
+              <span>EN / <b>DE</b></span></a>
+          </div>
+      </div>
+    </nav>
+    <script>
+      const btn = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+  
+      btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          
+          if (menu.classList.contains('hidden')) {
+              icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />';
+          } else {
+              icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+          }
+      });
+  
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+              menu.classList.add('hidden');
+          });
+      });
+  </script>
+
+<section class="py-20 pb-48 px-6 mt-6 md:mt-32">
+    <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16 md:mb-16">
+    <span class="inline-block px-4 py-1.5 rounded-full bg-soft-blue text-primary text-xs font-bold uppercase tracking-wider mb-6 dark:bg-primary/20 dark:text-blue-300">Personalisiertes Lernen</span>
+    <h1 class="text-3xl md:text-6xl font-extrabold text-primary dark:text-white leading-tight tracking-tight mb-8">
+                        Jedes Kind lernt anders. <span class="text-primary/80 dark:text-blue-400">Wir helfen Kids ihr volles Potenzial zu entfalten.</span>
+    </h1>
+    <h2 class="text-lg md:text-2xl font-bold text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                      Im Mittelpunkt steht dein Kind, kein Stereotyp eines statistischen Durchschnitts. Egal, ob dein Kind Stoff aufholen möchte oder bereit für mehr ist: Unsere Lern-App passt sich exakt an dessen Lernstand an und kann Lernblockaden oft effektiver als klassische Mathe- oder Deutsch-Nachhilfe lösen.
+                    </h2>
+    </div>
+    </div>
+</section>
+
+<section class="py-24 pt-32 px-6 bg-[#F8FAFC] dark:bg-background-dark overflow-hidden">
+    
+<div class="max-w-7xl mx-auto">
+<div class="bg-white dark:bg-card-dark rounded-[32px] p-1 py-5 pb-2 md:pb-auto md:py-10 md:p-10 lg:p-14 shadow-sm border border-slate-100 dark:border-slate-800 mb-12 md:mb-32" id="how-it-works">
+  
+  <div class="absolute top-128 md:top-96 lg:top-76 md:-right-6 lg:-right-6 xl:right-8 w-32 md:w-48 lg:w-56 z-30 pointer-events-none">
+    <img alt="Maskottchen" class="w-1/2 h-auto drop-shadow-xl" src="./images/dashboard_exercise_mascot_robot_220x320_transparent.png"/>
+    </div>
+    <div class="flex flex-col items-center mb-32 text-center">
+        <span class="inline-block px-1 md:px-4 py-1.5 rounded-full bg-accent/20 text-primary text-xs font-bold uppercase tracking-wider mb-4">Der Lernbooster für Mathe & Deutsch</span>
+        <h3 class="text-5xl font-extrabold text-primary dark:text-white mb-2">So funktioniert's</h3>
+        <p class="text-slate-500 text-sm font-medium">Bewege die Maus über einen Schritt, um mehr zu erfahren</p>
+    </div>
+        
+    <div class="relative px-4 lg:px-8 pb-0 md:pb-12">
+        <div class="flex absolute -top-[18%] -right-[5%] md:-top-[65%] lg:-top-[65%] md:-right-[5%] lg:right-[5%] w-32 md:w-48 lg:w-56 z-30 pointer-events-none">
+          <img alt="Maskottchen" class="w-1/2 h-auto drop-shadow-xl" src="./images/exercise_maskot_tier_fliegendestiefel.png"/>
+          </div>
+        <div class="absolute top-[63px] left-0 right-0 h-[2px] how-it-works-line opacity-20 px-10 md:px-0"></div>
+        
+        <div class="absolute -top-[30px] -left-[20px] right-0 h-[120px] pointer-events-none z-2">
+          <svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 120">
+          <defs>
+          <filter height="120%" id="fuzzy-red" width="120%" x="-1%" y="-1%">
+          <feturbulence basefrequency="0.005" numoctaves="0" result="noise" type="fractalNoise"></feturbulence>
+          <fedisplacementmap in="SourceGraphic" in2="noise" scale="3"></fedisplacementmap>
+          </filter>
+          </defs>
+          <path d="M 260,95 C 210,95 200,10 430,10 C 660,10 700,95 670,95" fill="none" filter="url(#fuzzy-red)" stroke="#EF4444" stroke-linecap="round" stroke-width="3"></path>
+          <path d="M 255,85 L 270,95 L 252,103" fill="none" filter="url(#fuzzy-red)" stroke="#EF4444" stroke-linecap="round" stroke-width="3"></path>
+          </svg>
+          <div class="absolute top-[-25px] left-[57%] -translate-x-1/2 rotate-3 text-[#EF4444] font-bold text-2xl md:text-2xl whitespace-nowrap" style="font-family: 'Gochi Hand', cursive;">
+                                  Anpassungs-Schleife
+          </div>
+        </div>
+
+  
+    <div class="max-w-7xl mx-auto px-1 md:px-4 py-10">
+      
+      <div class="flex md:hidden items-center justify-between relative w-full mb-12 px-2">
+          <div class="z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold ring-4 ring-white -top-[50px]">1</div>
+          <div class="z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold ring-4 ring-white -top-[50px]">2</div>
+          <div class="z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold ring-4 ring-white -top-[50px]">3</div>
+          <div class="z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold ring-4 ring-white -top-[50px]">4</div>
+          <div class="z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold ring-4 ring-white -top-[50px]">5</div>
+          <div class="z-10 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold ring-4 ring-white -top-[50px]">6</div>
+          <div class="z-10 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold ring-4 ring-white animate-bounce -top-[50px]">7</div>
+      </div>
+  
+      <div class="flex flex-col md:flex-row relative left-[20%] md:left-auto items-center md:items-start justify-between gap-1 md:gap-2">
+  
+          <div class="group step-group relative flex md:flex-col items-center text-center w-full md:w-auto flex-row items-start md:items-center">  
+              <div class="w-12 h-12 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-4 md:mb-8 transition-all duration-300 step-circle flex items-center justify-center text-white font-bold text-lg mr-[1rem] md:mr-0">
+                  <div class="absolute h-10 w-10 rounded-full bg-primary transition-all duration-300 ease-in-out group-hover:h-10 group-hover:w-10 group-hover:bg-accent leading-[2.2em]">1</div>
+              </div>
+              <div class="flex w-full md:w-auto flex-col md:flex-auto flex-wrap md:flex-nowrap items-start md:items-center lg:text-center self-start md:self-auto pt-[0.5rem] md:pt-auto">
+              <h4 class="text-lg font-extrabold text-primary dark:text-white mb-0 md:mb-2 leading-tight">Profil-Setup</h4>
+              <p class="text-[12px] text-slate-500 leading-relaxed max-w-[200px] md:max-w-[100%] font-bold w-full text-left md:w-auto md:text-auto lg:text-center">Startklar in unter 60 Sekunden.</p>
+              </div>
+              <div class="absolute -top-24 md:-top-20 left-1/2 -translate-x-1/2 w-48 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+                  Erstelle das Profil deines Kindes, inklusive Stärken und Wissenslücken.
+                  <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rotate-45"></div>
+              </div>
+          </div>
+  
+          <div class="group step-group relative flex md:flex-col items-center text-center w-full md:w-auto flex-row items-start md:items-center">
+              <div class="w-12 h-12 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-4 md:mb-8 transition-all duration-300 step-circle flex items-center justify-center text-white font-bold text-lg mr-[1rem] md:mr-0"><div class="absolute h-10 w-10 rounded-full bg-primary transition-all duration-300 ease-in-out group-hover:h-10 group-hover:w-10 group-hover:bg-accent leading-[2.2em]">2</div></div>
+              <div class="flex w-full md:w-auto flex-col md:flex-auto flex-wrap md:flex-nowrap items-start md:items-center lg:text-center self-start md:self-auto pt-[0.5rem] md:pt-auto">
+              <h4 class="text-lg font-extrabold text-primary dark:text-white mb-0 md:mb-2 leading-tight">Wissens-Check</h4>
+              <p class="text-[12px] text-slate-500 leading-relaxed max-w-[200px] md:max-w-[100%] font-bold w-full text-left md:w-auto md:text-auto lg:text-center">Ermittelt den aktuellen Lernstand.</p>
+              </div>
+              <div class="absolute -top-24 md:-top-20 left-1/2 -translate-x-1/2 w-48 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+                  Unser kurzer Einstiegs-Check deckt spielerisch Lücken auf – vorurteilsfrei, und ganz ohne Druck.
+                  <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rotate-45"></div>
+              </div>
+          </div>
+  
+          <div class="group step-group relative flex md:flex-col items-center text-center w-full md:w-auto flex-row items-start md:items-center">
+              <div class="w-12 h-12 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-4 md:mb-8 transition-all duration-300 step-circle flex items-center justify-center text-white font-bold text-lg mr-[1rem] md:mr-0"><div class="absolute h-10 w-10 rounded-full bg-primary transition-all duration-300 ease-in-out group-hover:h-10 group-hover:w-10 group-hover:bg-accent leading-[2.2em]">3</div></div>
+              <div class="flex w-full md:w-auto flex-col md:flex-auto flex-wrap md:flex-nowrap items-start md:items-center lg:text-center self-start md:self-auto pt-[0.5rem] md:pt-auto">
+              <h4 class="text-lg font-extrabold text-primary dark:text-white mb-0 md:mb-2 leading-tight">Eigener Lernpfad</h4>
+              <p class="text-[12px] text-slate-500 leading-relaxed max-w-[200px] md:max-w-[100%] font-bold w-full text-left md:w-auto md:text-auto lg:text-center">Erstellt den passenden Lernplan.</p>
+              </div>
+              <div class="absolute -top-24 md:-top-20 left-1/2 -translate-x-1/2 w-48 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+                  Einzigartiger Lernpfad: Neben Lernzielen wird dir aufgezeigt, was dein Kind noch üben sollte bzw. wo weitere Lernprioritäten gesetzt werden.
+                  <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rotate-45"></div>
+              </div>
+          </div>
+  
+          <div class="group step-group relative flex md:flex-col items-center text-center w-full md:w-auto flex-row items-start md:items-center">
+              <div class="w-12 h-12 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-4 md:mb-8 transition-all duration-300 step-circle flex items-center justify-center text-white font-bold text-lg mr-[1rem] md:mr-0"><div class="absolute h-10 w-10 rounded-full bg-primary transition-all duration-300 ease-in-out group-hover:h-10 group-hover:w-10 group-hover:bg-accent leading-[2.2em]">4</div></div>
+              <div class="flex w-full md:w-auto flex-col md:flex-auto flex-wrap md:flex-nowrap items-start md:items-center lg:text-center self-start md:self-auto pt-[0.5rem] md:pt-auto">
+              <h4 class="text-lg font-extrabold text-primary dark:text-white mb-0 md:mb-2 leading-tight">Tägliches Üben</h4>
+              <p class="text-[12px] text-slate-500 leading-relaxed max-w-[200px] md:max-w-[100%] font-bold w-full text-left md:w-auto md:text-auto lg:text-center">Motivierende, kurze Einheiten.</p>
+              </div>
+              <div class="absolute -top-24 md:-top-20 left-1/2 -translate-x-1/2 w-48 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+                  Dein Kind startet mit individuell angepassten Aufgaben. Kurze 10- bis 15-Minuten-Einheiten, die sich wie Erfolg anfühlen und nicht wie Hausaufgaben.
+                  <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rotate-45"></div>
+              </div>
+          </div>
+  
+          <div class="group step-group relative flex md:flex-col items-center text-center w-full md:w-auto flex-row items-start md:items-center">
+              <div class="w-12 h-12 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-4 md:mb-8 transition-all duration-300 step-circle flex items-center justify-center text-white font-bold text-lg mr-[1rem] md:mr-0"><div class="absolute h-10 w-10 rounded-full bg-primary transition-all duration-300 ease-in-out group-hover:h-10 group-hover:w-10 group-hover:bg-accent leading-[2.2em]">5</div></div>
+              <div class="flex w-full md:w-auto flex-col md:flex-auto flex-wrap md:flex-nowrap items-start md:items-center lg:text-center self-start md:self-auto pt-[0.5rem] md:pt-auto">
+              <h4 class="text-lg font-extrabold text-primary dark:text-white mb-0 md:mb-2 leading-tight">Lernanalyse</h4>
+              <p class="text-[12px] text-slate-500 leading-relaxed max-w-[200px] md:max-w-[100%] font-bold w-full text-left md:w-auto md:text-auto lg:text-center">Erfolge und Hürden erkennen.</p>
+              </div>
+              <div class="absolute -top-24 md:-top-20 left-1/2 -translate-x-1/2 w-48 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+                  Der Fortschritt wird stetig gemessen. Wöchentliche Berichte zeigen genau, wo es super läuft und wo noch etwas Zeit gebraucht wird. 
+                  <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rotate-45"></div>
+              </div>
+          </div>
+  
+          <div class="group step-group relative flex md:flex-col items-center text-center w-full md:w-auto flex-row items-start md:items-center">
+              <div class="w-12 h-12 rounded-full bg-primary border-4 border-white dark:border-card-dark shadow-md mb-4 md:mb-8 transition-all duration-300 step-circle flex items-center justify-center text-white font-bold text-lg mr-[1rem] md:mr-0"><div class="absolute h-10 w-10 rounded-full bg-primary transition-all duration-300 ease-in-out group-hover:h-10 group-hover:w-10 group-hover:bg-accent leading-[2.2em]">6</div></div>
+              <div class="flex w-full md:w-auto flex-col md:flex-auto flex-wrap md:flex-nowrap items-start md:items-center lg:text-center self-start md:self-auto pt-[0.5rem] md:pt-auto">
+              <h4 class="text-lg font-extrabold text-primary dark:text-white mb-0 md:mb-2 leading-tight">Pfad-Anpassung</h4>
+              <p class="text-[12px] text-slate-500 leading-relaxed max-w-[200px] md:max-w-[100%] font-bold w-full text-left md:w-auto md:text-auto lg:text-center">Immer auf dem besten Weg.</p>
+              </div>
+              <div class="absolute -top-24 md:-top-20 left-1/2 -translate-x-1/2 w-48 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+                  Der Lernpfad passt sich der Leistung an. Bei Bedarf gibt es zusätzliche Übungseinheiten und Erklärungen, nicht einfach nur die Lösung.
+                  <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rotate-45"></div>
+              </div>
+          </div>
+  
+          <div class="group step-group relative flex md:flex-col items-center text-center w-full md:w-auto flex-row items-start md:items-center">
+              <div class="w-12 h-12 rounded-full bg-accent border-4 border-white dark:border-card-dark shadow-md mb-4 md:mb-8 transition-all duration-300 step-circle animate-bounce flex items-center justify-center text-white font-bold text-lg mr-[1rem] md:mr-0">
+                  <div class="absolute h-10 w-10 rounded-full bg-accent transition-all duration-300 ease-in-out group-hover:h-5 group-hover:w-5 group-hover:bg-primary leading-[2.2em]">7</div>
+              </div>
+              <div class="flex w-full md:w-auto flex-col md:flex-auto flex-wrap md:flex-nowrap items-start md:items-center lg:text-center self-start md:self-auto pt-[0.5rem] md:pt-auto">
+              <h4 class="text-lg font-extrabold text-primary dark:text-white mb-0 md:mb-2 leading-tight">Ziele meistern</h4>
+              <p class="text-[12px] text-slate-500 leading-relaxed max-w-[200px] md:max-w-[100%] font-bold w-full text-left md:w-auto md:text-auto lg:text-center">Noten und Können verbessern sich.</p>
+              </div>
+              <div class="absolute -top-24 md:-top-20 left-1/2 -translate-x-1/2 w-48 bg-accent text-primary text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+                  Nach 4 bis 7 Wochen zeigen sich messbare Erfolge. Von da an wird der Lernpfad kontinuierlich weiter optimiert.
+                  <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent rotate-45"></div>
+              </div>
+          </div>
+  
+      </div>
+  </div>
+</div>
+</div>
+
+
+<section class="py-24 px-6 bg-[#F8FAFC] dark:bg-background-dark overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col items-center mb-16 text-center">
+    <span class="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-primary text-xs font-bold uppercase tracking-wider mb-4">Im Überblick</span>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-primary dark:text-white">Alles, was dein Kind für den Schulerfolg braucht</h2>
+    </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-[minmax(18px,auto)]">
+    <div class="md:col-span-2 lg:col-span-3 bento-card bg-soft-mint dark:bg-emerald-950/20 rounded-[32px] p-8 lg:p-10 border border-emerald-100 dark:border-emerald-900/30 flex flex-col justify-between">
+    <div>
+    <div class="w-14 h-14 bg-white dark:bg-emerald-500/20 rounded-2xl shadow-sm flex items-center justify-center mb-8">
+    <span class="material-symbols-outlined text-emerald-600 text-3xl">emoji_objects</span>
+    </div>
+    <h3 class="text-3xl font-extrabold text-primary dark:text-white mb-4">Die optimale Lernzone</h3>
+    <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-md">
+                                Ein dem Lernstand angepasster Schwierigkeitsgrad (in d. Lernforschung adaptiver Schwierigkeitsgrad) ist ein bewährtes Konzept, um auf unterschiedliche Lernvoraussetzungen individuell einzugehen. So wachsen Herausforderungen mit deinem Kind und halten es in der idealen Lernzone.
+                            </p>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-3 bento-card bg-white dark:bg-card-dark rounded-[32px] p-8 border-2 border-primary/10 dark:border-primary/30 flex flex-col">
+    <div class="flex items-center gap-4 mb-6">
+    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+    <span class="material-symbols-outlined text-primary">translate</span>
+    </div>
+    <h3 class="text-xl font-extrabold text-primary dark:text-white">Unterstützung für mehrsprachige Kinder</h3>
+    </div>
+    <p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed mb-8">
+                            Nicht nur Kinder aus zweisprachigen Familien, sondern auch Kids mit Sprach- oder Verständnisproblemen profitieren von Vorlese-Funktionen und Sprachausgabe. Das verbessert Aussprache und Hörverständnis. Wenn ein Wort mal nicht so klar ist, helfen u.a. klare Erklärungen beim Aufgabenverständnis.
+                        </p>
+    <div class="mt-auto flex gap-2 overflow-hidden">
+    <div class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-bold text-slate-400 uppercase tracking-tight">Tipps &amp; Videos</div>
+    <div class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-bold text-slate-400 uppercase tracking-tight">Vorlese-Funktion</div>
+    <div class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-bold text-slate-400 uppercase tracking-tight">Übersetzungs-Tools</div>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-2 bento-card bg-soft-lavender dark:bg-purple-950/20 rounded-[32px] p-8 border border-purple-100 dark:border-purple-900/30 flex flex-col justify-between">
+    <div>
+    <div class="w-12 h-12 bg-white/60 dark:bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-purple-600">keyboard_alt</span>
+    </div>
+    <h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">Kindgerechte Bildschirm-Tastatur</h3>
+    <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                                 Tastaturen können Kinder leicht verwirren. Bei Bedarf blenden wir einfache Tastaturen mit alphabetischem oder numerischen Layout ein, die direkt per Maus oder Touchpad bedient werden können. 
+                            </p>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-4 bento-card bg-accent rounded-[32px] p-10 flex flex-col md:flex-row gap-8 items-center justify-between text-primary">
+    <div class="max-w-md">
+    <div class="w-14 h-14 bg-white/30 rounded-full flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-primary text-3xl">audio_description</span>
+    </div>
+    <h3 class="text-3xl font-extrabold mb-4 leading-tight">LRS- & Legasthenie bzw. Dyslexie-freundliche Schriften</h3>
+    <p class="font-medium text-primary/80 text-base leading-relaxed">
+                                Kinder mit Leseschwäche profitieren von speziell zuschaltbaren Schriftarten und Textgrößen, was das Textverständnis in Mathe und Deutsch deutlich erhöht.*
+                            </p>
+    </div>
+    <div class="w-full md:w-1/3 aspect-square bg-white/20 rounded-2xl border-4 border-white/40 flex items-center justify-center">
+    <span class="material-symbols-outlined text-6xl text-white opacity-80"><img src="./images/dashboard_exercise_mascot_robot_on_rocket_with_backpack_512x512.jpg" class="block full-width"></span>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-2 bento-card bg-white dark:bg-card-dark rounded-[32px] p-8 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col">
+    <div class="w-12 h-12 bg-soft-blue rounded-xl flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-primary">share</span>
+    </div>
+    <h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">Lernpfad-Optionen</h3>
+    <p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed">
+                            Eltern entscheiden mit. <strong>Wähle aus verschiedenen Optionen:</strong> "Smart Practice" fokussiert sich auf Schwächen, "Deep Practice" vertieft ein spezielles Thema und "Broad Learning" deckt ein breiteres Lernspektrum ab.*
+                        </p>
+    </div>
+    <div class="md:col-span-2 lg:col-span-2 bento-card bg-primary rounded-[32px] p-8 text-white flex flex-col justify-between shadow-xl">
+    <div>
+    <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-accent">joystick</span>
+    </div>
+    <h3 class="text-xl font-extrabold mb-3">Motivation ohne Suchtgefahr</h3>
+    <p class="text-blue-100/70 text-base leading-relaxed">
+                                Wir verzichten auf manipulative Suchtmechaniken (Dark Patterns). Eltern können den Grad der Gamification (Belohnungen, Lernspiele) selbst bestimmen.
+                            </p>
+    </div>
+    </div>
+    <div class="md:col-span-2 lg:col-span-2 bento-card bg-white dark:bg-card-dark rounded-[32px] p-8 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col border-b-4 border-b-accent">
+    <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mb-6">
+    <span class="material-symbols-outlined text-primary">school</span>
+    </div>
+    <h3 class="text-xl font-extrabold text-primary dark:text-white mb-3">Exakt nach Lehrplan</h3>
+    <p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed">
+                            Die Aufgaben basieren auf dem offiziellen Rahmenlehrplan für Grundschulen, ergänzt durch zusätzliche Übungsformen, die helfen Lücken bei Grundkenntnissen oder im Fachwissen zu schließen.
+                        </p>
+    </div>
+    <div class="justify-right items-right relative block r-0 right-0 text-gray-500 h-[20px]" style="text-align: right;">* in Entwicklung</div>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 auto-rows-[minmax(180px,auto)]">
+  
+      <div class="bento-card bg-slate-50 dark:bg-slate-800/50 rounded-[32px] p-6 border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center justify-center">
+          <span class="material-symbols-outlined text-emerald-500 text-3xl mb-2">shield</span>
+          <h4 class="text-sm font-bold text-primary dark:text-white">DSGVO-konform</h4>
+          <p class="text-[10px] text-slate-400 uppercase font-extrabold tracking-widest mt-1">EU-Server</p>
+      </div>
+  
+      <div class="bento-card bg-slate-50 dark:bg-slate-800/50 rounded-[32px] p-6 border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center justify-center">
+          <span class="material-symbols-outlined text-blue-500 text-3xl mb-2">accessibility_new</span>
+          <h4 class="text-sm font-bold text-primary dark:text-white">Inklusiv</h4>
+          <p class="text-[10px] text-slate-400 uppercase font-extrabold tracking-widest mt-1">Diverse Bedürfnisse</p>
+      </div>
+  
+      <button id="open-struggle-modal" class="group focus:outline-none transition-transform hover:scale-105 active:scale-95 text-center">
+          <div class="h-full bento-card bg-slate-50 dark:bg-slate-800/50 rounded-[32px] p-6 border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center justify-center">
+              <span class="material-symbols-outlined text-purple-500 text-3xl mb-2">robot</span>
+              <h4 class="text-sm font-bold text-primary dark:text-white">Lern-Helfer</h4>
+              <p class="text-[10px] text-slate-400 uppercase font-extrabold tracking-widest mt-1">Hilft, wenn's mal hakt</p>
+          </div>
+      </button>
+  
+      <div class="bento-card bg-slate-50 dark:bg-slate-800/50 rounded-[32px] p-6 border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center justify-center">
+          <span class="material-symbols-outlined text-red-500 text-3xl mb-2">auto_fix_high</span>
+          <h4 class="text-sm font-bold text-primary dark:text-white">Aussprache-Hilfen</h4>
+          <p class="text-[10px] text-slate-400 uppercase font-extrabold tracking-widest mt-1">Fördert Sprachverständnis</p>
+      </div>
+
+    </div>
+    </div>
+    </section>
+    
+<section class="py-20 pb-48 px-6 mt-6 md:mt-32">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-8">
+    <div class="pb-6 pl-3 pr-3 pt-0 md:pb-8 md:pl-8 md:pr-8 rounded-xl bg-soft-mint dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50">
+      <div class="w-12 h-12 bg-emerald-200/90 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center relative -top-4 -left-7 md:-top-4 md:-left-12">
+           <span class="material-symbols-outlined">psychology</span>
+      </div>
+    <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Passend für verschiedene Lernziele</h3>
+
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            Für Kinder, die den Anschluss verloren haben. Wir schließen genau die Lücken, die sie zurückhalten – Schritt für Schritt und ohne Druck.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Grundlagen aufholen
+    </div>
+    
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            Für Kinder, die gut mitkommen, aber Routine brauchen. Kurze, tägliche Einheiten festigen den Stoff und verhindern, dass Lücken entstehen.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Mit dem Lehrplan Schritt halten
+    </div>
+    
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            Für Kids, die mehr Herausforderung suchen. Die Aufgaben passen sich nach oben an, um das Fachverständnis und Selbstbewusstsein zu stärken.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Wissen vertiefen
+    </div>
+    
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            Gezielte Module helfen, bestimmten Schulstoff vor Klassenarbeiten zu üben. Weniger Last-Minute-Stress – für dein Kind und für dich.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Vorbereitung auf Tests & Hausaufgaben
+    </div>
+    
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            Integrierte Übersetzungen, zweisprachige Audio-Aussprache und kindgerechte Umschreibungen machen den Stoff verständlich, auch wenn zu Hause kein Deutsch gesprochen wird.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Mehrsprachigkeit & Sprachbarrieren
+    </div>
+    
+    <div class="group relative flex items-start text-left">
+        <div class="absolute -top-20 left-3/4 -translate-x-1/2 w-64 bg-primary text-white text-[15px] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20 font-bold">
+            Neurodiverse Kinder oder die mit sehr individueller Lernkapazität profitieren von kindgerechten Schriften, Vorlese-Funktionen und anpassbaren Lernoptionen, welche eigenes Tempo und individuellen Lernstil berücksichtigen. Denn jedes Kind hat seinen Weg Gelerntes zu verarbeiten.
+            </div>
+    <span class="material-symbols-outlined text-emerald-500 text-xl mx-0 mr-1 md:mx-5">check_circle</span>Neurodiverse & die mit individuellem Lerntempo
+    </div>
+    
+    </div>
+    <div class="pb-8 pl-8 pr-8 pt-0 rounded-xl bg-soft-lavender dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/50">
+    <div class="w-12 h-12 bg-purple-500/20 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center relative -top-4 -left-12">
+    <span class="material-symbols-outlined">route</span>
+    </div>
+    <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Gemacht, um Lücken zu schließen</h3>
+
+    Lernschwierigkeiten sind kein Zufall. Oft liegen sie an fehlendem Grundwissen, einem nicht passenden Lerntempo oder Klassenräumen, die 25 verschiedenen Kindern einfach nicht gerecht werden können. Smartmeister schließt diese Lücke – für jedes Kind, auf jedem Level. Kein Druck. Keine Standardlösungen. <strong>Einfach fundiertes, personalisiertes und kindgerechtes Lernen.</strong>
+    
+    </div>
+    </div>
+    </div>
+</section>
+
+<section class="py-24 bg-[#F8FAFC] dark:bg-background-dark overflow-hidden" id="scenarios-container">
+  <div class="text-center mb-16">
+    <h2 class="text-4xl font-extrabold text-primary dark:text-white">Das sagen andere Eltern</h2>
+    <p class="text-slate-500 mt-2 font-medium">So hilft Smartmeister in unterschiedlichen Familienalltagen</p>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 group">
+    <div class="absolute left-0 top-0 bottom-0 w-16 z-20 md:w-32 pointer-events-none bg-gradient-to-r from-[#F8FAFC] dark:from-background-dark to-transparent"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-16 z-20 md:w-32 pointer-events-none bg-gradient-to-l from-[#F8FAFC] dark:from-background-dark to-transparent"></div>
+
+    <button id="scrollLeft" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white dark:bg-card-dark shadow-xl flex items-center justify-center text-primary hover:scale-110 transition-all opacity-0 group-hover:opacity-100 border border-slate-100 dark:border-slate-700">
+      <span class="material-symbols-outlined">chevron_left</span>
+    </button>
+    
+    <button id="scrollRight" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white dark:bg-card-dark shadow-xl flex items-center justify-center text-primary hover:scale-110 transition-all opacity-0 group-hover:opacity-100 border border-slate-100 dark:border-slate-700">
+      <span class="material-symbols-outlined">chevron_right</span>
+    </button>
+
+    <div class="overflow-hidden py-10">
+      <div id="scroller-track" class="flex gap-6 transition-transform duration-500 ease-in-out">
+        <div class="scenario-card flex-shrink-0 w-[85%] md:w-[calc(33.333%_-_1rem)]">
+          <div class="h-full bg-blue-50 dark:bg-blue-900/20 p-8 rounded-3xl border border-blue-100 dark:border-blue-800 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">M</div>
+              <div><h4 class="font-bold text-primary dark:text-white">Miriam</h4><p class="text-xs text-slate-500">München</p></div>
+            </div>
+            <h5 class="text-lg font-extrabold text-primary dark:text-blue-300 mb-3">Die "Schnelldenker"-Falle</h5>
+            <p class="text-base font-bold text-slate-600 dark:text-slate-400 italic">"Lara langweilt sich in der Schule. Sie braucht Aufgaben, die ihrem Tempo entsprechen, inklusive kniffligerer Herausforderungen."</p>
+          </div>
+        </div>
+
+        <div class="scenario-card flex-shrink-0 w-[85%] md:w-[calc(33.333%_-_1rem)]">
+          <div class="h-full bg-yellow-50 dark:bg-yellow-900/20 p-8 rounded-3xl border border-yellow-100 dark:border-yellow-800 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-lg">FY</div>
+              <div><h4 class="font-bold text-primary dark:text-white">Fatima & Ilias</h4><p class="text-xs text-slate-500">Berlin</p></div>
+            </div>
+            <h5 class="text-lg font-extrabold text-primary dark:text-yellow-300 mb-3">Sprachbarrieren</h5>
+            <p class="text-base font-bold text-slate-600 dark:text-slate-400 italic">"Unser Sohn tat sich mit deutschen Begriffen schwer. Die Übersetzungs-Tools helfen ihm, seinen Wortschatz aufzubauen und Textaufgaben endlich zu verstehen."</p>
+          </div>
+        </div>
+        
+        <div class="scenario-card flex-shrink-0 w-[85%] md:w-[calc(33.333%_-_1rem)]">
+          <div class="h-full bg-indigo-100 dark:bg-indigo-900/20 p-8 rounded-3xl border border-yellow-100 dark:border-yellow-800 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-lg">JS</div>
+              <div><h4 class="font-bold text-primary dark:text-white">James & Sophia</h4><p class="text-xs text-slate-500">Hannover</p></div>
+            </div>
+            <h5 class="text-lg font-extrabold text-primary dark:text-yellow-300 mb-3">Angst vor Bewertung</h5>
+            <p class="text-base font-bold text-slate-600 dark:text-slate-400 italic">"Sie tut sich schwer mit fremden Menschen (und mit Mathe). Einige Lehrer machen sie nervös, Kritik noch mehr. Nachhilfelehrer sind für uns gerade einfach keine Option."</p>
+          </div>
+        </div>
+
+        <div class="scenario-card flex-shrink-0 w-[85%] md:w-[calc(33.333%_-_1rem)]">
+          <div class="h-full bg-green-50 dark:bg-green-900/20 p-8 rounded-3xl border border-green-100 dark:border-green-800 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">S</div>
+              <div><h4 class="font-bold text-primary dark:text-white">Stefanie</h4><p class="text-xs text-slate-500">Hamburg</p></div>
+            </div>
+            <h5 class="text-lg font-extrabold text-primary dark:text-green-300 mb-3">Prüfungsangst</h5>
+            <p class="text-base font-bold text-slate-600 dark:text-slate-400 italic">"Bei Tests blockiert meine Tochter völlig. Es ist super wichtig, dass sie zuerst ohne Druck und in ihrem eigenen Tempo übt."</p>
+          </div>
+        </div>
+
+        <div class="scenario-card flex-shrink-0 w-[85%] md:w-[calc(33.333%_-_1rem)]">
+          <div class="h-full bg-purple-50 dark:bg-purple-900/20 p-8 rounded-3xl border border-purple-100 dark:border-purple-800 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">TR</div>
+              <div><h4 class="font-bold text-primary dark:text-white">Thomas & Rebecca</h4><p class="text-xs text-slate-500">Köln</p></div>
+            </div>
+            <h5 class="text-lg font-extrabold text-primary dark:text-purple-300 mb-3">Individualität</h5>
+            <p class="text-base font-bold text-slate-600 dark:text-slate-400 italic">"Unsere Zwillinge sind wie Tag und Nacht. Zwei komplett unterschiedliche Lernpfade lösen das Problem – und wir haben als Eltern wieder mehr Luft."</p>
+          </div>
+        </div>
+        
+        <div class="scenario-card flex-shrink-0 w-[85%] md:w-[calc(33.333%_-_1rem)]">
+          <div class="h-full bg-orange-50 dark:bg-orange-900/20 p-8 rounded-3xl border border-purple-100 dark:border-purple-800 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">CW</div>
+              <div><h4 class="font-bold text-primary dark:text-white">Claudia</h4><p class="text-xs text-slate-500">Leipzig</p></div>
+            </div>
+            <h5 class="text-lg font-extrabold text-primary dark:text-purple-300 mb-3">Sprache &amp; Aussprache</h5>
+            <p class="text-base font-bold text-slate-600 dark:text-slate-400 italic">"Mein Sohn brauchte dringend regelmäßiges Lese- und Aussprachetraining. Wegen meiner Arbeitszeiten schaffe ich das einfach nicht jeden Tag mit ihm zusammen."</p>
+          </div>
+        </div>
+        
+        <div class="scenario-card flex-shrink-0 w-[85%] md:w-[calc(33.333%_-_1rem)]">
+          <div class="h-full bg-red-50 dark:bg-red-900/20 p-8 rounded-3xl border border-purple-100 dark:border-purple-800 shadow-sm flex flex-col">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">MP</div>
+              <div><h4 class="font-bold text-primary dark:text-white">Marcus</h4><p class="text-xs text-slate-500">Frankfurt/Main</p></div>
+            </div>
+            <h5 class="text-lg font-extrabold text-primary dark:text-purple-300 mb-3">Verständnislücken</h5>
+            <p class="text-base font-bold text-slate-600 dark:text-slate-400 italic">"Sophia hat gute Noten, lernt aber oft eher auswendig. Textaufgaben bringen sie völlig aus dem Konzept. Echte Verständnisprobleme, und wir wussten nicht, wo wir anfangen sollen."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  /**
+   * (1) MANUAL CONFIGURATION
+   */
+  const PAUSE_DURATION = 6000;    // Time spent on a card (ms)
+  const MOTION_SPEED = 700;       // Speed of the jump (ms)
+  const AUTO_SCROLL_ENABLED = true;
+
+  const container = document.getElementById('scenarios-container');
+  const track = document.getElementById('scroller-track');
+  const leftBtn = document.getElementById('scrollLeft');
+  const rightBtn = document.getElementById('scrollRight');
+  
+  let cards = Array.from(track.getElementsByClassName('scenario-card'));
+  let currentIndex = 0;
+  let isPaused = false;
+  let autoTimer;
+
+  // --- INFINITE LOOP PREPARATION ---
+  // We clone the original set so we can loop seamlessly
+  const cardCount = cards.length;
+  cards.forEach(card => {
+    const clone = card.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  // Update track transition speed from our variable
+  track.style.transitionDuration = `${MOTION_SPEED}ms`;
+
+  /**
+   * CORE MOVEMENT FUNCTION
+   */
+  function updateScroller(immediate = false) {
+    if (immediate) track.style.transition = 'none';
+    else track.style.transition = `transform ${MOTION_SPEED}ms ease-in-out`;
+
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 24; // Tailwind gap-6
+    const offset = currentIndex * (cardWidth + gap);
+    
+    track.style.transform = `translateX(-${offset}px)`;
+
+    // Reset to start if we reach the end of the original set
+    if (!immediate && currentIndex >= cardCount) {
+      setTimeout(() => {
+        currentIndex = 0;
+        updateScroller(true);
+      }, MOTION_SPEED);
+    }
+    
+    // Reset to end if we go backwards past start
+    if (!immediate && currentIndex < 0) {
+      setTimeout(() => {
+        currentIndex = cardCount - 1;
+        updateScroller(true);
+      }, MOTION_SPEED);
+    }
+  }
+
+  /**
+   * AUTO-SCROLL LOGIC
+   */
+  function startAutoScroll() {
+    if (!AUTO_SCROLL_ENABLED) return;
+    stopAutoScroll(); // Clear existing
+    autoTimer = setInterval(() => {
+      if (!isPaused) {
+        currentIndex++;
+        updateScroller();
+      }
+    }, PAUSE_DURATION);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoTimer);
+  }
+
+  /**
+   * (2) HOVER PAUSE LOGIC
+   * Applies to buttons and cards because we listen on the container
+   */
+  container.addEventListener('mouseenter', () => { isPaused = true; });
+  container.addEventListener('mouseleave', () => { isPaused = false; });
+
+  /**
+   * MANUAL NAVIGATION
+   */
+  rightBtn.addEventListener('click', () => {
+    currentIndex++;
+    updateScroller();
+    startAutoScroll(); // Reset timer on manual interaction
+  });
+
+  leftBtn.addEventListener('click', () => {
+    // If at start, jump to the clone end first (instantly) then move back
+    if (currentIndex <= 0) {
+      currentIndex = cardCount;
+      updateScroller(true);
+      // Small timeout to allow the 'instant' move to register before the 'smooth' move
+      setTimeout(() => {
+        currentIndex--;
+        updateScroller();
+      }, 10);
+    } else {
+      currentIndex--;
+      updateScroller();
+    }
+    startAutoScroll();
+  });
+
+  // Initialize
+  startAutoScroll();
+  // Handle Window Resize to keep offsets correct
+  window.addEventListener('resize', () => updateScroller(true));
+
+</script>
+<div class="mb-32">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold text-primary dark:text-white">Der direkte Vergleich</h2>
+<p class="text-slate-500 mt-2 font-medium">Die beste Wahl für personalisiertes Lernen</p>
+</div>
+<div class="overflow-x-auto bg-white dark:bg-card-dark rounded-[32px] shadow-sm border border-slate-100 dark:border-slate-800">
+  <a href="#faq"><div class="justify-right items-right relative block r-0 right-0 text-gray-500 h-[20px] px-6 pt-2 pb-12 hover:font-bold" style="text-align: right;">Lies in unseren FAQs, <u>wie wir im Vergleich zu klassischer Nachhilfe abschneiden.</u></div></a>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-slate-100 dark:border-slate-800 h-[200px] md:h-[160px] lg:h-auto">
+<th class="p-6 text-sm font-extrabold text-slate-400 uppercase tracking-wider w-[50%] lg:w-[30%]">Funktionen / Vorteile</th>
+<th class="p-0 pt-2 lg:p-2 text-sm font-extrabold text-primary dark:text-white bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800 w-[50px] max-w-[3rem] lg:max-w-auto md:w-auto md:h-auto [text-align:-webkit-center] lg:[text-align:left] lg:align-bottom xl:text-center">
+  
+<div class="flex-none md:w-auto md:h-auto [writing-mode:vertical-rl] lg:[writing-mode:initial] [text-align:-webkit-center] lg:flex lg:justify-center">
+
+<span class="flex"><div class="w-5 h-5 bg-primary rounded flex items-center justify-center shrink-0">
+  <span class="text-white font-bold text-[10px]">SM</span>
+</div>&nbsp;Smartmeister</span>
+</div>
+
+</th>
+<th class="p-0 pt-2 lg:p-2 text-sm font-extrabold text-slate-600 dark:text-slate-300 w-[50px] max-w-[3rem] lg:max-w-auto md:w-auto md:h-auto [text-align:-webkit-center] lg:[text-align:left] lg:align-bottom xl:text-center"><div class="md:w-auto md:h-auto [writing-mode:vertical-rl] lg:[writing-mode:initial]">ChatGPT / Gemini</div></th>
+<th class="p-0 pt-2 lg:p-2 text-sm font-extrabold text-slate-600 dark:text-slate-300 w-[50px] max-w-[3rem] lg:max-w-auto md:w-auto md:h-auto [text-align:-webkit-center] lg:[text-align:left] lg:align-bottom xl:text-center"><div class="md:w-auto md:h-auto [writing-mode:vertical-rl] lg:[writing-mode:initial] [text-align:-webkit-center]">Allgemeine KI</div></th>
+<th class="p-0 pt-2 lg:p-2 text-sm font-extrabold text-slate-600 dark:text-slate-300 w-[50px] max-w-[3rem] lg:max-w-auto md:w-auto md:h-auto [text-align:-webkit-center] lg:[text-align:left] lg:align-bottom xl:text-center"><div class="md:w-auto md:h-auto [writing-mode:vertical-rl] lg:[writing-mode:initial] [text-align:-webkit-center]">YouTube Videos</div></th>
+<th class="p-0 pt-2 lg:p-2 text-sm font-extrabold text-slate-600 dark:text-slate-300 w-[50px] max-w-[3rem] lg:max-w-auto md:w-auto md:h-auto [text-align:-webkit-center] lg:[text-align:left] lg:align-bottom xl:text-center"><div class="md:w-auto md:h-auto [writing-mode:vertical-rl] lg:[writing-mode:initial] [text-align:-webkit-center]">Andere Lern-Apps</div></th>
+
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Aufgaben nie zu leicht, nie zu schwer</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Lernpfad passt sich Zielen/Lücken an*</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Bewährte Lehrmethoden</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-emerald-500 text-opacity-40">check_circle</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Vielfältige Übungsformate</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-emerald-500 text-opacity-40">check_circle</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Visuell ansprechende Lektionen</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-emerald-500 text-opacity-40">check_circle</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Interaktive Übungen</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-emerald-500 text-opacity-40">check_circle</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Lehrplangerecht</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-emerald-500 text-opacity-40">check_circle</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Zusätzliche Lernhilfen</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Vorlese-Funktion (inkl. Langsam-Modus)</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Detaillierte Lernfortschritts-Diagnose</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Kognitives Profiling*</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Kindgerechte Sprache</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-emerald-500 text-opacity-40">check_circle</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Lern-Helfer Maskottchen*</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Sinnvolle Gamification (ohne Suchtfaktor)</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-emerald-500 text-opacity-40">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-emerald-500 text-opacity-40">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+</tr>
+<tr class="comparison-table-row">
+<td class="p-2 font-semibold text-slate-700 dark:text-slate-200">Datenschutz &amp; Sicherheit (DSGVO)</td>
+<td class="p-1 md:p-2 text-center bg-soft-blue/30 dark:bg-primary/10 border-x border-slate-100 dark:border-slate-800"><span class="material-symbols-outlined text-emerald-500 font-bold">check_circle</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center"><span class="material-symbols-outlined text-rose-500 text-opacity-40">sentiment_sad</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-amber-500 text-opacity-40">warning</span></td>
+<td class="p-1 md:p-2 text-center "><span class="material-symbols-outlined text-emerald-500 text-opacity-40">check_circle</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="justify-right items-right relative block r-0 right-0 text-gray-300 h-[20px]" style="text-align: right;">* in Entwicklung</div>
+</div>
+
+</section>
+
+
+<div class="max-w-4xl mx-auto py-12" id="faq">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold text-primary dark:text-white">Häufig gestellte Fragen (FAQ)</h2>
+</div>
+<div class="space-y-4">
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Welche Fächer deckt Smartmeister ab?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg text-sm leading-relaxed">
+                        Aktuell konzentrieren wir uns noch auf die Kernkompetenzen in Mathe und Deutsch (gemäß KMK-Rahmenlehrplan). Wir planen, das Angebot bald auf Sachkunde, Musik und Grundlagen von STEAM-Fächern, Digitale Medien-Umgang und des Programmierens zu erweitern.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Passt der Stoff zum Lehrplan der Schule?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg text-sm leading-relaxed">
+                        Ja, unsere Lerninhalte richten sich strikt nach dem offiziellen Grundschul-Rahmenlehrplan und vertiefen die Themen sinnvoll. So zahlen sich die Übungen direkt auf die Schulleistungen deines Kindes aus.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Wie lange sollte ein Kind täglich üben?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg text-sm leading-relaxed">
+                        Wir empfehlen kurze, effektive Einheiten von 10–15 Minuten. Es geht nicht um stundenlanges Pauken jeden Tag, sondern um regelmäßiges Üben mehrmals pro Woche. Das verhindert digitale Ermüdung und verankert das Wissen langfristig.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Wie sicher sind die Daten meines Kindes?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg text-sm leading-relaxed">
+                        Datensicherheit steht bei uns an erster Stelle. Wir sind zu 100% DSGVO-konform. Die Daten deines Kindes verlassen niemals unsere sicheren EU-Server und werden nicht an Dritte verkauft. Daten, die von unserer KI genutzt werden (z. B. zur Fehleranalyse), enthalten keinerlei persönliche Profilinformationen. Dein Kind ist rundum geschützt.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+  <summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+  <h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Wie setzt ihr KI ein?</h4>
+  <span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+  </summary>
+  <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg text-sm leading-relaxed">
+                          Wir nutzen KI nur sehr gezielt im Hintergrund, um Lerninformationen auszuwerten (aktuelle Fehler, Wissenslücken, Lernziele) und passgenaue Übungen anzubieten. Die KI wird weder als offener Chatbot eingesetzt, noch interagiert sie ungefiltert mit den Kindern. Sie ist ein strikt begrenztes, analytisches Werkzeug, um das Lernen effektiver zu machen.
+                      </div>
+  </details>
+  <details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+    <summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+    <h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Ist es weniger zeitaufwendig als klassische Nachhilfe?</h4>
+    <span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+    </summary>
+    <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg text-sm leading-relaxed">
+                            Absolut. Eltern müssen keine Termine mehr koordinieren oder das Kind hin- und herfahren. Zudem lernt ein Kind genau dann, wenn Konzentration und Motivation am höchsten sind (optimale Lernzeitfenster finden nicht jede Woche um die selbe Uhrzeit statt). Somit wartet das Lernen nicht mehr auf den festen Terminplan des Nachhilfelehrers.
+                        </div>
+    </details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Können mehrere Kinder über ein Konto lernen?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg text-sm leading-relaxed">
+                        Wir entwickeln aktuell ein Familienprofil, mit dem bis zu drei Kinder getrennte Lernwege und Fortschrittsberichte in einem Account nutzen können.
+                    </div>
+</details>
+
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Wie funktioniert die Warteliste?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg text-sm leading-relaxed">
+                        Mit der Eintragung sicherst du dir einen Platz für den Early Access (Vorabzugang). Wir verschicken die Einladungen in Wellen, um allen Familien einen reibungslosen Start in die App zu garantieren.
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+<h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Was unterscheidet euch von anderen Lern-Apps?</h4>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg leading-relaxed">
+                        Im Gegensatz zu normalen Apps erkennt Smartmeister *warum* ein Kind feststeckt – nicht nur, *dass* es Fehler macht. Wir setzen auf echtes Verstehen statt auf stures Auswendiglernen. <br><br>
+                        Oft scheitern Kinder an Aufgaben, weil das reine Textverständnis fehlt oder spezifische Wortbedeutungen unklar sind. Die Gründer von Smartmeister sind selbst Eltern in bilingualen Familien. Wir wissen: Das Lernen von Schulstoff ist mit einer Sprachbarriere deutlich schwieriger. Aber auch Muttersprachler stolpern oft über komplexe Aufgabenstellungen. Genau deshalb bietet Smartmeister integrierte Lese- und Übersetzungs-Tools. So wird mangelndes Vokabular nicht zur Hürde für den Matheerfolg. Kein Kind darf zurückgelassen werden. 
+                    </div>
+</details>
+<details class="group bg-white dark:bg-card-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+  <summary class="flex items-center justify-between p-6 cursor-pointer focus:outline-none">
+  <h4 class="text-lg md:text-xl font-bold text-primary dark:text-white">Warum adaptives Lernen oft besser wirkt als klassische Nachhilfe</h4>
+  <span class="material-symbols-outlined faq-icon transition-transform duration-300 text-primary dark:text-white">expand_more</span>
+  </summary>
+  <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-lg md:text-lg leading-relaxed">
+                          Nachhilfe ist kein Allheilmittel. Die Qualität schwankt stark: <strong>Einen Tutor oder Nachhilfe-Lehrer zu finden, der genau erkennt, *warum* ein Kind strauchelt, braucht Zeit und Erfahrung. Gute Nachhilfelehrer sind selten, teuer und die Chemie muss ebenfalls stimmen.</strong> Insbesonders bei online-Nachhilfe fehlt Grundschulkindern noch die persönliche Komponente, da sich über einen Bildschirm nicht alles kindgerecht erklären lässt. Dazu kommt der feste Termin: Ein Kind, das Dienstag um 16 Uhr müde ist, nimmt aus der Stunde kaum etwas mit. <strong>Das optimale Lernfenster wartet aber nicht auf Termine.</strong><br><br>
+                          
+                          In Fächern wie Mathe kann schon eine kleine Grundlagen-Lücke alles blockieren, was darauf aufbaut. Ein Lehrer merkt in 2 Stunden pro Woche vielleicht, dass ein Kind Probleme hat, aber <strong>das komplette Muster an fehlenden Basics zu erkennen, ist in dieser kurzen Zeit extrem schwer.</strong> <br><br>
+                          
+                          Gleiches gilt für Deutsch und das Textverständnis: Versteht ein Kind Begriffe wie "Unterschied" oder "Begrenzung" nicht, scheitert es nicht an Mathe, sondern am Wortschatz. Ein Tutor löst das Problem vielleicht für diese eine Stunde. <strong>Adaptives Lernen hingegen analysiert das Kind bei jedem Klick, passt den Fokus sofort an und schließt diese Lücken kontinuierlich – jeden Tag, genau zur richtigen Uhrzeit für eure Familie.</strong> 
+                      </div>
+  </details>
+</div>
+</div>
+</div>
+</section>
+
+  <section class="bg-[#fcde72] px-4 md:px-8 lg:px-[60px] xl:px-[158px] py-12 md:py-16" id="waitlist">
+    <div class="max-w-[1440px] mx-auto">
+        <div class="flex flex-col lg:flex-row items-center gap-8">
+            
+            <div class="flex-1 w-full">
+                <h2 class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] font-bold sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-4">
+                  Wir geben Kindern das Selbstvertrauen, selbstständig zu lernen.
+              </h2>
+                
+                <p class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] font-bold text-5xl md:text-4xl lg:text-6xl mb-5">
+                    Sei früh dabei! +120 Eltern sinds schon.<br> Early Access jetzt sichern.
+                </p>
+
+                <div id="brevo-form" class="sib-form" style="text-align: center; background-color: transparent;">
+                    <div id="sib-form-container" class="sib-form-container">
+                        <div id="success-message" class="sib-form-message-panel" style="display:none; font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:1200px; margin-bottom: 20px;">
+                            <span class="sib-form-message-panel__inner-text">Willkommen bei Smartmeister! Du stehst offiziell auf der Warteliste!</span>
+                        </div>
+                        
+                        <div id="sib-container" style="text-align:left; background-color:#ffffff; max-width:1200px; border-radius:20px; border: 1px dotted #C0CCD9; padding: 20px;">
+                             <form id="sib-form" method="POST" action="https://ee44b5ec.sibforms.com/serve/MUIFAP8roiQcAmmZ2SOf15NnFsPZB1evAvyhMugqTdPcaQdASXOrKVWk512cuYAwjF0J1zQdadJE7cJgqfEdxmRunowTGutIRjsPJ9Q64XdebBxD5kO1I0XXy5s2kFvk7c2aK6VpiOKxvJsszitMmyT3nRU6yb327Ulo2VAeEt7ePkzDotwXOMmwr3cXlwaRrDiotJEpqOZFivczsQ==" data-type="subscription">
+                               
+                               <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 16px;">
+                                   <div style="flex: 1; min-width: 240px;">
+                                       <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="Name (Optional)" />
+                                   </div>
+                           
+                                   <div style="flex: 1; min-width: 240px;">
+                                       <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="email" id="EMAIL" name="EMAIL" placeholder="E-Mail-Adresse" required data-required="true" />
+                                   </div>
+                               </div>
+                           
+                               <div class="sib-optin sib-form-block" style="margin-bottom: 16px;">
+                                   <div style="display: flex; align-items: flex-start; gap: 10px;">
+                                       <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required data-required="true" style="width: 20px; height: 20px; flex-shrink:0; margin-top: 2px;" />
+                                       <label for="OPT_IN" style="font-size: 14px; color: #3C4858; cursor: pointer; text-align: left;">
+                                           Ich stimme zu, Produkt-Updates zu erhalten und akzeptiere die Datenschutzerklärung. Eine Abmeldung ist jederzeit möglich.<span style="color: #e74c3c;">*</span>
+                                       </label>
+                                   </div>
+                               </div>
+                           
+                               <div style="margin-bottom: 24px;">
+                                   <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+                               </div>
+                           
+                               <div style="text-align: left;">
+                                   <button class="sib-form-block__button sib-form-block__button-with-loader" style="background-color:#4C3BAD; color:white; padding: 14px 28px; border-radius: 8px; border:none; cursor:pointer; font-weight:600; width: 100%; max-width: 300px;" type="submit">
+                                       Auf die Warteliste setzen
+                                   </button>
+                               </div>
+                           
+                               <input type="hidden" name="locale" value="de">
+                               <input type="hidden" name="html_type" value="simple">
+                           </form>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            <div class="section-yellow-image-fix w-full lg:w-auto flex justify-center lg:justify-end">
+                <img alt="High five celebration" class="w-[280px] md:w-[350px] lg:w-[398px] h-auto" src="./images/cta-highfive.png">
+            </div>
+
+        </div> </div>
+    </section>
+    <script defer="" src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+
+<footer class="bg-slate-900 text-white pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 border-b border-slate-800 pb-16">
+        <div class="md:col-span-2 space-y-6">
+            <div class="text-2xl font-extrabold tracking-tight">smart<span class="text-brand-accent">|</span>meister</div>
+            <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Wir stärken Kinder darin, Mathe und Deutsch im eigenen Tempo zu meistern. Adaptives Lernen, das Wissen individuell aufbaut und Noten verbessert.</p>
+        </div>
+        <div class="space-y-6">
+            <h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Personalisiertes Lernen</h4>
+            <ul class="space-y-4 text-slate-300 font-medium">
+              <li><span class="text-white">Aufgaben passen sich Niveau an</span></li> 
+              <li><span class="text-white">Chancengleiche Lerntools</span></li>
+              <li><span class="text-white">Übersetzungshilfen für bilinguale Kids</span></li>
+              <li><span class="text-white">Vorlesefunktion für Hör- &amp; Leseverstehen</span></li>
+              <li><span class="text-white">Inklusive Mathe- &amp; Deutsch-Förderung</span></li>
+            </ul>
+        </div>
+        <div class="space-y-6">
+            <h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Rechtliches</h4>
+            <ul class="space-y-4 text-slate-300 font-medium">
+                <li><a href="lernapp_mathe_deutsch_nachhilfe_grundschule_lücken_sprachkenntnisse_üben.html" title="Adaptives Lernen, das sich wie Nachhilfe anfühlt" class="hover:text-white transition">Nachhilfe, die sich anpasst</a></li>
+                <li><a href="privacy_sm_lp 2.html" class="hover:text-white transition">Datenschutz</a></li>
+                <li><a href="imprnt_sm.html" class="hover:text-white transition">Impressum</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm font-medium">
+        <p>©2025-2026 Smartmeister Learning. Alle Rechte vorbehalten.</p>
+        <div class="flex gap-8">
+            <a href="https://www.linkedin.com/company/smartmeister" class="hover:text-white transition">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+  // WAITLIST FORM ACTIONS
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('sib-form');
+        const successMessage = document.getElementById('success-message');
+        const formContainer = document.getElementById('sib-container');
+        
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('EMAIL').value;
+                const optIn = document.querySelector('input[name="OPT_IN"]').checked;
+                
+                // Validation
+                if (!email || !email.includes('@')) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                if (!optIn) {
+                    alert('Please check the checkbox to agree to receive product updates.');
+                    return;
+                }
+                // 3. CAPTCHA Validation
+                if (typeof grecaptcha !== 'undefined') {
+                    const recaptchaResponse = grecaptcha.getResponse();
+                    if (!recaptchaResponse) {
+                        alert('Please check the "I\'m not a robot" checkbox.');
+                        return;
+                    }
+                }
+                
+                // Submit via fetch
+                const formData = new FormData(form);
+                
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(function() {
+                    // Show success message
+                    if (successMessage) {
+                        successMessage.style.display = 'block';
+                    }
+                    if (formContainer) {
+                        formContainer.style.display = 'none';
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Error:', error);
+                    alert('There was an error. Please try again.');
+                });
+            });
+        }
+    });
+    </script>
+      <div id="newvtPopupMenu"></div>
+      
+<div id="struggle-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 transition-opacity duration-300">
+    <div id="modal-backdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+
+    <div class="relative bg-white dark:bg-card-dark w-full max-w-2xl rounded-[32px] shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden flex flex-col md:flex-row transform transition-all duration-300 scale-95 opacity-0" id="modal-body">
+        
+        <button id="close-modal" class="absolute top-4 right-4 z-10 text-slate-400 hover:text-primary dark:hover:text-white transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <div class="w-full md:w-[65%] p-8 md:p-12 flex flex-col justify-center">
+            <h2 class="text-2xl font-extrabold text-primary dark:text-white mb-4">Unterstützung auf jedem Weg</h2>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                Smartmeister ist im Kern inklusiv konzipiert. Ob bei Verständnisproblemen, kniffligen Rechnungen oder tiefen Wissenslücken: Unser Lern-Helfer Pico greift ein, wenn Kinder nicht weiterwissen. Er gibt Tipps, erklärt Grundlagen und motiviert zum Weitermachen. 
+            </p>
+        </div>
+
+        <div class="w-full md:w-[35%] bg-soft-blue/30 dark:bg-primary/20 flex items-center justify-center p-6 border-l border-slate-100 dark:border-slate-800">
+            <img src="./images/dashboard_exercise_mascot_robot_220x320_transparent.png" 
+                 alt="Smartmeister Lern-Helfer Pico" 
+                 class="w-full h-auto max-w-[140px] md:max-w-full drop-shadow-lg object-contain">
+        </div>
+    </div>
+</div>
+      
+</body></html>
