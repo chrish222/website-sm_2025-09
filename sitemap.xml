@@ -1,72 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-	<loc>https://www.smartmeister.app/index.html</loc>
-	<xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/index.html"/>
-	<xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/index_de.html"/>
-	<lastmod>2026-04-02</lastmod>
-	<changefreq>weekly</changefreq>
-	<priority>1.0</priority>
+    <loc>https://www.smartmeister.app/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/index_de.html"/>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <url>
-	<loc>https://www.smartmeister.app/index_de.html</loc>
-	<xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/index_de.html"/>
-	<xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/index.html"/>
-	<lastmod>2026-04-02</lastmod>
-	<changefreq>weekly</changefreq>
-	<priority>1.0</priority>
+    <loc>https://www.smartmeister.app/index_de.html</loc>
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/index_de.html"/>
+    <xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/index.html"/>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <url>
-	<loc>https://www.smartmeister.app/how_learning_app_math_german_primary_school_adaptive_tutoring_works.html</loc>
-	<xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/how_learning_app_math_german_primary_school_adaptive_tutoring_works.html"/>
-	<xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/wie_funktioniert_lern_app_tutoring_nachhilfe_grundschule_mathe_deutsch.html"/>
-	<lastmod>2026-04-02</lastmod>
-	<changefreq>weekly</changefreq>
-	<priority>0.9</priority>
+    <loc>https://www.smartmeister.app/how_learning_app_math_german_primary_school_adaptive_tutoring_works.html</loc>
+    <xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/how_learning_app_math_german_primary_school_adaptive_tutoring_works.html"/>
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/wie_funktioniert_lern_app_tutoring_nachhilfe_grundschule_mathe_deutsch.html"/>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   
   <url>
-	  <loc>https://www.smartmeister.app/wie_funktioniert_lern_app_tutoring_nachhilfe_grundschule_mathe_deutsch.html</loc>
-	  <xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/wie_funktioniert_lern_app_tutoring_nachhilfe_grundschule_mathe_deutsch.html"/>
-	  <xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/how_learning_app_math_german_primary_school_adaptive_tutoring_works.html"/>
-	  <lastmod>2026-04-02</lastmod>
-	  <changefreq>weekly</changefreq>
-	  <priority>0.9</priority>
+    <loc>https://www.smartmeister.app/wie_funktioniert_lern_app_tutoring_nachhilfe_grundschule_mathe_deutsch.html</loc>
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/wie_funktioniert_lern_app_tutoring_nachhilfe_grundschule_mathe_deutsch.html"/>
+    <xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/how_learning_app_math_german_primary_school_adaptive_tutoring_works.html"/>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   
-  
   <url>
-		<loc>https://www.smartmeister.app/über_smartmeister_gründer_adaptive_nachhilfe_lernapp_grundschule.html</loc>
-		<xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/über_smartmeister_gründer_adaptive_nachhilfe_lernapp_grundschule.html"/>
-		<xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/about_smartmeister_german_primary_school_children_improve_subject_abilities.html"/>
-		<lastmod>2026-04-02</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.8</priority>
+    <loc>https://www.smartmeister.app/%C3%BCber_smartmeister_gr%C3%BCnder_adaptive_nachhilfe_lernapp_grundschule.html</loc>
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/%C3%BCber_smartmeister_gr%C3%BCnder_adaptive_nachhilfe_lernapp_grundschule.html"/>
+    <xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/about_smartmeister_german_primary_school_children_improve_subject_abilities.html"/>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 	
   <url>
-		<loc>https://www.smartmeister.app/about_smartmeister_german_primary_school_children_improve_subject_abilities.html</loc>
-		<xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/about_smartmeister_german_primary_school_children_improve_subject_abilities.html"/>
-		<xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/über_smartmeister_gründer_adaptive_nachhilfe_lernapp_grundschule.html"/>
-		<lastmod>2026-04-02</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.8</priority>
+    <loc>https://www.smartmeister.app/about_smartmeister_german_primary_school_children_improve_subject_abilities.html</loc>
+    <xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/about_smartmeister_german_primary_school_children_improve_subject_abilities.html"/>
+    <xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/%C3%BCber_smartmeister_gr%C3%BCnder_adaptive_nachhilfe_lernapp_grundschule.html"/>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-		<loc>https://www.smartmeister.app/tutoring-app_maths_german_primary-school_child_learning_gaps_language_practice-curriculum.html</loc>
-		<lastmod>2026-04-02</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>1.0</priority>
+    <loc>https://www.smartmeister.app/tutoring-app_maths_german_primary-school_child_learning_gaps_language_practice-curriculum.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 	  
   <url>
-		<loc>https://www.smartmeister.app/lernapp_mathe_deutsch_nachhilfe_grundschule_lücken_sprachkenntnisse_üben.html</loc>
-		<lastmod>2026-04-02</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>1.0</priority>
+    <loc>https://www.smartmeister.app/lernapp_mathe_deutsch_nachhilfe_grundschule_l%C3%BCcken_sprachkenntnisse_%C3%BCben.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
-
 </urlset>
-
