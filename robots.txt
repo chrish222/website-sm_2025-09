@@ -15,8 +15,6 @@ Disallow: /*.webp$
 # Reference to your new sitemap
 Sitemap: https://www.smartmeister.app/sitemap.xml
 
-
-<meta name="robots" content="noindex,nofollow">
 # === Explicitly Allow AEO Metadata Files ===
 
 Allow: /robots.txt
