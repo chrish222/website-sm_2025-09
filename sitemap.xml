@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://www.smartmeister.app/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/index.html"/>
-    <xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/index_de.html"/>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+   <url>
+	<loc>https://www.smartmeister.app/</loc>
+	<xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/"/>
+	<xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/index_de.html"/>
+	<lastmod>2026-03-25</lastmod>
+	<changefreq>weekly</changefreq>
+	<priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.smartmeister.app/index_de.html</loc>
-    <xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/index_de.html"/>
-    <xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/index.html"/>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+	<loc>https://www.smartmeister.app/index_de.html</loc>
+	<xhtml:link rel="alternate" hreflang="de-de" href="https://www.smartmeister.app/index_de.html"/>
+	<xhtml:link rel="alternate" hreflang="en-de" href="https://www.smartmeister.app/"/>
+	<lastmod>2026-03-25</lastmod>
+	<changefreq>weekly</changefreq>
+	<priority>1.0</priority>
   </url>
 
   <url>
