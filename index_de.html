@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="de-DE" class="scroll-smooth">
+<html lang="de" class="scroll-smooth">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="all">
-	<title>Smartmeister – Lernapp zum Deutsch-Lernen für mehrsprachige Kids: Lesekompetenz, Textverständnis & Aussprache </title>
-	<meta name="description" content="Deutsch-Lernapp, die multilingualen Kindern bessere Lesekompetenz und Spracherwerb ermöglicht. Stärkt Kinder im Alter von 5–14 auch ihr Vokabular und Sprachverständnis zu verbessern.">
+	<title>Smartmeister – Der Lese-Coach für Deutsch, perfekt angepaßt für Kinder und Leselücken | Klasse 1–5</title>
+	<meta name="description" content="Besser lesen trotz Leselücken. Wörter knacken, Geschichten verstehen. Smartmeister liest vor, zeigt Silben farbig und prüft das Verständnis – Lese-Coach für Deutsch, gemacht für Kinder der Klassen 1–5.">
 	<meta name="author" content="Smartmeister">
+	<meta name="theme-color" content="#FFFDF4">
 	<link rel="icon" type="image/x-icon" href="https://smartmeister.app/smartmeister-favicon.png">
-	
+
+	<script>document.documentElement.classList.add('js');</script>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Gochi+Hand&amp;display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;icon_names=arrow_forward,article,check_circle,child_care,cognition,ear_sound,editor_choice,emoji_people,favorite,font_download,g_translate,hub,menu_book,mindfulness,person,play_arrow,play_circle,rewarded_ads,rocket,school,spatial_audio,spellcheck,star,thumb_up,trending_up,trophy,voice_selection,volume_up&amp;display=block" rel="stylesheet"> 
-	
-	<link rel="stylesheet" href="https://smartmeister.app/index.css">
+	<!-- Fonts: Plus Jakarta Sans (body, original), Gochi Hand (accent, original), Bricolage Grotesque (new display), Andika (reading demo – designed for young readers, clear b/d/p/q shapes) -->
+	<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Gochi+Hand&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;icon_names=add,arrow_forward,auto_stories,block,check,check_circle,close,devices,ear_sound,family_restroom,font_download,format_line_spacing,g_translate,graphic_eq,hearing,help,lightbulb,menu_book,mic,pause,play_arrow,psychology,quiz,record_voice_over,school,science,slow_motion_video,speed,spellcheck,timer,translate,visibility,volume_up&amp;display=block" rel="stylesheet">
 	
 	<script>
 		tailwind.config = {
@@ -23,7 +24,10 @@
 				extend: {
 					fontFamily: {
 						sans: ['Plus Jakarta Sans', 'sans-serif'],
+						/* TYPOGRAPHY REVERT: replace 'Bricolage Grotesque' with 'Plus Jakarta Sans' to restore the original heading style */
+						display: ['Bricolage Grotesque', 'Plus Jakarta Sans', 'sans-serif'],
 						hand: ['Gochi Hand', 'cursive'],
+						reading: ['Andika', 'Plus Jakarta Sans', 'sans-serif'],
 					},
 					colors: {
 						primary: '#2e2195',
@@ -36,1247 +40,1399 @@
 						brandDeep: '#0d0b21',
 						pastelOrange: '#FFF7ED',
 						pastelPink: '#FCE7F3',
-						vermillion: '#E34234'
-					},
-					margin: {
-					  '-mt-100': '-100%',
-					  'mt-100': '100%',
+						vermillion: '#E34234',
+						peach: '#F8CBBE',
+						'sky-soft': '#BBD9EE',
+						ink: '#1b1550'
 					},
 					borderRadius: {
-					  '4xl': '2rem',
-					  '5xl': '3rem',
-				  }
+						'4xl': '2rem',
+						'5xl': '3rem',
+					}
 				}
 			}
 		}
 	</script>
 	<style>
-	* {
-	  font-variant-ligatures: none;
-	}
+		* { font-variant-ligatures: none; }
+		html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+		body { -webkit-tap-highlight-color: transparent; }
+		@media (max-width: 639px) {
+			.lab-word { padding: 0 2px; }
+			.custom_marker_highlight-green { padding: 0.25em 4px; }
+		}
+		@media (max-width: 400px) {
+			.g-recaptcha { transform: scale(.88); transform-origin: 0 0; margin-bottom: -9px; }
+		}
 		.material-symbols-outlined {
 			font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+			line-height: 1;
 		}
-		.bg-brandYellow {
-		  --tw-bg-opacity: 1;
-		  background-color: rgb(255 214 74 / var(--tw-bg-opacity, 1));
-	  }
-	  .bg-brandYellow-Gradient {
-	  background: linear-gradient(128deg,rgba(250, 215, 102, 1) 1%, rgba(255, 214, 74, 1) 37%, rgba(255, 199, 77, 1) 100%);
-	  }
-	  .bg-pink-gradient {
-		background: linear-gradient(128deg,rgba(250, 237, 244, 1) 1%, rgba(252, 220, 238, 1) 46%, rgba(247, 220, 236, 1) 100%);
+		.bg-brandYellow { background-color: #FFD64A; }
+		.bg-brandYellow-Gradient {
+			background: linear-gradient(128deg, rgba(250, 215, 102, 1) 1%, rgba(255, 214, 74, 1) 37%, rgba(255, 199, 77, 1) 100%);
 		}
-	  .bg-lightblue-gradient {
-		background: linear-gradient(128deg,rgba(233, 242, 245, 1) 5%, rgba(216, 230, 237, 1) 46%, rgba(207, 224, 232, 1) 100%);
+		.bg-lightblue-gradient {
+			background: linear-gradient(128deg, rgba(233, 242, 245, 1) 5%, rgba(216, 230, 237, 1) 46%, rgba(207, 224, 232, 1) 100%);
+		}
+		.max-w-8xl { max-width: 90rem; }
 
+		/* Marker highlight (kept from original) */
+		.custom_marker_highlight {
+			background:
+				linear-gradient(104deg, rgba(255, 214, 74, 0) 0.9%, rgba(255, 214, 74, 1) 2.4%, rgba(255, 214, 74, 0.5) 5.8%, rgba(255, 214, 74, 0.1) 93%, rgba(255, 214, 74, 0.7) 96%, rgba(255, 214, 74, 0) 98%),
+				linear-gradient(183deg, rgba(255, 214, 74, 0) 0%, rgba(255, 214, 74, 0.3) 7.9%, rgba(255, 214, 74, 0) 15%);
+			padding: 0.1em 8px;
+			box-decoration-break: clone;
+			-webkit-box-decoration-break: clone;
+			border-radius: 7.5px;
 		}
-		.bg-lightblue-strong-gradient {
-		  background: linear-gradient(128deg,rgba(237, 246, 250, 1) 2%, rgba(220, 242, 252, 1) 46%, rgba(220, 239, 247, 1) 100%);
+		
+		.custom_marker_highlight-green {
+			/* background: linear-gradient(104deg, rgba(130, 255, 173,0) 0.9%, rgba(130, 255, 173,1.25) 2.4%, rgba(130, 255, 173,0.5) 5.8%, rgba(130, 255, 173,0.1) 93%, rgba(130, 255, 173,0.7) 96%, rgba(130, 255, 1732,0) 98%), linear-gradient(183deg, rgba(130, 255, 173,0) 0%, rgba(130, 255, 173,0.3) 7.9%, rgba(130, 255, 173,0) 15%); */
+			background: 
+			linear-gradient(104deg, 
+			  rgba(145, 185, 225, 0) 0.9%, 
+			  rgba(145, 185, 225, 0.7) 2.4%, 
+			  rgba(145, 185, 225, 0.35) 5.8%, 
+			  rgba(145, 185, 225, 0.07) 93%, 
+			  rgba(145, 185, 225, 0.5) 96%, 
+			  rgba(145, 185, 225, 0) 98%
+			), 
+			linear-gradient(183deg, 
+			  rgba(145, 185, 225, 0) 0%, 
+			  rgba(145, 185, 225, 0.2) 7.9%, 
+			  rgba(145, 185, 225, 0) 15%
+			);
+			padding: 0.3em 4.7px;
+			box-decoration-break: clone;
+			-webkit-box-decoration-break: clone;
+			margin: 0;
+			border-radius: 7.5px;
+			/* text-shadow: -12px 12px 9.8px rgba(130, 255, 173,0.7), 21px -18.1px 7.3px rgba(255, 255, 255,1), -18.1px -27.3px 30px rgba(255, 255, 255,1); */
 		  }
-		.hand-divider {
-		  height: 12px;
-		  background: url("data:image/svg+xml,%3Csvg width='1200' height='12' viewBox='0 0 1200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6C50 4 100 8 150 6C200 4 250 8 300 6C350 4 400 8 450 6C500 4 550 8 600 6C650 4 700 8 750 6C800 4 850 8 900 6C950 4 1000 8 1050 6C1100 4 1150 8 1200 6' stroke='%23FF4D4D' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-		  background-repeat: repeat-x;
-	  }
+		  
+		/* Underline swoosh for hero keyword */
+		.swoosh {
+			background-image: url("data:image/svg+xml,%3Csvg width='300' height='16' viewBox='0 0 300 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 11C60 4 140 3 297 8' stroke='%23FFD64A' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: 0 100%;
+			background-size: 100% 0.32em;
+			padding-bottom: 0.08em;
+		}
+
+		.split-flag {
+			width: 20px; height: 14px;
+			background-image: url('./images/language-auswahl.svg');
+			background-size: 100% 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			position: relative; border-radius: 2px;
+			display: inline-block; vertical-align: middle; margin-right: 8px;
+		}
+
+		/* Syllable colours (Silbenmethode: alternating blue / red) */
+		.syl-a { color: #2e2195; }
+		.syl-b { color: #E34234; }
+		.syllables-off .syl-a, .syllables-off .syl-b { color: inherit; }
+
+		/* Hero mini reader: syllable "karaoke" */
+		@keyframes syl-glow {
+			0%, 100% { background-color: transparent; }
+			8%, 28% { background-color: #FFD64A; }
+			36% { background-color: transparent; }
+		}
+		.syl-karaoke span { border-radius: 6px; padding: 0 2px; animation: syl-glow 3.6s infinite; }
+		.syl-karaoke span:nth-child(2) { animation-delay: 0.9s; }
+		.syl-karaoke span:nth-child(3) { animation-delay: 1.8s; }
+
+		@keyframes eq {
+			0%, 100% { transform: scaleY(0.35); }
+			50% { transform: scaleY(1); }
+		}
+		.eq-bar { transform-origin: bottom; animation: eq 1s ease-in-out infinite; }
+		.eq-bar:nth-child(2) { animation-delay: .15s; }
+		.eq-bar:nth-child(3) { animation-delay: .3s; }
+		.eq-bar:nth-child(4) { animation-delay: .45s; }
+		.eq-paused .eq-bar { animation-play-state: paused; transform: scaleY(0.35); }
+
 		@keyframes float {
 			0%, 100% { transform: translateY(0); }
-			50% { transform: translateY(-10px); }
+			50% { transform: translateY(-8px); }
 		}
-		.float-anim { animation: float 3s ease-in-out infinite; }
-		
-		.hero-bg {
-		  background: linear-gradient(135deg, #FFD64A 0%, #FFF4CC 100%);
-	  }
-	  
-	  .marker-text {
-		  font-family: 'Gochi Hand', cursive;
-		  color: #FF4D4D;
-		  line-height: 1.1;
-	  }
-	  
-	  .section-yellow-image-fix {
-	  outline-offset: -5px;
-	  outline: 7px solid #fcde72;
-	  outline-color: #fcde72; }
+		.float-anim { animation: float 4s ease-in-out infinite; }
 
-	  .video-overlay {
-		  position: absolute;
-		  top: 20px;
-		  right: 20px;
-		  padding: 12px 20px;
-		  border-radius: 16px;
-		  font-weight: 700;
-		  font-size: 0.875rem;
-		  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-		  z-index: 10;
-		  display: none;
-		  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-	  }
+		/* Scroll reveal (only when JS is active) */
+		.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+		.js .reveal.is-visible { opacity: 1; transform: none; }
 
-	  @keyframes popIn {
-		  from { transform: scale(0.8); opacity: 0; }
-		  to { transform: scale(1); opacity: 1; }
-	  }
-	  
-	  @keyframes pulsate-red {
-		0%, 100% { outline: 2px solid rgba(239, 68, 68, 0); outline-offset: 0px; }
-		50% { outline: 6px solid rgba(239, 68, 68, 0.4); outline-offset: 4px; }
-	}
+		/* Stat dots */
+		.stat-dot { transition: background-color .5s ease, transform .5s ease; }
+		.is-visible .stat-dot.is-hit { background-color: #E34234; transform: scale(1.12); }
 
-	.pulse-highlight {
-		animation: pulsate-red 1s ease-in-out 3; /* 3 seconds total */
-	}
-
-	  .thumbnail-active {
-		  outline: 3px solid #374151; /* dark-grey outline */
-		  outline-offset: 2px;
-		  opacity: 1 !important;
-		  animation: none !important; /* Stop pulse if user clicks it */
-	  }
-
-	  .tooltip {
-		  position: absolute;
-		  bottom: 120%;
-		  left: 50%;
-		  transform: translateX(-50%);
-		  background: #1f2937;
-		  color: white;
-		  padding: 6px 12px;
-		  border-radius: 8px;
-		  font-size: 0.75rem;
-		  white-space: nowrap;
-		  opacity: 0;
-		  visibility: hidden;
-		  transition: all 0.2s ease;
-		  pointer-events: none;
-		  z-index: 20;
-	  }
-
-	  .tooltip::after {
-		  content: '';
-		  position: absolute;
-		  top: 100%;
-		  left: 50%;
-		  margin-left: -5px;
-		  border-width: 5px;
-		  border-style: solid;
-		  border-color: #1f2937 transparent transparent transparent;
-	  }
-
-	  .thumbnail-btn:hover .tooltip {
-		  opacity: 1;
-		  visibility: visible;
-		  bottom: 110%;
-	  }
-
-	  /* Custom SVG arrows and doodles */
-	  .doodle-arrow-1 {
-		  width: 80px;
-		  height: 60px;
-		  transform: rotate(-10deg);
-	  }
-	  /* custom Tailwind */
-	  .max-w-8xl {
-	  max-width: 90rem;
-	  }
-	  
-	  .custom_highlights::before, .custom_highlights::after {
-		z-index: -1 !important;
-	  }
-	  .custom_marker_highlight-green {
-		/* background: linear-gradient(104deg, rgba(130, 255, 173,0) 0.9%, rgba(130, 255, 173,1.25) 2.4%, rgba(130, 255, 173,0.5) 5.8%, rgba(130, 255, 173,0.1) 93%, rgba(130, 255, 173,0.7) 96%, rgba(130, 255, 1732,0) 98%), linear-gradient(183deg, rgba(130, 255, 173,0) 0%, rgba(130, 255, 173,0.3) 7.9%, rgba(130, 255, 173,0) 15%); */
-		background: 
-		linear-gradient(104deg, 
-		  rgba(145, 185, 225, 0) 0.9%, 
-		  rgba(145, 185, 225, 0.7) 2.4%, 
-		  rgba(145, 185, 225, 0.35) 5.8%, 
-		  rgba(145, 185, 225, 0.07) 93%, 
-		  rgba(145, 185, 225, 0.5) 96%, 
-		  rgba(145, 185, 225, 0) 98%
-		), 
-		linear-gradient(183deg, 
-		  rgba(145, 185, 225, 0) 0%, 
-		  rgba(145, 185, 225, 0.2) 7.9%, 
-		  rgba(145, 185, 225, 0) 15%
-		);
-		padding: 0.3em 4.7px;
-		box-decoration-break: clone;
-		-webkit-box-decoration-break: clone;
-		margin: 0;
-		border-radius: 7.5px;
-		/* text-shadow: -12px 12px 9.8px rgba(130, 255, 173,0.7), 21px -18.1px 7.3px rgba(255, 255, 255,1), -18.1px -27.3px 30px rgba(255, 255, 255,1); */
-	  }
-	  .custom_marker_highlight {
-	  /* Updated for RGB 255, 214, 74 */
-	  background: 
-		  linear-gradient(104deg, 
-			  rgba(255, 214, 74, 0) 0.9%, 
-			  rgba(255, 214, 74, 1) 2.4%, 
-			  rgba(255, 214, 74, 0.5) 5.8%, 
-			  rgba(255, 214, 74, 0.1) 93%, 
-			  rgba(255, 214, 74, 0.7) 96%, 
-			  rgba(255, 214, 74, 0) 98%
-		  ), 
-		  linear-gradient(183deg, 
-			  rgba(255, 214, 74, 0) 0%, 
-			  rgba(255, 214, 74, 0.3) 7.9%, 
-			  rgba(255, 214, 74, 0) 15%
-		  );
-	  
-	  padding: 0.4em 10px;
-	  box-decoration-break: clone;
-	  -webkit-box-decoration-break: clone;
-	  margin: 0;
-	  border-radius: 7.5px;
-	  
-	  /* Shadow updated to yellow glow */
-	  text-shadow: 
-		  -12px 12px 9.8px rgba(255, 214, 74, 0.4), 
-		  21px -18.1px 7.3px rgba(255, 255, 255, 1), 
-		  -18.1px -27.3px 30px rgba(255, 255, 255, 1);
+		/* Reading lab */
+		.lab-text { font-family: 'Andika', 'Plus Jakarta Sans', sans-serif; }
+		.lab-line { transition: color .35s ease, background-color .35s ease, opacity .35s ease; border-radius: 14px; }
+		.lab-focus .lab-line.is-dim { color: #b8b8c7; }
+		.lab-focus .lab-line.is-dim .syl-a, .lab-focus .lab-line.is-dim .syl-b { color: #b8b8c7; }
+		.lab-focus .lab-line.is-active { background-color: #E0F2FE; }
+		.lab-word {
+			border-radius: 8px; padding: 0 3px; margin: 0 -1px;
+			transition: background-color .2s ease, box-shadow .2s ease;
+			cursor: pointer;
 		}
-		
-	  .split-flag {
-		width: 20px;
-		height: 14px;
-		/* Load the SVG instead of the gradient */
-		background-image: url('./images/language-auswahl.svg');
-		background-size: 100% 100%; /* Ensures the SVG stretches/fits exactly to the 20x14 box */
-		background-position: center;
-		background-repeat: no-repeat;
-		
-		/* Kept all your original positioning and borders */
-		position: relative;
-		border-radius: 2px;
-		display: inline-block;
-		vertical-align: middle;
-		margin-right: 8px;
-		border: 0px solid rgba(0,0,0,0.1);
-	}
-	
-	/* how it works animation */
-	/* 1. Define the colors and the animation */
-	:root {
-	  --step-yellow: #E0CA00;
-	  --text-primary-color: #0f172a; /* Change this to your actual primary text color */
-	}
-  
-	@keyframes highlight-sequence {
-	  0% {
-		background-color: var(--active-bg);
-		color: var(--active-text);
-	  }
-	  /* Stay yellow for 2.5s (25% of 10s) */
-	  20% {
-		background-color: var(--step-yellow);
-		color: var(--text-primary-color);
-	  }
-	  /* Transition back to original */
-	  25%, 100% {
-		background-color: var(--orig-bg);
-		color: var(--orig-text);
-	  }
-	}
-  
-	.step-circle {
-	  /* Apply animation */
-	  animation: highlight-sequence 10s infinite linear;
-	  /* Default states */
-	  background-color: var(--orig-bg);
-	  color: var(--orig-text);
-	  transition: background-color 0.5s ease, color 0.5s ease;
-	}
-  
-	/* 2. Assign original colors for each step */
-	#step-1 { 
-	  --orig-bg: #60A5FA; /* bg-blue-400 */
-	  --orig-text: #ffffff;
-	  animation-delay: 0s; 
-	}
-	#step-2 { 
-	  --orig-bg: #1D4ED8; /* bg-blue-700 */
-	  --orig-text: #ffffff;
-	  animation-delay: 2.5s; 
-	}
-	#step-3 { 
-	  --orig-bg: #676AA3; 
-	  --orig-text: #ffffff;
-	  animation-delay: 5s; 
-	}
-	#step-4 { 
-	  --orig-bg: #2e2195; /* your bg-primary */
-	  --orig-text: #ffffff;
-	  animation-delay: 7.5s; 
-	}
-	
-	
-		/* Hide scrollbar for cleaner look */
+		.lab-word:hover { box-shadow: inset 0 -3px 0 #FFD64A; }
+		.lab-word:focus-visible { outline: 3px solid #2e2195; outline-offset: 2px; }
+		.lab-word.is-current { background-color: #FFD64A; }
+
+		.switch { width: 2.75rem; height: 1.5rem; border-radius: 9999px; background: #cbd5e1; position: relative; transition: background-color .2s ease; flex-shrink: 0; }
+		.switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 1.125rem; height: 1.125rem; border-radius: 9999px; background: white; box-shadow: 0 1px 3px rgba(0,0,0,.2); transition: transform .2s ease; }
+		[aria-pressed="true"] .switch { background: #2e2195; }
+		[aria-pressed="true"] .switch::after { transform: translateX(1.25rem); }
+
+		.thumb-btn[aria-pressed="true"] { background: #2e2195; color: white; border-color: #2e2195; }
+
+		/* Floating syllable embellishments (decorative background words) */
+		.deco-host { position: relative; isolation: isolate; }
+		.syl-deco { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; user-select: none; }
+		/* Each syllable is a toy block hopping on a small trampoline (motion: script at end of body) */
+		.syl-deco__word {
+			position: absolute; display: flex; align-items: flex-end; gap: .2em;
+			padding-bottom: .31em; font-family: 'Andika', 'Plus Jakarta Sans', sans-serif; font-weight: 700;
+			line-height: 1; white-space: nowrap;
+			font-size: calc(var(--s, clamp(4.5rem, 10vw, 9rem)) * .4 * var(--k, 1)); opacity: .3;
+			transform: rotate(var(--r, 0deg));
+		}
+		/* Words with little headroom only twitch in place: no trampoline */
+		.syl-deco__word.is-small { padding-bottom: .06em; }
+		.syl-deco__word.is-small::after { display: none; }
+		.syl-deco__word.is-outline { opacity: .22; }
+		.syl-deco__word > span {
+			position: relative; z-index: 1; display: block; padding: .34em .4em .3em;
+			border: .055em solid #4a2c1d; border-radius: .3em; background: var(--c, #ffd166); color: #4a2c1d;
+			transform-origin: 50% 100%; will-change: transform;
+		}
+		.syl-deco__word > span::before {
+			content: ''; position: absolute; left: .26em; top: .12em; width: .7em; height: .14em;
+			border-radius: 9999px; background: rgba(255,255,255,.75);
+		}
+		.syl-deco__word::after {
+			content: ''; position: absolute; z-index: 0; left: -16%; right: -16%; bottom: 0; height: .62em;
+			border-radius: 50%; background: #3d4270; border: .06em solid #4a2c1d;
+			box-shadow: inset 0 0 0 .13em #ff8a65;
+			transform: translateY(var(--mat, 0px));
+		}
+		@media (max-width: 767px) {
+			.syl-deco__word { opacity: .22; font-size: calc(var(--s, clamp(4.5rem, 10vw, 9rem)) * .34 * var(--k, 1)); }
+			.syl-deco__word.is-outline { opacity: .17; }
+			.syl-deco__word.is-wide { display: none; }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { animation: none !important; transition: none !important; }
+			.js .reveal { opacity: 1; transform: none; }
+		}
+
 		::-webkit-scrollbar { width: 8px; }
 		::-webkit-scrollbar-track { background: #f1f1f1; }
 		::-webkit-scrollbar-thumb { background: #2e2195; border-radius: 10px; }
-		::-webkit-scrollbar-thumb:hover { background: #1a135a; }
 	</style>
+
 </head>
-<body class="font-sans text-slate-900 overflow-x-hidden selection:bg-brand-yellow">
+<body class="font-sans text-slate-900 bg-light-bg overflow-x-hidden selection:bg-brand-yellow">
 
-
-  <!-- NAVIGATION -->
-	<nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
-	  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-		  <div class="text-2xl font-extrabold tracking-tight text-primary flex items-center shrink-0">
-			  <a href="./index_de.html" title="Home" alt="Return to Homepage" class="no-underline">
-				  Smart<span class="text-brand-accent">|</span>meister
-			  </a>
-		  </div>
-		  <div class="hidden md:flex items-center gap-8">
-			  <a href="#features" title="What features do help children to better learn" class="font-semibold text-base hover:text-primary transition">Features</a>
-			  <a href="#howitworks" title="How does adaptive German and Math learning with Smartmeister work" class="font-semibold text-base hover:text-primary transition">Wie funktionierts</a>
-			  <a href="./about_smartmeister_german_primary_school_children_improve_subject_abilities.html" title="About the startup founders of Smartmeister" class="font-semibold text-base py-2 border-b border-slate-50">über uns</a>
-			  <!--<a href="./index.html#granular_metrics" title="How is learning progress measured" class="font-semibold text-base hover:text-primary transition">Progress Tracking</a>-->
-		  </div>
-		  <div class="flex items-center gap-4">
-			<button class="mb-4">
-			  <span class="material-symbols-outlined text-3xl"></span>
-			  <a href="#waitlist" class="hidden md:block bg-primary text-white px-5 py-2 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
-				  In die Warteliste
-			  </a>
-			  <a href="#waitlist" class="block md:hidden bg-primary text-white px-5 py-2 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
-				 Jetzt loslegen
-			 </a>
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 right-0 bg-light-bg/85 backdrop-blur-md z-50 border-b border-slate-200/60" aria-label="Hauptnavigation">
+	<div class="max-w-7xl mx-auto px-5 sm:px-6 h-16 md:h-20 flex items-center justify-between gap-3 sm:gap-4">
+		<a href="./index.html" title="Home" class="text-xl sm:text-2xl font-extrabold tracking-tight text-primary shrink-0">
+			Smart<span class="text-brand-accent">|</span>meister
+		</a>
+		<div class="hidden md:flex items-center gap-8">
+			<a href="#method" class="font-semibold text-base hover:text-primary transition">So funktioniert&apos;s</a>
+			<a href="#demo" class="font-semibold text-base hover:text-primary transition">Ausprobieren</a>
+			<a href="#features" class="font-semibold text-base hover:text-primary transition">Funktionen</a>
+			<a href="./about_smartmeister_german_primary_school_children_improve_subject_abilities.html" class="font-semibold text-base hover:text-primary transition">Über uns</a>
+		</div>
+		<div class="flex items-center gap-3">
+			<a class="hidden lg:flex items-center text-slate-600 hover:text-primary transition font-medium text-sm pr-4 border-r border-slate-200" href="./index_de.html" title="Deutsch" hreflang="de">
+				<span aria-hidden="true" class="split-flag"></span><span><b>EN</b> / DE</span>
+			</a>
+			<a href="#waitlist" class="bg-primary text-white px-5 py-2.5 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-primary/20 text-sm sm:text-base">
+				<span class="hidden sm:inline">Frühen Zugang sichern</span><span class="sm:hidden">Mitmachen</span>
+			</a>
+			<button id="menu-toggle" class="md:hidden text-primary p-2 -mr-2 rounded-full" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+				<svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+				</svg>
 			</button>
-		  </div>
-		  
-		  <button id="menu-toggle" class="md:hidden text-primary focus:outline-none p-2" aria-label="Menü umschalten">
-			<svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-			  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-			</svg>
-		  </button>
-		  <div class="hidden lg:flex items-center ml-4 pr-4 border-r border-slate-200 dark:border-slate-700 mr-2">
-		  <a class="flex items-center text-slate-600 dark:text-slate-400 hover:text-navy-900 dark:hover:text-white transition-colors duration-200 font-medium text-sm" href="./index.html" title="German">
-		  <span aria-hidden="true" class="split-flag"></span>
-		  <span>EN / <b>DE</b></span>
-		  </a>
-		  </div>
-	  </div>
-  
-	  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full left-0 animate-in slide-in-from-top duration-300">
-		  <div class="flex flex-col p-6 space-y-4 shadow-xl">
-			  <a href="#features" title="What features do help children to better learn" class="font-semibold text-base py-2 border-b border-slate-50">Features</a>
-			  <a href="#howitworks" title="How does adaptive German and Math learning with Smartmeister work" class="font-semibold text-base py-2 border-b border-slate-50">Wie funktionierts</a>
-			  <a href="./about_smartmeister_german_primary_school_children_improve_subject_abilities.html" title="About the startup founders of Smartmeister" class="font-semibold text-base py-2 border-b border-slate-50">Über uns</a>
-			  <!--<a href="./index.html#granular_metrics" title="How is learning progress measured" class="font-semibold text-base py-2 border-b border-slate-50">Progress Tracking</a>-->
-			  <a class="flex items-center text-slate-600 dark:text-slate-400 hover:text-navy-900 dark:hover:text-white transition-colors duration-200 font-medium text-sm" href="./index.html" title="German"><span aria-hidden="true" class="split-flag"></span>
-			  <span>EN / <b>DE</b></span></a>
-		  </div>
-	  </div>
-  </nav>
+		</div>
+	</div>
+	<div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full left-0">
+		<div class="flex flex-col px-6 py-4 gap-1 shadow-xl max-h-[calc(100vh-4rem)] overflow-y-auto">
+			<a href="#method" class="font-semibold text-base py-3 border-b border-slate-100">So funktioniert&apos;s</a>
+			<a href="#demo" class="font-semibold text-base py-3 border-b border-slate-100">Ausprobieren</a>
+			<a href="#features" class="font-semibold text-base py-3 border-b border-slate-100">Funktionen</a>
+			<a href="./about_smartmeister_german_primary_school_children_improve_subject_abilities.html" class="font-semibold text-base py-3 border-b border-slate-100">Über uns</a>
+			<a class="flex items-center text-slate-600 font-medium text-sm pt-3" href="./index_de.html" hreflang="de"><span aria-hidden="true" class="split-flag"></span><span><b>EN</b> / DE</span></a>
+		</div>
+	</div>
+</nav>
 
-<script>
-  const btn = document.getElementById('menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-  const icon = document.getElementById('menu-icon');
+<main class="pt-16 md:pt-20">
 
-  btn.addEventListener('click', () => {
-	  menu.classList.toggle('hidden');
-	  
-	  // Simple icon swap (Hamburger to X)
-	  if (menu.classList.contains('hidden')) {
-		  icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />';
-	  } else {
-		  icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
-	  }
-  });
+	<!-- HERO -->
+	<section class="deco-host overflow-hidden">
+		<div class="syl-deco" aria-hidden="true">
+			<!--<span class="syl-deco__word" style="left:-1%;bottom:3%;--r:-6deg;--d:20s;"><span class="syl-a">Wol</span><span class="syl-b">ke</span></span>-->
+			<span class="syl-deco__word is-outline is-wide" style="left:38%;top:3%;--r:8deg;--d:17s;--s:clamp(4rem,8vw,7.5rem);"><span class="syl-a">Son</span><span class="syl-b">ne</span></span>
+		</div>
+		<div aria-hidden="true" class="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-brand-yellow/25 blur-3xl"></div>
+		<div class="relative max-w-7xl mx-auto px-5 sm:px-6 pt-8 pb-24 md:pt-20 md:pb-32 grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-12 items-center">
+			<div class="space-y-6 sm:space-y-8">
+				<div class="space-y-2">
+					<!--<p class="text-xs sm:text-sm font-extrabold tracking-[0.18em] uppercase text-primary">German reading coach<span class="text-vermillion" aria-hidden="true">·</span> with easy to use reading helpers</p>-->
+					<p class="text-xs sm:text-sm font-extrabold tracking-[0.14em] sm:tracking-[0.18em] uppercase text-primary">Lese-Coach für Deutsch <span class="text-vermillion" aria-hidden="true">·</span> Gemacht für Kinder <span class="text-vermillion" aria-hidden="true">·</span> Klasse 1–5</p>
+				</div>
+				<h1 class="font-display text-[2.5rem] sm:text-6xl xl:text-7xl font-extrabold text-primary leading-[1.05] sm:leading-[1.02] tracking-tight text-balance">
+					<!--Don&apos;t just get through the words. <span class="swoosh text-ink">Get the story.</span>-->
+					Nicht Wort für Wort stolpern. <span class="swoosh text-ink">Sondern Satz für Satz verstehen. </span>
+				</h1>
+				<!--<p class="text-base sm:text-lg md:text-xl text-slate-700 max-w-xl leading-relaxed font-medium text-pretty">
+					So kommt dein Kind beim Lesen voran. Smartmeister liest vor, zeigt Silben farbig und prüft das Verständnis. Dein Kind kann schwierige Wörter erneut anhören oder übersetzen – <strong class="text-slate-900">und weiterüben, auch wenn du mal nicht daneben sitzen kannst.</strong>
+				</p>-->
+				<p class="text-base sm:text-lg md:text-xl text-slate-700 max-w-xl leading-relaxed font-medium text-pretty">
+					So kommt dein Kind beim Lesen voran. Smartmeister liest vor, zeigt Silben farbig und trainiert Textverständnis. Dein Kind kann schwierige Wörter erneut anhören oder übersetzen – <strong class="text-slate-900">und weiterüben, auch wenn du mal nicht daneben sitzen kannst.</strong>
+				</p>
+				<div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
+					<a href="#waitlist" class="flex sm:inline-flex items-center justify-center gap-3 bg-primary text-white px-7 py-4 rounded-2xl text-base sm:text-lg font-bold hover:scale-[1.03] transition shadow-xl shadow-primary/20">
+						Frühen Zugang sichern
+						<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+					</a>
+					<a href="#demo" class="flex sm:inline-flex items-center justify-center gap-3 bg-white text-primary border-2 border-primary/15 px-6 py-4 rounded-2xl text-base sm:text-lg font-bold hover:border-primary transition">
+						<span class="material-symbols-outlined text-vermillion" aria-hidden="true">play_arrow</span>
+						Reader ausprobieren
+					</a>
+				</div>
+				<ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-slate-600">
+					<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-primary" aria-hidden="true">check_circle</span>Entwickelt mit Lehrkräften und Lerntherapeuten</li>
+					<!--<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-primary" aria-hidden="true">check_circle</span>No install – runs in the browser</li>
+					<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-primary" aria-hidden="true">check_circle</span>Free trial at launch</li>-->
+				</ul>
+			</div>
 
-  // Close menu when clicking a link
-  document.querySelectorAll('#mobile-menu a').forEach(link => {
-	  link.addEventListener('click', () => {
-		  menu.classList.add('hidden');
-	  });
-  });
-</script>
+			<!-- Editorial photo frame (inspired by design reference) -->
+			<div class="relative mx-auto w-full max-w-[520px] lg:mr-0 px-0 pr-3 sm:pr-0">
+				<div aria-hidden="true" class="absolute -top-6 -right-3 sm:-top-8 sm:-right-8 w-2/3 h-3/5 rounded-[2rem] bg-peach"></div>
+				<div aria-hidden="true" class="absolute bottom-16 -left-3 sm:-left-8 w-1/4 h-1/4 rounded-[1.5rem] bg-sky-soft"></div>
+				<div class="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-2xl shadow-primary/10">
+					<img src="./images/sm_photo_child-reading-tablet.png" alt="Ein Mädchen mit Kopfhörern liest am Küchentisch eine Geschichte auf dem Tablet" class="w-full h-full object-cover">
+				</div>
+				<!--<div aria-hidden="true" class="absolute bottom-0 right-0 w-20 h-20 bg-light-bg rounded-tl-[1.75rem] flex items-center justify-center">
+					<span class="material-symbols-outlined text-vermillion text-3xl" style="font-variation-settings:'wght' 700">add</span>
+				</div>-->
+				<p aria-hidden="true" class="hidden sm:block absolute top-28 -right-7 sm:-right-14 [writing-mode:vertical-rl] text-xs font-bold tracking-[0.3em] uppercase text-slate-400 whitespace-nowrap">Lesen · Hören · Verstehen</p>
 
-	<main class="pt-20">
-		<!-- HERO SECTION -->
-		<section class="relative bg-brand-yellow bg-brandYellow-Gradient pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
-			<div class="max-w-7xl md:p-12 lg:p-16  md:max-w-screen-2xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center md:items-start lg:items-center md:grid-cols-[40%_60%] lg:grid-cols-[50%_50%]">
-				<div class="space-y-8 z-10">
-				  
-					<h1 class="relative text-5xl md:text-4xl lg:text-6xl font-extrabold text-primary leading-[1.1] 
-					 before:content-['Für_Eltern_mit_wenig_Zeit'] 
-					 before:absolute before:-top-16 before:-left-12 md:before:-top-20 md:before:-left-14 2xl:before:-left-24 
-					 before:w-64 before:h-24 before:flex before:items-center before:justify-center 
-					 before:text-center before:-rotate-2 md:before:-rotate-12 before:font-hand before:text-brand-accent 
-					 before:font-bold before:text-xl md:before:text-2xl xl:before:text-2‚‚xl before:leading-4 sm:before:leading-6 before:tracking-wide before:z-10">
-					  <!-- <div class="relative z-0 top-12 left-32 w-48 h-48 rounded-full flex items-center justify-center">
-						<span class="font-hand text-brand-accent font-bold text-xl md:text-xl flex items-center justify-center text-center -rotate-12">Abgestimmt auf den deutschen Grundschullehrplan</span>
-					  </div>-->
-					  <!--Kleine Schritte, große Sprünge.-->
-
-						Kinder verbessern ihr Deutsch mit Stories,
-						
-						<span class="text-slate-900 inline">Spielen &amp; Quizzen</span>
-					</h1>
-					<p class="text-lg md:text-xl text-slate-800/80 max-w-lg leading-relaxed font-bold">
-						Ideal für mehrsprachige Kids: Packende Geschichten, interaktive Quizze, die sich den Fähigkeiten anpassen, <span class="inline md:inline lg:inline">und Aussprache-Training machen das Sprachenlernen zum Kinderspiel.</span>
-					</p>
-					
-					<!--<a href="#waitlist" class="hidden md:inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-105 transition shadow-xl shadow-primary/20">
-					  Frühzeitig Zugang sichern. Trag dich auf die Warteliste ein!
-					  <span class="material-symbols-outlined">arrow_forward</span>
-				  </a>-->
-					<div class="space-y-1 flex-col md:hidden lg:flex">
-						<div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
-							<span class="material-symbols-outlined text-primary">school</span>
-							<span class="font-bold text-primary text-base xl:text-lg">Spannende Übungen, direkt in jede Geschichte eingewoben <!--Tausende Lehrplan-Übungen--></span>
-						</div>
-						<div class="flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
-							<span class="material-symbols-outlined text-primary">trending_up</span>
-							<span class="font-bold text-primary text-base xl:text-lg">Vorlesestimme mit anpassbarem Tempo &amp; Text-Markierung</span>
-						</div>
-						<div class="flex md:hidden lg:flex items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
-						  <span class="material-symbols-outlined text-primary">emoji_people</span>
-						  <span class="font-bold text-primary text-base xl:text-lg">Das Schwierigkeitslevel passt sich dem Kind an</span>
-					  </div>
-					  <!-- STEFAN CHANGE FOR OTHER FILES -->
-					  <div class="flex lg:hidden items-center gap-2 p-0 rounded-xl w-fit backdrop-blur-sm">
-						<span class="material-symbols-outlined text-primary">trophy</span>
-						<span class="font-bold text-primary text-base xl:text-lg">Das allgemeine Verständnis in vielen Schulfächern verbessern</span>
-					  </div>
+				<!-- Floating mini reader -->
+				<div class="absolute -bottom-10 left-3 sm:-left-10 bg-white rounded-3xl shadow-2xl p-4 sm:p-5 w-[230px] sm:w-[260px] float-anim" aria-hidden="true">
+					<div class="flex items-center justify-between mb-3">
+						<span class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Liest vor · langsam</span>
+						<span class="flex items-end gap-0.5 h-4">
+							<span class="eq-bar w-1 h-4 bg-vermillion rounded-full"></span>
+							<span class="eq-bar w-1 h-4 bg-vermillion rounded-full"></span>
+							<span class="eq-bar w-1 h-4 bg-vermillion rounded-full"></span>
+							<span class="eq-bar w-1 h-4 bg-vermillion rounded-full"></span>
+						</span>
 					</div>
-					<!--<a href="#waitlist" class="inline-flex md:hidden items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-xl font-bold hover:scale-105 transition shadow-xl shadow-primary/20 ">
-						Frühzeitig Zugang sichern. Trag dich auf die Warteliste ein!
-						<span class="material-symbols-outlined">arrow_forward</span>
-					</a>-->
+					<p class="font-reading text-3xl sm:text-4xl font-bold syl-karaoke"><span class="syl-a">Wild</span><span class="syl-b">bee</span><span class="syl-a">ren</span></p>
+					<p class="mt-2 text-sm font-semibold text-slate-500 flex items-center gap-1.5">
+						<span class="material-symbols-outlined text-base text-primary">translate</span>wild berries
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- THE READING GAP -->
+	<section class="bg-primary text-white py-16 md:py-24 relative overflow-hidden" aria-labelledby="gap-title">
+		<div class="max-w-7xl mx-auto px-5 sm:px-6">
+			<div class="max-w-3xl reveal">
+				<!--<p class="font-hand text-xl sm:text-2xl md:text-3xl text-brand-yellow -rotate-1">Die Leselücke ist real und sie wächst.</p>-->
+				<p class="font-hand text-xl sm:text-2xl md:text-3xl text-brand-yellow -rotate-1">Aus kleinen Leselücken werden große.</p>
+				<h2 id="gap-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mt-2 text-balance">Lesen ist die Kompetenz, auf der jedes andere Schulfach aufbaut.</h2>
+			</div>
+			<div class="grid md:grid-cols-3 gap-5 sm:gap-6 mt-10 md:mt-14">
+				<div class="reveal bg-white/5 border border-white/10 rounded-3xl sm:rounded-[2rem] p-6 sm:p-8">
+					<div class="flex gap-2 mb-5 sm:mb-6" aria-hidden="true">
+						<span class="stat-dot is-hit w-6 h-6 rounded-full bg-white/25"></span>
+						<span class="stat-dot w-6 h-6 rounded-full bg-white/25"></span>
+						<span class="stat-dot w-6 h-6 rounded-full bg-white/25"></span>
+						<span class="stat-dot w-6 h-6 rounded-full bg-white/25"></span>
+					</div>
+					<p class="font-display text-5xl sm:text-6xl font-extrabold text-brand-yellow">1 von 4</p>
+					<p class="mt-3 text-lg font-semibold leading-snug">Viertklässlern in Deutschland erreicht das grundlegende Leseniveau nicht.</p>
+					<p class="mt-3 text-xs font-bold uppercase tracking-wider text-white/70">IGLU 2021</p>
+				</div>
+				<div class="reveal bg-white/5 border border-white/10 rounded-3xl sm:rounded-[2rem] p-6 sm:p-8" style="transition-delay:.1s">
+					<div class="flex gap-2 mb-5 sm:mb-6" aria-hidden="true">
+						<span class="stat-dot is-hit w-6 h-6 rounded-full bg-white/25"></span>
+						<span class="stat-dot w-6 h-6 rounded-full bg-white/25"></span>
+						<span class="stat-dot w-6 h-6 rounded-full bg-white/25"></span>
+					</div>
+					<p class="font-display text-5xl sm:text-6xl font-extrabold text-brand-yellow">1 von 3</p>
+					<p class="mt-3 text-lg font-semibold leading-snug">Kindern wird zu Hause selten oder nie vorgelesen.</p>
+					<p class="mt-3 text-xs font-bold uppercase tracking-wider text-white/70">Stiftung Lesen, Vorlesemonitor</p>
+				</div>
+				<div class="reveal bg-brand-yellow text-ink rounded-3xl sm:rounded-[2rem] p-6 sm:p-8" style="transition-delay:.2s">
+					<span class="material-symbols-outlined text-4xl mb-5 block" aria-hidden="true">timer</span>
+					<p class="font-display text-5xl sm:text-6xl font-extrabold">10–15 Min.</p>
+					<p class="mt-3 text-lg font-semibold leading-snug">Geführte tägliche Leseübung stärkt Leseflüssigkeit, Leseverständnis, Aussprache und Wortschatz.</p>
+					<p class="mt-3 text-xs font-bold uppercase tracking-widest text-ink/50">Genau hier setzen wir an</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- EVERY TAP BRINGS THEM BACK TO THE TEXT -->
+	<!--<section class="pb-24 md:pb-32" aria-labelledby="apps-title">-->
+	<section class="deco-host pb-16 md:pb-32 pt-16 md:pt-32" aria-labelledby="apps-title">
+		<div class="syl-deco" aria-hidden="true">
+			<span class="syl-deco__word is-outline" style="right:-2%;top:4%;--r:9deg;--d:19s;"><span class="syl-a">Ap</span><span class="syl-b">fel</span></span>
+			<span class="syl-deco__word is-wide" style="left:-1%;bottom:4%;--r:-7deg;--d:16s;"><span class="syl-a">Kä</span><span class="syl-b">fer</span></span>
+		</div>
+		<div class="max-w-6xl mx-auto px-5 sm:px-6">
+			<div class="text-center max-w-3xl mx-auto space-y-5 reveal">
+				<!--<h2 id="apps-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Every tap brings them back to the text.</h2>-->
+				<!--<h2 id="apps-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Reading helpers support them learning to read step by step without distractions.</h2>-->
+				<!--<h2 id="apps-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Kids improve their reading step by step with inbuilt reading helpers</h2> -->
+				<!--<h2 id="apps-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Laser focused reading progress without distractions</h2> -->
+				<h2 id="apps-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Fokussierte Lesehilfe – ohne Ablenkungen.</h2> 
+				<!--reading helpers keep kids on track to improve their reading / keeping them laser-focused on the reading effort / laser focused reading progress without distractions-->
+				<!--<p class="text-lg md:text-xl text-slate-600 font-medium text-pretty">In many apps, a tap opens a distraction or a reward. In Smartmeister, every tap brings them back to the text: replay the word, reveal its meaning, answer a question about the story.</p>-->
+				<p class="text-base sm:text-lg md:text-xl text-slate-600 font-medium text-pretty">Jede Aktion hält die Kinder beim Text: einen Satz nochmal anhören, ein Wort übersetzen, Silben einzeln hören, Fragen zur Geschichte beantworten.</p>
+			</div>
+			<!--
+			<ol class="grid md:grid-cols-3 gap-5 sm:gap-6 mt-10 md:mt-14">
+				<li class="reveal bg-white border border-slate-100 rounded-[2rem] p-8 shadow-sm">
+					<p class="flex items-center justify-between">
+						<span class="text-xs font-extrabold tracking-widest uppercase text-slate-400">Tap</span>
+						<span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">volume_up</span>
+					</p>
+					<h3 class="font-display text-2xl font-extrabold text-slate-900 mt-5">Replay the word</h3>
+					<p class="font-reading text-3xl font-bold mt-4" lang="de"><span class="syl-a">Hü</span><span class="syl-b">gel</span></p>
+					<p class="text-slate-600 mt-2">Heard again, as often as needed.</p>
+				</li>
+				<li class="reveal bg-white border border-slate-100 rounded-[2rem] p-8 shadow-sm" style="transition-delay:.1s">
+					<p class="flex items-center justify-between">
+						<span class="text-xs font-extrabold tracking-widest uppercase text-slate-400">Tap</span>
+						<span class="material-symbols-outlined text-3xl text-vermillion" aria-hidden="true">translate</span>
+					</p>
+					<h3 class="font-display text-2xl font-extrabold text-slate-900 mt-5">Reveal its meaning</h3>
+					<p class="font-reading text-3xl font-bold mt-4"><span lang="de">Hügel</span> <span class="text-slate-300" aria-hidden="true">→</span> <span class="text-vermillion">hill</span></p>
+					<p class="text-slate-600 mt-2">Meaning in context, in one tap.</p>
+				</li>
+				<li class="reveal bg-white border border-slate-100 rounded-[2rem] p-8 shadow-sm" style="transition-delay:.2s">
+					<p class="flex items-center justify-between">
+						<span class="text-xs font-extrabold tracking-widest uppercase text-slate-400">Tap</span>
+						<span class="material-symbols-outlined text-3xl text-ink" aria-hidden="true">quiz</span>
+					</p>
+					<h3 class="font-display text-2xl font-extrabold text-slate-900 mt-5">Answer a story question</h3>
+					<p class="font-reading text-2xl font-bold mt-4" lang="de">Wo sucht der Fuchs Beeren?</p>
+					<p class="text-slate-600 mt-2">Shows what they understood.</p>
+				</li>
+			</ol>
+			-->
+			<!--<p class="reveal text-center font-hand text-xl md:text-2xl text-brand-accent mt-10 -rotate-1">Smart reading helpers serve them progressing on their own.</p>-->
+			<p class="reveal text-center font-hand text-xl sm:text-2xl md:text-3xl lg:text-4xl text-brand-accent mt-8 sm:mt-10 -rotate-1 text-balance">Für Kinder mit Leseschwierigkeiten hört Üben auf, ein Krampf zu sein.</p>
+		</div>
+	</section>
+
+	
+
+
+	
+	
+	<!-- HOW IT WORKS METHOD: READ LISTEN UNDERSTAND -->
+	<section id="method" class="py-16 md:py-32 pb-20 md:pb-32 bg-white scroll-mt-20" aria-labelledby="method-title">
+		<div class="max-w-7xl mx-auto px-5 sm:px-6">
+			<div class="max-w-5xl reveal space-y-4">
+				<!--<span class="inline-block bg-pastel-blue text-primary px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">How it works</span>-->
+				<!--<h2 id="method-title" class="font-display text-[1.875rem] sm:text-4xl md:text-6xl font-extrabold text-primary leading-[1.05] tracking-tight text-balance">Erst die Wörter knacken.<br><span class="text-slate-900">Dann die ganze Story verstehen.</span></h2>-->
+				<!--<h2 id="method-title" class="font-display text-[1.875rem] sm:text-4xl md:text-6xl font-extrabold text-primary leading-[1.05] tracking-tight text-balance">Texthürden überwindbar machen.<br><span class="text-slate-900">Dann die ganze Story verstehen.</span></h2>-->
+				<h2 id="method-title" class="font-display text-[1.875rem] sm:text-4xl md:text-6xl font-extrabold text-primary leading-[1.05] tracking-tight text-balance">Erst die Wörter.<br><span class="text-slate-900">Dann die ganze Story .</span></h2>
+				<!--<p class="text-lg md:text-xl text-slate-600 font-medium text-pretty">The same sentence is seen, heard and checked... so cracking a word and understanding it happen in one practice.</p>-->
+			</div>
+			<div class="grid md:grid-cols-3 gap-5 sm:gap-6 mt-10 md:mt-14">
+				<article class="reveal rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 bg-pastel-blue">
+					<div class="flex items-center justify-between">
+						<span class="font-display text-5xl font-extrabold text-primary/20">01</span>
+						<span class="material-symbols-outlined text-4xl text-primary" aria-hidden="true">auto_stories</span>
+					</div>
+					<h3 class="font-display text-2xl sm:text-3xl font-extrabold text-primary mt-4 sm:mt-6">Lesen</h3>
+					<!--<p class="mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Farbig markierte Silben und Zeilenfokus helfen Kindern, <strong>Wörter & Sätze besser zu begreifen</strong>.</p>-->
+					<p class="mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Farbig markierte Silben und Zeilenfokus helfen Kindern, <strong>lange Wörter & Sätze schneller zu knacken</strong>.</p>
+					<p class="font-reading text-2xl font-bold mt-6"><span class="syl-a">Le</span><span class="syl-b">se</span><span class="syl-a">fuchs</span></p>
+				</article>
+				<article class="reveal rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 bg-peach/60" style="transition-delay:.1s">
+					<div class="flex items-center justify-between">
+						<span class="font-display text-5xl font-extrabold text-vermillion/25">02</span>
+						<span class="material-symbols-outlined text-4xl text-vermillion" aria-hidden="true">hearing</span>
+					</div>
+					<h3 class="font-display text-2xl sm:text-3xl font-extrabold text-primary mt-4 sm:mt-6">Hören</h3>
+					<p class="mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Ganze Texte, einzelne Sätze oder nur ein Wort – <strong>klar vorgelesen</strong>, bei Bedarf auch langsam.</p>
+					<div class="flex items-end gap-1 h-8 mt-6" aria-hidden="true">
+						<span class="eq-bar w-1.5 h-8 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1.5 h-8 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1.5 h-8 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1.5 h-8 bg-vermillion rounded-full"></span>
+					</div>
+				</article>
+				<article class="reveal rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 bg-brand-yellow/40" style="transition-delay:.2s">
+					<div class="flex items-center justify-between">
+						<span class="font-display text-5xl font-extrabold text-ink/15">03</span>
+						<span class="material-symbols-outlined text-4xl text-ink" aria-hidden="true">lightbulb</span>
+					</div>
+					<h3 class="font-display text-2xl sm:text-3xl font-extrabold text-primary mt-4 sm:mt-6">Verstehen</h3>
+					<p class="mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Kurze Quizfragen, auch vorgelesen, zeigen, <strong>was wirklich hängen geblieben ist</strong>. Unbekannte Wörter lassen sich mit einem Tipp übersetzen.</p>
+					<p class="mt-6 inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 text-sm font-bold text-primary"><span class="material-symbols-outlined text-base" aria-hidden="true">quiz</span><span lang="de">Wen trifft der Fuchs?</span></p>
+				</article>
+			</div>
+			<!--<div class="reveal mt-10 rounded-[2rem] bg-ink text-white p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6 justify-between">
+				<p class="font-display text-2xl md:text-3xl font-bold leading-snug max-w-3xl text-balance">Fluency, comprehension, pronunciation <span class="text-brand-yellow">and</span> vocabulary – practised on the same sentence.</p>-->
+				<!--<p class="text-white/70 font-medium md:max-w-xs">Covers the curriculum&apos;s core areas of reading and listening – linking school and home.</p>-->
+			<!--</div>-->
+		</div>
+	</section>
+	
+	<!-- REAL APP SCREENS -->
+	<section id="howitworks" class="py-16 md:py-32" aria-labelledby="screens-title">
+		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
+			<div class="space-y-6 reveal">
+				<!--<span class="inline-block bg-pastelOrange text-orange-700 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Real app screens</span>-->
+				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Read the story. Practise with its words.</h2>-->
+				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and vocabulary.</h2>-->
+				<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister trainiert Lesen, Zuhören, Leseverständnis und Aussprache.</h2>
+				
+				<!--<p class="text-lg text-slate-700 font-medium text-pretty">Children listen and read along, then practise syllables, articles or pronouns with words from the story they just read – at their level.</p>-->
+				<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Erst mitlesen und zuhören, dann das Verständnis üben. Kinder starten einfach und steigern sich Stufe für Stufe. Schwierigkeit passt sich dem Leseniveau deines Kindes an.</p>
+				<button type="button" id="audioButton" class="flex sm:inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-white border-2 border-primary/15 hover:border-primary text-primary px-6 py-4 rounded-2xl text-base sm:text-lg font-bold transition">
+					<span id="audio-eq" class="flex items-end gap-0.5 h-5 eq-paused" aria-hidden="true">
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+					</span>
+					<span id="audioLabel">Eine vorgelesene Geschichte anhören</span>
+				</button>
+				<audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3" preload="none"></audio>
+			</div>
+			<div class="space-y-5 reveal">
+				<div class="relative">
+					<div aria-hidden="true" class="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-1/2 h-1/2 rounded-[2rem] bg-brand-yellow"></div>
+					<div class="relative rounded-2xl sm:rounded-[2rem] aspect-video overflow-hidden shadow-2xl bg-slate-100">
+						<video id="main-video-player" class="w-full h-full object-cover" autoplay muted loop playsinline aria-label="Bildschirmaufnahme der Smartmeister-App">
+							<source id="main-video-source" src="./videos_sm-downsized/sm_exercise_readaloud_main.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				<div class="flex flex-wrap gap-2 pt-1" role="group" aria-label="App-Ansicht wählen">
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="true" data-video="./videos_sm-downsized/sm_exercise_readaloud_main.mp4">Vorlesen</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_readaloud.mp4">Texthervorhebung</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_geschichten-stories.mp4">Text-Auswahl</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_syllables_en.mp4">Silben</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_articles-drag_en.mp4">Artikel</button>
+					<!--<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_grammar_en.mp4">Pronomen</button>-->
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- INTERACTIVE READING LAB -->
+	<section id="demo" class="py-16 md:py-32 scroll-mt-20" aria-labelledby="demo-title">
+		<div class="max-w-7xl mx-auto px-3 sm:px-6">
+			<div class="bg-lightblue-gradient rounded-[2rem] sm:rounded-[3rem] p-4 pt-8 sm:p-10 md:p-14 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-14 items-start">
+				<div class="space-y-5 sm:space-y-6 px-1 sm:px-0">
+					<span class="inline-block bg-white text-primary px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Direkt hier ausprobieren</span>
+					<h2 id="demo-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Drücke auf Play. Tippe auf ein schwieriges Wort.</h2>
+					<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Ein kleiner Vorgeschmack auf den Smartmeister-Reader (<strong>hier mit vereinfachte Stimme</strong>). Schalte die Lesehelfer ein und aus, genau wie dein Kind es in der App kann..</p>
+
+					<div class="space-y-3" role="group" aria-label="Lesehelfer">
+						<button type="button" id="toggle-syllables" aria-pressed="true" class="w-full flex items-center justify-between gap-3 sm:gap-4 bg-white rounded-2xl p-3.5 sm:p-4 text-left hover:shadow-md transition">
+							<span class="flex items-center gap-3">
+								<span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">spellcheck</span>
+								<span><span class="block font-bold text-slate-900">Silbenfarben</span><span class="block text-sm text-slate-500">Lange Wörter schneller knacken.</span></span>
+							</span>
+							<span class="switch" aria-hidden="true"></span>
+						</button>
+						<button type="button" id="toggle-focus" aria-pressed="true" class="w-full flex items-center justify-between gap-3 sm:gap-4 bg-white rounded-2xl p-3.5 sm:p-4 text-left hover:shadow-md transition">
+							<span class="flex items-center gap-3">
+								<span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">format_line_spacing</span>
+								<span><span class="block font-bold text-slate-900">Zeilenfokus</span><span class="block text-sm text-slate-500">Andere Zeilen treten in den Hintergrund: Dein Kind verliert die Zeile nicht.</span></span>
+							</span>
+							<span class="switch" aria-hidden="true"></span>
+						</button>
+						<button type="button" id="toggle-slow" aria-pressed="false" class="w-full flex items-center justify-between gap-3 sm:gap-4 bg-white rounded-2xl p-3.5 sm:p-4 text-left hover:shadow-md transition">
+							<span class="flex items-center gap-3">
+								<span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">slow_motion_video</span>
+								<span><span class="block font-bold text-slate-900">Langsamer Modus</span><span class="block text-sm text-slate-500">Langsamere Stimme, größere Pausen.</span></span>
+							</span>
+							<span class="switch" aria-hidden="true"></span>
+						</button>
+					</div>
 				</div>
 
 				<div class="relative">
-					<div class="relative z-10 rounded-[40px] overflow-hidden shadow-2xl -ml-4 -mr-4 md:ml-auto md:mr-auto border-[3px] md:border-[12px] border-white/30 aspect-3/2 md:aspect-auto lg:aspect-auto">
-						<!--<img src="./images/curiosity-main.png" alt="Kinder lernen eine Sprache" class="w-full h-full object-cover"> -->
-						<img src="./images/smartmeister_girl_slices_language.jpg" alt="Kinder lernen eine Sprache" class="w-full h-full object-cover">
-						
-					</div>
-					
-					<!-- <div class="absolute bg-primary -bottom-10 -left-6 md:-left-12 p-6 rounded-3xl shadow-2xl max-w-[280px] z-20 float-anim"> -->
-					<div class="absolute hidden lg:block bg-white -bottom-24 -left-2 sm:-left-12 sm:-bottom-20 lg:-bottom-28 p-3 md:p-6 rounded-3xl shadow-2xl max-w-full md:max-w-[350px] z-40 md:float-anim">
+					<div id="lab-card" class="relative bg-white rounded-3xl sm:rounded-[2rem] shadow-2xl shadow-primary/10 p-5 sm:p-8">
+						<div class="flex flex-wrap items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-5 border-b border-slate-100">
+							<div>
+								<p class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Geschichte · Klasse 2</p>
+								<p class="font-display text-xl font-extrabold text-primary">Der kleine Fuchs</p>
+							</div>
+							<button type="button" id="lab-play" class="inline-flex items-center gap-2 bg-vermillion text-white pl-4 pr-5 py-2.5 sm:py-3 rounded-full font-bold shadow-lg shadow-vermillion/30 hover:scale-105 transition">
+								<span id="lab-play-icon" class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+								<span id="lab-play-label">Vorlesen</span>
+							</button>
+						</div>
 
-						<p class="text-primary font-medium text-lg md:text-xl">
-							<b>Wir helfen Eltern, die ihren Kindern nicht vorlesen können.</b> So wird wichtiger Wortschatz und Leseverständnis für alle Kids greifbar.
-							<!-- Ob Lernfrust abbauen oder Ängste überwinden: Smartmeister sorgt für bessere Noten -->
+						<div id="lab-text" class="lab-text lab-focus text-xl sm:text-[1.75rem] leading-[1.85] sm:leading-[1.9] text-slate-900 py-4 sm:py-6 space-y-1" lang="de" aria-live="off"></div>
+
+						<p class="text-sm text-slate-500 font-medium flex items-center gap-2 border-t border-slate-100 pt-4">
+							<span class="material-symbols-outlined text-base text-primary" aria-hidden="true">translate</span>
+							Tippe auf ein Wort, um es zu hören und seine Bedeutung zu sehen.
 						</p>
-					</div>
-					<div class="absolute hidden lg:hidden -bottom-20 md:-bottom-28 lg:-bottom-24 left-4 sm:-bottom-20 p-3 md:p-3 max-w-full md:max-w z-40">
-					  <p class="font-hand text-brand-accent font-bold text-lg md:text-xl">
-						  Von Eltern für Eltern gemacht... mit echten Insights von Lehrkräften für bessere Noten.
-						  <!--Selbstvertrauen fürs Kind. Entlastung für die Eltern.-->
-						  <!-- Ob Lernfrust abbauen oder Ängste überwinden: Smartmeister sorgt für bessere Noten -->
-					  </p>
-					</div>
-				</div>
-				
-			</div>
-			<div class="space-y-4 gap-4 items-end hidden md:flex lg:hidden px-12">
-			  <div class="flex items-center gap-3 p-4 rounded-xl w-fit backdrop-blur-sm border-2 border-primary">
-				  <span class="material-symbols-outlined text-primary text-4xl">school</span>
-				  <span class="font-bold text-primary text-lg xl:text-lg">Spannende Übungen, direkt in jede Geschichte eingewoben <!--Tausende Lehrplan-Übungen--></span>
-			  </div>
-			  <div class="flex items-center gap-3 p-4 rounded-xl w-fit backdrop-blur-sm border-2 border-primary">
-				  <span class="material-symbols-outlined text-primary text-4xl">trending_up</span>
-				  <span class="font-bold text-primary text-lg xl:text-lg">Vorlesestimme mit anpassbarem Tempo &amp; Text-Markierung</span>
-			  </div>
-			  <div class="flex items-center gap-3 p-4 rounded-xl w-fit backdrop-blur-sm border-2 border-primary">
-				<span class="material-symbols-outlined text-primary text-4xl">emoji_people</span>
-				<span class="font-bold text-primary text-lg xl:text-lg">Das Textverständnis in Schulfächern boosten</span>
-			  </div>
-			</div>
-			<div class="absolute hidden md:block top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl -mr-64 -mt-64"></div>
-			<div class="absolute hidden md:block bottom-8 left-1/2 -translate-x-1/2 animate-bounce"><div class="w-6 h-10 border-2 border-white/90 rounded-full flex justify-center pt-2"><div class="w-2 h-3 bg-white rounded-full"></div></div></div>
-		</section>
-		
-		
-		<!-- WHY WE BUILT IT SECTION -->
-		<section class="py-24 bg-white">
-			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-				<div class="text-center mb-12 space-y-4 sm:mb-32 xl:mb-16 col-span-3">
-				  <span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Warum wir diese Lese-App entwickelt haben</span>
-				  <!--<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Deutsch richtig lesen und verstehen ist eine Fähigkeit fürs Leben. Ohne sie haben mehrsprachige Kids oft dauerhaft das Nachsehen. Die Schule allein schafft das nicht. Wir packen das an.</h2>-->
-				  <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Lesen: Der Skill fürs Leben! Wer hier hinkt, hats überall schwer. Unser Sprach+Leselern-App füllt die Lücke, die Schulen alleine nicht stemmen können.</h2>
-				  </div>
-				  
-				<!--<div class="bg-pastel-blue p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">-->
-				<div class="bg-transparent p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
-					<!--<div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/maths-card.png"></div>-->
-					<div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block"><img alt="High-Five-Feier" class="w-[280px] md:w-[200px] lg:w-[280px] h-auto" style="" src="./images/sm_learners-1-fits-all.jpg"></div>
-					<!--<div class="w-200 h-200 bg-white/30 rounded-full inline-flex items-center justify-center mb-6">
-					  <span class="material-symbols-outlined font-bold text-secondary-300 text-1xl xl:text-1xl icon-48">menu_book</span>
-					</div>-->
-					<!--<h3 class="custom_highlights relative z-10 inline-block text-2xl font-extrabold text-slate-900 leading-tight after:content-[''] after:absolute after:inset-x-[-3px] after:bottom-1 after:h-[95%] after:bg-[#ffd64a] after:-z-1 after:rotate-[-1.5deg] after:rounded-sm after:opacity-80">
-					  08/15-Apps, die sich nicht an dein Kind anpassen</h3>-->
-					  <h3 data-text="08/15-Apps passen sich nicht an dein Kind auf" class="custom_highlights relative z-10 inline-block text-2xl leading-normal font-extrabold text-slate-900 ">
-						<span class="custom_marker_highlight leading-normal">08/15-Apps passen sich nicht an dein Kind an</span></h3>
-					<p class="text-slate-600 leading-relaxed font-medium">Jedes Kind lernt anders. Trotzdem behandeln die meisten Apps alle gleich.</p>
-				</div>
-				<!--<div class="bg-pastel-green p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">-->
-				<div class="bg-transparent p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
-					<!--<div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/flexible-family.png"></div>-->
-					<div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block"><img alt="High-Five-Feier" class="w-[280px] md:w-[200px] lg:w-[280px] h-auto" style="" src="./images/sm_time-is-money.jpg"></div>
-					<!--<div class="w-20 h-20 bg-white/30 rounded-full inline-flex items-center justify-center mb-6">
-					   <span class="material-symbols-outlined font-bold text-secondary-300 text-3xl xl:text-4xl">mindfulness</span>
-					</div>-->
-					<!--<h3 class="custom_highlights relative z-10 inline-block text-2xl font-extrabold text-slate-900 leading-tight before:content-[''] before:absolute before:inset-x-[-3px] before:bottom-1 before:h-[95%] before:bg-[#ffd64a] before:-z-1 before:rotate-[-1.5deg] before:rounded-sm before:opacity-80">
-					  Klassische Nachhilfe ist teuer und träge</h3>-->
-					  <h3 data-text="Klassische Nachhilfe ist teuer und träge" class="custom_highlights relative z-10 inline-block text-2xl leading-normal font-extrabold text-slate-900 ">
-						<span class="custom_marker_highlight leading-normal">Lesekompetenz hängt von Zeit &amp; Fähigkeiten der Eltern ab.</span></h3>
-					<p class="text-slate-600 leading-relaxed font-medium">Wenn Eltern nicht vorlesen können, fehlen Kindern oft Wortschatz und Textverständnis.</p>
-				</div>
-				<!--<div class="bg-pastel-purple p-10 rounded-[48px] text-center space-y-6 hover:translate-y-[-8px] transition duration-300">-->
-				<div class="bg-transparent p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
-					<!--<div class="w-48 h-48 bg-white rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner hidden sm:block"><img alt="High five celebration" class="w-[180px] md:w-[150px] lg:w-[198px] h-auto" style="border-radius: 50%;" src="./images/german-card.png"></div>-->
-					<div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block"><img alt="High-Five-Feier" class="w-[280px] md:w-[200px] lg:w-[280px] h-auto" style="" src="./images/sm_learner-piechart.jpg"></div>
-					<!--<div class="w-20 h-20 bg-white/30 rounded-full inline-flex items-center justify-center mb-6">
-					   <span class="material-symbols-outlined font-bold text-secondary-300 text-3xl xl:text-4xl">school</span>
-					</div>-->
-					<!--<h3 data-text="Unpersonalisierte Übungen bringen nichts" class="custom_highlights relative z-10 inline-block text-2xl font-extrabold text-slate-900 leading-tight 
-					before:content-[attr(data-text)] before:relative before:inline before:text-transparent before:bg-[#ffd64a] before:rotate-[-0.3deg] ">
-					  Unpersonalisierte Übungen bringen nichts</h3>-->
-					  <h3 data-text="Unpersonalisierte Übungen bringen nichts" class="custom_highlights relative z-10 inline-block text-2xl leading-normal font-extrabold text-slate-900 ">
-						<span class="custom_marker_highlight leading-normal">Textverständnis + Aussprache gehören zusammen</span></h3>
-					
-					<p class="text-slate-600 leading-relaxed font-medium">Lesen üben ohne Blick auf Kontext und Bedeutung verpufft meist wirkungslos.</p>
-				</div>
-				<div class="text-center mb-12 space-y-4 sm:mb-32 xl:mb-16 col-span-3 mt-12">
-				   <h2 class="text-4xl md:text-6xl font-extrabold text-primary text-center leading-[1.2] tracking-tight">
-					Gleiche Bildungschancen für jedes Kind...
-				   <div class="w-24 h-2 bg-brandYellow mx-auto mt-12 rounded-full"></div>
-				   </h2>
-				</div>
-			</div>
-		</section>
-		
-		
-		<!-- Voice Narration Section -->
-		<section class="max-w-7xl mx-auto px-6 py-24">
-			<div class="bg-slate-50 bg-lightblue-gradient rounded-[60px] p-8 md:p-20 grid md:grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-				<!-- Left Column: Video -->
-				<div class="relative group">
-					<div class="relative bg-slate-900 rounded-[40px] aspect-video overflow-hidden shadow-2xl">
-						<video class="w-full h-full object-cover" autoplay muted loop playsinline poster="./">
-							<source src="./videos_sm-downsized/sm_exercise_readaloud.mp4" type="video/mp4">
-						</video>
-						<div class="hidden absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-					</div>
-					
-					<!-- Vermillion Circular Badge -->
-					<div class="absolute -top-10 -left-10 bg-vermillion border-[6px] border-white rounded-full w-32 h-32 md:w-40 md:h-40 shadow-2xl flex items-center justify-center z-20 hover:scale-110 transition-transform">
-						<span class="text-white font-black text-sm md:text-base text-center leading-tight uppercase tracking-widest px-4">Kein Kind wird zurück gelassen</span>
-					</div>
-				</div>
 
-				<!-- Right Column: Text Content -->
-				<div class="space-y-8">
-					<div class="inline-block bg-pastelOrange text-orange-700 px-6 py-2 rounded-full text-xs font-extrabold tracking-widest uppercase">
-						Deutsch-Kompetenz stärken
+						<div id="lab-popover" role="dialog" aria-label="Wortbedeutung" class="hidden absolute z-20 bg-ink text-white rounded-2xl shadow-2xl p-4 w-[15rem] max-w-[calc(100%-1.5rem)]">
+							<div class="flex items-start justify-between gap-2">
+								<p id="pop-word" class="font-reading text-2xl font-bold" lang="de"></p>
+								<button type="button" id="pop-close" class="text-white/60 hover:text-white" aria-label="Schließen"><span class="material-symbols-outlined text-xl" aria-hidden="true">close</span></button>
+							</div>
+							<p class="mt-1 text-sm text-white/60">Englisch</p>
+							<p id="pop-translation" class="font-semibold text-lg text-brand-yellow"></p>
+							<button type="button" id="pop-speak" class="mt-3 inline-flex items-center gap-1.5 text-sm font-bold bg-white/10 hover:bg-white/20 rounded-full px-3 py-1.5 transition">
+								<span class="material-symbols-outlined text-base" aria-hidden="true">volume_up</span>Anhören
+							</button>
+						</div>
 					</div>
-					<h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-						Lesen, Wortschatz &amp; Aussprache-Lernen direkt mit der Geschichte verknüpft
-					</h2>
-					<blockquote class="text-2xl lg:text-xl xl:text-2xl font-semibold text-primary border-l-4 border-vermillion pl-6 leading-relaxed">
-					  <!--Echtes Verständnis kommt davon, Sprache im Kontext zu hören, nicht nur zu lesen. <span class="bg-yellow-400">Kinder lauschen Geschichten und Büchern</span>, und üben dann Verständnis, Grammatik und Aussprache durch spielerische Aufgaben im Lesefluss. Das Fundament sitzt, bevor Neues kommt.-->
-					   Verständnis ist der Schlüssel zum effektiven Lernen. <span class="bg-yellow-400">Kinder hören Geschichten an</span> und trainieren danach direkt im Lesefluss Textverständnis, Rechtschreibung oder Aussprache durch kleine Übungen. 
-					   
-					  
-					</blockquote>
-					<div class="pt-4 flex items-center gap-4 hover:scale-105 transition">
-					<a href="#waitlist" id="audioButton" class="inline-flex items-center gap-3 bg-vermillion text-white px-8 py-4 rounded-2xl text-xl font-bold transition shadow-xl shadow-primary/20 float-anim">
-					  Hörbeispiel abspielen
-					  <span class="material-symbols-outlined">volume_up</span>
+
+					<!-- Quiz -->
+					<div class="mt-4 sm:mt-6 bg-white rounded-3xl sm:rounded-[2rem] shadow-xl shadow-primary/5 p-5 sm:p-8">
+						<div class="flex items-center justify-between gap-4">
+							<p class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-slate-400"><span class="material-symbols-outlined text-base text-primary" aria-hidden="true">quiz</span>Kurzer Check</p>
+							<button type="button" id="quiz-speak" class="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:underline py-2 -my-2">
+								<span class="material-symbols-outlined text-base" aria-hidden="true">volume_up</span>Frage vorlesen
+							</button>
+						</div>
+						<p class="font-reading text-xl sm:text-2xl font-bold text-slate-900 mt-3" lang="de" id="quiz-question">Wen trifft der Fuchs heute?</p>
+						<div class="grid sm:grid-cols-3 gap-3 mt-5" id="quiz-options" lang="de">
+							<button type="button" data-correct="false" class="quiz-opt font-reading text-base sm:text-lg font-bold border-2 border-slate-200 rounded-2xl px-4 py-3.5 sm:py-3 hover:border-primary transition">einen Hasen</button>
+							<button type="button" data-correct="true" class="quiz-opt font-reading text-base sm:text-lg font-bold border-2 border-slate-200 rounded-2xl px-4 py-3.5 sm:py-3 hover:border-primary transition">einen Bären</button>
+							<button type="button" data-correct="false" class="quiz-opt font-reading text-base sm:text-lg font-bold border-2 border-slate-200 rounded-2xl px-4 py-3.5 sm:py-3 hover:border-primary transition">eine Eule</button>
+						</div>
+						<p id="quiz-feedback" class="mt-4 font-semibold min-h-[1.5rem]" role="status" aria-live="polite"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- SOUND FAMILIAR -->
+	<section class="deco-host py-16 md:py-32" aria-labelledby="familiar-title">
+		<div class="syl-deco" aria-hidden="true">
+			<span class="syl-deco__word" style="left:-1%;top:5%;--r:-9deg;--d:18s;"><span class="syl-a">Ha</span><span class="syl-b">se</span></span>
+			<!--<span class="syl-deco__word is-outline is-wide" style="right:1%;bottom:3%;--r:6deg;--d:21s;"><span class="syl-a">Blu</span><span class="syl-b">me</span></span>-->
+		</div>
+		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+			<div class="reveal order-2 lg:order-1">
+				<img src="./images/smartmeister_girl_slices_language.jpg" alt="Illustration eines besorgten Mädchens, dem die Bausteine Verständnis, Wortschatz und Sprache fehlen." class="w-full max-w-lg mx-auto">
+			</div>
+			<div class="order-1 lg:order-2 space-y-8">
+				<div class="reveal space-y-4">
+					<!--<span class="inline-block bg-pastelOrange text-orange-700 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Sound familiar?</span>-->
+					<!--<h2 id="familiar-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Some words won&apos;t crack. Some stories won&apos;t land.</h2>-->
+					<!--<h2 id="familiar-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Wem Lesen schwerfällt, der merkt es überall.</h2>-->
+					<h2 id="familiar-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Wenn Lesen schwerfällt, merkt man es überall.</h2>
+				</div>
+				<div class="reveal">
+					<p class="text-base sm:text-lg md:text-xl font-semibold text-slate-800 leading-relaxed text-pretty">
+						<span class="custom_marker_highlight">Für genau diese Momente ist Smartmeister gemacht:</span>
+					</p>
+				</div>
+				<ul class="space-y-3 reveal">
+					<!--<li class="flex gap-4 bg-white rounded-2xl p-4 border border-slate-100 shadow-sm">-->
+					<li class="flex gap-2 p-0">
+						<span class="font-reading text-lg sm:text-xl font-bold text-primary w-12 shrink-0 text-center">F-u-</span>
+						<p class="text-slate-700"><strong class="text-slate-900">Buchstabe für Buchstabe stolpern</strong> – und das Vorlesen vermeiden.</p>
+					</li>
+					<li class="flex gap-2 p-0">
+						<span class="font-reading text-lg sm:text-xl font-bold text-primary w-12 shrink-0 text-center">?!</span>
+						<p class="text-slate-700"><strong class="text-slate-900">Lesen, aber nicht verstehen</strong>: Alle Energie geht fürs Entziffern drauf.</p>
+					</li>
+					<li class="flex gap-2 p-0">
+						<span class="font-reading text-lg sm:text-xl font-bold text-primary w-12 shrink-0 text-center">b<span class="text-vermillion">d</span></span>
+						<p class="text-slate-700"><strong class="text-slate-900">Buchstaben verwechseln,</strong> Silben auslassen oder Wörter erfinden.</p>
+					</li>
+					<!--<li class="flex gap-2 p-0">
+						<span class="material-symbols-outlined text-primary text-2xl w-12 shrink-0 text-center" aria-hidden="true">mic</span>
+						<p class="text-slate-700"><strong class="text-slate-900">Avoiding reading aloud</strong>– sometimes with real fear.</p>
+					</li>-->
+					<!--<li class="flex gap-2 p-0">
+						<span class="material-symbols-outlined text-primary text-2xl w-12 shrink-0 text-center" aria-hidden="true">psychology</span>
+						<p class="text-slate-700"><strong class="text-slate-900">Knowing the letters, not the meaning</strong> of words in context.</p>
+					</li>-->
+				</ul>
+				<!--<div class="reveal border-l-4 border-vermillion pl-6">
+					<p class="text-lg md:text-xl font-semibold text-slate-800 leading-relaxed text-pretty">-->
+						<!--Maybe German isn&apos;t your first language. Maybe there&apos;s just no time after work. Either way: -->
+						<!--<span class="custom_marker_highlight">Reading is too crucial to leave your child's gaps untackled.</span>-->
+						<!--<span class="custom_marker_highlight">We remove the chore for those with reading difficulties</span>
+					</p>
+				</div>-->
+				<div class="w-full mx-auto sm:px-6 grid items-center">
+					<a href="#waitlist" class="inline-flex items-center justify-center sm:justify-start gap-3 bg-primary text-white px-6 sm:px-7 py-4 rounded-2xl text-base sm:text-lg text-center font-bold hover:scale-[1.03] transition shadow-xl shadow-primary/20">
+						Jetzt auf die Warteliste – zum Start kostenlos testen
+						<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
 					</a>
 					</div>
-					<audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3"></audio>
-
-					
-					
-					
-				</div>
 			</div>
-		</section>
-		
+		</div>
+	</section>
 
-		
-
-		<!-- COMPREHENSIVE FEATURES GUIDE -->
-		<section id="features" class="py-24 bg-slate-50">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="text-center mb-16 space-y-4">
-					<span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Clevere Sprachvertiefung</span>
-					<h2 class="text-4xl md:text-5xl font-extrabold text-primary">Stressfrei Deutsch lernen</h2>
-					<p class="text-slate-600 font-medium max-w-3xl mx-auto text-lg md:text-xl lg:text-2xl">Perfekt abgestimmt auf jedes Lerntempo und alle Fähigkeiten.</p>
-				</div>
-
-				<!-- STACKED COLORFUL CALLOUTS -->
-				<div class="max-w-5xl mx-auto mb-16 space-y-3">
-					<div class="flex items-center gap-4 bg-blue-400 rounded-full pl-2 pr-6 py-2 shadow-sm md:ml-0">
-						<span class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-							<span class="material-symbols-outlined text-primary text-xl">spellcheck</span>
-						</span>
-						<p class="font-bold text-slate-800 text-lg md:text-xl">Wortschatz-Training – basierend auf den Geschichten, die dein Kind gerade gelesen hat</p>
-					</div>
-					<div class="flex items-center gap-4 bg-purple-300 rounded-full pl-2 pr-6 py-2 shadow-sm md:ml-8 mr-0 md:mr-8 lg:mr-12 xl:mr-16">
-						<span class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-							<span class="material-symbols-outlined text-primary text-xl">favorite</span>
-						</span>
-						<p class="font-bold text-slate-800 text-lg md:text-xl">Empfehlungen von Vorlese-Geschichten, die zu Alter &amp; Interessen passen</p>
-					</div>
-					<div class="flex items-center gap-4 bg-green-500 rounded-full pl-2 pr-6 py-2 shadow-sm md:ml-0">
-						<span class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-							<span class="material-symbols-outlined text-primary text-xl">g_translate</span>
-						</span>
-						<p class="font-bold text-slate-800 text-lg md:text-xl">1-Klick-Übersetzung für unbekannte Wörter</p>
-					</div>
-					<div class="flex items-center gap-4 bg-orange-300 rounded-full pl-2 pr-6 py-2 shadow-sm md:ml-8 mr-0 md:mr-2 lg:mr-6 xl:mr-10">
-						<span class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-							<span class="material-symbols-outlined text-primary text-xl">ear_sound</span>
-						</span>
-						<p class="font-bold text-slate-800 text-lg md:text-xl">Hilfreiches, direktes Feedback zu Sprache &amp; Aussprache</p>
-					</div>
-					<div class="flex items-center gap-4 bg-pink-300 rounded-full pl-2 pr-6 py-2 shadow-sm ml-0 md:ml-8 lg:ml-12 xl:ml-16 mr-0 md:mr-2 lg:mr-4 xl:mr-8">
-						<span class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-							<span class="material-symbols-outlined text-primary text-xl">editor_choice</span>
-						</span>
-						<p class="font-bold text-slate-800 text-lg md:text-xl">Geschichten &amp; Verständnisübungen gehen Hand in Hand</p>
-					</div>
-				</div>
-
-				<div class="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-2 mt-16 md:mt-24 xl:mt-48">
-					<!-- Feature 1 -->
-					<div class="p-1 rounded-3xl shadow-sm space-y-4">
-						<!--<div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
-							<span class="material-symbols-outlined">thumb_up</span>
-						</div>-->
-						<h3 class="font-extrabold md:text-lg xl:text-xl text-slate-900">Maßgeschneiderte Geschichten</h3>
-						<p class="text-base md:text-lg lg:text-xl text-slate-600 font-medium leading-relaxed">...werden auf Alter &amp; Textverständnis des Kindes abgestimmt. Lernen nicht zu schwierig, nicht zu einfach!</p>
-					</div>
-
-					<!-- Feature 2 -->
-					<div class="p-1 rounded-3xl shadow-sm space-y-4">
-						<!--<div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center">
-							<span class="material-symbols-outlined">spellcheck</span>
-						</div>-->
-						<h3 class="font-extrabold md:text-lg xl:text-xl  text-slate-900">Dynamische Wortschatzübungen</h3>
-						<p class="text-base md:text-lg lg:text-xl text-slate-600 font-medium leading-relaxed">Vokabeltraining orientiert sich flexibel an Wortschatz, Verständnis und nutzt Wörter aus vorher gelesenen Stories.</p>
-					</div>
-
-					<!-- Feature 3 -->
-					<div class="p-1 rounded-3xl shadow-sm space-y-4">
-						<!--<div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center">
-							<span class="material-symbols-outlined">g_translate</span>
-						</div>-->
-						<h3 class="font-extrabold md:text-lg xl:text-xl  text-slate-900">1-Klick-Übersetzung & Erklärungen</h3>
-						<p class="text-base md:text-lg lg:text-xl text-slate-600 font-medium leading-relaxed">Kinder können unbekannte Wörter erklären oder übersetzen. Ein Klick/Tap genügt. Super-Easy.</p>
-					</div>
-
-					<!-- Feature 4 -->
-					<div class="p-1 rounded-3xl shadow-sm space-y-4">
-						<!--<div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center">
-							<span class="material-symbols-outlined">ear_sound</span>
-						</div>-->
-						<h3 class="font-extrabold md:text-lg xl:text-xl  text-slate-900">Sprache &amp; Aussprache üben</h3>
-						<p class="text-base md:text-lg lg:text-xl text-slate-600 font-medium leading-relaxed">Kinder üben ihre Aussprache kinderleicht. Fehler werden im Wort angezeigt, so dass Kids wissen, was sie besser sprechen müssen.</p>
-					</div>
-				</div>
+	<!-- FEATURES -->
+	<section id="features" class="py-16 md:py-32 bg-white scroll-mt-20" aria-labelledby="features-title">
+		<div class="max-w-7xl mx-auto px-5 sm:px-6">
+			<div class="max-w-5xl reveal space-y-4">
+				<!--<span class="inline-block bg-pastel-purple text-primary px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">POWERFUL TOOLKIT</span>-->
+				<!--<h2 id="features-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">When a word stops them, help is right there.</h2>-->
+				<h2 id="features-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Die App hält die Kinder im Lesefluss.</h2>
+				<!--<p class="text-lg text-slate-600 font-medium text-pretty">Each helper answers a moment where reading gets stuck – on focused reading screens where the text stays in front.</p>-->
 			</div>
-		</section>
-		
-		
-		
-		
-		
-		<!-- VIDEO SECTION #2 -->
-		<section class="py-24 overflow-hidden" id="howitworks">
-			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-				<div class="space-y-6 md:order-2">
-					<span class="bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Stressfrei lernen</span>
-					<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Schluss mit dem Frust beim Sprachenlernen</h2>
-					<p class="text-lg leading-relaxed text-slate-600">Smartmeister kombiniert farbige Textmarkierungen beim Vorlesen mit visueller Silbentrennung, kinderleichter Wortübersetzung, anpassbarer Vorlesegeschwindigkeit und gezielten Fragen zum Textverständnis – für Sprachkompetenz, die wirklich sitzt.</p>
-				</div>
-				<div class="relative md:order-1">
-					<div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-50 aspect-video relative">
-						<!--<video data-autoplay src="./videos_sm-downsized/sm_exercise_solutionpanel.mp4" muted loop playsinline class="w-full h-full object-cover"></video>-->
-						<img src="./images/smartmeister_graphic_reading-listening.jpg" alt="Stressfrei lernen mit einfachem Textverständnis" class="w-full h-full object-cover">
-						
-					</div>
-					<div class="absolute -bottom-24 md:-bottom-28 left-1/2 -translate-x-1/2 text-center w-full">
-					  <svg width="60" height="140" viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg" style="display: block; pointer-events: none; transform: rotate(224deg) scaleY(1.5) translateY(10px);" class="mx-auto w-12 h-12 text-brand-accent -rotate-12" fill="none" stroke="currentColor">
-<!-- Definition of the 'Wobble' filter to simulate hand-drawing -->
-<defs>
-  <filter id="hand-drawn-roughness">
-	<feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" />
-	<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-  </filter>
-</defs>
+			<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-10 md:mt-14">
+				<article class="reveal rounded-[2rem] p-2">
 
-<!-- 
-  The Arrow Path 
-  - Filled with a distinct Red (#D32F2F)
-  - Uses the filter defined above
-  - Constructed entirely of Bezier curves (C, Q) so there are no straight lines
--->
-<path 
-  fill="#D32F2F" 
-  filter="url(#hand-drawn-roughness)"
-  d="M 22 5 
-	 C 18 25, 10 55, 18 85 
-	 C 21 98, 26 108, 32 115 
-	 C 25 112, 15 108, 8 108 
-	 Q 15 120, 28 128 
-	 C 35 132, 40 136, 48 138 
-	 C 45 125, 48 112, 55 102 
-	 C 48 108, 42 110, 38 105 
-	 C 32 95, 28 70, 28 45 
-	 C 28 30, 32 15, 30 5 
-	 Q 26 2, 22 5 Z"
-/>
-</svg>
-						<p class="font-hand text-3xl text-brand-accent mb-2 rotate-2">Eingebaute Hilfestellungen, mit denen Kids Hürden ganz allein meistern!</p>
-						<!--<svg class="mx-auto w-12 h-12 text-brand-accent -rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
-						</svg>-->
-					</div>
-				</div>
+						<span class="w-16 h-16 rounded-2xl bg-pastel-blue text-primary flex items-center justify-center shrink-0" aria-hidden="true"><span class="material-symbols-outlined text-4xl">help</span></span>
+						<h3 class="font-display text-xl font-extrabold text-primary leading-tight mt-4">„Was heißt dieses Wort?“</h3>
+
+					<p class="mt-2 sm:mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Das Wort wird vorgesprochen, die Übersetzung erscheint in der Familiensprache.</p>
+				</article>
+				<article class="reveal rounded-[2rem] p-2" style="transition-delay:.1s">
+
+						<span class="w-16 h-16 rounded-2xl bg-pastel-blue text-primary flex items-center justify-center shrink-0" aria-hidden="true"><span class="material-symbols-outlined text-4xl">spellcheck</span></span>
+						<h3 class="font-display text-xl font-extrabold text-primary leading-tight mt-4">„Das Wort kann ich nicht lesen.“</h3>
+
+					<p class="mt-2 sm:mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Silbenfarben zeigen, wie es gebaut ist. Klare Buchstaben halten b/d, i/l, o/a, p/q auseinander.</p>
+				</article>
+				<article class="reveal rounded-[2rem] p-2" style="transition-delay:.2s">
+
+						<span class="w-16 h-16 rounded-2xl bg-peach/60 text-vermillion flex items-center justify-center shrink-0" aria-hidden="true"><span class="material-symbols-outlined text-4xl">speed</span></span>
+						<h3 class="font-display text-xl font-extrabold text-primary leading-tight mt-4">„Kannst du es nochmal vorlesen?“</h3>
+
+					<p class="mt-2 sm:mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Langsamer Modus, größere Pausen, jeder Teil beliebig oft – auch die Silbenaussprache.</p>
+				</article>
+				<article class="reveal rounded-[2rem] p-2">
+
+						<span class="w-16 h-16 rounded-2xl bg-peach/60 text-vermillion flex items-center justify-center shrink-0" aria-hidden="true"><span class="material-symbols-outlined text-4xl">visibility</span></span>
+						<h3 class="font-display text-xl font-extrabold text-primary leading-tight mt-4">„Wo war ich?“</h3>
+
+					<p class="mt-2 sm:mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Die aktuelle Zeile leuchtet auf, der Rest tritt zurück.</p>
+				</article>
+				<article class="reveal rounded-[2rem] p-2" style="transition-delay:.1s">
+
+						<span class="w-16 h-16 rounded-2xl bg-brand-yellow/40 text-ink flex items-center justify-center shrink-0" aria-hidden="true"><span class="material-symbols-outlined text-4xl">quiz</span></span>
+						<h3 class="font-display text-xl font-extrabold text-primary leading-tight mt-4">„Worum ging es in der Geschichte?“</h3>
+
+					<p class="mt-2 sm:mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Kurze Quizfragen, auch vorgelesen, zeigen, was wirklich hängen geblieben ist.</p>
+				</article>
+				<article class="reveal rounded-[2rem] p-2" style="transition-delay:.2s">
+
+						<span class="w-16 h-16 rounded-2xl bg-brand-yellow/40 text-ink flex items-center justify-center shrink-0" aria-hidden="true"><span class="material-symbols-outlined text-4xl">devices</span></span>
+						<h3 class="font-display text-xl font-extrabold text-primary leading-tight mt-4">„Kann ich alleine üben?“</h3> 
+
+					<p class="mt-2 sm:mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Lesehelfer, die dein Kind selbst bedient. Und der Schwierigkeitsgrad passt sich dem Leseniveau an..</p>
+				</article>
 			</div>
-		</section>
 
-		<!-- VIDEO SECTION #3 -->
+			<ul class="reveal mt-8 sm:mt-10 flex flex-wrap gap-2 sm:gap-3 text-sm font-semibold text-slate-700" aria-label="Weitere Funktionen">
+				<li class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2"><span class="material-symbols-outlined text-base text-primary" aria-hidden="true">graphic_eq</span>Weibliche oder männliche Stimme</li>
+				<li class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2"><span class="material-symbols-outlined text-base text-primary" aria-hidden="true">ear_sound</span>Wort- und Klangspiele</li>
+				<li class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2"><span class="material-symbols-outlined text-base text-primary" aria-hidden="true">mic</span>Sprech-Feedback <span class="text-[11px] font-extrabold uppercase tracking-wider bg-vermillion text-white rounded-full px-2 py-0.5">Bald</span></li>
+			</ul>
+		</div>
+	</section>
 
-		<!-- Interactive Video Section #3 -->
-		<section class="py-24 overflow-hidden">
-		  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-			<div class="space-y-6">
-				<span class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">FÜR JEDEN LERNTYP</span>
-				<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Ein Schwierigkeitsgrad, der sich einfach goldrichtig anfühlt</h2>
-				<p class="text-lg leading-relaxed text-slate-6000">
-					 Die verschiedenen Übungen zu Wortschatz, Aussprache oder Grammatik passen sich dem Verständnis und den Fähigkeiten deines Kindes an. So bauen wir das Sprachfundament Stein für Stein auf.
-				</p>
+
+	
+	<!-- WHO IS IT FOR SECTION -->
+	<section class="py-16 md:py-24 bg-white" aria-labelledby="who-title">
+		<!--<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">-->
+			<div class="max-w-7xl mx-auto px-5 sm:px-6 grid md:grid-cols-3 gap-6 md:gap-8 items-end reveal">
+			
+			<div class="text-center mb-2 md:mb-12 space-y-4 sm:mb-8 xl:mb-3 col-span-3">
+			  <!--<span class="bg-blue-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">WHO IT'S FOR</span>-->
+			  <!--<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Regardless of reading ability or learning needs. Everyone benefits</h2>-->
+			  <!--<h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Made for different needs</h2>-->
+			  <img src="./images/curiosity-main.png" alt="Kinder lernen Sprache" class="w-3/4 h-fit object-cover inline-block hidden">
 			</div>
 			
-			<div class="space-y-6">
-				<!-- Main Display Area -->
-				<!-- REMOVED CSS CLASS FROM NEXT DIV: bg-slate-900 -->
-				<div id="video-display" class="relative rounded-[40px] aspect-video overflow-hidden shadow-2xl flex items-center justify-center transition-all duration-500">
-					<video id="main-video-player" class="w-full h-full object-cover opacity-80" autoplay muted loop playsinline poster="./">
-						<source id="main-video-source" src="./videos_sm-downsized/sm_exercise_syllables_en.mp4" type="video/mp4">
-					</video>
-					<div id="video-overlay-badge" class="video-overlay">
-						<!-- Dynamic content here -->
-					</div>
-					<!-- Overlay Play Icon: Initially hidden as video autoplays -->
-					<div id="video-play-overlay" class="absolute inset-0 flex items-center justify-center pointer-events-none hidden">
-						<div class="w-20 h-20 bg-white/40 rounded-full flex items-center justify-center shadow-xl">
-							<span class="material-symbols-outlined text-white text-4xl fill-1">play_arrow</span>
-						</div>
-					</div>
-					<p class="absolute bottom-6 text-white/70 text-sm font-bold uppercase tracking-widest" id="video-caption">Video-Bereich: Übungen</p>
-				</div>
-
-				<!-- Thumbnail Navigation -->
-				<div id="thumbnail-container" class="flex flex-wrap gap-4 items-center justify-center md:justify-start">
-
-				  <!-- Thumb 4 (Pulsate Target) -->
-				  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(1)">
-					  <img src="./images/sm_exercise_syllables_en.gif" class="w-full h-full object-cover rounded-xl" alt="thumb 4">
-					  <div class="tooltip">Deutsch: Silben</div>
-				  </button>
-				  <!-- Thumb 5 (Pulsate Target) -->
-				  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(2)">
-					  <img src="./images/sm_exercise_grammar_en.gif" class="w-full h-full object-cover rounded-xl" alt="thumb 5">
-					  <div class="tooltip">Deutsch: Pronomen</div>
-				  </button>
-				  <!-- Thumb 6 (Pulsate Target) -->
-				  <button class="thumbnail-btn pulse-target relative w-16 h-10 md:w-20 md:h-12 rounded-xl overflow-visible transition-all opacity-60 hover:opacity-100" onclick="handleThumbClick(3)">
-					  <img src="./images/sm_exercise_articles-drag_en.gif" class="w-full h-full object-cover rounded-xl" alt="thumb 6">
-					  <div class="tooltip">Deutsch: Artikel</div>
-				  </button>
-			  </div>
+			  
+			<div class="bg-transparent p-3 md:p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
+				<div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block mb-8 md:mb-12"><img alt="head 1" class="w-[230px] md:w-[200px] lg:w-[250px] h-auto" style="" src="./images/sm_who_head1.gif"></div>
+				  <h3 data-text="Silbenfarben, langsamer Modus und Zeilenfokus nehmen den Druck raus." class="custom_highlights relative z-10 inline-block text-xl sm:text-2xl leading-normal font-extrabold text-slate-900 ">
+					<!--<span class="custom_marker_highlight-green leading-normal">Children who are 'at home' in multiple languages </span></h3>-->
+					<span class="custom_marker_highlight-green leading-normal">Wenn Lesen trotz Üben nicht besser wird.</span></h3>
+				<!--<p class="text-slate-600 leading-relaxed font-medium"></p>-->
 			</div>
-		  </div>
-		</section>
+
+			<div class="bg-transparent p-3 md:p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
+				<div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block mb-8 md:mb-12"><img alt="head 2" class="w-[230px] md:w-[200px] lg:w-[250px] h-auto" style="" src="./images/sm_who_head2.gif"></div>
+				  <h3 data-text="Klare Vorlesestimme, Bedeutung im Kontext und Übersetzung mit einem Tipp." class="custom_highlights relative z-10 inline-block text-xl sm:text-2xl leading-normal font-extrabold text-slate-900 ">
+					<!--<span class="custom_marker_highlight-green leading-normal">Little language experts with German as a second language (DAZ)</span></h3>-->
+					<span class="custom_marker_highlight-green leading-normal">Wenn Deutsch noch neu ist.</span></h3>
+				<!--<p class="text-slate-600 leading-relaxed font-medium"></p>-->
+			</div>
+			<div class="bg-transparent p-3 md:p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
+				<div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block mb-8 md:mb-12"><img alt="head 3" class="w-[230px] md:w-[200px] lg:w-[250px] h-auto" style="" src="./images/sm_who_head3.gif"></div>
+				  <h3 data-text="Die Lesehelfer tragen das Üben an vollen Abenden, wenn du nicht vorlesen kannst." class="custom_highlights relative z-10 inline-block text-xl sm:text-2xl leading-normal font-extrabold text-slate-900 ">
+					<!--<span class="custom_marker_highlight-green leading-normal">Children finding their voice and confidence at their own pace</span></h3>-->
+					<span class="custom_marker_highlight-green leading-normal">Wenn das Üben auch ohne dich klappen muss.</span></h3>
+				<!--<p class="text-slate-600 leading-relaxed font-medium"></p>-->
+			</div>
+		</div>
 		
-		<section id="features" class="py-24 bg-slate-50">
-			<div class="max-w-7xl mx-auto px-6">
-				<!-- ACCESSIBILITY MINI-GRID -->
-				<div class="text-center mb-16 space-y-4">
-					<span class="bg-indigo-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Barrierefreiheit</span>
-					<h2 class="text-4xl md:text-5xl font-extrabold text-primary">Barrierefreies Lernen für alle</h2>
-					<p class="text-slate-600 font-medium max-w-3xl mx-auto text-lg md:text-xl lg:text-2xl">Wir senken Hürden, damit effektives Lernen für jedes Kind klappt.</p>
-				</div>
-				<div class="mt-8 bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm grid md:grid-cols-3 gap-6">
-					<div class="flex items-start gap-3">
-						<span class="material-symbols-outlined text-primary mt-0.5">font_download</span>
-						<div>
-							<h4 class="font-bold text-slate-900 text-base">Schriftart bei Lese-Rechtschreib-Schwäche (LRS)</h4>
-							<p class="text-sm md:text-base lg:text-lg text-slate-500 mt-1">Spezielle Layouts helfen dem Auge, in der Zeile zu bleiben, und erleichtern das Erkennen von Buchstaben.</p>
-						</div>
-					</div>
-					<div class="flex items-start gap-3">
-						<span class="material-symbols-outlined text-primary mt-0.5">school</span>
-						<div>
-							<h4 class="font-bold text-slate-900 text-base">Durchdachte Wiederholungen</h4>
-							<p class="text-sm md:text-base lg:text-lg text-slate-500 mt-1">Kinder können Sätze markieren, die sie nicht verstehen, um ganz unkompliziert eine einfachere Erklärung zu bekommen.</p>
-						</div>
-					</div>
-					<div class="flex items-start gap-3">
-						<span class="material-symbols-outlined text-primary mt-0.5">volume_up</span>
-						<div>
-							<h4 class="font-bold text-slate-900 text-base">Modus für Einfache Sprache</h4>
-							<p class="text-sm md:text-base lg:text-lg text-slate-500 mt-1">Verschachtelte, komplexe Sätze lassen sich per Klick in eine leicht verständliche, stressfreie Satzstruktur umwandeln.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<!-- WHO IS IT FOR SECTION -->
-		<section class="py-24 bg-white">
-			<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-				<div class="text-center mb-6 md:mb-12 space-y-4 sm:mb-32 xl:mb-3 col-span-3">
-				  <span class="bg-blue-100 text-indigo-600 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">FÜR WELCHE KINDER</span>
-				  <h2 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">Perfekt für alle Lerntypen, ganz besonders für...</h2>
-				  <img src="./images/curiosity-main.png" alt="Kids learning language" class="w-3/4 h-fit object-cover inline-block md:hidden">
-				  </div>
-				  
-				<div class="bg-transparent p-3 md:p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
-					  <h3 data-text="08/15-Apps passen sich nicht an dein Kind an" class="custom_highlights relative z-10 inline-block text-2xl leading-normal font-extrabold text-slate-900 ">
-						<span class="custom_marker_highlight-green leading-normal">Kinder, die in mehreren Sprachen „zu Hause“ sind </span></h3>
-					<!--<p class="text-slate-600 leading-relaxed font-medium"></p>-->
-				</div>
+	</section>
 
-				<div class="bg-transparent p-3 md:p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
-					  <h3 data-text="Klassische Nachhilfe ist teuer und träge" class="custom_highlights relative z-10 inline-block text-2xl leading-normal font-extrabold text-slate-900 ">
-						<span class="custom_marker_highlight-green leading-normal">Kleine Sprachexperten mit Deutsch als Zweitsprache (DaZ)</span></h3>
-					<!--<p class="text-slate-600 leading-relaxed font-medium"></p>-->
+	<!-- PARENTS / FOUNDER QUOTE -->
+	<section class="py-16 md:py-32 bg-white" aria-labelledby="parents-title">
+		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+			<div class="relative reveal max-w-xl mx-auto w-full">
+				<div aria-hidden="true" class="absolute -top-4 -left-3 sm:-top-6 sm:-left-6 w-1/2 h-1/2 rounded-[2rem] bg-sky-soft"></div>
+				<div aria-hidden="true" class="absolute -bottom-6 right-10 w-1/3 h-1/4 rounded-[1.5rem] bg-peach"></div>
+				<div class="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-xl">
+					<img src="./images/sm_photo_parent-child-practice.png" alt="Eine Mutter und ihr Sohn üben gemeinsam Lesen auf einem Tablet auf dem Sofa." class="w-full h-full object-cover">
 				</div>
-				<div class="bg-transparent p-3 md:p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
-					  <h3 data-text="Unpersonalisierte Übungen bringen nichts" class="custom_highlights relative z-10 inline-block text-2xl leading-normal font-extrabold text-slate-900 ">
-						<span class="custom_marker_highlight-green leading-normal">Kids, die im eigenen Tempo ihre Stimme und ihr Selbstvertrauen finden</span></h3>
-					<!--<p class="text-slate-600 leading-relaxed font-medium"></p>-->
-				</div>
-			</div>
-		</section>
-
-		<!-- WHO IT'S FOR -->
-
-		<!-- METHODOLOGY & DYNAMIC ACTION -->
-		<section id="methodology" class="py-24 bg-white">
-			<div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 items-center">
-				<div class="lg:col-span-5 space-y-6">
-					<span class="bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Wissenschaftlich belegt</span>
-					<h2 class="text-4xl font-extrabold text-primary leading-tight">Nachweislich mehr Deutsch-Kompetenz für zu Hause</h2>
-					
-					<div class="bg-primary text-white p-8 rounded-[32px] relative overflow-hidden">
-						<p class="text-5xl font-black mb-2 text-brand-yellow">+20%</p>
-						<h4 class="text-lg font-bold mb-2">Besseres Textverständnis</h4>
-						<p class="text-white/80 text-sm md:text-base lg:text-lg leading-relaxed">Kinder, die regelmäßig Lesen und Wortschatz trainieren, schneiden bei Tests zum Textverständnis um 20 % besser ab als Kids, die den klassischen Weg gehen.</p>
-					</div>
-
-					
-				</div>
-
-				<div class="lg:col-span-7 space-y-6">
-					<div class="rounded-[40px] overflow-hidden shadow-2xl bg-slate-100 border-4 border-slate-100 aspect-video relative">
-						<video src="https://smartmeister.app/videos_sm-downsized/sm_exercise_adaptive-short_de.mp4" muted loop autoplay playsinline class="w-full h-full object-cover"></video>
-					</div>
-					<!--<div class="grid grid-cols-2 gap-4">
-						<div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-							<h4 class="font-bold text-slate-900 text-sm mb-1">Gezielte Lernspiele</h4>
-							<p class="text-sm md:text-base lg:text-lg text-slate-500">Sprachliche Elemente fokussiert und mit jeder Menge Spaß festigen – ganz ohne visuelle Ablenkungen.</p>
-						</div>
-						<div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-							<h4 class="font-bold text-slate-900 text-sm mb-1">Interaktive Quizze</h4>
-							<p class="text-sm md:text-base lg:text-lg text-slate-500">Die Aufgaben beziehen sich direkt aufs Gelesene. So bleibt das Gelernte auch langfristig im Kopf.</p>
-						</div>
-					</div>-->
-				</div>
-			</div>
-		</section>
-		
-		<!-- CORE PHILOSOPHY: ACTIVE VS PASSIVE -->
-		<section id="philosophy" class="py-24 bg-white border-b border-slate-100">
-			<div class="max-w-5xl mx-auto px-6 text-center space-y-8">
-				<span class="bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-sm font-extrabold tracking-widest uppercase">Unsere Lernphilosophie</span>
-				<h2 class="text-3xl md:text-5xl font-extrabold text-primary">Warum wir bewusst auf Reizüberflutung verzichten</h2>
-				<p class="text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-					Smartmeister nutzt <strong class="text-slate-900">keine</strong> übermäßig animierten Bilder in den Geschichten. Warum? Zu viele Animationen verleiten Kinder dazu, nur wie gebannt auf den Bildschirm zu schauen, statt den Text zu lesen. Dieser rein passive Konsum bewirkt beim Lernen genau das Gegenteil von dem, was wir wollen. 
-				</p>
-				<!--<div class="p-6 bg-slate-50 rounded-3xl inline-flex items-center gap-4 text-left max-w-2xl mx-auto border border-slate-100">
-					<span class="material-symbols-outlined text-primary text-3xl shrink-0">article</span>
-					<p class="text-base md:text-lg lg:text-xl text-slate-600 font-medium">Unsere Illustrationen sind rein dazu da, das <strong class="text-slate-900">Textverständnis zu unterstützen</strong>, ohne vom eigentlichen Lesen abzulenken.</p>
+				<!--<div aria-hidden="true" class="absolute top-0 right-0 w-16 h-16 bg-white rounded-bl-[1.5rem] flex items-center justify-center">
+					<span class="material-symbols-outlined text-vermillion text-2xl" style="font-variation-settings:'wght' 700">add</span>
 				</div>-->
 			</div>
-		</section>
-
-		<!-- FUTURE VISION SECTION -->
-		<!--<section id="future" class="py-24 bg-slate-900 text-white relative overflow-hidden">
-			<div class="max-w-4xl mx-auto px-6 text-center space-y-8 relative z-10">
-				<div class="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-brand-yellow text-xs font-extrabold uppercase tracking-widest mx-auto">
-					<span class="material-symbols-outlined text-sm">rocket</span> Zukunftspläne
+			<div class="space-y-8">
+				<div class="reveal space-y-4">
+					<!--<span class="inline-block bg-pastelPink text-pink-700 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">For parents</span>-->
+					<h2 id="parents-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Eltern: Dein Deutsch muss nicht perfekt sein, damit dein Kind üben kann.</h2>
+					<!--<p class="text-lg text-slate-700 font-medium text-pretty">Smartmeister supplies the pronunciation, the word meanings and the patient repetition. You supply the opportunity and the encouragement.</p>-->
 				</div>
-				<h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Dynamische Einschätzung des Sprachniveaus</h2>
-				<p class="text-base md:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed">
-					Wir planen ein intelligentes, stressfreies System zur Einstufung des Sprachniveaus. Mit diesem zukünftigen Feature können Eltern und Kids den individuellen Lernfortschritt ganz ohne Rätselraten mitverfolgen und Meilensteine bei Sprache und Textverständnis im Blick behalten.
-				</p>
-
-			</div>-->
-			<!-- Subdued background accent -->
-			<!--<div class="absolute -bottom-48 -left-48 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
-		</section>-->
-		
-		<!-- SUMMARY CLOSING -->
-		<section class="bg-brand-yellow bg-brandYellow-Gradient py-24 text-center">
-			<div class="max-w-4xl mx-auto px-6 space-y-8">
-				<h2 class="text-4xl md:text-6xl font-extrabold text-primary leading-tight">Gute Lese- und Schreibkompetenz öffnet Türen für eine bessere Zukunft: In der Schule, im Leben und in der Gesellschaft</h2>
-				<!--<p class="text-base md:text-lg lg:text-xl text-slate-800 font-bold">Umfassende deutsche Lesekompetenz für adaptives Lernen zu Hause freischalten.</p>-->
+				<figure class="reveal">
+					<blockquote class="text-lg sm:text-xl md:text-2xl font-semibold text-slate-800 leading-relaxed text-pretty">
+						&bdquo;Als mehrsprachige Eltern sind wir uns nie zu 100&nbsp;% sicher, ob wir alles richtig aussprechen – geschweige denn, erklären zu können, was ein Wort wirklich bedeutet. Smartmeister gibt uns die Gewissheit, dass unsere Kinder nicht wegen uns zurückbleiben.&ldquo;
+					</blockquote>
+					<figcaption class="mt-4 font-hand text-xl sm:text-2xl text-brand-accent">Die Smartmeister-Gründer – selbst Eltern in mehrsprachigen Familien.</figcaption>
+				</figure>
+				<ul class="reveal space-y-3 text-base sm:text-lg font-semibold text-slate-800">
+					<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5" aria-hidden="true">check</span>Du richtest das Konto ein. Dein Kind übt danach selbstständig weiter.</li>
+					<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5" aria-hidden="true">check</span>Hör mit und schärfe dabei auch deine eigene Aussprache.</li>
+					<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5" aria-hidden="true">check</span>Deine Ermutigung kann keine App ersetzen.</li>
+				</ul>
 			</div>
-		</section>
-		
-		
+		</div>
+	</section>
 
+	<!-- RESEARCH -->
+	<section class="deco-host py-16 md:py-32" aria-labelledby="research-title">
+		<div class="syl-deco" aria-hidden="true">
+			<span class="syl-deco__word is-outline" style="right:2%;top:4%;--r:10deg;--d:17s;"><span class="syl-a">I</span><span class="syl-b">gel</span></span>
+					</div>
+		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+			<div class="space-y-8">
+				<div class="reveal space-y-4">
+					<!--<span class="inline-block bg-pastel-green text-green-800 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Backed by research</span>-->
+					<!--<h2 id="research-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">A little practice. A regular place in the day.</h2>-->
+					<h2 id="research-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Täglich ein bisschen üben macht den Meister.</h2>
+					<!--<p class="text-lg text-slate-700 font-medium text-pretty">Reading research consistently points to regular, guided practice in which fluency and understanding develop together. Short sessions of around 10–15 minutes fit into an ordinary day – after school, before bed, on the bus.</p>-->
+					<!--<p class="text-lg text-slate-700 font-medium text-pretty">Reading research points to regular practice in which fluency + understanding develop together. Short sessions of around 10–15 minutes result in 20% better on reading comprehension tests than kids following traditional tracks.</p>-->
+					<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Die Forschung ist sich einig: Mit regelmäßiger Übung entwickeln sich Leseflüssigkeit und Leseverständnis gemeinsam. Schon kurze Einheiten von etwa 10–15 Minuten führen zu deutlich besseren Ergebnissen in Leseverständnistests**. Mit Smartmeister können Kinder und Jugendliche ihre Lesekompetenz verbessern, damit Unterricht und Leben einfacher werden.</p>
+				</div>
+				<div class="grid sm:grid-cols-2 gap-4 reveal">
+					<div class="bg-primary text-white rounded-2xl p-5 sm:p-6">
+						<p class="font-display text-4xl sm:text-5xl font-extrabold text-brand-yellow">32% der</p>
+						<p class="mt-2 font-semibold leading-snug">15-Jährigen verfehlen die Mindestkompetenzstufe 2 (mittellange Texte erfassen).</p>
+						<p class="mt-3 text-xs font-bold uppercase tracking-wider text-white/70">PISA 2025</p>
+					</div>
+					<div class="bg-primary text-white rounded-2xl p-5 sm:p-6">
+						<p class="font-display text-4xl sm:text-5xl font-extrabold text-brand-yellow">141 Minuten</p>
+						<p class="mt-2 font-semibold leading-snug"> – so lange lesen Kinder in Deutschland. Der OECD-Durchschnitt: 205 Minuten.</p>
+						<p class="mt-3 text-xs font-bold uppercase tracking-wider text-white/70">Stiftung Lesen</p>
+					</div>
+				</div>
+				<p class="reveal text-sm text-slate-500 max-w-xl">* Allgemeine Forschungsergebnisse aus Deutschland (nicht mit Smartmeister erhoben).</p>
+				<p class="reveal text-sm text-slate-500 max-w-xl">** Im Vergleich zu klassischen Übungsmethoden.</p>
+				<p class="reveal flex items-center gap-2 font-semibold text-slate-800"><span class="material-symbols-outlined text-primary" aria-hidden="true">science</span>Entwickelt mit Lehrkräften und Lerntherapeuten.</p>
+			</div>
+			<div class="relative reveal max-w-md mx-auto w-full">
+				<div aria-hidden="true" class="absolute -top-6 -right-3 sm:-top-8 sm:-right-8 w-2/3 h-2/3 rounded-[2rem] bg-peach"></div>
+				<div aria-hidden="true" class="absolute bottom-12 -left-3 sm:-left-8 w-1/4 h-1/3 rounded-[1.5rem] bg-sky-soft"></div>
+				<div class="relative rounded-[2.5rem] overflow-hidden aspect-square shadow-xl">
+					<img src="./images/sm_photo_book-stack.png" alt="Ein bunter Stapel Kinderbücher auf einem hölzernen Schultisch" class="w-full h-full object-cover">
+				</div>
+				<!--<div aria-hidden="true" class="absolute bottom-0 right-0 w-20 h-20 bg-light-bg rounded-tl-[1.75rem] flex items-center justify-center">
+					<span class="material-symbols-outlined text-vermillion text-3xl" style="font-variation-settings:'wght' 700">add</span>
+				</div>-->
+			</div>
+		</div>
+	</section>
 
-		
-	</main>
-	
-	<!-- BREVO FORM -->
-	<section class="bg-[#fcde72] bg-brandYellow-Gradient gap-4 px-4 md:px-1 py-12 md:py-16" id="waitlist">
-		<div class="max-w-[1440px] mx-auto px-8 lg:px-12 xl:px-28 max-w-7xl">
-			<div class="flex flex-col lg:flex-row items-center gap-8">
-				
-				<div class="flex-1 w-full">
-					<h2 class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] font-bold md:text-3xl lg:text-4xl mb-4">
-					  Auf dem neuesten Stand bleiben 
-				  </h2>
-					
-					<p class="font-['Rethink_Sans:Bold',sans-serif] text-[#2f1796] font-bold text-4xl md:text-2xl lg:text-5xl mb-5">
-						Früh dabei sein beim Free Access! +120 Familien sind es bereits. 
-					</p>
-	
-					<div id="brevo-form" class="sib-form" style="text-align: center; background-color: transparent;">
-						<div id="sib-form-container" class="sib-form-container">
-							<div id="success-message" class="sib-form-message-panel" style="display:none; font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:1200px; margin-bottom: 20px;">
-								<span class="sib-form-message-panel__inner-text">Willkommen bei Smartmeister! Sie stehen offiziell auf der Warteliste!</span>
-							</div>
-							
-							<div id="sib-container" style="text-align:left; background-color:#ffffff; max-width:1200px; border-radius:20px; border: 1px dotted #C0CCD9; padding: 20px;">
+	<!-- CLOSING STATEMENT -->
+	<section class="deco-host py-16 md:py-32 bg-white text-center" aria-labelledby="closing-title">
+		<div class="syl-deco" aria-hidden="true">
+			<span class="syl-deco__word is-outline" style="left:-3%;top:8%;--r:-10deg;--d:20s;--s:clamp(4rem,9vw,8rem);"><span class="syl-a">Ra</span><span class="syl-b">ke</span><span class="syl-a">te</span></span>
+			<span class="syl-deco__word is-wide" style="right:-1%;bottom:6%;--r:7deg;--d:18s;"><span class="syl-a">Ster</span><span class="syl-b">ne</span></span>
+		</div>
+		<div class="max-w-4xl mx-auto px-5 sm:px-6 reveal space-y-6">
+			<!--<h2 id="closing-title" class="font-display text-[1.875rem] sm:text-4xl md:text-6xl font-extrabold text-primary leading-[1.1] tracking-tight text-balance">The story today. <span class="custom_marker_highlight text-ink">The word problem tomorrow.</span></h2>-->
+			<h2 id="closing-title" class="font-display text-[1.875rem] sm:text-4xl md:text-6xl font-extrabold text-primary leading-[1.1] tracking-tight text-balance">Lesen ist der Schlüssel für die Schule, fürs Leben – <span class="custom_marker_highlight text-ink">für jedes Kind</span></h2>
+			
+			<!--<p class="text-lg md:text-xl text-slate-600 font-medium max-w-2xl mx-auto text-pretty">Stories are where reading practice starts. Word problems, worksheets and textbooks are where it pays off.</p>-->
+			
+			
+			
+		</div>
+	</section>
+</main>
 
-								 <form id="sib-form" method="POST" action="https://ee44b5ec.sibforms.com/serve/MUIFAP8roiQcAmmZ2SOf15NnFsPZB1evAvyhMugqTdPcaQdASXOrKVWk512cuYAwjF0J1zQdadJE7cJgqfEdxmRunowTGutIRjsPJ9Q64XdebBxD5kO1I0XXy5s2kFvk7c2aK6VpiOKxvJsszitMmyT3nRU6yb327Ulo2VAeEt7ePkzDotwXOMmwr3cXlwaRrDiotJEpqOZFivczsQ==" data-type="subscription">
-								   
-								   <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; margin-bottom: 16px;">
-									   <div style="flex: 1; min-width: 240px;">
-										   <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="Vorname (Optional)" />
-									   </div>
-							   
-									   <div style="flex: 1; min-width: 240px;">
-										   <input class="input" style="width: 100%; padding: 14px; border: 1px solid #C0CCD9; border-radius: 8px;" type="email" id="EMAIL" name="EMAIL" placeholder="E-Mail-Adresse" required data-required="true" />
-									   </div>
-								   </div>
-							   
-								   <div class="sib-optin sib-form-block" style="margin-bottom: 16px;">
-									   <div style="display: flex; align-items: flex-start; gap: 10px;">
-										   <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required data-required="true" style="width: 20px; height: 20px; flex-shrink:0; margin-top: 2px;" />
-										   <label for="OPT_IN" style="font-size: 14px; color: #3C4858; cursor: pointer; text-align: left;">
-											   Ich bin damit einverstanden, Produkt-Updates zu erhalten und akzeptiere die Datenschutzbestimmungen. Eine Abmeldung ist jederzeit möglich.<span style="color: #e74c3c;">*</span>
-										   </label>
-									   </div>
-								   </div>
-							   
-								   <div style="margin-bottom: 24px;">
-									   <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
-								   </div>
-							   
-								   <div style="text-align: left;">
-									   <button class="sib-form-block__button sib-form-block__button-with-loader" style="background-color:#4C3BAD; color:white; padding: 14px 28px; border-radius: 8px; border:none; cursor:pointer; font-weight:600; width: 100%; max-width: 300px;" type="submit">
-										   Auf die Warteliste setzen
-									   </button>
-								   </div>
-							   
-								   <input type="hidden" name="locale" value="de">
-								   <input type="hidden" name="html_type" value="simple">
-							   </form>
-	
-							</div>
+<!-- WAITLIST (Brevo) -->
+<section class="bg-brandYellow-Gradient px-3 sm:px-4 md:px-1 py-14 md:py-24 scroll-mt-20" id="waitlist" aria-labelledby="waitlist-title">
+	<div class="max-w-7xl mx-auto px-1 sm:px-4 lg:px-12">
+		<div class="flex flex-col lg:flex-row items-center gap-10">
+			<div class="flex-1 w-full">
+				<p class="font-hand text-xl sm:text-2xl md:text-3xl text-vermillion -rotate-1">Über 120 Familien sind schon dabei</p>
+				<h2 id="waitlist-title" class="font-display text-ink font-extrabold text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight mt-1">Frühen Zugang sichern.</h2>
+				<ol class="flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2 mt-4 sm:mt-5 mb-6 sm:mb-8 text-ink font-semibold text-sm sm:text-base">
+					<li class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-ink text-brand-yellow text-sm font-extrabold flex items-center justify-center">1</span>Auf die Warteliste</li>
+					<li class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-ink text-brand-yellow text-sm font-extrabold flex items-center justify-center">2</span>Zum Start kostenlos testen</li>
+					<li class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-ink text-brand-yellow text-sm font-extrabold flex items-center justify-center">3</span>Einfaches Monatsabo</li>
+				</ol>
+
+				<div id="brevo-form" class="sib-form" style="background-color: transparent;">
+					<div id="sib-form-container" class="sib-form-container">
+						<div id="success-message" class="sib-form-message-panel" role="status" style="display:none; font-size:16px; text-align:left; color:#085229; background-color:#e7faf0; border-radius:16px; padding:16px; margin-bottom: 20px;">
+							<span class="sib-form-message-panel__inner-text">Willkommen bei Smartmeister! Du stehst jetzt auf der Warteliste.</span>
+						</div>
+						<div id="sib-container" class="bg-white rounded-3xl p-4 sm:p-5 md:p-7 shadow-xl shadow-ink/10 text-left">
+							<form id="sib-form" method="POST" action="https://ee44b5ec.sibforms.com/serve/MUIFAP8roiQcAmmZ2SOf15NnFsPZB1evAvyhMugqTdPcaQdASXOrKVWk512cuYAwjF0J1zQdadJE7cJgqfEdxmRunowTGutIRjsPJ9Q64XdebBxD5kO1I0XXy5s2kFvk7c2aK6VpiOKxvJsszitMmyT3nRU6yb327Ulo2VAeEt7ePkzDotwXOMmwr3cXlwaRrDiotJEpqOZFivczsQ==" data-type="subscription">
+								<div class="flex flex-col sm:flex-row gap-4 mb-4">
+									<div class="flex-1">
+										<label for="FIRSTNAME" class="sr-only">Vorname (optional)</label>
+										<input class="w-full px-4 py-3.5 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary" type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="Vorname (optional)" autocomplete="given-name">
+									</div>
+									<div class="flex-1">
+										<label for="EMAIL" class="sr-only">E-Mail</label>
+										<input class="w-full px-4 py-3.5 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary" type="email" id="EMAIL" name="EMAIL" placeholder="E-Mail" required data-required="true" autocomplete="email">
+									</div>
+								</div>
+								<div class="sib-optin sib-form-block mb-4">
+									<div class="flex items-start gap-3">
+										<input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required data-required="true" class="w-5 h-5 shrink-0 mt-0.5 accent-[#2e2195]">
+										<label for="OPT_IN" class="text-sm text-slate-600 cursor-pointer leading-snug">
+											Ich möchte Produkt-Updates erhalten und akzeptiere die Datenschutzerklärung. Abmeldung jederzeit möglich.<span class="text-vermillion">*</span>
+										</label>
+									</div>
+								</div>
+								<div class="mb-5">
+									<div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+								</div>
+								<button class="sib-form-block__button w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-ink transition" type="submit">
+									Auf die Warteliste
+									<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+								</button>
+								<input type="hidden" name="locale" value="de">
+								<input type="hidden" name="html_type" value="simple">
+							</form>
 						</div>
 					</div>
-					</div>
-	
-				<div class="section-yellow-image-fix w-full lg:w-auto flex justify-center lg:justify-end">
-					<img alt="High five celebration" class="w-[280px] md:w-[350px] lg:w-[398px] h-auto" src="./images/cta-highfive.png">
 				</div>
-	
-			</div> </div>
-		</section>
-	<script defer="" src="https://sibforms.com/forms/end-form/build/main.js"></script>
-	
-	<!-- FOOTER SECTION -->
-	<footer class="bg-slate-900 text-white pt-24 pb-12">
-		<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 border-b border-slate-800 pb-16">
-			<div class="md:col-span-2 space-y-6">
-				<div class="text-2xl font-extrabold tracking-tight"><a href="./index.html" title="Home" class="no-underline">smart<span class="text-brand-accent">|</span>meister</a></div>
-				<!-- <p class="text-slate-400 text-lg max-w-sm leading-relaxed">Kinder befähigen, Mathe und Deutsch im eigenen Tempo zu meistern. Adaptives Lernen, das individuelles Wachstum und bessere Noten fördert.</p> -->
-				<p class="text-slate-400 text-lg max-w-sm leading-relaxed">Wir boosten die deutsche Sprachkompetenz von Kindern durch die clevere Kombi aus Geschichten hören + lesen, Aussprache- und Wortschatz-Training. </p>
 			</div>
-			<div class="space-y-6">
-				<h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Adaptives Sprachenlernen mit packenden Storys</h4>
-				<ul class="space-y-2 text-slate-300 font-medium">
-				  <li><span class="text-white" title="">Übungen, die sich dem Können anpassen</span></li> 
-				  <li><span class="text-white" title="">Gezielte Wortübersetzung</span></li>
-				  <li><span class="text-white" title="">Vorlesefunktion fürs Hörverständnis</span></li>
-				  <li><span class="text-white" title="">Bewertung der Aussprache</span></li>
-				  <li><span class="text-white" title="">Wortschatz passend zu Level &amp; Interesse</span></li>
-				</ul>
-			</div>
-			<div class="space-y-6">
-				<h4 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Rechtliches</h4>
-				<ul class="space-y-4 text-slate-300 font-medium">
-					<li><a href="privacy_sm_lp 2.html" class="hover:text-white transition">Datenschutzrichtlinie</a></li>
-					<!-- <li><a href="#" class="hover:text-white transition">Nutzungsbedingungen</a></li> -->
-					<li><a href="./imprnt_sm.html" class="hover:text-white transition">Impressum</a></li>
-				</ul>
+			<div class="w-full lg:w-auto flex justify-center lg:justify-end">
+				<img alt="Zwei Kinder geben sich ein High Five" class="w-[260px] md:w-[340px] lg:w-[380px] h-auto" src="./images/cta-highfive.png">
 			</div>
 		</div>
-		<div class="max-w-7xl mx-auto px-6 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm font-medium">
-			<p>©2025-2026 Smartmeister Learning. Alle Rechte vorbehalten.</p> <p>     Gemacht für Eltern, die sich einfach mehr Gelassenheit für die Zukunft ihrer Kids wünschen</p>
-			<div class="flex gap-8">
-				<!-- <a href="#" class="hover:text-white transition">Twitter</a> -->
-				<a href="https://www.linkedin.com/company/smartmeister" class="hover:text-white transition">LinkedIn</a>
+	</div>
+</section>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
-			</div>
+<!-- FOOTER -->
+<footer class="bg-ink text-white pt-14 md:pt-20 pb-10">
+	<div class="max-w-7xl mx-auto px-5 sm:px-6 grid md:grid-cols-4 gap-10 md:gap-12 border-b border-white/10 pb-10 md:pb-14">
+		<div class="md:col-span-2 space-y-5">
+			<a href="./index.html" title="Home" class="text-2xl font-extrabold tracking-tight">smart<span class="text-brand-accent">|</span>meister</a>
+			<p class="text-white/60 text-base sm:text-lg max-w-sm leading-relaxed">Lese-Coach für Deutsch, gemacht für Kinder der Klassen 1–5.</p>
 		</div>
-	</footer>
-	
-	<script>
-		const button = document.getElementById('audioButton');
-		const audio = document.getElementById('storyAudio');
-	  
-		button.addEventListener('click', function(e) {
-		  e.preventDefault();
-	  
-		  if (audio.paused) {
-			audio.play();
-		  } else {
-			audio.pause();
-			audio.currentTime = 0; // reset to start
-		  }
-		});
-		</script>
-		<script>
-		// WAITLIST FORM ACTIONS
-		  document.addEventListener('DOMContentLoaded', function() {
-			  const form = document.getElementById('sib-form');
-			  const successMessage = document.getElementById('success-message');
-			  const formContainer = document.getElementById('sib-container');
-			  
-			  if (form) {
-				  form.addEventListener('submit', function(e) {
-					  e.preventDefault();
-					  
-					  const email = document.getElementById('EMAIL').value;
-					  const optIn = document.querySelector('input[name="OPT_IN"]').checked;
-					  
-					  // Validation
-					  if (!email || !email.includes('@')) {
-						  alert('Please enter a valid email address.');
-						  return;
-					  }
-					  
-					  if (!optIn) {
-						  alert('Please check the checkbox to agree to receive product updates.');
-						  return;
-					  }
-					  // 3. CAPTCHA Validation
-					  if (typeof grecaptcha !== 'undefined') {
-						  const recaptchaResponse = grecaptcha.getResponse();
-						  if (!recaptchaResponse) {
-							  alert('Please check the "I\'m not a robot" checkbox.');
-							  return;
-						  }
-					  }
-					  
-					  // Submit via fetch
-					  const formData = new FormData(form);
-					  
-					  fetch(form.action, {
-						  method: 'POST',
-						  body: formData,
-						  mode: 'no-cors'
-					  })
-					  .then(function() {
-						  // Show success message
-						  if (successMessage) {
-							  successMessage.style.display = 'block';
-						  }
-						  if (formContainer) {
-							  formContainer.style.display = 'none';
-						  }
-					  })
-					  .catch(function(error) {
-						  console.error('Error:', error);
-						  alert('There was an error. Please try again.');
-					  });
-				  });
-			  }
-		  });
-		  </script>
-		  <div id="newvtPopupMenu"></div>
-		  
-		<script>
-			// HANDLE AUTO-PLAY VIDEOS ON SCROLL
-			const autoPlayVideos = document.querySelectorAll('video[data-autoplay]');
-			const videoObserver = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					const video = entry.target;
-					if (entry.isIntersecting) {
-						video.play().catch(e => console.log('Autoplay prevented', e));
-					} else {
-						video.pause();
-					}
+		<div class="space-y-5">
+			<h3 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Lesehelfer</h3>
+			<ul class="space-y-2 text-white/80 font-medium">
+				<li>Vorlesen &amp; langsamer Modus</li>
+				<li>Silbenfarben &amp; Zeilenfokus</li>
+				<li>Übersetzung mit einem Tipp</li>
+				<li>Quizfragen zum Verständnis</li>
+				<li>Stufen für Klasse 1–6</li>
+			</ul>
+		</div>
+		<div class="space-y-5">
+			<h3 class="text-xs font-black text-brand-yellow uppercase tracking-widest">Rechtliches</h3>
+			<ul class="space-y-3 text-white/80 font-medium">
+				<li><a href="privacy_sm_lp 2.html" class="inline-block py-1 hover:text-white transition">Datenschutz</a></li>
+				<li><a href="./imprnt_sm.html" class="inline-block py-1 hover:text-white transition">Impressum</a></li>
+				<li><a href="https://www.linkedin.com/company/smartmeister" class="inline-block py-1 hover:text-white transition">LinkedIn</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="max-w-7xl mx-auto px-5 sm:px-6 pt-8 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-4 text-white/50 text-sm font-medium">
+		<p>&copy; 2025–2026 Smartmeister Learning. Alle Rechte vorbehalten.</p>
+		<p>Von mehrsprachigen Eltern gemacht – für jedes Kind, das Lesen auf Deutsch übt.</p>
+	</div>
+</footer>
+
+<!-- Mobile menu -->
+<script>
+	(function () {
+		const btn = document.getElementById('menu-toggle');
+		const menu = document.getElementById('mobile-menu');
+		const icon = document.getElementById('menu-icon');
+		const OPEN = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+		const CLOSED = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />';
+		function setOpen(open) {
+			menu.classList.toggle('hidden', !open);
+			btn.setAttribute('aria-expanded', String(open));
+			icon.innerHTML = open ? OPEN : CLOSED;
+		}
+		btn.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+		menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+	})();
+</script>
+
+<!-- Scroll reveal -->
+<script>
+	(function () {
+		const items = document.querySelectorAll('.reveal');
+		if (!('IntersectionObserver' in window)) { items.forEach(el => el.classList.add('is-visible')); return; }
+		const io = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+			});
+		}, { threshold: 0.15 });
+		items.forEach(el => io.observe(el));
+	})();
+</script>
+
+<!-- Reading lab -->
+<script>
+	(function () {
+		const story = [
+			[['Der'], ['klei', 'ne'], ['Fuchs'], ['wohnt'], ['tief'], ['im'], ['Wald.']],
+			[['Je', 'den'], ['Mor', 'gen'], ['sucht'], ['er'], ['Wild', 'bee', 'ren'], ['hin', 'ter'], ['dem'], ['Hü', 'gel.']],
+			[['Heu', 'te'], ['trifft'], ['er'], ['ei', 'nen'], ['Bä', 'ren.']],
+			[['Der'], ['Bär'], ['ist'], ['groß,'], ['a', 'ber'], ['freund', 'lich.']]
+		];
+		const dictionary = {
+			der: 'the', kleine: 'little', fuchs: 'fox', wohnt: 'lives', tief: 'deep', im: 'in the', wald: 'forest',
+			jeden: 'every', morgen: 'morning', sucht: 'looks for', er: 'he', wildbeeren: 'wild berries', hinter: 'behind',
+			dem: 'the', 'hügel': 'hill', heute: 'today', trifft: 'meets', einen: 'a', 'bären': 'bear', 'bär': 'bear',
+			ist: 'is', 'groß': 'big', aber: 'but', freundlich: 'friendly'
+		};
+
+		const textEl = document.getElementById('lab-text');
+		const card = document.getElementById('lab-card');
+		const playBtn = document.getElementById('lab-play');
+		const playIcon = document.getElementById('lab-play-icon');
+		const playLabel = document.getElementById('lab-play-label');
+		const popover = document.getElementById('lab-popover');
+		const popWord = document.getElementById('pop-word');
+		const popTranslation = document.getElementById('pop-translation');
+		const popSpeak = document.getElementById('pop-speak');
+		const popClose = document.getElementById('pop-close');
+		const toggles = {
+			syllables: document.getElementById('toggle-syllables'),
+			focus: document.getElementById('toggle-focus'),
+			slow: document.getElementById('toggle-slow')
+		};
+
+		const lines = [];
+		const words = [];
+		let sylIndex = 0;
+		story.forEach((sentence, lineIdx) => {
+			const p = document.createElement('p');
+			p.className = 'lab-line px-2 -mx-2';
+			const lineWords = [];
+			sentence.forEach((syls, wIdx) => {
+				const btn = document.createElement('button');
+				btn.type = 'button';
+				btn.className = 'lab-word';
+				syls.forEach(s => {
+					const span = document.createElement('span');
+					span.className = sylIndex % 2 === 0 ? 'syl-a' : 'syl-b';
+					span.textContent = s;
+					btn.appendChild(span);
+					sylIndex++;
 				});
-			}, { threshold: 0.5 });
-	
-			autoPlayVideos.forEach(v => videoObserver.observe(v));
-	
-			// HANDLE DIAGNOSTICS DOUBLE VIDEO LOGIC
-			const leftVideo = document.getElementById('diagnostics-left');
-			const rightVideo = document.getElementById('diagnostics-right');
-			const rightContainer = document.getElementById('right-video-container');
-			const rightOverlay = document.getElementById('right-overlay');
-			const rightPlayIcon = document.getElementById('right-play-icon');
-	
-			let isRightPlaying = false;
-	
-			// Intersection Observer for Left Video specifically
-			const leftObserver = new IntersectionObserver((entries) => {
-				if (entries[0].isIntersecting && !isRightPlaying) {
-					leftVideo.play().catch(() => {});
-				} else {
-					leftVideo.pause();
+				const full = syls.join('');
+				const clean = full.replace(/[.,!?]/g, '');
+				btn.dataset.word = clean;
+				btn.dataset.syllables = syls.map(s => s.replace(/[.,!?]/g, '')).join('·');
+				btn.setAttribute('aria-label', clean);
+				p.appendChild(btn);
+				if (wIdx < sentence.length - 1) p.appendChild(document.createTextNode(' '));
+				const w = { el: btn, line: lineIdx, text: full };
+				words.push(w);
+				lineWords.push(w);
+			});
+			textEl.appendChild(p);
+			lines.push({ el: p, words: lineWords, text: sentence.map(s => s.join('')).join(' ') });
+		});
+
+		const state = { syllables: true, focus: true, slow: false, playing: false, line: 0, word: -1, timer: null };
+
+		function setToggle(key, value) {
+			state[key] = value;
+			toggles[key].setAttribute('aria-pressed', String(value));
+			if (key === 'syllables') textEl.classList.toggle('syllables-off', !value);
+			if (key === 'focus') textEl.classList.toggle('lab-focus', value);
+		}
+		Object.keys(toggles).forEach(key => {
+			toggles[key].addEventListener('click', () => setToggle(key, !state[key]));
+		});
+
+		const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
+		let germanVoice = null;
+		function pickVoice() {
+			if (!synth) return;
+			const voices = synth.getVoices();
+			germanVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('de')) || null;
+		}
+		if (synth) { pickVoice(); synth.onvoiceschanged = pickVoice; }
+
+		function speak(text, { onBoundary, onEnd } = {}) {
+			if (!synth || !germanVoice) { return false; }
+			const u = new SpeechSynthesisUtterance(text);
+			u.voice = germanVoice;
+			u.lang = germanVoice.lang;
+			u.rate = state.slow ? 0.6 : 0.9;
+			if (onBoundary) u.onboundary = onBoundary;
+			if (onEnd) u.onend = onEnd;
+			synth.speak(u);
+			return true;
+		}
+
+		function highlight(lineIdx, wordIdx) {
+			words.forEach(w => w.el.classList.remove('is-current'));
+			lines.forEach((l, i) => {
+				l.el.classList.toggle('is-active', state.playing && i === lineIdx);
+				l.el.classList.toggle('is-dim', state.playing && i !== lineIdx);
+			});
+			const w = lines[lineIdx] && lines[lineIdx].words[wordIdx];
+			if (w) w.el.classList.add('is-current');
+		}
+
+			const REST_LINE = 1;
+			function clearHighlight() {
+				words.forEach(w => w.el.classList.remove('is-current'));
+				lines.forEach((l, i) => {
+					l.el.classList.toggle('is-active', i === REST_LINE);
+					l.el.classList.toggle('is-dim', i !== REST_LINE);
+				});
+			}
+			clearHighlight();
+
+		function stop() {
+			state.playing = false;
+			clearTimeout(state.timer);
+			if (synth) synth.cancel();
+			clearHighlight();
+			playIcon.textContent = 'play_arrow';
+			playLabel.textContent = 'Read aloud';
+		}
+
+		function playLine(lineIdx) {
+			if (!state.playing) return;
+			if (lineIdx >= lines.length) { stop(); return; }
+			state.line = lineIdx;
+			const line = lines[lineIdx];
+			const starts = [];
+			let pos = 0;
+			line.words.forEach(w => { starts.push(pos); pos += w.text.length + 1; });
+
+			let gotBoundary = false;
+			let fallbackIdx = 0;
+			const wordMs = state.slow ? 760 : 420;
+			const pauseMs = state.slow ? 900 : 450;
+
+			function runTimer() {
+				if (!state.playing || gotBoundary) return;
+				highlight(lineIdx, fallbackIdx);
+				fallbackIdx++;
+				if (fallbackIdx < line.words.length) {
+					state.timer = setTimeout(runTimer, wordMs);
+				} else if (!speaking) {
+					state.timer = setTimeout(() => playLine(lineIdx + 1), wordMs + pauseMs);
 				}
-			}, { threshold: 0.2 });
-			leftObserver.observe(leftVideo);
-	
-			rightContainer.addEventListener('click', () => {
-				if (isRightPlaying) {
-					// Pause right, play left
-					rightVideo.pause();
-					leftVideo.play();
-					rightOverlay.classList.replace('opacity-0', 'opacity-100');
-					rightPlayIcon.textContent = 'play_arrow';
-					isRightPlaying = false;
-				} else {
-					// Pause left, play right
-					leftVideo.pause();
-					rightVideo.play().catch(() => {});
-					rightOverlay.classList.replace('opacity-100', 'opacity-0');
-					rightPlayIcon.textContent = 'pause';
-					isRightPlaying = true;
+			}
+
+			highlight(lineIdx, 0);
+			const speaking = speak(line.text, {
+				onBoundary: (e) => {
+					if (!state.playing) return;
+					gotBoundary = true;
+					let idx = 0;
+					for (let i = 0; i < starts.length; i++) { if (e.charIndex >= starts[i]) idx = i; }
+					highlight(lineIdx, idx);
+				},
+				onEnd: () => {
+					if (!state.playing) return;
+					clearTimeout(state.timer);
+					state.timer = setTimeout(() => playLine(lineIdx + 1), pauseMs);
 				}
 			});
-		</script>
-		<script>
-		  /**
-		   * Interactive Video Section Logic
-		   */
-		  const videoBadgeData = [
-			 // null, // Thumb 1 (no badge)
-			  { text: "German: Syllables", color: "#F59E0B" }, // Thumb 4 (Amber)
-			  { text: "German: Pronouns", color: "#8B5CF6" }, // Thumb 5 (Purple)
-			  { text: "German: Articles", color: "#EC4899" }, // Thumb 6 (Pink)
-		  ];
-	
-		  const videoCaptions = [
-			//  "",
-			//  "",
-			//  "",
-			  "",
-			  "",
-			  ""
-		  ];
-	
-		  const videoSources = [
-			  "./videos_sm-downsized/sm_exercise_syllables_en.mp4",
-			  "./videos_sm-downsized/sm_exercise_grammar_en.mp4",
-			  "./videos_sm-downsized/sm_exercise_articles-drag_en.mp4"
-		  ];
-	
-		  function handleThumbClick(id) {
-			  const videoPlayer = document.getElementById('main-video-player');
-			  const videoSource = document.getElementById('main-video-source');
-			  const badge = document.getElementById('video-overlay-badge');
-			  const caption = document.getElementById('video-caption');
-			  const playOverlay = document.getElementById('video-play-overlay');
-			  const btns = document.querySelectorAll('.thumbnail-btn');
-	
-			  // 1. Update Video Source and Play
-			  // videoPlayer.poster = `https://picsum.photos/seed/vid${id}/800/450`;
-			  videoPlayer.poster = ``;
-			  videoSource.src = videoSources[id-1];
-			  videoPlayer.load();
-			  videoPlayer.play();
-			  
-			  // Ensure play overlay is hidden during autoplay
-			  playOverlay.classList.add('hidden');
-			  
-			  // 2. Handle Thumbnail Active State
-			  btns.forEach((btn, index) => {
-				  if (index === (id - 1)) {
-					  btn.classList.add('thumbnail-active');
-				  } else {
-					  btn.classList.remove('thumbnail-active');
-				  }
-			  });
-	
-			  // 3. Update Caption
-			  caption.innerText = videoCaptions[id-1];
-	
-			  // 4. Handle Floating Badge Logic
-			  const badgeInfo = videoBadgeData[id-1];
-			  if (badgeInfo) {
-				  badge.style.display = 'block';
-				  badge.style.backgroundColor = badgeInfo.color;
-				  badge.style.color = '#FFFFFF';
-				  badge.innerText = badgeInfo.text;
-			  } else {
-				  badge.style.display = 'none';
-			  }
-		  }
-		  
-		  /**
-		   * Pulse Animation Scroll Trigger
-		   */
-		  document.addEventListener('DOMContentLoaded', () => {
-			  const pulseTargets = document.querySelectorAll('.pulse-target');
-			  
-			  const observerOptions = {
-				  root: null,
-				  threshold: 0.5 // Trigger when at least 50% is visible
-			  };
-	
-			  const observer = new IntersectionObserver((entries, observer) => {
-				  entries.forEach(entry => {
-					  if (entry.isIntersecting) {
-						  // Add class to all pulsate targets simultaneously for a synchronized look
-						  pulseTargets.forEach(target => {
-							  target.classList.add('pulse-highlight');
-						  });
-						  // Animation lasts 3 seconds as defined in CSS. 
-						  // Once triggered, we unobserve to make it "one time".
-						  observer.unobserve(entry.target);
-					  }
-				  });
-			  }, observerOptions);
-	
-			  // We observe the container or the first target to trigger the group pulse
-			  if (pulseTargets.length > 0) {
-				  observer.observe(document.getElementById('thumbnail-container'));
-			  }
-		  });
-	  </script>
+			fallbackIdx = 1;
+			state.timer = setTimeout(runTimer, wordMs);
+		}
+
+		playBtn.addEventListener('click', () => {
+			if (state.playing) { stop(); return; }
+			hidePopover();
+			state.playing = true;
+			playIcon.textContent = 'pause';
+			playLabel.textContent = 'Stop';
+			playLine(0);
+		});
+
+		let activeWord = null;
+		function showPopover(btn) {
+			activeWord = btn;
+			const key = btn.dataset.word.toLowerCase();
+			popWord.textContent = btn.dataset.syllables;
+			popTranslation.textContent = dictionary[key] || '–';
+			popover.classList.remove('hidden');
+			const cardRect = card.getBoundingClientRect();
+			const r = btn.getBoundingClientRect();
+			const popW = popover.offsetWidth;
+			let left = r.left - cardRect.left + r.width / 2 - popW / 2;
+			left = Math.max(12, Math.min(left, cardRect.width - popW - 12));
+			popover.style.left = left + 'px';
+			popover.style.top = (r.bottom - cardRect.top + 10) + 'px';
+		}
+		function hidePopover() { popover.classList.add('hidden'); activeWord = null; }
+
+		words.forEach(w => {
+			w.el.addEventListener('click', (e) => {
+				e.stopPropagation();
+				if (state.playing) stop();
+				showPopover(w.el);
+				speak(w.el.dataset.word);
+			});
+		});
+		popSpeak.addEventListener('click', (e) => { e.stopPropagation(); if (activeWord) speak(activeWord.dataset.word); });
+		popClose.addEventListener('click', (e) => { e.stopPropagation(); hidePopover(); });
+		popover.addEventListener('click', (e) => e.stopPropagation());
+		document.addEventListener('click', hidePopover);
+		document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hidePopover(); });
+
+		// Quiz
+		const feedback = document.getElementById('quiz-feedback');
+		document.querySelectorAll('.quiz-opt').forEach(opt => {
+			opt.addEventListener('click', () => {
+				const correct = opt.dataset.correct === 'true';
+				document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('border-green-500', 'bg-pastel-green', 'border-vermillion', 'bg-pastelOrange'));
+				opt.classList.add(correct ? 'border-green-500' : 'border-vermillion', correct ? 'bg-pastel-green' : 'bg-pastelOrange');
+				feedback.textContent = correct ? 'Richtig! The fox meets a friendly bear.' : 'Not quite – read the third sentence again.';
+				feedback.className = 'mt-4 font-semibold min-h-[1.5rem] ' + (correct ? 'text-green-700' : 'text-vermillion');
+				if (correct) speak('Richtig!');
+			});
+		});
+		document.getElementById('quiz-speak').addEventListener('click', () => {
+			speak('Wen trifft der Fuchs heute? Einen Hasen, einen Bären oder eine Eule?');
+		});
+	})();
+</script>
+
+<!-- App screens: video switcher + story audio -->
+<script>
+	(function () {
+		const player = document.getElementById('main-video-player');
+		const source = document.getElementById('main-video-source');
+		const btns = document.querySelectorAll('.thumb-btn');
+		btns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				btns.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+				source.src = btn.dataset.video;
+				player.load();
+				player.play().catch(() => {});
+			});
+		});
+
+		const audioBtn = document.getElementById('audioButton');
+		const audio = document.getElementById('storyAudio');
+		const eq = document.getElementById('audio-eq');
+		const label = document.getElementById('audioLabel');
+		function setPlaying(playing) {
+			eq.classList.toggle('eq-paused', !playing);
+			label.textContent = playing ? 'Stop listening' : 'Hear a story read aloud';
+		}
+		audioBtn.addEventListener('click', () => {
+			if (audio.paused) { audio.play().then(() => setPlaying(true)).catch(() => {}); }
+			else { audio.pause(); audio.currentTime = 0; setPlaying(false); }
+		});
+		audio.addEventListener('ended', () => setPlaying(false));
+	})();
+</script>
+
+<!-- Waitlist form -->
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const form = document.getElementById('sib-form');
+		const successMessage = document.getElementById('success-message');
+		const formContainer = document.getElementById('sib-container');
+		if (!form) return;
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			const email = document.getElementById('EMAIL').value;
+			const optIn = document.querySelector('input[name="OPT_IN"]').checked;
+			if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+			if (!optIn) { alert('Please check the checkbox to agree to receive product updates.'); return; }
+			if (typeof grecaptcha !== 'undefined') {
+				const recaptchaResponse = grecaptcha.getResponse();
+				if (!recaptchaResponse) { alert('Please check the "I\'m not a robot" checkbox.'); return; }
+			}
+			fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+				.then(function () {
+					if (successMessage) successMessage.style.display = 'block';
+					if (formContainer) formContainer.style.display = 'none';
+				})
+				.catch(function (error) {
+					console.error('Error:', error);
+					alert('There was an error. Please try again.');
+				});
+		});
+	});
+</script>
+
+<!-- Syllable blocks: hopping on mini trampolines (vanilla port of the app's trampoline loading animation) -->
+<script>
+(function () {
+	var words = Array.prototype.slice.call(document.querySelectorAll('.syl-deco__word'));
+	if (!words.length) return;
+
+	var COLORS = ['#ffd166', '#7fd1ae', '#8ecdf7', '#ffb3c7'];
+	var CONTACT = 0.28, COMPRESS = 0.74, STAGGER = 0.11, TAU = Math.PI * 2;
+	var HEIGHT_K = 205 / 36 * 0.4;
+	var BIG_SPEED = 0.2, SMALL_SPEED = 0.5;
+	var rand = function (lo, hi) { return lo + Math.random() * (hi - lo); };
+	var clamp01 = function (x) { return x < 0 ? 0 : x > 1 ? 1 : x; };
+	var smooth = function (a, b, x) { var k = clamp01((x - a) / (b - a)); return k * k * (3 - 2 * k); };
+	var ease = function (x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+	var r2 = function (n) { return Math.round(n * 100) / 100; };
+	var shuffle = function (a) {
+		a = a.slice();
+		for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+		return a;
+	};
+
+	function makeSchedule() {
+		var tiers = shuffle([[0.9, 1.0], [1.02, 1.14], [1.18, 1.3]]);
+		var jumps = tiers.map(function (t) {
+			var d = rand(t[0], t[1]), air = d * (1 - CONTACT);
+			return { d: d, h: air * air, trick: 'none', dir: Math.random() < 0.5 ? 1 : -1 };
+		});
+		var tallest = jumps.slice().sort(function (a, b) { return b.h - a.h; })[0];
+		tallest.trick = ['flip', 'turn', 'twist'][Math.floor(Math.random() * 3)];
+		var total = jumps.reduce(function (s, j) { return s + j.d; }, 0);
+		return { jumps: jumps, total: total, offset: Math.random() * total };
+	}
+
+	var items = words.map(function (word) {
+		var tiles = Array.prototype.slice.call(word.children);
+		var colors = shuffle(COLORS);
+		tiles.forEach(function (tile, i) { tile.style.setProperty('--c', colors[i % colors.length]); });
+		// Some words are shrunk to 0.3x-1.0x of their designed size
+		if (Math.random() < 0.6) word.style.setProperty('--k', r2(rand(0.3, 1)));
+		return { word: word, tiles: tiles, schedule: makeSchedule(), visible: false, tileH: 0, room: 0, speed: BIG_SPEED };
+	});
+
+	function measure(item) {
+		var host = item.word.parentElement.getBoundingClientRect();
+		var w = item.word.getBoundingClientRect();
+		item.tileH = item.tiles[0].offsetHeight;
+		// Free space above the blocks: keeps jumps and flips inside the section's clipping box
+		item.room = Math.max(0, w.top - host.top - item.tileH * 0.55);
+		var small = item.room < item.tileH * 1.6;
+		item.word.classList.toggle('is-small', small);
+		item.speed = small ? SMALL_SPEED : BIG_SPEED;
+	}
+
+	function pose(item, t) {
+		var s = item.schedule, jumps = s.jumps, H = item.tileH, matMax = 0;
+		item.tiles.forEach(function (tile, i) {
+			var local = (((t - i * STAGGER + s.offset) % s.total) + s.total) % s.total, idx = 0;
+			while (idx < jumps.length - 1 && local >= jumps[idx].d) { local -= jumps[idx].d; idx++; }
+			var jump = jumps[idx], prev = jumps[(idx - 1 + jumps.length) % jumps.length];
+			var u = clamp01(local / jump.d);
+			var heightPx = Math.min(H * HEIGHT_K * jump.h * 1, item.room);
+			var prevPx = Math.min(H * HEIGHT_K * prev.h, item.room);
+			var canTrick = item.room > H * 1.1;
+			var y = 0, sx = 1, sy = 1, rot = 0;
+			if (u < CONTACT) {
+				var v = u / CONTACT;
+				if (v < COMPRESS) {
+					var sq = Math.sin(Math.PI * v / COMPRESS);
+					y = (H * 0.14 + 0.06 * prevPx) * sq;
+					sy = 1 - 0.17 * sq; sx = 1 + 0.13 * sq;
+				} else {
+					var push = (v - COMPRESS) / (1 - COMPRESS);
+					y = -H * 0.1 * Math.sin(push * Math.PI / 2);
+					sy = 1 + 0.09 * push; sx = 1 - 0.055 * push;
+				}
+				matMax = Math.max(matMax, y);
+			} else {
+				var f = (u - CONTACT) / (1 - CONTACT), air = (u - CONTACT) * jump.d, vel = 1 - 2 * f;
+				y = -H * 0.1 * (1 - f) - 4 * heightPx * f * (1 - f);
+				var stretch = f < 0.5 ? 0.09 * vel * vel : 0.055 * vel * vel * (1 - smooth(0.88, 1, f));
+				var jig = 0.035 * Math.sin(TAU * 6 * air) * Math.exp(-air / 0.16);
+				sy = 1 + stretch - jig * 0.8; sx = 1 - 0.6 * stretch + jig;
+				if (canTrick && jump.trick !== 'none') {
+					var k = clamp01((f - 0.08) / 0.84), apex = Math.sin(Math.PI * f);
+					if (jump.trick === 'flip') rot = jump.dir * 360 * ease(k);
+					else if (jump.trick === 'twist') rot = 14 * Math.sin(TAU * f) * apex;
+					else { var c = Math.cos(TAU * ease(k)); sx *= (c < 0 ? -1 : 1) * Math.max(Math.abs(c), 0.06); }
+				}
+			}
+			tile.style.transform = 'translateY(' + r2(y) + 'px) translateY(' + r2(-H / 2) + 'px) rotate(' + r2(rot) + 'deg) translateY(' + r2(H / 2) + 'px) scale(' + r2(sx) + ',' + r2(sy) + ')';
+		});
+		item.word.style.setProperty('--mat', r2(matMax) + 'px');
+	}
+
+	var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	if (reduced) return;
+
+	function measureAll() { items.forEach(measure); }
+	measureAll();
+	window.addEventListener('resize', measureAll);
+	window.addEventListener('load', measureAll);
+
+	if ('IntersectionObserver' in window) {
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (e) {
+				items.forEach(function (item) { if (item.word.parentElement === e.target) item.visible = e.isIntersecting; });
+			});
+		}, { rootMargin: '80px' });
+		items.forEach(function (item, i) {
+			if (items.findIndex(function (o) { return o.word.parentElement === item.word.parentElement; }) === i) io.observe(item.word.parentElement);
+		});
+	} else {
+		items.forEach(function (item) { item.visible = true; });
+	}
+
+	var start = performance.now();
+	function frame(now) {
+		var t = (now - start) / 1000;
+		items.forEach(function (item) { if (item.visible && !document.hidden) pose(item, t * item.speed); });
+		requestAnimationFrame(frame);
+	}
+	requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
