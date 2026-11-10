@@ -4,8 +4,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="all">
-	<title>Lese-Coach fürs deutsch üben, perfekt angepaßt für Kinder und Leselücken | Smartmeister</title>
-	<meta name="description" content="Besser lesen trotz Leselücken. Wörter knacken, Geschichten verstehen. Smartmeister liest laut vor, zeigt Silben farbig und testet Textverständnis – Lese-Coach für Deutsch, gemacht für Schulkinder Kl. 1–5.">
+	<title>Lese-Coach fürs Deutsch lesen üben, perfekt angepaßt für Kinder & Leselücken | Smartmeister</title>
+	<meta name="description" content="Besser Deutsch lesen lernen trotz Leselücken. Wörter knacken, Geschichten verstehen. Smartmeister liest laut vor, zeigt Silben farbig & prüft Textverständnis – Ein Lese-App für verschiedene Sprachnieveaus, gemacht für Schulkinder Kl. 1–5">
+	<!--<meta name="description" content="Besser lesen trotz Leselücken. Wörter knacken, Geschichten verstehen. Smartmeister liest vor, zeigt Silben und prüft das Verständnis – die Lese-App für Deutsch, gemacht für Kinder der Klassen 1–5.">
 	<meta name="author" content="Smartmeister">
 	<meta name="theme-color" content="#FFFDF4">
 	<link rel="icon" type="image/x-icon" href="https://smartmeister.app/smartmeister-favicon.png">
@@ -310,7 +311,7 @@
 					</a>
 					<a href="#demo" class="flex sm:inline-flex items-center justify-center gap-3 bg-white text-primary border-2 border-primary/15 px-6 py-4 rounded-2xl text-base sm:text-lg font-bold hover:border-primary transition">
 						<span class="material-symbols-outlined text-vermillion" aria-hidden="true">play_arrow</span>
-						Reader ausprobieren
+						Jetzt ausprobieren
 					</a>
 				</div>
 				<ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-slate-600">
@@ -392,6 +393,50 @@
 		</div>
 	</section>
 	
+	
+	<!-- REAL APP SCREENS -->
+	<section id="howitworks" class="py-16 md:py-32" aria-labelledby="screens-title">
+		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
+			<div class="space-y-6 reveal">
+				<!--<span class="inline-block bg-pastelOrange text-orange-700 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Real app screens</span>-->
+				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Read the story. Practise with its words.</h2>-->
+				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and vocabulary.</h2>-->
+				<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister trainiert Lesen, Zuhören, Leseverständnis und Aussprache.</h2>
+				
+				<!--<p class="text-lg text-slate-700 font-medium text-pretty">Children listen and read along, then practise syllables, articles or pronouns with words from the story they just read – at their level.</p>-->
+				<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Erst mitlesen und zuhören, dann das Verständnis üben. Kinder starten einfach und steigern sich Stufe für Stufe. Schwierigkeit passt sich dem Leseniveau deines Kindes an.</p>
+				<button type="button" id="audioButton" class="flex sm:inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-white border-2 border-primary/15 hover:border-primary text-primary px-6 py-4 rounded-2xl text-base sm:text-lg font-bold transition">
+					<span id="audio-eq" class="flex items-end gap-0.5 h-5 eq-paused" aria-hidden="true">
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+					</span>
+					<span id="audioLabel">Eine vorgelesene Geschichte anhören</span>
+				</button>
+				<audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3" preload="none"></audio>
+			</div>
+			<div class="space-y-5 reveal">
+				<div class="relative">
+					<div aria-hidden="true" class="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-1/2 h-1/2 rounded-[2rem] bg-brand-yellow"></div>
+					<div class="relative rounded-2xl sm:rounded-[2rem] aspect-video overflow-hidden shadow-2xl bg-slate-100">
+						<video id="main-video-player" class="w-full h-full object-cover" autoplay muted loop playsinline aria-label="Bildschirmaufnahme der Smartmeister-App">
+							<source id="main-video-source" src="./videos_sm-downsized/sm_exercise_readaloud_main.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				<div class="flex flex-wrap gap-2 pt-1" role="group" aria-label="App-Ansicht wählen">
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="true" data-video="./videos_sm-downsized/sm_exercise_readaloud_main.mp4">Vorlesen</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_readaloud.mp4">Texthervorhebung</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_geschichten-stories.mp4">Geschichten</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_syllables_en.mp4">Silben</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_articles-drag_en.mp4">Artikel</button>
+					<!--<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_grammar_en.mp4">Pronomen</button>-->
+				</div>
+			</div>
+		</div>
+	</section>
+	
 	<!-- EVERY TAP BRINGS THEM BACK TO THE TEXT -->
 	<!--<section class="pb-24 md:pb-32" aria-labelledby="apps-title">-->
 	<section class="deco-host pb-16 md:pb-32 pt-16 md:pt-32" aria-labelledby="apps-title">
@@ -445,11 +490,9 @@
 			<p class="reveal text-center font-hand text-xl sm:text-2xl md:text-3xl lg:text-4xl text-brand-accent mt-8 sm:mt-10 -rotate-1 text-balance">Für Kinder mit Leseschwierigkeiten hört Üben auf, ein Krampf zu sein.</p>
 		</div>
 	</section>
-
 	
 
 
-	
 	
 	<!-- HOW IT WORKS METHOD: READ LISTEN UNDERSTAND -->
 	<section id="method" class="py-16 md:py-32 pb-20 md:pb-32 bg-white scroll-mt-20" aria-labelledby="method-title">
@@ -503,49 +546,7 @@
 		</div>
 	</section>
 	
-	<!-- REAL APP SCREENS -->
-	<section id="howitworks" class="py-16 md:py-32" aria-labelledby="screens-title">
-		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
-			<div class="space-y-6 reveal">
-				<!--<span class="inline-block bg-pastelOrange text-orange-700 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Real app screens</span>-->
-				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Read the story. Practise with its words.</h2>-->
-				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and vocabulary.</h2>-->
-				<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister trainiert Lesen, Zuhören, Leseverständnis und Aussprache.</h2>
-				
-				<!--<p class="text-lg text-slate-700 font-medium text-pretty">Children listen and read along, then practise syllables, articles or pronouns with words from the story they just read – at their level.</p>-->
-				<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Erst mitlesen und zuhören, dann das Verständnis üben. Kinder starten einfach und steigern sich Stufe für Stufe. Schwierigkeit passt sich dem Leseniveau deines Kindes an.</p>
-				<button type="button" id="audioButton" class="flex sm:inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-white border-2 border-primary/15 hover:border-primary text-primary px-6 py-4 rounded-2xl text-base sm:text-lg font-bold transition">
-					<span id="audio-eq" class="flex items-end gap-0.5 h-5 eq-paused" aria-hidden="true">
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-					</span>
-					<span id="audioLabel">Eine vorgelesene Geschichte anhören</span>
-				</button>
-				<audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3" preload="none"></audio>
-			</div>
-			<div class="space-y-5 reveal">
-				<div class="relative">
-					<div aria-hidden="true" class="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-1/2 h-1/2 rounded-[2rem] bg-brand-yellow"></div>
-					<div class="relative rounded-2xl sm:rounded-[2rem] aspect-video overflow-hidden shadow-2xl bg-slate-100">
-						<video id="main-video-player" class="w-full h-full object-cover" autoplay muted loop playsinline aria-label="Bildschirmaufnahme der Smartmeister-App">
-							<source id="main-video-source" src="./videos_sm-downsized/sm_exercise_readaloud_main.mp4" type="video/mp4">
-						</video>
-					</div>
-				</div>
-				<div class="flex flex-wrap gap-2 pt-1" role="group" aria-label="App-Ansicht wählen">
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="true" data-video="./videos_sm-downsized/sm_exercise_readaloud_main.mp4">Vorlesen</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_readaloud.mp4">Texthervorhebung</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_geschichten-stories.mp4">Text-Auswahl</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_syllables_en.mp4">Silben</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_articles-drag_en.mp4">Artikel</button>
-					<!--<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_grammar_en.mp4">Pronomen</button>-->
-				</div>
-			</div>
-		</div>
-	</section>
-
+	
 
 	<!-- INTERACTIVE READING LAB -->
 	<section id="demo" class="py-16 md:py-32 scroll-mt-20" aria-labelledby="demo-title">
@@ -847,7 +848,7 @@
 					<h2 id="research-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Täglich ein bisschen üben macht den Meister.</h2>
 					<!--<p class="text-lg text-slate-700 font-medium text-pretty">Reading research consistently points to regular, guided practice in which fluency and understanding develop together. Short sessions of around 10–15 minutes fit into an ordinary day – after school, before bed, on the bus.</p>-->
 					<!--<p class="text-lg text-slate-700 font-medium text-pretty">Reading research points to regular practice in which fluency + understanding develop together. Short sessions of around 10–15 minutes result in 20% better on reading comprehension tests than kids following traditional tracks.</p>-->
-					<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Die Forschung ist sich einig: Mit regelmäßiger Übung entwickeln sich Leseflüssigkeit und Leseverständnis gemeinsam. Schon kurze Einheiten von etwa 10–15 Minuten führen zu deutlich besseren Ergebnissen in Leseverständnistests**. Mit Smartmeister können Kinder und Jugendliche ihre Lesekompetenz verbessern, damit Unterricht und Leben einfacher werden.</p>
+					<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Forschungsstudien: Mit regelmäßiger Übung entwickeln sich Leseflüssigkeit und Leseverständnis gemeinsam. Schon kurze Einheiten von etwa 10–15 Minuten führen zu deutlich besseren Ergebnissen in Leseverständnistests**. Mit Smartmeister können Kinder und Jugendliche ihre Lesekompetenz verbessern, damit Unterricht und Leben einfacher werden.</p>
 				</div>
 				<div class="grid sm:grid-cols-2 gap-4 reveal">
 					<div class="bg-primary text-white rounded-2xl p-5 sm:p-6">
@@ -863,7 +864,7 @@
 				</div>
 				<p class="reveal text-sm text-slate-500 max-w-xl">* Allgemeine Forschungsergebnisse aus Deutschland (nicht mit Smartmeister erhoben).</p>
 				<p class="reveal text-sm text-slate-500 max-w-xl">** Im Vergleich zu klassischen Übungsmethoden.</p>
-				<p class="reveal flex items-center gap-2 font-semibold text-slate-800"><span class="material-symbols-outlined text-primary" aria-hidden="true">science</span>Entwickelt mit Lehrkräften und Lerntherapeuten.</p>
+				<!--<p class="reveal flex items-center gap-2 font-semibold text-slate-800"><span class="material-symbols-outlined text-primary" aria-hidden="true">science</span>Entwickelt mit Lehrkräften und Lerntherapeuten.</p>-->
 			</div>
 			<div class="relative reveal max-w-md mx-auto w-full">
 				<div aria-hidden="true" class="absolute -top-6 -right-3 sm:-top-8 sm:-right-8 w-2/3 h-2/3 rounded-[2rem] bg-peach"></div>
@@ -970,7 +971,7 @@
 				<li>Silbenfarben &amp; Zeilenfokus</li>
 				<li>Übersetzung mit einem Tipp</li>
 				<li>Quizfragen zum Verständnis</li>
-				<li>Stufen für Klasse 1–6</li>
+				<li>Stufen für Klasse 1–5</li>
 			</ul>
 		</div>
 		<div class="space-y-5">
