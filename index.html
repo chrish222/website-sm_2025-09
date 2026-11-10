@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="all">
-	<title>German Reading Helper for Children. Practice that improves reading skills | Smartmeister</title>
+	<title>German Reading Practice Coach for Children (6-12). Improve reading skills | Smartmeister</title>
 	<meta name="description" content="Tackle reading problems & boost understanding. Read-aloud, syllable highlighting, translation & word help – so your child practices on their own.">
 	
 	
@@ -443,11 +443,49 @@
 			<p class="reveal text-center font-hand text-xl sm:text-2xl md:text-3xl lg:text-4xl text-brand-accent mt-8 sm:mt-10 -rotate-1 text-balance">Removing the grind for those with reading difficulties</p>
 		</div>
 	</section>
-
 	
-
-
-	
+	<!-- REAL APP SCREENS -->
+	<section id="howitworks" class="py-16 md:py-32" aria-labelledby="screens-title">
+		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
+			<div class="space-y-6 reveal">
+				<!--<span class="inline-block bg-pastelOrange text-orange-700 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Real app screens</span>-->
+				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Read the story. Practise with its words.</h2>-->
+				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and vocabulary.</h2>-->
+				<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and pronunciation.</h2>
+				
+				<!--<p class="text-lg text-slate-700 font-medium text-pretty">Children listen and read along, then practise syllables, articles or pronouns with words from the story they just read – at their level.</p>-->
+				<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Read and listen along, then practise comprehension. Children start easy and climb the difficulty ladder steadily. Reading difficulty evolves with your child at their level.</p>
+				<button type="button" id="audioButton" class="flex sm:inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-white border-2 border-primary/15 hover:border-primary text-primary px-6 py-4 rounded-2xl text-base sm:text-lg font-bold transition">
+					<span id="audio-eq" class="flex items-end gap-0.5 h-5 eq-paused" aria-hidden="true">
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+					</span>
+					<span id="audioLabel">Hear a story read aloud</span>
+				</button>
+				<audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3" preload="none"></audio>
+			</div>
+			<div class="space-y-5 reveal">
+				<div class="relative">
+					<div aria-hidden="true" class="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-1/2 h-1/2 rounded-[2rem] bg-brand-yellow"></div>
+					<div class="relative rounded-2xl sm:rounded-[2rem] aspect-video overflow-hidden shadow-2xl bg-slate-100">
+						<video id="main-video-player" class="w-full h-full object-cover" autoplay muted loop playsinline aria-label="Smartmeister app screen recording">
+							<source id="main-video-source" src="./videos_sm-downsized/sm_geschichten-stories.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				<div class="flex flex-wrap gap-2 pt-1" role="group" aria-label="Choose an app screen">
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="true" data-video="./videos_sm-downsized/sm_exercise_readaloud_main.mp4">Read-aloud</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="true" data-video="./videos_sm-downsized/sm_exercise_readaloud.mp4">Highlighting</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_geschichten-stories.mp4">Book choice</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_syllables_en.mp4">Syllables</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_articles-drag_en.mp4">Articles</button>
+					<!--<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_grammar_en.mp4">Pronouns</button>-->
+				</div>
+			</div>
+		</div>
+	</section>
 	
 	<!-- HOW IT WORKS METHOD: READ LISTEN UNDERSTAND -->
 	<section id="method" class="py-16 md:py-32 pb-20 md:pb-32 bg-white scroll-mt-20" aria-labelledby="method-title">
@@ -498,48 +536,7 @@
 		</div>
 	</section>
 	
-	<!-- REAL APP SCREENS -->
-	<section id="howitworks" class="py-16 md:py-32" aria-labelledby="screens-title">
-		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
-			<div class="space-y-6 reveal">
-				<!--<span class="inline-block bg-pastelOrange text-orange-700 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Real app screens</span>-->
-				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Read the story. Practise with its words.</h2>-->
-				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and vocabulary.</h2>-->
-				<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and pronunciation.</h2>
-				
-				<!--<p class="text-lg text-slate-700 font-medium text-pretty">Children listen and read along, then practise syllables, articles or pronouns with words from the story they just read – at their level.</p>-->
-				<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Read and listen along, then practise comprehension. Children start easy and climb the difficulty ladder steadily. Reading difficulty evolves with your child at their level.</p>
-				<button type="button" id="audioButton" class="flex sm:inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-white border-2 border-primary/15 hover:border-primary text-primary px-6 py-4 rounded-2xl text-base sm:text-lg font-bold transition">
-					<span id="audio-eq" class="flex items-end gap-0.5 h-5 eq-paused" aria-hidden="true">
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-					</span>
-					<span id="audioLabel">Hear a story read aloud</span>
-				</button>
-				<audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3" preload="none"></audio>
-			</div>
-			<div class="space-y-5 reveal">
-				<div class="relative">
-					<div aria-hidden="true" class="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-1/2 h-1/2 rounded-[2rem] bg-brand-yellow"></div>
-					<div class="relative rounded-2xl sm:rounded-[2rem] aspect-video overflow-hidden shadow-2xl bg-slate-100">
-						<video id="main-video-player" class="w-full h-full object-cover" autoplay muted loop playsinline aria-label="Smartmeister app screen recording">
-							<source id="main-video-source" src="./videos_sm-downsized/sm_geschichten-stories.mp4" type="video/mp4">
-						</video>
-					</div>
-				</div>
-				<div class="flex flex-wrap gap-2 pt-1" role="group" aria-label="Choose an app screen">
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="true" data-video="./videos_sm-downsized/sm_exercise_readaloud_main.mp4">Read-aloud</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="true" data-video="./videos_sm-downsized/sm_exercise_readaloud.mp4">Highlighting</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_geschichten-stories.mp4">Book choice</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_syllables_en.mp4">Syllables</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_articles-drag_en.mp4">Articles</button>
-					<!--<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_grammar_en.mp4">Pronouns</button>-->
-				</div>
-			</div>
-		</div>
-	</section>
+	
 
 
 	<!-- INTERACTIVE READING LAB -->
