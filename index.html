@@ -4,10 +4,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="all">
-	<title>German Reading Practice Coach for Children (6-12). Improve reading skills | Smartmeister</title>
+	<!--<title>Smartmeister – Effective German Literacy, Reading & Speech Training for Multilingual Children</title>-->
+	<!--<title>Smartmeister – German Reading Practice for Grades 1–5 | Tackle reading problems. Help with Words and Understanding</title>-->
+	
+	
+	<title>German Reading Practice Coach for Children. Improve reading and language skills | Smartmeister</title>
 	<meta name="description" content="Tackle reading problems & boost understanding. Read-aloud, syllable highlighting, translation & word help – so your child practices on their own.">
-	
-	
+	<!--<meta name="description" content="German language app designed for multilingual kids to boost German reading skills and comprehension. Empowering children aged 5–14 to build vocabulary and verbal confidence.">-->
 	<!--<meta name="description" content="Smartmeister reads aloud, colours syllables and checks understanding. German reading practice for grades 1–5, with levels and reading helpers – so your child can keep practising when you can't sit beside them.">-->
 	<meta name="author" content="Smartmeister">
 	<meta name="theme-color" content="#FFFDF4">
@@ -487,6 +490,7 @@
 		</div>
 	</section>
 	
+	
 	<!-- HOW IT WORKS METHOD: READ LISTEN UNDERSTAND -->
 	<section id="method" class="py-16 md:py-32 pb-20 md:pb-32 bg-white scroll-mt-20" aria-labelledby="method-title">
 		<div class="max-w-7xl mx-auto px-5 sm:px-6">
@@ -536,7 +540,7 @@
 		</div>
 	</section>
 	
-	
+
 
 
 	<!-- INTERACTIVE READING LAB -->
@@ -546,7 +550,7 @@
 				<div class="space-y-5 sm:space-y-6 px-1 sm:px-0">
 					<span class="inline-block bg-white text-primary px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Try it right here</span>
 					<h2 id="demo-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Press play. Tap a tricky word. See how we help.</h2>
-					<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">A small taste of the Smartmeister reader. Switch the reading helpers on and off – just as children can in the app.</p>
+					<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">A small taste of the Smartmeister reader (simplified preview with low fidelity voice). Switch the reading helpers on and off – just as children can in the app.</p>
 
 					<div class="space-y-3" role="group" aria-label="Reading helpers">
 						<button type="button" id="toggle-syllables" aria-pressed="true" class="w-full flex items-center justify-between gap-3 sm:gap-4 bg-white rounded-2xl p-3.5 sm:p-4 text-left hover:shadow-md transition">
@@ -1101,6 +1105,7 @@
 </script>
 
 <!-- Reading lab -->
+<script src="./audio/demo-timings.js"></script>
 <script>
 	(function () {
 		const story = [
@@ -1165,13 +1170,51 @@
 			lines.push({ el: p, words: lineWords, text: sentence.map(s => s.join('')).join(' ') });
 		});
 
-		const state = { syllables: true, focus: true, slow: false, playing: false, line: 0, word: -1, timer: null };
+		const state = { syllables: true, focus: true, slow: false, playing: false, paused: false, line: 0, word: -1, timer: null };
+		const LABELS = { idle: 'Read aloud', playing: 'Pause', paused: 'Resume', synth: 'Stop' };
+
+		// Pre-rendered app voice (scripts/build-demo-audio.mjs); falls back to browser speech if unavailable.
+		const AUDIO = window.SM_DEMO_AUDIO || null;
+		const SLOW_PLAYBACK_RATE = 0.77;
+		let useAudio = !!AUDIO;
+		const storyAudio = {};
+		let clipAudio = null;
+		let rafId = 0;
+		if (AUDIO) {
+			['normal', 'slow'].forEach(mode => {
+				const a = new Audio(AUDIO.story[mode].src);
+				a.preload = 'auto';
+				a.addEventListener('ended', () => stop());
+				a.addEventListener('error', () => { useAudio = false; });
+				storyAudio[mode] = a;
+			});
+			clipAudio = new Audio(AUDIO.clips.src);
+			clipAudio.preload = 'auto';
+		}
+		const modeKey = () => (state.slow ? 'slow' : 'normal');
+		const activeAudio = () => storyAudio[modeKey()];
+
+		function setButton(kind) {
+			playIcon.textContent = kind === 'playing' || kind === 'synth' ? 'pause' : 'play_arrow';
+			playLabel.textContent = LABELS[kind];
+		}
+
+		function switchStoryMode(fromKey) {
+			if (!useAudio || !(state.playing || state.paused)) return;
+			const from = storyAudio[fromKey];
+			const to = activeAudio();
+			from.pause();
+			to.currentTime = AUDIO.story[modeKey()].times[Math.max(state.word, 0)];
+			if (state.playing) playAudio();
+		}
 
 		function setToggle(key, value) {
+			const prevMode = modeKey();
 			state[key] = value;
 			toggles[key].setAttribute('aria-pressed', String(value));
 			if (key === 'syllables') textEl.classList.toggle('syllables-off', !value);
 			if (key === 'focus') textEl.classList.toggle('lab-focus', value);
+			if (key === 'slow') switchStoryMode(prevMode);
 		}
 		Object.keys(toggles).forEach(key => {
 			toggles[key].addEventListener('click', () => setToggle(key, !state[key]));
@@ -1199,10 +1242,11 @@
 		}
 
 		function highlight(lineIdx, wordIdx) {
+			const on = state.playing || state.paused;
 			words.forEach(w => w.el.classList.remove('is-current'));
 			lines.forEach((l, i) => {
-				l.el.classList.toggle('is-active', state.playing && i === lineIdx);
-				l.el.classList.toggle('is-dim', state.playing && i !== lineIdx);
+				l.el.classList.toggle('is-active', on && i === lineIdx);
+				l.el.classList.toggle('is-dim', on && i !== lineIdx);
 			});
 			const w = lines[lineIdx] && lines[lineIdx].words[wordIdx];
 			if (w) w.el.classList.add('is-current');
@@ -1218,13 +1262,76 @@
 			}
 			clearHighlight();
 
+		function syncHighlight() {
+			const times = AUDIO.story[modeKey()].times;
+			const t = activeAudio().currentTime + 0.03;
+			let idx = 0;
+			while (idx < times.length - 1 && t >= times[idx + 1]) idx++;
+			state.word = idx;
+			const w = words[idx];
+			highlight(w.line, lines[w.line].words.indexOf(w));
+		}
+		function tick() {
+			syncHighlight();
+			if (state.playing) rafId = requestAnimationFrame(tick);
+		}
+
+		function playAudio() {
+			const a = activeAudio();
+			a.defaultPlaybackRate = a.playbackRate = state.slow ? SLOW_PLAYBACK_RATE : 1;
+			state.playing = true;
+			state.paused = false;
+			setButton('playing');
+			cancelAnimationFrame(rafId);
+			a.play().then(tick).catch((err) => {
+				state.playing = false;
+				// Autoplay blocks are not audio failures; only real load/decode errors switch to browser speech.
+				if (err && err.name === "NotAllowedError") { setButton(state.paused ? "paused" : "idle"); return; }
+				useAudio = false;
+				startSynth();
+			});
+		}
+		function pauseAudio() {
+			activeAudio().pause();
+			cancelAnimationFrame(rafId);
+			state.playing = false;
+			state.paused = true;
+			syncHighlight();
+			setButton('paused');
+		}
+
 		function stop() {
 			state.playing = false;
+			state.paused = false;
+			state.word = -1;
 			clearTimeout(state.timer);
+			cancelAnimationFrame(rafId);
 			if (synth) synth.cancel();
+			Object.values(storyAudio).forEach(a => { a.pause(); a.currentTime = 0; });
 			clearHighlight();
-			playIcon.textContent = 'play_arrow';
-			playLabel.textContent = 'Read aloud';
+			setButton('idle');
+		}
+
+		let clipWatch = 0;
+		function playClip(text) {
+			const item = useAudio && clipAudio && AUDIO.clips.items[text.toLowerCase()];
+			if (!item) { speak(text); return; }
+			if (state.playing) pauseAudio();
+			if (synth) synth.cancel();
+			cancelAnimationFrame(clipWatch);
+			clipAudio.pause();
+			clipAudio.currentTime = item[0];
+			const watch = () => {
+				if (clipAudio.currentTime >= item[1]) { clipAudio.pause(); return; }
+				clipWatch = requestAnimationFrame(watch);
+			};
+			clipAudio.play().then(watch).catch(() => speak(text));
+		}
+
+		function startSynth() {
+			state.playing = true;
+			setButton('synth');
+			playLine(0);
 		}
 
 		function playLine(lineIdx) {
@@ -1272,12 +1379,14 @@
 		}
 
 		playBtn.addEventListener('click', () => {
-			if (state.playing) { stop(); return; }
 			hidePopover();
-			state.playing = true;
-			playIcon.textContent = 'pause';
-			playLabel.textContent = 'Stop';
-			playLine(0);
+			if (useAudio) {
+				if (state.playing) pauseAudio();
+				else playAudio();
+				return;
+			}
+			if (state.playing) { stop(); return; }
+			startSynth();
 		});
 
 		let activeWord = null;
@@ -1300,12 +1409,12 @@
 		words.forEach(w => {
 			w.el.addEventListener('click', (e) => {
 				e.stopPropagation();
-				if (state.playing) stop();
+				if (state.playing && !useAudio) stop();
 				showPopover(w.el);
-				speak(w.el.dataset.word);
+				playClip(w.el.dataset.word);
 			});
 		});
-		popSpeak.addEventListener('click', (e) => { e.stopPropagation(); if (activeWord) speak(activeWord.dataset.word); });
+		popSpeak.addEventListener('click', (e) => { e.stopPropagation(); if (activeWord) playClip(activeWord.dataset.word); });
 		popClose.addEventListener('click', (e) => { e.stopPropagation(); hidePopover(); });
 		popover.addEventListener('click', (e) => e.stopPropagation());
 		document.addEventListener('click', hidePopover);
@@ -1320,11 +1429,11 @@
 				opt.classList.add(correct ? 'border-green-500' : 'border-vermillion', correct ? 'bg-pastel-green' : 'bg-pastelOrange');
 				feedback.textContent = correct ? 'Richtig! The fox meets a friendly bear.' : 'Not quite – read the third sentence again.';
 				feedback.className = 'mt-4 font-semibold min-h-[1.5rem] ' + (correct ? 'text-green-700' : 'text-vermillion');
-				if (correct) speak('Richtig!');
+				if (correct) playClip('Richtig!');
 			});
 		});
 		document.getElementById('quiz-speak').addEventListener('click', () => {
-			speak('Wen trifft der Fuchs heute? Einen Hasen, einen Bären oder eine Eule?');
+			playClip('Wen trifft der Fuchs heute? Einen Hasen, einen Bären oder eine Eule?');
 		});
 	})();
 </script>
