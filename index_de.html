@@ -6,7 +6,7 @@
 	<meta name="robots" content="all">
 	<title>Lese-Coach fürs Deutsch lesen üben, perfekt angepaßt für Kinder & Leselücken | Smartmeister</title>
 	<meta name="description" content="Besser Deutsch lesen lernen trotz Leselücken. Wörter knacken, Geschichten verstehen. Smartmeister liest laut vor, zeigt Silben farbig & prüft Textverständnis – Ein Lese-App für verschiedene Sprachnieveaus, gemacht für Schulkinder Kl. 1–5">
-	<!--<meta name="description" content="Besser lesen trotz Leselücken. Wörter knacken, Geschichten verstehen. Smartmeister liest vor, zeigt Silben und prüft das Verständnis – die Lese-App für Deutsch, gemacht für Kinder der Klassen 1–5.">
+	<!--<meta name="description" content="Besser lesen trotz Leselücken. Wörter knacken, Geschichten verstehen. Smartmeister liest vor, zeigt Silben und prüft das Verständnis – die Lese-App für Deutsch, gemacht für Kinder der Klassen 1–5.">-->
 	<meta name="author" content="Smartmeister">
 	<meta name="theme-color" content="#FFFDF4">
 	<link rel="icon" type="image/x-icon" href="https://smartmeister.app/smartmeister-favicon.png">
@@ -138,14 +138,22 @@
 		.syllables-off .syl-a, .syllables-off .syl-b { color: inherit; }
 
 		/* Hero mini reader: syllable "karaoke" */
-		@keyframes syl-glow {
+		/* @keyframes syl-glow {
 			0%, 100% { background-color: transparent; }
 			8%, 28% { background-color: #FFD64A; }
 			36% { background-color: transparent; }
 		}
-		.syl-karaoke span { border-radius: 6px; padding: 0 2px; animation: syl-glow 3.6s infinite; }
-		.syl-karaoke span:nth-child(2) { animation-delay: 0.9s; }
-		.syl-karaoke span:nth-child(3) { animation-delay: 1.8s; }
+		.syl-karaoke span { border-radius: 6px; padding: 0 2px; animation: syl-glow 3.6s infinite; animation-delay: 4s;}
+		.syl-karaoke span:nth-child(2) { animation-delay: 4.9s; }
+		.syl-karaoke span:nth-child(3) { animation-delay: 5.8s; } */
+		@keyframes syl-glow {
+			  0%, 8% { background-color: transparent; }
+			  14%, 22% { background-color: #FFD64A; }
+			  30%, 100% { background-color: transparent; }
+			  }
+			  .syl-karaoke span { border-radius: 6px; padding: 0 2px; animation: syl-glow 6.6s infinite; animation-delay: 4s}
+			  .syl-karaoke span:nth-child(2) { animation-delay: 4.9s; }
+			  .syl-karaoke span:nth-child(3) { animation-delay: 5.8s; }
 
 		@keyframes eq {
 			0%, 100% { transform: scaleY(0.35); }
@@ -283,10 +291,10 @@
 
 	<!-- HERO -->
 	<section class="deco-host overflow-hidden">
-		<div class="syl-deco" aria-hidden="true">
-			<!--<span class="syl-deco__word" style="left:-1%;bottom:3%;--r:-6deg;--d:20s;"><span class="syl-a">Wol</span><span class="syl-b">ke</span></span>-->
-			<span class="syl-deco__word is-outline is-wide" style="left:38%;top:3%;--r:8deg;--d:17s;--s:clamp(4rem,8vw,7.5rem);"><span class="syl-a">Son</span><span class="syl-b">ne</span></span>
-		</div>
+		<!--<div class="syl-deco" aria-hidden="true">
+			<span class="syl-deco__word" style="left:-1%;bottom:3%;--r:-6deg;--d:20s;"><span class="syl-a">Wol</span><span class="syl-b">ke</span></span>
+			<span class="syl-deco__word is-outline is-wide" style="left:75%;top:13%;--r:8deg;--d:17s;--s:clamp(4rem,8vw,7.5rem);"><span class="syl-a">Son</span><span class="syl-b">ne</span></span>
+		</div>-->
 		<div aria-hidden="true" class="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-brand-yellow/25 blur-3xl"></div>
 		<div class="relative max-w-7xl mx-auto px-5 sm:px-6 pt-8 pb-24 md:pt-20 md:pb-32 grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-12 items-center">
 			<div class="space-y-6 sm:space-y-8">
@@ -321,20 +329,29 @@
 				</ul>
 			</div>
 
-			<!-- Editorial photo frame (inspired by design reference) -->
-			<div class="relative mx-auto w-full max-w-[520px] lg:mr-0 px-0 pr-3 sm:pr-0">
+			<!-- Editorial photo frame -->
+			<!--<div class="relative mx-auto w-full max-w-[520px] lg:mr-0 px-0 pr-3 sm:pr-0">
 				<div aria-hidden="true" class="absolute -top-6 -right-3 sm:-top-8 sm:-right-8 w-2/3 h-3/5 rounded-[2rem] bg-peach"></div>
 				<div aria-hidden="true" class="absolute bottom-16 -left-3 sm:-left-8 w-1/4 h-1/4 rounded-[1.5rem] bg-sky-soft"></div>
 				<div class="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-2xl shadow-primary/10">
 					<img src="./images/sm_photo_child-reading-tablet.png" alt="Ein Mädchen mit Kopfhörern liest am Küchentisch eine Geschichte auf dem Tablet" class="w-full h-full object-cover">
-				</div>
+				</div>-->
 				<!--<div aria-hidden="true" class="absolute bottom-0 right-0 w-20 h-20 bg-light-bg rounded-tl-[1.75rem] flex items-center justify-center">
 					<span class="material-symbols-outlined text-vermillion text-3xl" style="font-variation-settings:'wght' 700">add</span>
 				</div>-->
+			<!-- Editorial video frame  -->
+				<div class="relative mx-auto w-full max-w-[620px] lg:mr-0 px-0 pr-3 sm:pr-0">
+					<div aria-hidden="true" class="absolute -top-6 -right-3 sm:-top-8 sm:-right-8 w-2/3 h-3/5 rounded-[1rem] bg-peach"></div>
+					<div aria-hidden="true" class="absolute bottom-16 -left-3 sm:-left-8 w-1/4 h-1/4 rounded-[0.5rem] bg-sky-soft"></div>
+					<div class="relative rounded-[2rem] sm:rounded-[1.5rem] overflow-hidden aspect-[3/2] shadow-2xl shadow-primary/10">
+							<video class="w-full h-full object-cover" autoplay muted loop playsinline preload="auto" disablepictureinpicture poster="./images/sm_photo_child-reading-tablet.png" aria-label="Kurzes Video: Kinder entdecken Geschichten mit Smartmeister">
+								<source src="./videos_sm-downsized/sm_geschichten-stories_header.mp4" type="video/mp4">
+							</video>
+					</div>
 				<p aria-hidden="true" class="hidden sm:block absolute top-28 -right-7 sm:-right-14 [writing-mode:vertical-rl] text-xs font-bold tracking-[0.3em] uppercase text-slate-400 whitespace-nowrap">Lesen · Hören · Verstehen</p>
 
 				<!-- Floating mini reader -->
-				<div class="absolute -bottom-10 left-3 sm:-left-10 bg-white rounded-3xl shadow-2xl p-4 sm:p-5 w-[230px] sm:w-[260px] float-anim" aria-hidden="true">
+				<div class="absolute -bottom-16 left-3 sm:-left-10 bg-white rounded-3xl shadow-2xl p-4 sm:p-5 w-[230px] sm:w-[260px] float-anim" aria-hidden="true">
 					<div class="flex items-center justify-between mb-3">
 						<span class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Liest vor · langsam</span>
 						<span class="flex items-end gap-0.5 h-4">
@@ -354,7 +371,11 @@
 	</section>
 	
 	<!-- THE READING GAP -->
-	<section class="bg-primary text-white py-16 md:py-24 relative overflow-hidden" aria-labelledby="gap-title">
+	<section class="bg-primary text-white py-16 md:py-24 relative overflow-hidden deco-host" aria-labelledby="gap-title">
+		<div class="syl-deco z-99" aria-hidden="true">
+			<!--<span class="syl-deco__word" style="left:-1%;bottom:3%;--r:-6deg;--d:20s;"><span class="syl-a">Wol</span><span class="syl-b">ke</span></span>-->
+			<span class="syl-deco__word is-outline is-wide" style="left:75%;top:34%;--r:5deg;--d:17s;--s:clamp(4rem,8vw,7.5rem);"><span class="syl-a">Son</span><span class="syl-b">ne</span></span>
+		</div>
 		<div class="max-w-7xl mx-auto px-5 sm:px-6">
 			<div class="max-w-3xl reveal">
 				<!--<p class="font-hand text-xl sm:text-2xl md:text-3xl text-brand-yellow -rotate-1">Die Leselücke ist real und sie wächst.</p>-->
@@ -553,9 +574,9 @@
 		<div class="max-w-7xl mx-auto px-3 sm:px-6">
 			<div class="bg-lightblue-gradient rounded-[2rem] sm:rounded-[3rem] p-4 pt-8 sm:p-10 md:p-14 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-14 items-start">
 				<div class="space-y-5 sm:space-y-6 px-1 sm:px-0">
-					<span class="inline-block bg-white text-primary px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Direkt hier ausprobieren</span>
+					<span class="inline-block bg-white text-primary px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Direkt hier ausprobieren (vereinfachtes Beispiel)</span>
 					<h2 id="demo-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Drücke auf Play. Tippe auf ein schwieriges Wort.</h2>
-					<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Ein kleiner Vorgeschmack auf den Smartmeister-Reader (<strong>hier mit vereinfachter Stimme</strong>). Schalte die Lesehelfer ein und aus, genau wie dein Kind es in der App kann..</p>
+					<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Ein kleiner Vorgeschmack auf den Smartmeister-Reader (vereinfachte Vorschau mit Stimme in geringer Qualität). Schalten Sie die Lesehelfer ein und aus, genau wie dein Kind es in der App kann.</p>
 
 					<div class="space-y-3" role="group" aria-label="Lesehelfer">
 						<button type="button" id="toggle-syllables" aria-pressed="true" class="w-full flex items-center justify-between gap-3 sm:gap-4 bg-white rounded-2xl p-3.5 sm:p-4 text-left hover:shadow-md transition">
@@ -568,7 +589,7 @@
 						<button type="button" id="toggle-focus" aria-pressed="true" class="w-full flex items-center justify-between gap-3 sm:gap-4 bg-white rounded-2xl p-3.5 sm:p-4 text-left hover:shadow-md transition">
 							<span class="flex items-center gap-3">
 								<span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">format_line_spacing</span>
-								<span><span class="block font-bold text-slate-900">Zeilenfokus</span><span class="block text-sm text-slate-500">Andere Zeilen treten in den Hintergrund: Dein Kind verliert die Zeile nicht.</span></span>
+								<span><span class="block font-bold text-slate-900">Zeilenfokus</span><span class="block text-sm text-slate-500">Andere Zeilen treten in den Hintergrund, dein Kind verliert die Zeile nicht.</span></span>
 							</span>
 							<span class="switch" aria-hidden="true"></span>
 						</button>
@@ -599,7 +620,7 @@
 
 						<p class="text-sm text-slate-500 font-medium flex items-center gap-2 border-t border-slate-100 pt-4">
 							<span class="material-symbols-outlined text-base text-primary" aria-hidden="true">translate</span>
-							Tippe auf ein Wort, um es zu hören und seine Bedeutung zu sehen.
+							Tippen Sie auf ein Wort, um es zu hören und seine Bedeutung zu sehen.
 						</p>
 
 						<div id="lab-popover" role="dialog" aria-label="Wortbedeutung" class="hidden absolute z-20 bg-ink text-white rounded-2xl shadow-2xl p-4 w-[15rem] max-w-[calc(100%-1.5rem)]">
@@ -895,6 +916,54 @@
 			
 		</div>
 	</section>
+	
+	
+	<!-- FAQ -->
+	<section id="faq" class="py-16 md:py-28 scroll-mt-20" aria-labelledby="faq-title">
+		<div class="max-w-3xl mx-auto px-5 sm:px-6">
+			<div class="reveal space-y-3 mb-8 md:mb-12">
+				<p class="font-hand text-xl sm:text-2xl text-vermillion -rotate-1">Gut zu wissen</p>
+				<h2 id="faq-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Häufige Fragen</h2>
+			</div>
+			<div class="faq-list reveal border-t border-primary/15">
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						Für welches Alter ist Smartmeister gedacht?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">Für Kinder der Klassen 1–5 – vom ersten Silbenlesen bis zum sicheren Verstehen längerer Texte. Die Texte und Übungen passen sich dem Niveau deines Kindes an.</p>
+				</details>
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						Muss ich selbst gut Deutsch sprechen, um mein Kind zu unterstützen?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">Nein. Smartmeister liest jeden Text deutlich vor, erklärt unbekannte Wörter und prüft das Verständnis. Du musst nicht jede Aussprache kennen, um dein Kind beim Üben zu begleiten.</p>
+				</details>
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						Wie viel Zeit sollte mein Kind täglich üben?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">Etwa 10–15 Minuten am Tag reichen. Kurze, regelmäßige Einheiten bringen mehr als seltene lange – zum Beispiel nach der Schule, vor dem Schlafengehen oder unterwegs.</p>
+				</details>
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						Was passiert, wenn ich mich auf die Warteliste eintrage?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">Du bekommst eine Nachricht, sobald Smartmeister startet, und kannst die App zum Start kostenlos testen. Die Anmeldung ist unverbindlich und du kannst dich jederzeit wieder abmelden.</p>
+				</details>
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						Was passiert mit den Daten meines Kindes?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">Wir gehen sorgsam mit Daten um und erheben nur, was für das Lernen nötig ist. Kinder können anomysiert von den Eltern angemeldet werden. Es finden keine Interaktionen statt, bei denen Bild- oder Tondaten ihres Kindes erhoben bzw. übermittelt werden.</p>
+				</details>
+			</div>
+		</div>
+	</section>
 </main>
 
 <!-- WAITLIST (Brevo) -->
@@ -1022,6 +1091,7 @@
 </script>
 
 <!-- Reading lab -->
+<script src="./audio/demo-timings.js"></script>
 <script>
 	(function () {
 		const story = [
@@ -1086,13 +1156,51 @@
 			lines.push({ el: p, words: lineWords, text: sentence.map(s => s.join('')).join(' ') });
 		});
 
-		const state = { syllables: true, focus: true, slow: false, playing: false, line: 0, word: -1, timer: null };
+		const state = { syllables: true, focus: true, slow: false, playing: false, paused: false, line: 0, word: -1, timer: null };
+		const LABELS = { idle: 'Vorlesen', playing: 'Pause', paused: 'Weiter', synth: 'Stopp' };
+
+		// Pre-rendered app voice (scripts/build-demo-audio.mjs); falls back to browser speech if unavailable.
+		const AUDIO = window.SM_DEMO_AUDIO || null;
+		const SLOW_PLAYBACK_RATE = 0.77;
+		let useAudio = !!AUDIO;
+		const storyAudio = {};
+		let clipAudio = null;
+		let rafId = 0;
+		if (AUDIO) {
+			['normal', 'slow'].forEach(mode => {
+				const a = new Audio(AUDIO.story[mode].src);
+				a.preload = 'auto';
+				a.addEventListener('ended', () => stop());
+				a.addEventListener('error', () => { useAudio = false; });
+				storyAudio[mode] = a;
+			});
+			clipAudio = new Audio(AUDIO.clips.src);
+			clipAudio.preload = 'auto';
+		}
+		const modeKey = () => (state.slow ? 'slow' : 'normal');
+		const activeAudio = () => storyAudio[modeKey()];
+
+		function setButton(kind) {
+			playIcon.textContent = kind === 'playing' || kind === 'synth' ? 'pause' : 'play_arrow';
+			playLabel.textContent = LABELS[kind];
+		}
+
+		function switchStoryMode(fromKey) {
+			if (!useAudio || !(state.playing || state.paused)) return;
+			const from = storyAudio[fromKey];
+			const to = activeAudio();
+			from.pause();
+			to.currentTime = AUDIO.story[modeKey()].times[Math.max(state.word, 0)];
+			if (state.playing) playAudio();
+		}
 
 		function setToggle(key, value) {
+			const prevMode = modeKey();
 			state[key] = value;
 			toggles[key].setAttribute('aria-pressed', String(value));
 			if (key === 'syllables') textEl.classList.toggle('syllables-off', !value);
 			if (key === 'focus') textEl.classList.toggle('lab-focus', value);
+			if (key === 'slow') switchStoryMode(prevMode);
 		}
 		Object.keys(toggles).forEach(key => {
 			toggles[key].addEventListener('click', () => setToggle(key, !state[key]));
@@ -1120,10 +1228,11 @@
 		}
 
 		function highlight(lineIdx, wordIdx) {
+			const on = state.playing || state.paused;
 			words.forEach(w => w.el.classList.remove('is-current'));
 			lines.forEach((l, i) => {
-				l.el.classList.toggle('is-active', state.playing && i === lineIdx);
-				l.el.classList.toggle('is-dim', state.playing && i !== lineIdx);
+				l.el.classList.toggle('is-active', on && i === lineIdx);
+				l.el.classList.toggle('is-dim', on && i !== lineIdx);
 			});
 			const w = lines[lineIdx] && lines[lineIdx].words[wordIdx];
 			if (w) w.el.classList.add('is-current');
@@ -1139,13 +1248,76 @@
 			}
 			clearHighlight();
 
+		function syncHighlight() {
+			const times = AUDIO.story[modeKey()].times;
+			const t = activeAudio().currentTime + 0.03;
+			let idx = 0;
+			while (idx < times.length - 1 && t >= times[idx + 1]) idx++;
+			state.word = idx;
+			const w = words[idx];
+			highlight(w.line, lines[w.line].words.indexOf(w));
+		}
+		function tick() {
+			syncHighlight();
+			if (state.playing) rafId = requestAnimationFrame(tick);
+		}
+
+		function playAudio() {
+			const a = activeAudio();
+			a.defaultPlaybackRate = a.playbackRate = state.slow ? SLOW_PLAYBACK_RATE : 1;
+			state.playing = true;
+			state.paused = false;
+			setButton('playing');
+			cancelAnimationFrame(rafId);
+			a.play().then(tick).catch((err) => {
+				state.playing = false;
+				// Autoplay blocks are not audio failures; only real load/decode errors switch to browser speech.
+				if (err && err.name === "NotAllowedError") { setButton(state.paused ? "paused" : "idle"); return; }
+				useAudio = false;
+				startSynth();
+			});
+		}
+		function pauseAudio() {
+			activeAudio().pause();
+			cancelAnimationFrame(rafId);
+			state.playing = false;
+			state.paused = true;
+			syncHighlight();
+			setButton('paused');
+		}
+
 		function stop() {
 			state.playing = false;
+			state.paused = false;
+			state.word = -1;
 			clearTimeout(state.timer);
+			cancelAnimationFrame(rafId);
 			if (synth) synth.cancel();
+			Object.values(storyAudio).forEach(a => { a.pause(); a.currentTime = 0; });
 			clearHighlight();
-			playIcon.textContent = 'play_arrow';
-			playLabel.textContent = 'Read aloud';
+			setButton('idle');
+		}
+
+		let clipWatch = 0;
+		function playClip(text) {
+			const item = useAudio && clipAudio && AUDIO.clips.items[text.toLowerCase()];
+			if (!item) { speak(text); return; }
+			if (state.playing) pauseAudio();
+			if (synth) synth.cancel();
+			cancelAnimationFrame(clipWatch);
+			clipAudio.pause();
+			clipAudio.currentTime = item[0];
+			const watch = () => {
+				if (clipAudio.currentTime >= item[1]) { clipAudio.pause(); return; }
+				clipWatch = requestAnimationFrame(watch);
+			};
+			clipAudio.play().then(watch).catch(() => speak(text));
+		}
+
+		function startSynth() {
+			state.playing = true;
+			setButton('synth');
+			playLine(0);
 		}
 
 		function playLine(lineIdx) {
@@ -1193,12 +1365,14 @@
 		}
 
 		playBtn.addEventListener('click', () => {
-			if (state.playing) { stop(); return; }
 			hidePopover();
-			state.playing = true;
-			playIcon.textContent = 'pause';
-			playLabel.textContent = 'Stop';
-			playLine(0);
+			if (useAudio) {
+				if (state.playing) pauseAudio();
+				else playAudio();
+				return;
+			}
+			if (state.playing) { stop(); return; }
+			startSynth();
 		});
 
 		let activeWord = null;
@@ -1221,12 +1395,12 @@
 		words.forEach(w => {
 			w.el.addEventListener('click', (e) => {
 				e.stopPropagation();
-				if (state.playing) stop();
+				if (state.playing && !useAudio) stop();
 				showPopover(w.el);
-				speak(w.el.dataset.word);
+				playClip(w.el.dataset.word);
 			});
 		});
-		popSpeak.addEventListener('click', (e) => { e.stopPropagation(); if (activeWord) speak(activeWord.dataset.word); });
+		popSpeak.addEventListener('click', (e) => { e.stopPropagation(); if (activeWord) playClip(activeWord.dataset.word); });
 		popClose.addEventListener('click', (e) => { e.stopPropagation(); hidePopover(); });
 		popover.addEventListener('click', (e) => e.stopPropagation());
 		document.addEventListener('click', hidePopover);
@@ -1239,13 +1413,13 @@
 				const correct = opt.dataset.correct === 'true';
 				document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('border-green-500', 'bg-pastel-green', 'border-vermillion', 'bg-pastelOrange'));
 				opt.classList.add(correct ? 'border-green-500' : 'border-vermillion', correct ? 'bg-pastel-green' : 'bg-pastelOrange');
-				feedback.textContent = correct ? 'Richtig! The fox meets a friendly bear.' : 'Not quite – read the third sentence again.';
+				feedback.textContent = correct ? 'Richtig! Der Fuchs trifft einen freundlichen Bären.' : 'Nicht ganz – lies den dritten Satz noch einmal.';
 				feedback.className = 'mt-4 font-semibold min-h-[1.5rem] ' + (correct ? 'text-green-700' : 'text-vermillion');
-				if (correct) speak('Richtig!');
+				if (correct) playClip('Richtig!');
 			});
 		});
 		document.getElementById('quiz-speak').addEventListener('click', () => {
-			speak('Wen trifft der Fuchs heute? Einen Hasen, einen Bären oder eine Eule?');
+			playClip('Wen trifft der Fuchs heute? Einen Hasen, einen Bären oder eine Eule?');
 		});
 	})();
 </script>
@@ -1316,11 +1490,11 @@
 (function () {
 	var words = Array.prototype.slice.call(document.querySelectorAll('.syl-deco__word'));
 	if (!words.length) return;
-
+//  var CONTACT = 0.28, COMPRESS = 0.74, STAGGER = 0.11, TAU = Math.PI * 2;
 	var COLORS = ['#ffd166', '#7fd1ae', '#8ecdf7', '#ffb3c7'];
-	var CONTACT = 0.28, COMPRESS = 0.74, STAGGER = 0.11, TAU = Math.PI * 2;
+	var CONTACT = 0.28, COMPRESS = 0.44, STAGGER = 0.11, TAU = Math.PI * 2;
 	var HEIGHT_K = 205 / 36 * 0.4;
-	var BIG_SPEED = 0.2, SMALL_SPEED = 0.5;
+	var BIG_SPEED = 0.4, SMALL_SPEED = 0.6;
 	var rand = function (lo, hi) { return lo + Math.random() * (hi - lo); };
 	var clamp01 = function (x) { return x < 0 ? 0 : x > 1 ? 1 : x; };
 	var smooth = function (a, b, x) { var k = clamp01((x - a) / (b - a)); return k * k * (3 - 2 * k); };
