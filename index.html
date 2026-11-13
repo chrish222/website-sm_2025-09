@@ -6,10 +6,9 @@
 	<meta name="robots" content="all">
 	<!--<title>Smartmeister – Effective German Literacy, Reading & Speech Training for Multilingual Children</title>-->
 	<!--<title>Smartmeister – German Reading Practice for Grades 1–5 | Tackle reading problems. Help with Words and Understanding</title>-->
-	
-	
-	<title>German Reading Practice Coach for Children. Improve reading and language skills | Smartmeister</title>
-	<meta name="description" content="Tackle reading problems & boost understanding. Read-aloud, syllable highlighting, translation & word help – so your child practices on their own.">
+
+	<title>German Language App for Children. Improve reading, pronunciation & listening comprehension | Smartmeister</title>
+	<meta name="description" content="Kids improve their German language through reading & listening. Learner tools help tackling reading deficits & boost German comprehension: Read-aloud, syllable highlights, translation & word help – so your child practices on their own.">
 	<!--<meta name="description" content="German language app designed for multilingual kids to boost German reading skills and comprehension. Empowering children aged 5–14 to build vocabulary and verbal confidence.">-->
 	<!--<meta name="description" content="Smartmeister reads aloud, colours syllables and checks understanding. German reading practice for grades 1–5, with levels and reading helpers – so your child can keep practising when you can't sit beside them.">-->
 	<meta name="author" content="Smartmeister">
@@ -143,14 +142,22 @@
 		.syllables-off .syl-a, .syllables-off .syl-b { color: inherit; }
 
 		/* Hero mini reader: syllable "karaoke" */
-		@keyframes syl-glow {
+		/* @keyframes syl-glow {
 			0%, 100% { background-color: transparent; }
 			8%, 28% { background-color: #FFD64A; }
 			36% { background-color: transparent; }
 		}
-		.syl-karaoke span { border-radius: 6px; padding: 0 2px; animation: syl-glow 3.6s infinite; }
-		.syl-karaoke span:nth-child(2) { animation-delay: 0.9s; }
-		.syl-karaoke span:nth-child(3) { animation-delay: 1.8s; }
+		.syl-karaoke span { border-radius: 6px; padding: 0 2px; animation: syl-glow 3.6s infinite; animation-delay: 4s;}
+		.syl-karaoke span:nth-child(2) { animation-delay: 4.9s; }
+		.syl-karaoke span:nth-child(3) { animation-delay: 5.8s; } */
+		@keyframes syl-glow {
+			  0%, 8% { background-color: transparent; }
+			  14%, 22% { background-color: #FFD64A; }
+			  30%, 100% { background-color: transparent; }
+			  }
+			  .syl-karaoke span { border-radius: 6px; padding: 0 2px; animation: syl-glow 6.6s infinite; animation-delay: 4s}
+			  .syl-karaoke span:nth-child(2) { animation-delay: 4.9s; }
+			  .syl-karaoke span:nth-child(3) { animation-delay: 5.8s; }
 
 		@keyframes eq {
 			0%, 100% { transform: scaleY(0.35); }
@@ -287,10 +294,10 @@
 
 	<!-- HERO -->
 	<section class="deco-host overflow-hidden">
-		<div class="syl-deco" aria-hidden="true">
-			<!--<span class="syl-deco__word" style="left:-1%;bottom:3%;--r:-6deg;--d:20s;"><span class="syl-a">Wol</span><span class="syl-b">ke</span></span>-->
+		<!--<div class="syl-deco" aria-hidden="true">
+			<span class="syl-deco__word" style="left:-1%;bottom:3%;--r:-6deg;--d:20s;"><span class="syl-a">Wol</span><span class="syl-b">ke</span></span>
 			<span class="syl-deco__word is-outline is-wide" style="left:38%;top:3%;--r:8deg;--d:17s;--s:clamp(4rem,8vw,7.5rem);"><span class="syl-a">Son</span><span class="syl-b">ne</span></span>
-		</div>
+		</div>-->
 		<div aria-hidden="true" class="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-brand-yellow/25 blur-3xl"></div>
 		<div class="relative max-w-7xl mx-auto px-5 sm:px-6 pt-8 pb-24 md:pt-20 md:pb-32 grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-12 items-center">
 			<div class="space-y-6 sm:space-y-8">
@@ -354,7 +361,11 @@
 	</section>
 	
 	<!-- THE READING GAP -->
-	<section class="bg-primary text-white py-16 md:py-24 relative overflow-hidden" aria-labelledby="gap-title">
+	<section class="bg-primary text-white py-16 md:py-24 relative overflow-hidden deco-host" aria-labelledby="gap-title">
+		<div class="syl-deco z-99" aria-hidden="true">
+			<!--<span class="syl-deco__word" style="left:-1%;bottom:3%;--r:-6deg;--d:20s;"><span class="syl-a">Wol</span><span class="syl-b">ke</span></span>-->
+			<span class="syl-deco__word is-outline is-wide" style="left:75%;top:34%;--r:5deg;--d:17s;--s:clamp(4rem,8vw,7.5rem);"><span class="syl-a">Son</span><span class="syl-b">ne</span></span>
+		</div>
 		<div class="max-w-7xl mx-auto px-5 sm:px-6">
 			<div class="max-w-3xl reveal">
 				<p class="font-hand text-xl sm:text-2xl md:text-3xl text-brand-yellow -rotate-1">The reading gap is real and growing.</p>
@@ -387,6 +398,50 @@
 					<p class="font-display text-5xl sm:text-6xl font-extrabold">10–15 min</p>
 					<p class="mt-3 text-lg font-semibold leading-snug">of guided daily practice boosts fluency, comprehension, pronunciation and vocabulary.</p>
 					<p class="mt-3 text-xs font-bold uppercase tracking-widest text-ink/50">That&apos;s where we come in</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- REAL APP SCREENS -->
+	<section id="howitworks" class="py-16 md:py-32" aria-labelledby="screens-title">
+		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
+			<div class="space-y-6 reveal">
+				<!--<span class="inline-block bg-pastelOrange text-orange-700 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Real app screens</span>-->
+				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Read the story. Practise with its words.</h2>-->
+				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and vocabulary.</h2>-->
+				<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and pronunciation.</h2>
+				
+				<!--<p class="text-lg text-slate-700 font-medium text-pretty">Children listen and read along, then practise syllables, articles or pronouns with words from the story they just read – at their level.</p>-->
+				<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Read and listen along, then practise comprehension. Children start easy and climb the difficulty ladder steadily. Reading difficulty evolves with your child at their level.</p>
+				<button type="button" id="audioButton" class="flex sm:inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-white border-2 border-primary/15 hover:border-primary text-primary px-6 py-4 rounded-2xl text-base sm:text-lg font-bold transition">
+					<span id="audio-eq" class="flex items-end gap-0.5 h-5 eq-paused" aria-hidden="true">
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
+					</span>
+					<span id="audioLabel">Hear a story read aloud</span>
+				</button>
+				<audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3" preload="none"></audio>
+			</div>
+			<div class="space-y-5 reveal">
+				<div class="relative">
+					<div aria-hidden="true" class="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-1/2 h-1/2 rounded-[2rem] bg-brand-yellow"></div>
+					<div class="relative rounded-2xl sm:rounded-[2rem] aspect-video overflow-hidden shadow-2xl bg-slate-100">
+						<video id="main-video-player" class="w-full h-full object-cover" autoplay muted loop playsinline aria-label="Smartmeister app screen recording">
+							<source id="main-video-source" src="./videos_sm-downsized/sm_geschichten-stories.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				<div class="flex flex-wrap gap-2 pt-1" role="group" aria-label="Choose an app screen">
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_readaloud_main.mp4">Read-aloud</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_geschichten-dialogue.mp4">Dialoge</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_readaloud.mp4">Highlights</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_geschichten-stories.mp4">Story choice</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_syllables_en.mp4">Syllables</button>
+					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_articles-drag_en.mp4">Exercises</button>
+					<!--<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_grammar_en.mp4">Pronouns</button>-->
 				</div>
 			</div>
 		</div>
@@ -446,48 +501,7 @@
 		</div>
 	</section>
 	
-	<!-- REAL APP SCREENS -->
-	<section id="howitworks" class="py-16 md:py-32" aria-labelledby="screens-title">
-		<div class="max-w-7xl mx-auto px-5 sm:px-6 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
-			<div class="space-y-6 reveal">
-				<!--<span class="inline-block bg-pastelOrange text-orange-700 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase">Real app screens</span>-->
-				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Read the story. Practise with its words.</h2>-->
-				<!--<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and vocabulary.</h2>-->
-				<h2 id="screens-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Smartmeister covers reading, listening, comprehension and pronunciation.</h2>
-				
-				<!--<p class="text-lg text-slate-700 font-medium text-pretty">Children listen and read along, then practise syllables, articles or pronouns with words from the story they just read – at their level.</p>-->
-				<p class="text-base sm:text-lg text-slate-700 font-medium text-pretty">Read and listen along, then practise comprehension. Children start easy and climb the difficulty ladder steadily. Reading difficulty evolves with your child at their level.</p>
-				<button type="button" id="audioButton" class="flex sm:inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-white border-2 border-primary/15 hover:border-primary text-primary px-6 py-4 rounded-2xl text-base sm:text-lg font-bold transition">
-					<span id="audio-eq" class="flex items-end gap-0.5 h-5 eq-paused" aria-hidden="true">
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-						<span class="eq-bar w-1 h-5 bg-vermillion rounded-full"></span>
-					</span>
-					<span id="audioLabel">Hear a story read aloud</span>
-				</button>
-				<audio id="storyAudio" src="./audio_sm-downsized/sm_story_telling_sample_drache.mp3" preload="none"></audio>
-			</div>
-			<div class="space-y-5 reveal">
-				<div class="relative">
-					<div aria-hidden="true" class="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 w-1/2 h-1/2 rounded-[2rem] bg-brand-yellow"></div>
-					<div class="relative rounded-2xl sm:rounded-[2rem] aspect-video overflow-hidden shadow-2xl bg-slate-100">
-						<video id="main-video-player" class="w-full h-full object-cover" autoplay muted loop playsinline aria-label="Smartmeister app screen recording">
-							<source id="main-video-source" src="./videos_sm-downsized/sm_geschichten-stories.mp4" type="video/mp4">
-						</video>
-					</div>
-				</div>
-				<div class="flex flex-wrap gap-2 pt-1" role="group" aria-label="Choose an app screen">
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="true" data-video="./videos_sm-downsized/sm_exercise_readaloud_main.mp4">Read-aloud</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="true" data-video="./videos_sm-downsized/sm_exercise_readaloud.mp4">Highlighting</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_geschichten-stories.mp4">Book choice</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_syllables_en.mp4">Syllables</button>
-					<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_articles-drag_en.mp4">Articles</button>
-					<!--<button type="button" class="thumb-btn px-4 py-2.5 rounded-full border-2 border-slate-200 bg-white font-bold text-sm transition hover:border-primary" aria-pressed="false" data-video="./videos_sm-downsized/sm_exercise_grammar_en.mp4">Pronouns</button>-->
-				</div>
-			</div>
-		</div>
-	</section>
+	
 	
 	
 	<!-- HOW IT WORKS METHOD: READ LISTEN UNDERSTAND -->
@@ -528,7 +542,7 @@
 						<span class="material-symbols-outlined text-4xl text-ink" aria-hidden="true">lightbulb</span>
 					</div>
 					<h3 class="font-display text-2xl sm:text-3xl font-extrabold text-primary mt-4 sm:mt-6">Understand</h3>
-					<p class="mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Short quizzes, read aloud too, show <strong>what they understood</strong>. Unknown words translate in one tap.</p>
+					<p class="mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Short quizzes, read aloud too, test <strong>what they understood</strong>. Unknown words translate in one tap.</p>
 					<p class="mt-6 inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 text-sm font-bold text-primary"><span class="material-symbols-outlined text-base" aria-hidden="true">quiz</span>Who does the fox meet?</p>
 				</article>
 			</div>
@@ -741,7 +755,7 @@
 						<span class="w-16 h-16 rounded-2xl bg-brand-yellow/40 text-ink flex items-center justify-center shrink-0" aria-hidden="true"><span class="material-symbols-outlined text-4xl">devices</span></span>
 						<h3 class="font-display text-xl font-extrabold text-primary leading-tight mt-4">Can I practise on my own?</h3> 
 
-					<p class="mt-2 sm:mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Easy-use reading helpers and difficulty adapt to reading ability.</p>
+					<p class="mt-2 sm:mt-3 text-slate-700 text-base sm:text-lg leading-relaxed">Easy-use reading helpers, multilingual controls & difficulty that adapts to ability.</p>
 				</article>
 			</div>
 			
@@ -870,7 +884,7 @@
 				<div class="w-64 h-40 bg-white flex items-center justify-center text-4xl mx-auto shadow-inner block sm:block mb-8 md:mb-12"><img alt="head 2" class="w-[230px] md:w-[200px] lg:w-[250px] h-auto" style="" src="./images/sm_who_head2.gif"></div>
 				  <h3 data-text="Clear narration, meaning in context and translation in one tap." class="custom_highlights relative z-10 inline-block text-xl sm:text-2xl leading-normal font-extrabold text-slate-900 ">
 					<!--<span class="custom_marker_highlight-green leading-normal">Little language experts with German as a second language (DAZ)</span></h3>-->
-					<span class="custom_marker_highlight-green leading-normal">When German is the new part</span></h3>
+					<span class="custom_marker_highlight-green leading-normal">First-readers or when German is the new part</span></h3>
 				<!--<p class="text-slate-600 leading-relaxed font-medium"></p>-->
 			</div>
 			<div class="bg-transparent p-3 md:p-10 rounded-[48px] text-center space-y-2 md:space-y-6 hover:translate-y-[-8px] transition duration-300 col-span-3 md:col-span-3 lg:col-span-1">
@@ -977,7 +991,66 @@
 			
 		</div>
 	</section>
+	
+	
+	<!-- FAQ -->
+	<section id="faq" class="py-16 md:py-28 scroll-mt-20" aria-labelledby="faq-title">
+		<div class="max-w-3xl mx-auto px-5 sm:px-6">
+			<div class="reveal space-y-3 mb-8 md:mb-12">
+				<p class="font-hand text-xl sm:text-2xl text-vermillion -rotate-1">Good to know</p>
+				<h2 id="faq-title" class="font-display text-[1.875rem] sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight tracking-tight text-balance">Frequently Asked Questions</h2>
+			</div>
+			<div class="faq-list reveal border-t border-primary/15">
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						What age group is Smartmeister designed for?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">For children in grades 1 through 5 – from reading their first syllables to confidently understanding longer texts. The stories and exercises adapt automatically to your child's level.</p>
+				</details>
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						Do I need to speak German well myself to support my child?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">Not at all. Smartmeister reads every text clearly aloud, translates unfamiliar words, and checks reading comprehension. You don't need to know every single pronunciation to accompany your child through their practice sessions.</p>
+				</details>
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						How much time should my child practice every day?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">About 10 to 15 minutes a day is plenty. Short, regular sessions are much more effective than long, infrequent ones – for example, right after school, before bedtime, or while on the go.</p>
+				</details>
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						What happens when I sign up for the waitlist?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">You'll receive a notification as soon as Smartmeister launches and will be able to test the app for free at launch. Signing up is completely non-binding, and you can opt out at any time.</p>
+				</details>
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						How much will Smartmeister cost?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">Once the trial phase ends, a standard monthly subscription will cost approximately €11. The standard account includes all reading texts and standard narration voices. A premium subscription (available at a later date) for roughly €18 will also offer more voice options and additional features for children to test their pronunciation and reading fluency.</p>
+				</details>
+				<details class="faq-item group border-b border-primary/15">
+					<summary class="flex items-center justify-between gap-6 py-5 md:py-6 cursor-pointer text-left font-bold text-lg md:text-xl text-ink hover:text-primary transition">
+						What happens to my child's data?
+						<span class="faq-icon material-symbols-outlined shrink-0 text-primary transition-transform duration-300" aria-hidden="true">add</span>
+					</summary>
+					<p class="pb-6 pr-10 text-base sm:text-lg text-slate-700 leading-relaxed text-pretty">We handle data with the utmost care and only collect what is strictly necessary for learning. Parents can register their children anonymously. There are no interactions that collect or transmit any image or audio data of your child.</p>
+				</details>
+			</div>
+		</div>
+	</section>
+
 </main>
+
+
+
 
 <!-- WAITLIST (Brevo) -->
 <section class="bg-brandYellow-Gradient px-3 sm:px-4 md:px-1 py-14 md:py-24 scroll-mt-20" id="waitlist" aria-labelledby="waitlist-title">
